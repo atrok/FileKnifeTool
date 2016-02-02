@@ -5,9 +5,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import cmdline.CommandParse;
+
 public class StatisticFactory {
 	private HashMap m_RegisteredProducts = new HashMap();
-
+	
+	private Logger logger=LoggerFactory.getLogger(StatisticFactory.class);
+	
 	private static StatisticFactory sf=new StatisticFactory();
 	public static StatisticFactory instance(){
 		return sf;
@@ -24,6 +31,7 @@ public class StatisticFactory {
 		Class productClass = (Class)m_RegisteredProducts.get(productID);
 		Constructor<StatisticDefinition> productConstructor;
 		try {
+			logger.info("{}: instantiating {}", productID, productClass);
 			productConstructor = productClass.getDeclaredConstructor(new Class[]{String.class,Map.class});
 			return (StatisticDefinition)productConstructor.newInstance((Object[])args);
 

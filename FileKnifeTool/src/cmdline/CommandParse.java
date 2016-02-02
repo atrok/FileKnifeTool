@@ -115,11 +115,10 @@ public class CommandParse extends CommandImpl{
 	            stream.close();
 	            
 	            processed++;
-	            logger.info("procesed file: {}, {}", file, TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
-	            logger.debug("timeprocessing: {}",TimeUnit.SECONDS.convert(ln.getTimeprocessing(), TimeUnit.NANOSECONDS));
-	            logger.debug("normalizing: {}",TimeUnit.SECONDS.convert(ln.getTimenormalizing(), TimeUnit.NANOSECONDS));
-	            logger.debug("getstatvalue: {}",TimeUnit.SECONDS.convert(ln.getTimegetstatvalue(),TimeUnit.NANOSECONDS));
-	            logger.debug("getsplitvalue: {}",TimeUnit.SECONDS.convert(ln.getTimesplitline(),TimeUnit.NANOSECONDS));
+	            logger.info("procesed file: {}, {} sec", file, TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
+	            
+	            ln.getReport();
+	            
 	 		}catch(IOException e){
 	 			failed++;
 	 			data.put(e.toString(), file.getAbsolutePath());
@@ -178,7 +177,7 @@ public class CommandParse extends CommandImpl{
     					URL[] urls = ((URLClassLoader)cl).getURLs();
 
     						        for(URL url: urls){
-    						        	System.out.println(url.getFile());
+    						        	logger.debug(url.getFile());
     						        }
     		
 
@@ -210,7 +209,7 @@ public class CommandParse extends CommandImpl{
             	args[0]=section;
             	args[1]=kv;
             	
-            	sm.addStatistic(StatisticFactory.instance().getProduct(kv.get(StatisticParamNaming.STATTYPE),args));
+            	sm.addStatistic(StatisticFactory.instance().getProduct(kv.get(StatisticParamNaming.STATTYPE.toString()),args));
             }
 /*    		String[] configuredStatistics=FilesUtil.read(input);
     		
@@ -225,6 +224,7 @@ public class CommandParse extends CommandImpl{
     	} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.exit(1);
 		}finally{}
     	
 		//sm.addStatistic(new IncrementalStatistic(".+Message.+(received from|sent to).+","SentReceived"));

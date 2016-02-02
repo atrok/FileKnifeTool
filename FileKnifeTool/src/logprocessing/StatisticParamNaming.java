@@ -13,6 +13,6 @@ public enum StatisticParamNaming {
 	this.description = description;
 	}
 	public String getDescription() { return description; }
-
+	public String toString() { return description; }
 
 }

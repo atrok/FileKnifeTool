@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -286,5 +287,14 @@ public class LineProcessing {
 
 	public long getTimesplitline() {
 		return timesplitline;
+	}
+
+	public void getReport() {
+		logger.debug("timeprocessing: {} sec",TimeUnit.SECONDS.convert(getTimeprocessing(), TimeUnit.NANOSECONDS));
+        logger.debug("normalizing: {} sec",TimeUnit.SECONDS.convert(getTimenormalizing(), TimeUnit.NANOSECONDS));
+        logger.debug("getstatvalue: {} sec",TimeUnit.SECONDS.convert(getTimegetstatvalue(),TimeUnit.NANOSECONDS));
+        logger.debug("getsplitvalue: {} sec",TimeUnit.SECONDS.convert(getTimesplitline(),TimeUnit.NANOSECONDS));
+		
+    	timeprocessing=timenormalizing=timegetstatvalue=timesplitline=0;
 	}
 }

@@ -41,7 +41,7 @@ public abstract class StatisticDefinition {
 	
 	public StatisticDefinition(String name, Map<String,String> parameters){
 		
-		this.regexp=parameters.get(StatisticParamNaming.REGEXP);
+		this.regexp=parameters.get(StatisticParamNaming.REGEXP.toString());
 		this.varname=this.name=name;
 		this.patternLineMatcher=Pattern.compile(getRegexp());
 		
