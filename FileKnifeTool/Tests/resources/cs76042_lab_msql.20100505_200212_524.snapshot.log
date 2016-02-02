@@ -1,0 +1,2217 @@
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:14:04.042 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 92
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]
+
+20:14:04.074 Trc 24215 There are [47] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:14:04.074 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 92
+
+20:14:04.152 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 93
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 245]
+
+20:14:04.152 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:14:04.152 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 93
+
+20:14:04.152 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 94
+
+  Query  : CfgSolution[components/*/@appDBID = 245]
+
+20:14:04.152 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:14:04.152 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 94
+
+20:14:04.167 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 95
+
+  Query  : CfgApplication[@backupServerDBID = 245 ]
+
+20:14:04.167 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:14:04.167 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 95
+
+20:14:04.183 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 96
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]
+
+20:14:04.183 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:14:04.183 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 96
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:14:21.371 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@hostDBID = 128]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 97
+
+  Query  : CfgApplication[@hostDBID = 128]
+
+20:14:21.371 Trc 24215 There are [19] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:14:21.371 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 97
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:14:30.199 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@hostDBID = 101]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 98
+
+  Query  : CfgApplication[@hostDBID = 101]
+
+20:14:30.199 Trc 24215 There are [21] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:14:30.199 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 98
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:14:50.137 Trc 04541 Message MSGCFG_GETACCOUNTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETACCOUNTINFO
+  attr: SATRCFG_APPID               value: "CSID=0DBID=245type=9"
+  attr: IATRCFG_REQUESTID           value: 99
+
+20:14:50.137 Trc 04542 Message MSGCFG_ACCOUNTINFO sent to 1784 (SCE 'default')
+
+MSGCFG_ACCOUNTINFO
+  attr: SATRCFG_ACCOUNTID           value: "CfgID=CSID=0DBID=100type=3"
+  attr: IATRCFG_REQUESTID           value: 99
+
+20:14:50.137 Trc 04541 Message MSGCFG_GETBRIEFINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETBRIEFINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 3 [CfgPerson]
+  attr: IATRCFG_REQUESTID           value: 100
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 100
+  Query  : dbid100
+
+20:14:50.137 Trc 24215 There are [1] objects of type [CfgPerson] sent to the client [1784] (application [default], type [SCE])
+20:14:50.137 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 3 [CfgPerson]
+  attr: IATRCFG_REQUESTID           value: 100
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:28:14.986 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 101
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+20:28:14.986 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:28:14.986 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 101
+
+20:28:15.002 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1784 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "9900logx-conn-debug-writeYes00000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 102
+
+<CfgServerUpdate
+  DBID="99">
+ <options>
+  <list_pair
+    key="log">
+   <str_pair
+     value="Yes"
+     key="x-conn-debug-write"   />
+  </list_pair>
+ </options>
+</CfgServerUpdate>
+
+20:28:15.127 Trc 24211 Object [CfgServerUpdate], DBID [99] is to be changed by client, type [SCE], name: [default], user: [default]
+20:28:15.127 Trc 24218 Transaction [2] is sent on execution
+DBRequest, handle 470 sent, query :
+20:28:15.142 BEGIN TRANSACTION
+
+DBRequest, handle 471 sent, query :
+20:28:15.158 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'log', 'x-conn-debug-write', 'Yes', 0)
+
+DBRequest, handle 472 sent, query :
+20:28:15.158 update cfg_refresh set notify_id = 2
+
+DBRequest, handle 473 sent, query :
+20:28:15.158 COMMIT TRANSACTION
+
+20:28:15.158 Trc 24216 Transaction [2] is committed
+20:28:15.173 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+20:28:15.189 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+20:28:15.205 [HISTORYDB]: History log is activated
+20:28:15.205 Std 24201 Object: [CfgServer], name [confserv], DBID: [99] is changed by client, type [SCE], name: [default], user: [default]
+20:28:15.205 [HISTORYDB]: History log consistency mode  OFF
+20:28:15.205 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1784 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 102
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:29:51.395 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 103
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+20:29:51.395 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:29:51.395 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 103
+
+20:29:51.410 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1784 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "990000000000logx-conn-debug-write1"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 104
+
+<CfgServerUpdate
+  DBID="99">
+ <options
+   action="change">
+  <list_pair
+    key="log">
+   <str_pair
+     value="1"
+     key="x-conn-debug-write"   />
+  </list_pair>
+ </options>
+</CfgServerUpdate>
+
+20:29:51.410 Trc 24211 Object [CfgServerUpdate], DBID [99] is to be changed by client, type [SCE], name: [default], user: [default]
+20:29:51.410 Trc 24218 Transaction [3] is sent on execution
+DBRequest, handle 493 sent, query :
+20:29:51.410 BEGIN TRANSACTION
+
+DBRequest, handle 494 sent, query :
+20:29:51.410 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'log' and opt = 'x-conn-debug-write'
+
+DBRequest, handle 495 sent, query :
+20:29:51.410 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'log', 'x-conn-debug-write', '1', 0)
+
+DBRequest, handle 496 sent, query :
+20:29:51.410 update cfg_refresh set notify_id = 3
+
+DBRequest, handle 497 sent, query :
+20:29:51.410 COMMIT TRANSACTION
+
+20:29:51.410 Trc 24216 Transaction [3] is committed
+20:29:51.410 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+20:29:51.473 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+20:29:51.551 [HISTORYDB]: History log is activated
+20:29:51.551 Std 24201 Object: [CfgServer], name [confserv], DBID: [99] is changed by client, type [SCE], name: [default], user: [default]
+20:29:51.551 [HISTORYDB]: History log consistency mode  OFF
+conn::write(1784,len=32)
+20:29:51.551 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1784 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 104
+
+conn::write(1792,len=256)
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+conn::write(1820,len=72)
+conn::write(1820,len=5)
+read error 0, fderr=0
+Connection to LCA at host atrok, port 4999 lost
+conn::write(1792,len=256)
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+conn::write(1820,len=72)
+conn::write(1820,len=5)
+read error 0, fderr=0
+Connection to LCA at host atrok, port 4999 lost
+conn::write(1792,len=256)
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+conn::write(1820,len=72)
+conn::write(1820,len=5)
+read error 0, fderr=0
+Connection to LCA at host atrok, port 4999 lost
+conn::write(1820,len=72)
+conn::write(1820,len=5)
+conn::write(1792,len=256)
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+read error 0, fderr=0
+Connection to LCA at host atrok, port 4999 lost
+conn::write(1820,len=72)
+conn::write(1820,len=5)
+conn::write(1792,len=256)
+LCALayer: Connected to LCA at host atrok, port 4999
+******************************                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                JECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 50
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:05:10.294 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 20 [CfgAppPrototype]
+  attr: IATRCFG_REQUESTID           value: 51
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+20:05:10.294 Trc 24215 There are [1] objects of type [CfgAppPrototype] sent to the client [1784] (application [default], type [SCE])
+20:05:10.294 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 20 [CfgAppPrototype]
+  attr: IATRCFG_REQUESTID           value: 51
+
+Connection to LCA at host atrok, port 4999 lost
+20:05:13.497 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 99 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 52
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 99 ]
+
+20:05:13.560 Trc 24215 There are [66] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:05:13.560 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 52
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:05:13.638 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 53
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 99]
+
+20:05:13.638 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:05:13.638 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 53
+
+20:05:13.654 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 54
+
+  Query  : CfgSolution[components/*/@appDBID = 99]
+
+20:05:13.654 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:05:13.654 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 54
+
+20:05:13.654 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 55
+
+  Query  : CfgApplication[@backupServerDBID = 99 ]
+
+20:05:13.654 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:05:13.654 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 55
+
+20:05:13.654 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 99 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 56
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 99 ]
+
+20:05:13.654 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:05:13.654 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 56
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:05:30.967 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 57
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 249
+  Query  : dbid249
+
+20:05:30.967 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:05:30.967 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 57
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:05:33.420 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 58
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]
+
+20:05:33.451 Trc 24215 There are [47] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:05:33.451 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 58
+
+20:05:33.529 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 59
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 245]
+
+20:05:33.529 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:05:33.529 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 59
+
+20:05:33.545 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 60
+
+  Query  : CfgSolution[components/*/@appDBID = 245]
+
+20:05:33.545 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:05:33.545 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 60
+
+20:05:33.545 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 61
+
+  Query  : CfgApplication[@backupServerDBID = 245 ]
+
+20:05:33.545 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:05:33.545 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 61
+
+20:05:33.545 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 62
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]
+
+20:05:33.545 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:05:33.545 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 62
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:07:10.344 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 63
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 251
+  Query  : dbid251
+
+20:07:10.344 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:07:10.344 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 63
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:07:13.907 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@hostDBID = 128]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 64
+
+  Query  : CfgApplication[@hostDBID = 128]
+
+20:07:13.922 Trc 24215 There are [19] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:07:13.922 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 64
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:07:57.064 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 65
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]
+
+20:07:57.080 Trc 24215 There are [47] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:07:57.080 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 65
+
+20:07:57.158 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 66
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 245]
+
+20:07:57.158 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:07:57.158 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 66
+
+20:07:57.158 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 67
+
+  Query  : CfgSolution[components/*/@appDBID = 245]
+
+20:07:57.158 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:07:57.158 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 67
+
+20:07:57.173 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 68
+
+  Query  : CfgApplication[@backupServerDBID = 245 ]
+
+20:07:57.173 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:07:57.173 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 68
+
+20:07:57.189 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 69
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]
+
+20:07:57.189 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:07:57.189 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 69
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:08:08.986 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 70
+
+  Query  : CfgApplication[@backupServerDBID = 245]
+
+20:08:08.986 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:08:08.986 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 70
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:08:44.784 Trc 04541 Message MSGCFG_GETACCOUNTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETACCOUNTINFO
+  attr: SATRCFG_APPID               value: "CSID=0DBID=99type=9"
+  attr: IATRCFG_REQUESTID           value: 71
+
+20:08:44.800 Trc 04542 Message MSGCFG_ACCOUNTINFO sent to 1784 (SCE 'default')
+
+MSGCFG_ACCOUNTINFO
+  attr: SATRCFG_ACCOUNTID           value: "CfgID=CSID=0DBID=100type=3"
+  attr: IATRCFG_REQUESTID           value: 71
+
+20:08:44.800 Trc 04541 Message MSGCFG_GETBRIEFINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETBRIEFINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 3 [CfgPerson]
+  attr: IATRCFG_REQUESTID           value: 72
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 100
+  Query  : dbid100
+
+20:08:44.800 Trc 24215 There are [1] objects of type [CfgPerson] sent to the client [1784] (application [default], type [SCE])
+20:08:44.800 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 3 [CfgPerson]
+  attr: IATRCFG_REQUESTID           value: 72
+
+Connection to LCA at host atrok, port 4999 lost
+20:08:49.800 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 73
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 447
+  Query  : CfgFolder[@DBID = 447]/objectIDs/CfgFolderShortcut/linkDBID
+
+20:08:49.800 Trc 24215 There are [7] objects of type [CfgFolder] sent to the client [1784] (application [default], type [SCE])
+20:08:49.800 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 73
+
+20:08:49.800 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 74
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 447
+  Query  : CfgFolder[@DBID = 447]/objectIDs/CfgApplicationShortcut/linkDBID
+
+20:08:49.800 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:08:49.800 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 74
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:09:09.800 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 114 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 75
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 114 ]
+
+20:09:09.800 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:09:09.800 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 75
+
+20:09:09.800 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 114]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 76
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 114]
+
+20:09:09.800 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:09:09.800 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 76
+
+20:09:09.816 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 114]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 77
+
+  Query  : CfgSolution[components/*/@appDBID = 114]
+
+20:09:09.816 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:09:09.816 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 77
+
+20:09:09.832 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 114 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 78
+
+  Query  : CfgApplication[@backupServerDBID = 114 ]
+
+20:09:09.847 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:09:09.847 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 78
+
+20:09:09.847 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 114 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 79
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 114 ]
+
+20:09:09.847 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:09:09.847 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 79
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+20:09:15.660 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 99 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 80
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 99 ]
+
+20:09:15.722 Trc 24215 There are [66] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:09:15.722 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 80
+
+20:09:15.832 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 81
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 99]
+
+20:09:15.832 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:09:15.832 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 81
+
+20:09:15.832 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 82
+
+  Query  : CfgSolution[components/*/@appDBID = 99]
+
+20:09:15.847 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:09:15.847 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 82
+
+20:09:15.847 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 83
+
+  Query  : CfgApplication[@backupServerDBID = 99 ]
+
+20:09:15.847 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:09:15.847 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 83
+
+20:09:15.847 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 99 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 84
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 99 ]
+
+20:09:15.847 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:09:15.847 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 84
+
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:09:53.848 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 85
+
+  Query  : CfgApplication[appServerDBIDs/CfgConnectionInfo/@linkDBID= 245 ]
+
+20:09:53.864 Trc 24215 There are [47] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:09:53.864 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 85
+
+20:09:53.942 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgAlarmCondition[@detectAppDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 86
+
+  Query  : CfgAlarmCondition[@detectAppDBID = 245]
+
+20:09:53.942 Trc 24215 There are [0] objects of type [CfgAlarmCondition] sent to the client [1784] (application [default], type [SCE])
+20:09:53.942 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 34 [CfgAlarmCondition]
+  attr: IATRCFG_REQUESTID           value: 86
+
+20:09:53.942 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgSolution[components/*/@appDBID = 245]"
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 87
+
+  Query  : CfgSolution[components/*/@appDBID = 245]
+
+20:09:53.942 Trc 24215 There are [0] objects of type [CfgService] sent to the client [1784] (application [default], type [SCE])
+20:09:53.942 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 8 [CfgService]
+  attr: IATRCFG_REQUESTID           value: 87
+
+20:09:53.942 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 88
+
+  Query  : CfgApplication[@backupServerDBID = 245 ]
+
+20:09:53.942 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:09:53.942 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 88
+
+20:09:53.942 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]"
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 89
+
+  Query  : CfgCampaignGroup[serverDBIDs/*/@linkDBID= 245 ]
+
+20:09:53.942 Trc 24215 There are [0] objects of type [CfgCampaignGroup] sent to the client [1784] (application [default], type [SCE])
+20:09:53.942 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 38 [CfgCampaignGroup]
+  attr: IATRCFG_REQUESTID           value: 89
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:10:19.802 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@hostDBID = 101]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 90
+
+  Query  : CfgApplication[@hostDBID = 101]
+
+20:10:19.802 Trc 24215 There are [21] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:10:19.802 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 90
+
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+20:10:42.037 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1784 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@hostDBID = 128]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 91
+
+  Query  : CfgApplication[@hostDBID = 128]
+
+20:10:42.053 Trc 24215 There are [19] objects of type [CfgApplication] sent to the client [1784] (application [default], type [SCE])
+20:10:42.053 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1784 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 91
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

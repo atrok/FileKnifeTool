@@ -1,0 +1,2176 @@
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+16:56:57.473 Trc 04120 Check point 2010-12-30T16:56:57
+17:56:57.479 Trc 04120 Check point 2010-12-30T17:56:57
+18:56:57.485 Trc 04120 Check point 2010-12-30T18:56:57
+19:56:57.490 Trc 04120 Check point 2010-12-30T19:56:57
+20:56:57.496 Trc 04120 Check point 2010-12-30T20:56:57
+21:56:57.504 Trc 04120 Check point 2010-12-30T21:56:57
+22:56:57.506 Trc 04120 Check point 2010-12-30T22:56:57
+23:56:57.512 Trc 04120 Check point 2010-12-30T23:56:57
+00:56:57.518 Trc 04120 Check point 2010-12-31T00:56:57
+01:56:57.524 Trc 04120 Check point 2010-12-31T01:56:57
+02:56:57.530 Trc 04120 Check point 2010-12-31T02:56:57
+03:56:57.535 Trc 04120 Check point 2010-12-31T03:56:57
+04:56:57.541 Trc 04120 Check point 2010-12-31T04:56:57
+05:56:57.547 Trc 04120 Check point 2010-12-31T05:56:57
+06:56:57.553 Trc 04120 Check point 2010-12-31T06:56:57
+07:56:57.555 Trc 04120 Check point 2010-12-31T07:56:57
+08:56:57.561 Trc 04120 Check point 2010-12-31T08:56:57
+09:56:57.566 Trc 04120 Check point 2010-12-31T09:56:57
+10:56:57.572 Trc 04120 Check point 2010-12-31T10:56:57
+11:56:57.578 Trc 04120 Check point 2010-12-31T11:56:57
+12:56:57.584 Trc 04120 Check point 2010-12-31T12:56:57
+13:56:57.590 Trc 04120 Check point 2010-12-31T13:56:57
+14:56:57.596 Trc 04120 Check point 2010-12-31T14:56:57
+15:56:57.601 Trc 04120 Check point 2010-12-31T15:56:57
+15:57:32.477 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/01/10 are to be removed
+15:57:32.477 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 12/30/10 are to be removed
+15:57:32.477 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:57.613 Trc 04120 Check point 2010-12-31T16:56:57
+17:56:57.618 Trc 04120 Check point 2010-12-31T17:56:57
+18:56:57.624 Trc 04120 Check point 2010-12-31T18:56:57
+19:56:57.630 Trc 04120 Check point 2010-12-31T19:56:57
+20:56:57.636 Trc 04120 Check point 2010-12-31T20:56:57
+21:56:57.642 Trc 04120 Check point 2010-12-31T21:56:57
+22:56:57.648 Trc 04120 Check point 2010-12-31T22:56:57
+23:56:57.653 Trc 04120 Check point 2010-12-31T23:56:57
+00:56:57.659 Trc 04120 Check point 2011-01-01T00:56:57
+01:56:57.665 Trc 04120 Check point 2011-01-01T01:56:57
+02:56:57.671 Trc 04120 Check point 2011-01-01T02:56:57
+03:56:57.677 Trc 04120 Check point 2011-01-01T03:56:57
+04:56:57.683 Trc 04120 Check point 2011-01-01T04:56:57
+05:56:57.688 Trc 04120 Check point 2011-01-01T05:56:57
+06:56:57.694 Trc 04120 Check point 2011-01-01T06:56:57
+07:56:57.700 Trc 04120 Check point 2011-01-01T07:56:57
+08:56:57.706 Trc 04120 Check point 2011-01-01T08:56:57
+09:56:57.712 Trc 04120 Check point 2011-01-01T09:56:57
+10:56:57.717 Trc 04120 Check point 2011-01-01T10:56:57
+11:56:57.723 Trc 04120 Check point 2011-01-01T11:56:57
+12:56:57.729 Trc 04120 Check point 2011-01-01T12:56:57
+13:56:57.735 Trc 04120 Check point 2011-01-01T13:56:57
+14:56:57.741 Trc 04120 Check point 2011-01-01T14:56:57
+15:56:57.747 Trc 04120 Check point 2011-01-01T15:56:57
+15:57:32.482 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/02/10 are to be removed
+15:57:32.529 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 12/31/10 are to be removed
+15:57:32.529 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:57.752 Trc 04120 Check point 2011-01-01T16:56:57
+17:56:57.758 Trc 04120 Check point 2011-01-01T17:56:57
+18:56:57.764 Trc 04120 Check point 2011-01-01T18:56:57
+19:56:57.773 Trc 04120 Check point 2011-01-01T19:56:57
+20:56:57.779 Trc 04120 Check point 2011-01-01T20:56:57
+21:56:57.785 Trc 04120 Check point 2011-01-01T21:56:57
+22:56:57.791 Trc 04120 Check point 2011-01-01T22:56:57
+23:56:57.797 Trc 04120 Check point 2011-01-01T23:56:57
+00:56:57.803 Trc 04120 Check point 2011-01-02T00:56:57
+01:56:57.808 Trc 04120 Check point 2011-01-02T01:56:57
+02:56:57.814 Trc 04120 Check point 2011-01-02T02:56:57
+03:56:57.820 Trc 04120 Check point 2011-01-02T03:56:57
+04:56:57.830 Trc 04120 Check point 2011-01-02T04:56:57
+05:56:57.836 Trc 04120 Check point 2011-01-02T05:56:57
+06:56:57.842 Trc 04120 Check point 2011-01-02T06:56:57
+07:56:57.848 Trc 04120 Check point 2011-01-02T07:56:57
+08:56:57.854 Trc 04120 Check point 2011-01-02T08:56:57
+09:56:57.860 Trc 04120 Check point 2011-01-02T09:56:57
+10:56:57.865 Trc 04120 Check point 2011-01-02T10:56:57
+11:56:57.871 Trc 04120 Check point 2011-01-02T11:56:57
+12:56:57.877 Trc 04120 Check point 2011-01-02T12:56:57
+13:56:57.882 Trc 04120 Check point 2011-01-02T13:56:57
+14:56:57.888 Trc 04120 Check point 2011-01-02T14:56:57
+15:56:57.894 Trc 04120 Check point 2011-01-02T15:56:57
+15:57:32.536 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/03/10 are to be removed
+15:57:32.536 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/01/11 are to be removed
+15:57:32.536 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:57.900 Trc 04120 Check point 2011-01-02T16:56:57
+17:56:57.906 Trc 04120 Check point 2011-01-02T17:56:57
+18:56:57.911 Trc 04120 Check point 2011-01-02T18:56:57
+19:56:57.917 Trc 04120 Check point 2011-01-02T19:56:57
+20:56:57.923 Trc 04120 Check point 2011-01-02T20:56:57
+21:56:57.929 Trc 04120 Check point 2011-01-02T21:56:57
+22:56:57.937 Trc 04120 Check point 2011-01-02T22:56:57
+23:56:57.947 Trc 04120 Check point 2011-01-02T23:56:57
+00:56:57.953 Trc 04120 Check point 2011-01-03T00:56:57
+01:56:57.959 Trc 04120 Check point 2011-01-03T01:56:57
+02:56:57.965 Trc 04120 Check point 2011-01-03T02:56:57
+03:56:57.971 Trc 04120 Check point 2011-01-03T03:56:57
+04:56:57.977 Trc 04120 Check point 2011-01-03T04:56:57
+05:56:57.982 Trc 04120 Check point 2011-01-03T05:56:57
+06:56:57.988 Trc 04120 Check point 2011-01-03T06:56:57
+07:56:57.996 Trc 04120 Check point 2011-01-03T07:56:57
+08:56:58.002 Trc 04120 Check point 2011-01-03T08:56:58
+09:56:58.008 Trc 04120 Check point 2011-01-03T09:56:58
+10:56:58.014 Trc 04120 Check point 2011-01-03T10:56:58
+11:56:58.020 Trc 04120 Check point 2011-01-03T11:56:58
+12:56:58.026 Trc 04120 Check point 2011-01-03T12:56:58
+13:56:58.031 Trc 04120 Check point 2011-01-03T13:56:58
+14:56:58.037 Trc 04120 Check point 2011-01-03T14:56:58
+15:56:58.043 Trc 04120 Check point 2011-01-03T15:56:58
+15:57:32.544 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/04/10 are to be removed
+15:57:32.560 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/02/11 are to be removed
+15:57:32.575 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.049 Trc 04120 Check point 2011-01-03T16:56:58
+17:56:58.056 Trc 04120 Check point 2011-01-03T17:56:58
+18:56:58.062 Trc 04120 Check point 2011-01-03T18:56:58
+19:56:58.068 Trc 04120 Check point 2011-01-03T19:56:58
+20:56:58.073 Trc 04120 Check point 2011-01-03T20:56:58
+21:56:58.079 Trc 04120 Check point 2011-01-03T21:56:58
+22:56:58.085 Trc 04120 Check point 2011-01-03T22:56:58
+23:56:58.091 Trc 04120 Check point 2011-01-03T23:56:58
+00:56:58.097 Trc 04120 Check point 2011-01-04T00:56:58
+01:56:58.102 Trc 04120 Check point 2011-01-04T01:56:58
+02:56:58.113 Trc 04120 Check point 2011-01-04T02:56:58
+03:56:58.119 Trc 04120 Check point 2011-01-04T03:56:58
+04:56:58.125 Trc 04120 Check point 2011-01-04T04:56:58
+05:56:58.130 Trc 04120 Check point 2011-01-04T05:56:58
+06:56:58.136 Trc 04120 Check point 2011-01-04T06:56:58
+07:56:58.142 Trc 04120 Check point 2011-01-04T07:56:58
+08:56:58.148 Trc 04120 Check point 2011-01-04T08:56:58
+09:56:58.154 Trc 04120 Check point 2011-01-04T09:56:58
+10:56:58.160 Trc 04120 Check point 2011-01-04T10:56:58
+11:56:58.167 Trc 04120 Check point 2011-01-04T11:56:58
+12:56:58.173 Trc 04120 Check point 2011-01-04T12:56:58
+13:56:58.178 Trc 04120 Check point 2011-01-04T13:56:58
+14:56:58.184 Trc 04120 Check point 2011-01-04T14:56:58
+15:56:58.190 Trc 04120 Check point 2011-01-04T15:56:58
+15:57:32.582 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/05/10 are to be removed
+15:57:32.582 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/03/11 are to be removed
+15:57:32.582 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.196 Trc 04120 Check point 2011-01-04T16:56:58
+17:56:58.202 Trc 04120 Check point 2011-01-04T17:56:58
+18:56:58.208 Trc 04120 Check point 2011-01-04T18:56:58
+19:56:58.213 Trc 04120 Check point 2011-01-04T19:56:58
+20:56:58.224 Trc 04120 Check point 2011-01-04T20:56:58
+21:56:58.230 Trc 04120 Check point 2011-01-04T21:56:58
+22:56:58.236 Trc 04120 Check point 2011-01-04T22:56:58
+23:56:58.242 Trc 04120 Check point 2011-01-04T23:56:58
+00:56:58.247 Trc 04120 Check point 2011-01-05T00:56:58
+01:56:58.253 Trc 04120 Check point 2011-01-05T01:56:58
+02:56:58.259 Trc 04120 Check point 2011-01-05T02:56:58
+03:56:58.265 Trc 04120 Check point 2011-01-05T03:56:58
+04:56:58.271 Trc 04120 Check point 2011-01-05T04:56:58
+05:56:58.278 Trc 04120 Check point 2011-01-05T05:56:58
+06:56:58.284 Trc 04120 Check point 2011-01-05T06:56:58
+07:56:58.290 Trc 04120 Check point 2011-01-05T07:56:58
+08:56:58.296 Trc 04120 Check point 2011-01-05T08:56:58
+09:56:58.302 Trc 04120 Check point 2011-01-05T09:56:58
+10:56:58.308 Trc 04120 Check point 2011-01-05T10:56:58
+11:56:58.313 Trc 04120 Check point 2011-01-05T11:56:58
+12:56:58.319 Trc 04120 Check point 2011-01-05T12:56:58
+13:56:58.325 Trc 04120 Check point 2011-01-05T13:56:58
+14:56:58.340 Trc 04120 Check point 2011-01-05T14:56:58
+15:56:58.346 Trc 04120 Check point 2011-01-05T15:56:58
+15:57:32.597 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/06/10 are to be removed
+15:57:32.628 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/04/11 are to be removed
+15:57:32.628 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.352 Trc 04120 Check point 2011-01-05T16:56:58
+17:56:58.358 Trc 04120 Check point 2011-01-05T17:56:58
+18:56:58.363 Trc 04120 Check point 2011-01-05T18:56:58
+19:56:58.369 Trc 04120 Check point 2011-01-05T19:56:58
+20:56:58.375 Trc 04120 Check point 2011-01-05T20:56:58
+21:56:58.381 Trc 04120 Check point 2011-01-05T21:56:58
+22:56:58.387 Trc 04120 Check point 2011-01-05T22:56:58
+23:56:58.398 Trc 04120 Check point 2011-01-05T23:56:58
+00:56:58.404 Trc 04120 Check point 2011-01-06T00:56:58
+01:56:58.410 Trc 04120 Check point 2011-01-06T01:56:58
+02:56:58.416 Trc 04120 Check point 2011-01-06T02:56:58
+03:56:58.421 Trc 04120 Check point 2011-01-06T03:56:58
+04:56:58.427 Trc 04120 Check point 2011-01-06T04:56:58
+05:56:58.433 Trc 04120 Check point 2011-01-06T05:56:58
+06:56:58.439 Trc 04120 Check point 2011-01-06T06:56:58
+07:56:58.445 Trc 04120 Check point 2011-01-06T07:56:58
+08:56:58.458 Trc 04120 Check point 2011-01-06T08:56:58
+09:56:58.464 Trc 04120 Check point 2011-01-06T09:56:58
+10:56:58.470 Trc 04120 Check point 2011-01-06T10:56:58
+11:56:58.475 Trc 04120 Check point 2011-01-06T11:56:58
+12:56:58.481 Trc 04120 Check point 2011-01-06T12:56:58
+13:56:58.487 Trc 04120 Check point 2011-01-06T13:56:58
+14:56:58.493 Trc 04120 Check point 2011-01-06T14:56:58
+15:56:58.499 Trc 04120 Check point 2011-01-06T15:56:58
+15:57:32.640 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/07/10 are to be removed
+15:57:32.640 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/05/11 are to be removed
+15:57:32.640 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.504 Trc 04120 Check point 2011-01-06T16:56:58
+17:56:58.517 Trc 04120 Check point 2011-01-06T17:56:58
+18:56:58.533 Trc 04120 Check point 2011-01-06T18:56:58
+19:56:58.538 Trc 04120 Check point 2011-01-06T19:56:58
+20:56:58.544 Trc 04120 Check point 2011-01-06T20:56:58
+21:56:58.550 Trc 04120 Check point 2011-01-06T21:56:58
+22:56:58.571 Trc 04120 Check point 2011-01-06T22:56:58
+23:56:58.577 Trc 04120 Check point 2011-01-06T23:56:58
+00:56:58.583 Trc 04120 Check point 2011-01-07T00:56:58
+01:56:58.589 Trc 04120 Check point 2011-01-07T01:56:58
+02:56:58.604 Trc 04120 Check point 2011-01-07T02:56:58
+03:56:58.609 Trc 04120 Check point 2011-01-07T03:56:58
+04:56:58.615 Trc 04120 Check point 2011-01-07T04:56:58
+05:56:58.621 Trc 04120 Check point 2011-01-07T05:56:58
+06:56:58.627 Trc 04120 Check point 2011-01-07T06:56:58
+07:56:58.633 Trc 04120 Check point 2011-01-07T07:56:58
+08:56:58.638 Trc 04120 Check point 2011-01-07T08:56:58
+09:56:58.644 Trc 04120 Check point 2011-01-07T09:56:58
+10:56:58.650 Trc 04120 Check point 2011-01-07T10:56:58
+11:56:58.656 Trc 04120 Check point 2011-01-07T11:56:58
+12:56:58.665 Trc 04120 Check point 2011-01-07T12:56:58
+13:56:58.671 Trc 04120 Check point 2011-01-07T13:56:58
+14:56:58.676 Trc 04120 Check point 2011-01-07T14:56:58
+15:56:58.682 Trc 04120 Check point 2011-01-07T15:56:58
+15:57:32.652 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/08/10 are to be removed
+15:57:32.746 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/06/11 are to be removed
+15:57:32.746 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.688 Trc 04120 Check point 2011-01-07T16:56:58
+17:56:58.694 Trc 04120 Check point 2011-01-07T17:56:58
+18:56:58.700 Trc 04120 Check point 2011-01-07T18:56:58
+19:56:58.706 Trc 04120 Check point 2011-01-07T19:56:58
+20:56:58.711 Trc 04120 Check point 2011-01-07T20:56:58
+21:56:58.717 Trc 04120 Check point 2011-01-07T21:56:58
+22:56:58.723 Trc 04120 Check point 2011-01-07T22:56:58
+23:56:58.729 Trc 04120 Check point 2011-01-07T23:56:58
+00:56:58.734 Trc 04120 Check point 2011-01-08T00:56:58
+01:56:58.740 Trc 04120 Check point 2011-01-08T01:56:58
+02:56:58.746 Trc 04120 Check point 2011-01-08T02:56:58
+03:56:58.752 Trc 04120 Check point 2011-01-08T03:56:58
+04:56:58.758 Trc 04120 Check point 2011-01-08T04:56:58
+05:56:58.764 Trc 04120 Check point 2011-01-08T05:56:58
+06:56:58.767 Trc 04120 Check point 2011-01-08T06:56:58
+07:56:58.773 Trc 04120 Check point 2011-01-08T07:56:58
+08:56:58.779 Trc 04120 Check point 2011-01-08T08:56:58
+09:56:58.784 Trc 04120 Check point 2011-01-08T09:56:58
+10:56:58.790 Trc 04120 Check point 2011-01-08T10:56:58
+11:56:58.796 Trc 04120 Check point 2011-01-08T11:56:58
+12:56:58.802 Trc 04120 Check point 2011-01-08T12:56:58
+13:56:58.808 Trc 04120 Check point 2011-01-08T13:56:58
+14:56:58.813 Trc 04120 Check point 2011-01-08T14:56:58
+15:56:58.826 Trc 04120 Check point 2011-01-08T15:56:58
+15:57:32.749 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/09/10 are to be removed
+15:57:32.749 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/07/11 are to be removed
+15:57:32.765 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.832 Trc 04120 Check point 2011-01-08T16:56:58
+17:56:58.838 Trc 04120 Check point 2011-01-08T17:56:58
+18:56:58.844 Trc 04120 Check point 2011-01-08T18:56:58
+19:56:58.849 Trc 04120 Check point 2011-01-08T19:56:58
+20:56:58.855 Trc 04120 Check point 2011-01-08T20:56:58
+21:56:58.861 Trc 04120 Check point 2011-01-08T21:56:58
+22:56:58.867 Trc 04120 Check point 2011-01-08T22:56:58
+23:56:58.873 Trc 04120 Check point 2011-01-08T23:56:58
+00:56:58.881 Trc 04120 Check point 2011-01-09T00:56:58
+01:56:58.887 Trc 04120 Check point 2011-01-09T01:56:58
+02:56:58.893 Trc 04120 Check point 2011-01-09T02:56:58
+03:56:58.899 Trc 04120 Check point 2011-01-09T03:56:58
+04:56:58.904 Trc 04120 Check point 2011-01-09T04:56:58
+05:56:58.910 Trc 04120 Check point 2011-01-09T05:56:58
+06:56:58.916 Trc 04120 Check point 2011-01-09T06:56:58
+07:56:58.922 Trc 04120 Check point 2011-01-09T07:56:58
+08:56:58.928 Trc 04120 Check point 2011-01-09T08:56:58
+09:56:58.941 Trc 04120 Check point 2011-01-09T09:56:58
+10:56:58.946 Trc 04120 Check point 2011-01-09T10:56:58
+11:56:58.952 Trc 04120 Check point 2011-01-09T11:56:58
+12:56:58.974 Trc 04120 Check point 2011-01-09T12:56:58
+13:56:58.980 Trc 04120 Check point 2011-01-09T13:56:58
+14:56:58.985 Trc 04120 Check point 2011-01-09T14:56:58
+15:56:58.991 Trc 04120 Check point 2011-01-09T15:56:58
+15:57:32.774 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/10/10 are to be removed
+15:57:32.774 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/08/11 are to be removed
+15:57:32.774 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:58.997 Trc 04120 Check point 2011-01-09T16:56:58
+17:56:59.003 Trc 04120 Check point 2011-01-09T17:56:59
+18:56:59.013 Trc 04120 Check point 2011-01-09T18:56:59
+19:56:59.021 Trc 04120 Check point 2011-01-09T19:56:59
+20:56:59.027 Trc 04120 Check point 2011-01-09T20:56:59
+21:56:59.032 Trc 04120 Check point 2011-01-09T21:56:59
+22:56:59.038 Trc 04120 Check point 2011-01-09T22:56:59
+23:56:59.044 Trc 04120 Check point 2011-01-09T23:56:59
+00:56:59.050 Trc 04120 Check point 2011-01-10T00:56:59
+01:56:59.056 Trc 04120 Check point 2011-01-10T01:56:59
+02:56:59.062 Trc 04120 Check point 2011-01-10T02:56:59
+03:56:59.068 Trc 04120 Check point 2011-01-10T03:56:59
+04:56:59.076 Trc 04120 Check point 2011-01-10T04:56:59
+05:56:59.082 Trc 04120 Check point 2011-01-10T05:56:59
+06:56:59.088 Trc 04120 Check point 2011-01-10T06:56:59
+07:56:59.094 Trc 04120 Check point 2011-01-10T07:56:59
+08:56:59.100 Trc 04120 Check point 2011-01-10T08:56:59
+09:56:59.105 Trc 04120 Check point 2011-01-10T09:56:59
+10:56:59.111 Trc 04120 Check point 2011-01-10T10:56:59
+11:56:59.117 Trc 04120 Check point 2011-01-10T11:56:59
+12:56:59.118 Trc 04120 Check point 2011-01-10T12:56:59
+13:56:59.128 Trc 04120 Check point 2011-01-10T13:56:59
+14:56:59.134 Trc 04120 Check point 2011-01-10T14:56:59
+15:56:59.140 Trc 04120 Check point 2011-01-10T15:56:59
+15:57:32.782 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/11/10 are to be removed
+15:57:32.782 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/09/11 are to be removed
+15:57:32.782 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:59.146 Trc 04120 Check point 2011-01-10T16:56:59
+17:56:59.152 Trc 04120 Check point 2011-01-10T17:56:59
+18:56:59.158 Trc 04120 Check point 2011-01-10T18:56:59
+19:56:59.163 Trc 04120 Check point 2011-01-10T19:56:59
+20:56:59.169 Trc 04120 Check point 2011-01-10T20:56:59
+21:56:59.179 Trc 04120 Check point 2011-01-10T21:56:59
+22:56:59.181 Trc 04120 Check point 2011-01-10T22:56:59
+23:56:59.187 Trc 04120 Check point 2011-01-10T23:56:59
+00:56:59.193 Trc 04120 Check point 2011-01-11T00:56:59
+01:56:59.199 Trc 04120 Check point 2011-01-11T01:56:59
+02:56:59.205 Trc 04120 Check point 2011-01-11T02:56:59
+03:56:59.211 Trc 04120 Check point 2011-01-11T03:56:59
+04:56:59.216 Trc 04120 Check point 2011-01-11T04:56:59
+05:56:59.222 Trc 04120 Check point 2011-01-11T05:56:59
+06:56:59.228 Trc 04120 Check point 2011-01-11T06:56:59
+07:56:59.236 Trc 04120 Check point 2011-01-11T07:56:59
+08:56:59.242 Trc 04120 Check point 2011-01-11T08:56:59
+09:56:59.248 Trc 04120 Check point 2011-01-11T09:56:59
+10:56:59.254 Trc 04120 Check point 2011-01-11T10:56:59
+11:56:59.260 Trc 04120 Check point 2011-01-11T11:56:59
+12:56:59.265 Trc 04120 Check point 2011-01-11T12:56:59
+13:56:59.271 Trc 04120 Check point 2011-01-11T13:56:59
+14:56:59.277 Trc 04120 Check point 2011-01-11T14:56:59
+15:56:59.283 Trc 04120 Check point 2011-01-11T15:56:59
+15:57:32.784 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 12/12/10 are to be removed
+15:57:32.831 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 01/10/11 are to be removed
+15:57:32.831 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+16:56:59.293 Trc 04120 Check point 2011-01-11T16:56:59
+17:26:15.583 [HISTORYDB]: Client record 2 has been written to history database
+17:26:15.677 Std 22801 Port [3030], protocol [CFGLIB], mode [INSECURE] closed
+17:26:15.708 Trc 04524 Client '1764' disconnected
+17:26:15.724 Std 22801 Port [4042], protocol [CFGSOAP], mode [REGULAR] closed
+Shutdown timer has being set to finalize network activity, delay - 5 sec
+ok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+15:56:57.467 Trc 04120 Check point 2010-12-30T15:56:57
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+15:57:32.359 [HISTORYDB]: History database ./histlog.hdb... is being purged. Records older than 11/30/10 are to be removed
+15:57:32.406 [HISTORYDB]: Client session database ./histlog.hdb... is being purged. Records older than 12/29/10 are to be removed
+15:57:32.421 [HISTORYDB]: History database ./histlog.hdb has been purged successfully.
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+LCALayer: Connected to LCA at host atrok, port 4999
+************************************
+LCALayer: REventRegistered on LCA...
+************************************
+Connection to LCA at host atrok, port 4999 lost
+*********************************
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

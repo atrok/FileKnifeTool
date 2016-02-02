@@ -1,0 +1,1325 @@
+Build information :
+  Description : (Content freeze)
+  Timestamp   : Apr 22 2009 12:20:39
+  Components  :
+    Configuration library   v.7.6.000.05
+    Common library          v.7.5.000.38 C2
+    Service library         v.7.5.000.04 MT
+    Message library         v.7.5.000.01
+    Log library             v.7.6.000.00 MT
+    LCA library             v.7.5.000.06
+    Thread library          v.7.6.000.00
+    DBServer library        v.7.5.000.02
+    Genesys License library v.7.5.000.00 MT
+    License library         v.FLEXLm 8.3c
+    Stat Script library     v.7.5.000.00
+
+Application name: confserv
+Application type: ConfigurationServer (21)
+Command line:     confserv.exe -c confserv_lab_msql.cfg 
+Host name:        atrok
+DST:              TZ = 1, timeb = 1
+Time zone:        -10800, Russian Standard Time, Russian Daylight Time
+UTC time:         2010-04-22T10:54:42.407
+Local time:       2010-04-22T14:54:42.407
+Start time (UTC): 2010-04-22T10:54:42
+Running time:     0:00:00:00
+Host info:        Windows 5.1.2600, 2, Service Pack 2, 2.0, 0100, 1
+File:             (1) logs/cs76042_lab_msql.20100422_145442_408.log
+
+14:54:42.407 Trc 04112 The Log Output of type 'logs/cs76042_lab_msql' has been created and opened
+14:54:42.407 Std 22110 Encoding [utf-8] is set successfully.
+14:54:42.407 Std 05060 Application started
+14:54:42.407 Std 22100 Genesys Configuration Server. Version 7.6.000.42
+14:54:42.407 Std 22101 Copyright (c) 1997-2009 Genesys Telecommunications Laboratories, Inc.
+14:54:42.407 Std 22102 Server application name is set to [confserv]
+14:54:42.407 Std 22915 Server mode is set to [PRIMARY]
+14:54:42.407 Std 22900 Objectset [main-cfgset] is being loaded ...
+14:54:42.922 Std 22901 Objectset [main-cfgset] : XML schema is loaded
+14:54:43.063  dbserver_manager with alias main-dbserver has being registered for the socket 1840, reference counter 3
+14:54:43.063 Trc 04500 Connecting to DBServer '' at host 'atrok', port 4040
+14:54:43.079 Std 04503 Connected to DBServer '' at host 'atrok', port 4040
+14:54:43.235 Trc 24400 Trying to open database [435941] ,SQL server [atrok]
+14:54:43.766 Std 07001 Database '435941' opened 
+14:54:43.766  dbserver_manager with alias dbcontroller_alias has being registered for the socket 1816, reference counter 3
+14:54:43.766 cfg_refresh DB server connection connecting
+14:54:43.782 cfg_refresh DB server connection established
+14:54:43.813 Std 22913 Configuration database version is [7.6]
+14:54:43.813 Std 22918 Configuration tenancy model is: [SINGLE-TENANT]
+Database schema is reading ... done
+14:54:44.079 Std 22910 Database schema [dbschema.xml] is loaded
+MAXDBIE request is about to be sent
+MAXDBID read responce received
+14:54:44.126 Std 22500 LCA is connected at [CABPICCIM01:4999]
+14:54:44.141 Std 22911 Backup server [ConfigServer_BCK] on [CABPICCIM03:2020] is set up in the configuration
+14:54:44.141 Trc 04500 Connecting to ConfigurationServer '' at host 'CABPICCIM03', port 2020
+addp-trace off
+(addp_xconfig) local OFF, remote OFF, trace off
+error: ConnNS.cpp:166 cannot resolve name 'CABPICCIM03'
+14:54:46.485 Std 04502 Cannot connect to ConfigurationServer '' at host 'CABPICCIM03', port 2020, reason 'CFGServerNotFound'
+14:54:46.485 Std 22906 Objectset [main-cfgset] : data is cleaned up. Source : [DBServer]
+14:54:46.485 Std 22902 Objectset [main-cfgset] : read requests sent on DBServer
+Cluster [principal] is being read ...........................done
+Cluster [statistic] is being read ........done
+Cluster [persons] is being read ...............done
+Cluster [CTI] is being read .....done
+Cluster [scripts] is being read .....done
+Cluster [outbound] is being read ...............done
+Cluster [gvp] is being read .....done
+Cluster [service] is being read .......done
+14:55:09.736 Std 22903 Objectset [main-cfgset] : data is loaded. Now initializing ...
+Initializing Virtual Agent Groups ....................................................................................................................................................................................................................................................................................................................................................done
+14:55:20.721 Std 22904 Objectset [main-cfgset] is fully loaded
+14:55:20.736 [HISTORYDB]: Initializing of History database...
+14:55:20.752 [HISTORYDB]: Opening a history database D:\GenesysLogs\configServer_history/histlog.hdb...
+14:55:20.783 Std 22138 History Log database D:\GenesysLogs\configServer_history/histlog.hdb operation failure: unable to open database file.
+14:55:20.783 Std 22115 History of Changes Adapter (HCA) is activated. Mode is [INACTIVE].
+14:55:20.783 Std 22108 Transaction manager is activated
+14:55:20.814 Trc 24218 Transaction [1] is sent on execution
+DBRequest, handle 101 sent, query :
+14:55:20.846 BEGIN TRANSACTION
+
+DBRequest, handle 103 sent, query :
+14:55:20.861 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'backupserver'
+
+DBRequest, handle 104 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'database-guid'
+
+DBRequest, handle 105 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'encoding'
+
+DBRequest, handle 106 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'encryption'
+
+DBRequest, handle 107 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'history-log-created'
+
+DBRequest, handle 108 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'history-log-guid'
+
+DBRequest, handle 109 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'history-log-minid'
+
+DBRequest, handle 110 sent, query :
+14:55:22.142 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'history-log-version'
+
+DBRequest, handle 111 sent, query :
+14:55:22.158 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'hostname'
+
+DBRequest, handle 112 sent, query :
+14:55:22.158 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'management-port'
+
+DBRequest, handle 113 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'port'
+
+DBRequest, handle 114 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'reconnect-timeout'
+
+DBRequest, handle 115 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'confserv' and opt = 'server'
+
+DBRequest, handle 116 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'dbengine'
+
+DBRequest, handle 117 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'dbserver'
+
+DBRequest, handle 118 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'host'
+
+DBRequest, handle 119 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'port'
+
+DBRequest, handle 120 sent, query :
+14:55:22.174 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'reconnect-timeout'
+
+DBRequest, handle 121 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'response-timeout'
+
+DBRequest, handle 122 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'server'
+
+DBRequest, handle 123 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'dbserver' and opt = 'username'
+
+DBRequest, handle 124 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'hca' and opt = 'schema'
+
+DBRequest, handle 125 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'history-log' and opt = 'active'
+
+DBRequest, handle 126 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'history-log' and opt = 'all'
+
+DBRequest, handle 127 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'history-log' and opt = 'client-expiration'
+
+DBRequest, handle 128 sent, query :
+14:55:22.205 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'history-log' and opt = 'expiration'
+
+DBRequest, handle 129 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'history-log' and opt = 'failsafe-store-processing'
+
+DBRequest, handle 130 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'history-log' and opt = 'max-records'
+
+DBRequest, handle 131 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'log' and opt = 'all'
+
+DBRequest, handle 132 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'log' and opt = 'buffering'
+
+DBRequest, handle 133 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'log' and opt = 'expire'
+
+DBRequest, handle 134 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'log' and opt = 'segment'
+
+DBRequest, handle 135 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'log' and opt = 'verbose'
+
+DBRequest, handle 136 sent, query :
+14:55:22.221 delete from cfg_app_option where object_dbid = 99 and object_type = 9 and section = 'soap' and opt = 'port'
+
+DBRequest, handle 137 sent, query :
+14:55:22.221 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'log', 'verbose', 'all', 0)
+
+DBRequest, handle 138 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'log', 'all', 'stdout,logs/cs76042_lab_msql', 0)
+
+DBRequest, handle 139 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'port', '4050', 0)
+
+DBRequest, handle 140 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'management-port', '4051', 0)
+
+DBRequest, handle 141 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'server', 'dbserver', 0)
+
+DBRequest, handle 142 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'encryption', 'false', 0)
+
+DBRequest, handle 143 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'encoding', 'utf-8', 0)
+
+DBRequest, handle 144 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'history-log-guid', NULL, 0)
+
+DBRequest, handle 145 sent, query :
+14:55:22.252 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'history-log-version', NULL, 0)
+
+DBRequest, handle 146 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'history-log-created', '0', 0)
+
+DBRequest, handle 147 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'history-log-minid', '0', 0)
+
+DBRequest, handle 148 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'confserv', 'database-guid', '2EB1AAD9-74FA-441E-A16B-C1CF547B8B11', 0)
+
+DBRequest, handle 149 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'host', 'atrok', 0)
+
+DBRequest, handle 150 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'port', '4040', 0)
+
+DBRequest, handle 151 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'dbengine', 'mssql', 0)
+
+DBRequest, handle 152 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'dbserver', 'atrok', 0)
+
+DBRequest, handle 153 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'dbname', '435941', 0)
+
+DBRequest, handle 154 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'username', 'trok', 0)
+
+DBRequest, handle 155 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'server', 'dbserver_bu', 0)
+
+DBRequest, handle 156 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'reconnect-timeout', '10', 0)
+
+DBRequest, handle 157 sent, query :
+14:55:22.267 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'dbserver', 'response-timeout', '600', 0)
+
+DBRequest, handle 158 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'soap', 'port', '4042', 0)
+
+DBRequest, handle 159 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'soap', 'debug', 'true', 0)
+
+DBRequest, handle 160 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'hca', 'schema', 'none', 0)
+
+DBRequest, handle 161 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'history-log', 'active', 'true', 0)
+
+DBRequest, handle 162 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'history-log', 'all', 'D:\GenesysLogs\configServer_history\histlog', 0)
+
+DBRequest, handle 163 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'history-log', 'client-expiration', '10', 0)
+
+DBRequest, handle 164 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'history-log', 'expiration', '10', 0)
+
+DBRequest, handle 165 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'history-log', 'failsafe-store-processing', 'false', 0)
+
+DBRequest, handle 166 sent, query :
+14:55:22.283 insert into cfg_app_option (object_dbid, object_type, section, opt, val, object_csid) values(99, 9, 'history-log', 'max-records', '1000', 0)
+
+DBRequest, handle 167 sent, query :
+14:55:22.283 update cfg_parameters set val = '7.5.000.03' where set_id = 0 and section='version' and opt='schema'
+
+DBRequest, handle 168 sent, query :
+14:55:22.299 update cfg_refresh set notify_id = 2
+
+DBRequest, handle 169 sent, query :
+14:55:22.299 COMMIT TRANSACTION
+
+14:55:22.314 Trc 24216 Transaction [1] is committed
+14:55:22.314 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+14:55:22.330 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+14:55:22.346 Trc 24206 Notification : Object [CfgServer], name [confserv], DBID: [99] is changed at server
+14:55:22.346 Std 24222 Configuration Schema changed. New version: [7.5.000.03]
+14:55:22.346 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+14:55:22.346 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+14:55:22.346 Std 22100 Genesys Configuration Server. Version 7.6.000.42
+14:55:22.346 Std 22101 Copyright (c) 1997-2009 Genesys Telecommunications Laboratories, Inc.
+14:55:22.346 [HISTORYDB]: History log is activated
+14:55:22.346 Std 04525 Port 2020 opened for listening
+14:55:22.346 Std 22800 Extended info : Port [2020], protocol [CFGLIB], mode [INSECURE] opened for listening
+14:55:22.346 Std 04525 Port 4042 opened for listening
+14:55:22.346 Std 22800 Extended info : Port [4042], protocol [CFGSOAP], mode [REGULAR] opened for listening
+14:55:22.346 Std 22915 Server mode is set to [PRIMARY]
+14:55:22.346 Std 04562 Warm Standby (Primary) mode activated
+14:55:22.361 Std 04525 Port 4051 opened for listening
+14:55:22.361 Std 22800 Extended info : Port [4051], protocol [SNMP], mode [REGULAR] opened for listening
+14:55:22.361 Std 22128 Authentication type is [internal]
+
+============================================
+Configuration statistics. Number of objects:
+============================================
+ CfgSwitch            : 8
+ CfgDN                : 19342
+ CfgPerson            : 4552
+ CfgPlace             : 5358
+ CfgAgentGroup        : 425
+ CfgPlaceGroup        : 34
+ CfgTenant            : 2
+ CfgService           : 20
+ CfgApplication       : 238
+ CfgHost              : 46
+ CfgPhysicalSwitch    : 8
+ CfgScript            : 192
+ CfgSkill             : 23
+ CfgActionCode        : 6
+ CfgAgentLogin        : 9457
+ CfgTransaction       : 142
+ CfgDNGroup           : 6686
+ CfgStatDay           : 15
+ CfgStatTable         : 1
+ CfgAppPrototype      : 34
+ CfgAccessGroup       : 37
+ CfgFolder            : 429
+ CfgField             : 57
+ CfgFormat            : 8
+ CfgTableAccess       : 8
+ CfgCallingList       : 24
+ CfgCampaign          : 23
+ CfgTreatment         : 21
+ CfgFilter            : 23
+ CfgTimeZone          : 34
+ CfgVoicePrompt       : 2
+ CfgIVRPort           : 370
+ CfgIVR               : 2
+ CfgAlarmCondition    : 41
+ CfgEnumerator        : 23
+ CfgEnumeratorValue   : 70
+ CfgCampaignGroup     : 23
+    Total objects :    47784
+============================================
+14:55:22.361 Std 22109 Configuration Server is initialized
+14:55:53.815 Trc 04520 New client 1748 connected
+14:55:53.815 Trc 24300 Extended info : New client [1748] connected, protocol [cfglib]
+14:55:53.815 Total number of clients: 1
+14:55:53.831 Trc 04541 Message MSGCFG_GETSERVERPROTOCOL received from 1748 ( '')
+
+MSGCFG_GETSERVERPROTOCOL
+  attr: SATRCFG_APPNAME             value: "default"
+  attr: IATRCFG_SECURELIBRARY       value: 1
+  attr: IATRCFG_REQUESTID           value: 1
+
+14:55:53.831 Trc 04542 Message MSGCFG_SERVERPROTOCOL sent to 1748 ( '')
+
+MSGCFG_SERVERPROTOCOL
+  attr: SATRCFG_PROTOCOL            value: "CfgProtocol 5.1.3.70"
+  attr: IATRCFG_REQUESTID           value: 1
+
+14:55:53.831 Trc 04541 Message MSGCFG_CLIENTREGISTER received from 1748 ( '')
+
+MSGCFG_CLIENTREGISTER
+  attr: SATRCFG_PROTOCOLEX          value: "CfgProtocol 5.1.3.70"
+  attr: SATRCFG_PROTOCOL            value: "CfgProtocol 5.1.3.54"
+  attr: SATRCFG_USERPASS            value: "******"
+  attr: SATRCFG_USERNAME            value: "default"
+  attr: SATRCFG_APPPASS             value: ""
+  attr: SATRCFG_APPNAME             value: "default"
+  attr: IATRCFG_APPTYPE             value: 0 [Unknown]
+  attr: IATRCFG_REQUESTID           value: 2
+
+14:55:53.847 Number of GUI clients: 1
+14:55:53.847 Trc 04522 Client 1748 authorized, name 'default', type 'SCE'
+14:55:53.847 Trc 22121 Extended info : Client 1748 authorized, name [default], type [SCE], user name [default], protocol [cfglib], address [192.168.10.10:1935]. Authentication type : [internal]
+14:55:53.847 Trc 04542 Message MSGCFG_CLIENTREGISTERED sent to 1748 (SCE 'default')
+
+MSGCFG_CLIENTREGISTERED
+  attr: IATRCFG_CRYPTPASSW          value: 1
+  attr: IATRCFG_BACKUPCFGSERVERDBID value: 114
+  attr: IATRCFG_CFGSERVERDBID       value: 99
+  attr: IATRCFG_EXTERNALAUTH        value: 0
+  attr: IATRCFG_SESSIONNUMBER       value: 1
+  attr: SATRCFG_SCHEMAVERSION       value: "7.5.000.03"
+  attr: SATRCFG_PROTOCOLEX          value: "CfgProtocol 5.1.3.70"
+  attr: SATRCFG_PROTOCOL            value: "CfgProtocol 5.1.3.54"
+  attr: IATRCFG_UNSOLEVENTNUM       value: 2
+  attr: IATRCFG_REQUESTID           value: 2
+
+14:55:53.893 Trc 04541 Message MSGCFG_GETSCHEMAINFO received from 1748 (SCE 'default')
+14:55:53.909 Trc 04542 Message MSGCFG_SCHEMAINFO sent to 1748 (SCE 'default')
+
+MSGCFG_SCHEMAINFO
+  attr: SATRCFG_PROTOCOL            value: "CfgProtocol 5.1.3.54"
+  attr: SATRCFG_SCHEMAINFO          value: "<... skipped ...>"
+  attr: IATRCFG_REQUESTID           value: 3
+
+14:55:53.909 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 4
+
+  Filter :
+   key: name                        type:  [String], value : default
+  Query  : CfgApplication[ (@name = 'default')]
+
+14:55:53.909 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:55:53.909 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 4
+
+14:55:53.909 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 5
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+14:55:53.909 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:55:53.909 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 5
+
+14:55:53.909 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 6
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 114
+  Query  : dbid114
+
+14:55:53.909 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:55:53.909 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 6
+
+14:55:53.909 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 7
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 103
+  Query  : dbid103
+
+14:55:53.909 Trc 24215 There are [1] objects of type [CfgHost] sent to the client [1748] (application [default], type [SCE])
+14:55:53.909 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 7
+
+14:55:53.925 Trc 04541 Message MSGCFG_GETLOCALEINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETLOCALEINFO
+  attr: IATRCFG_LCID                value: 1
+  attr: IATRCFG_REQUESTID           value: 8
+
+14:55:53.925 Trc 04542 Message MSGCFG_LOCALEINFO sent to 1748 (SCE 'default')
+
+MSGCFG_LOCALEINFO
+  attr: SATRCFG_SCHEMAINFO          value: "<... skipped ...>"
+  attr: IATRCFG_LCID                value: 1
+  attr: IATRCFG_REQUESTID           value: 8
+
+14:55:53.940 Trc 04541 Message MSGCFG_READCFGSERVERAPP received from 1748 (SCE 'default')
+
+MSGCFG_READCFGSERVERAPP
+  attr: IATRCFG_REQUESTID           value: 9
+
+14:55:53.940 Trc 04542 Message MSGCFG_CFGSERVERAPPREAD sent to 1748 (SCE 'default')
+
+MSGCFG_CFGSERVERAPPREAD
+  attr: IATRCFG_BACKUPCFGSERVERDBID value: 114
+  attr: IATRCFG_CFGSERVERDBID       value: 99
+  attr: IATRCFG_REQUESTID           value: 9
+
+14:55:53.940 Trc 04541 Message MSGCFG_READCFGSERVERAPP received from 1748 (SCE 'default')
+
+MSGCFG_READCFGSERVERAPP
+  attr: IATRCFG_REQUESTID           value: 10
+
+14:55:54.065 Trc 04542 Message MSGCFG_CFGSERVERAPPREAD sent to 1748 (SCE 'default')
+
+MSGCFG_CFGSERVERAPPREAD
+  attr: IATRCFG_BACKUPCFGSERVERDBID value: 114
+  attr: IATRCFG_CFGSERVERDBID       value: 99
+  attr: IATRCFG_REQUESTID           value: 10
+
+14:55:54.065 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 11
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 114
+  Query  : dbid114
+
+14:55:54.065 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:55:54.065 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 11
+
+14:55:54.065 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 12
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 103
+  Query  : dbid103
+
+14:55:54.081 Trc 24215 There are [1] objects of type [CfgHost] sent to the client [1748] (application [default], type [SCE])
+14:55:54.081 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 12
+
+14:55:54.112 Trc 04541 Message MSGCFG_REGISTEROBJECTTYPEEX received from 1748 (SCE 'default')
+
+MSGCFG_REGISTEROBJECTTYPEEX
+  attr: BATRCFG_SUBSCRIPTION        value: 
+  attr: IATRCFG_REQUESTID           value: 13
+
+14:55:54.112 Trc 04542 Message MSGCFG_OBJECTTYPEREGISTERED sent to 1748 (SCE 'default')
+
+MSGCFG_OBJECTTYPEREGISTERED
+  attr: IATRCFG_OBJECTTYPE          value: -1 []
+  attr: IATRCFG_REQUESTID           value: 13
+
+14:55:54.112 Trc 04541 Message MSGCFG_REGISTERREADLOCALE received from 1748 (SCE 'default')
+
+MSGCFG_READLOCALEREGISTERED
+  attr: IATRCFG_REQUESTID           value: 14
+
+14:55:54.112 Trc 04542 Message MSGCFG_READLOCALEREGISTERED sent to 1748 (SCE 'default')
+
+MSGCFG_READLOCALEREGISTERED
+  attr: IATRCFG_REQUESTID           value: 14
+
+14:55:55.112 Trc 04541 Message MSGCFG_GETOPERATIONALMODE received from 1748 (SCE 'default')
+
+MSGCFG_GETOPERATIONALMODE
+  attr: IATRCFG_REQUESTID           value: 15
+
+14:55:55.112 Trc 04542 Message MSGCFG_OPERATIONALMODE sent to 1748 (SCE 'default')
+
+MSGCFG_OPERATIONALMODE
+  attr: IATRCFG_OPERATIONALMODE     value: 1
+  attr: IATRCFG_REQUESTID           value: 15
+
+14:55:55.112 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 3 [CfgPerson]
+  attr: IATRCFG_REQUESTID           value: 16
+
+  Filter :
+   key: user_name                   type:  [String], value : default
+  Query  : CfgPerson[ (@name = 'default')]
+
+14:55:55.112 Trc 24215 There are [1] objects of type [CfgPerson] sent to the client [1748] (application [default], type [SCE])
+14:55:55.112 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 3 [CfgPerson]
+  attr: IATRCFG_REQUESTID           value: 16
+
+14:55:55.128 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 17
+
+  Filter :
+   key: name                        type:  [String], value : default
+  Query  : CfgApplication[ (@name = 'default')]
+
+14:55:55.128 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:55:55.128 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 17
+
+14:55:55.128 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 18
+
+  Filter :
+   key: type                        type:  [Integer], value : 7
+   key: default_folder              type:  [Integer], value : 0
+  Query  : CfgFolder[ (@type = '7') and (not(folderIDs))]
+
+14:55:55.128 Trc 24215 There are [1] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:55:55.128 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 18
+
+14:55:55.143 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 7 [CfgTenant]
+  attr: IATRCFG_REQUESTID           value: 19
+
+  Filter :
+   key: all_tenants                 type:  [Integer], value : 0
+  Query  : CfgBaseTenant
+
+14:55:55.143 Trc 24215 There are [2] objects of type [CfgTenant] sent to the client [1748] (application [default], type [SCE])
+14:55:55.143 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 7 [CfgTenant]
+  attr: IATRCFG_REQUESTID           value: 19
+
+14:55:57.003 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 20
+
+  Filter :
+   key: all_tenants                 type:  [Integer], value : 0
+   key: folder_dbid                 type:  [Integer], value : 119
+  Query  : CfgFolder[@DBID = 119]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:55:57.003 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:55:57.003 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 20
+
+14:55:57.003 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 7 [CfgTenant]
+  attr: IATRCFG_REQUESTID           value: 21
+
+  Filter :
+   key: all_tenants                 type:  [Integer], value : 0
+   key: folder_dbid                 type:  [Integer], value : 119
+  Query  : CfgBaseTenant
+
+14:55:57.003 Trc 24215 There are [2] objects of type [CfgTenant] sent to the client [1748] (application [default], type [SCE])
+14:55:57.003 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 7 [CfgTenant]
+  attr: IATRCFG_REQUESTID           value: 21
+
+14:55:58.847 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 22
+
+  Filter :
+   key: owner_dbid                  type:  [Integer], value : 1
+   key: owner_type                  type:  [Integer], value : 7
+   key: default_folder              type:  [Integer], value : 0
+  Query  : CfgBaseTenant[@DBID = 1]/objectFolders/CfgTenantOwnerShortcut/baseDBID[ (not(folderIDs)) and (@name != 'Configuration')]
+
+14:55:58.847 Trc 24215 There are [6] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:55:58.847 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 22
+
+14:56:00.487 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 23
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 102
+  Query  : CfgFolder[@DBID = 102]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:00.487 Trc 24215 There are [2] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:00.487 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 23
+
+14:56:00.487 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 24
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 102
+  Query  : CfgFolder[@DBID = 102]/objectIDs/CfgApplicationShortcut/linkDBID
+
+14:56:00.487 Trc 24215 There are [15] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:00.487 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 24
+
+14:56:08.175 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 25
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 194
+  Query  : CfgFolder[@DBID = 194]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:08.175 Trc 24215 There are [9] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:08.175 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 25
+
+14:56:08.191 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 26
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 194
+  Query  : CfgFolder[@DBID = 194]/objectIDs/CfgApplicationShortcut/linkDBID
+
+14:56:08.191 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:08.191 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 26
+
+14:56:10.425 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 27
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 199
+  Query  : CfgFolder[@DBID = 199]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:10.425 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:10.425 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 27
+
+14:56:10.425 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 28
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 199
+  Query  : CfgFolder[@DBID = 199]/objectIDs/CfgApplicationShortcut/linkDBID
+
+14:56:10.441 Trc 24215 There are [7] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:10.441 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 28
+
+14:56:17.332 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 29
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 240
+  Query  : CfgFolder[@DBID = 240]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:17.332 Trc 24215 There are [9] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:17.332 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 29
+
+14:56:17.347 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 30
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 240
+  Query  : CfgFolder[@DBID = 240]/objectIDs/CfgApplicationShortcut/linkDBID
+
+14:56:17.347 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:17.347 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 30
+
+14:56:18.191 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 31
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 281
+  Query  : CfgFolder[@DBID = 281]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:18.191 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:18.191 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 31
+
+14:56:18.191 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 32
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 281
+  Query  : CfgFolder[@DBID = 281]/objectIDs/CfgApplicationShortcut/linkDBID
+
+14:56:18.191 Trc 24215 There are [3] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:18.191 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 32
+
+14:56:24.504 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 20 [CfgAppPrototype]
+  attr: IATRCFG_REQUESTID           value: 33
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+14:56:24.504 Trc 24215 There are [1] objects of type [CfgAppPrototype] sent to the client [1748] (application [default], type [SCE])
+14:56:24.504 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 20 [CfgAppPrototype]
+  attr: IATRCFG_REQUESTID           value: 33
+
+14:56:27.832 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 34
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 101
+  Query  : dbid101
+
+14:56:27.832 Trc 24215 There are [1] objects of type [CfgHost] sent to the client [1748] (application [default], type [SCE])
+14:56:27.832 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 34
+
+14:56:32.770 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 35
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 103
+  Query  : CfgFolder[@DBID = 103]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:32.770 Trc 24215 There are [2] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:32.770 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 35
+
+14:56:32.770 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 36
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 103
+  Query  : CfgFolder[@DBID = 103]/objectIDs/CfgHostShortcut/linkDBID
+
+14:56:32.770 Trc 24215 There are [0] objects of type [CfgHost] sent to the client [1748] (application [default], type [SCE])
+14:56:32.770 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 36
+
+14:56:34.004 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 37
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 287
+  Query  : CfgFolder[@DBID = 287]/objectIDs/CfgFolderShortcut/linkDBID
+
+14:56:34.004 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+14:56:34.004 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 37
+
+14:56:34.004 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 38
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 287
+  Query  : CfgFolder[@DBID = 287]/objectIDs/CfgHostShortcut/linkDBID
+
+14:56:34.004 Trc 24215 There are [26] objects of type [CfgHost] sent to the client [1748] (application [default], type [SCE])
+14:56:34.004 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 10 [CfgHost]
+  attr: IATRCFG_REQUESTID           value: 38
+
+14:56:39.395 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 39
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 108
+  Query  : dbid108
+
+14:56:39.395 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:39.395 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 39
+
+14:56:42.801 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@hostDBID = 101]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 40
+
+  Query  : CfgApplication[@hostDBID = 101]
+
+14:56:42.801 Trc 24215 There are [21] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+14:56:42.801 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 40
+
+15:54:42.428 Trc 04120 Check point 2010-04-22T15:54:42
+15:57:02.542 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 41
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 196
+  Query  : CfgFolder[@DBID = 196]/objectIDs/CfgFolderShortcut/linkDBID
+
+15:57:03.323 Trc 24215 There are [2] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+15:57:03.323 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 41
+
+15:57:03.511 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 42
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 196
+  Query  : CfgFolder[@DBID = 196]/objectIDs/CfgApplicationShortcut/linkDBID
+
+15:57:03.558 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:03.558 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 42
+
+15:57:04.808 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 43
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 238
+  Query  : CfgFolder[@DBID = 238]/objectIDs/CfgFolderShortcut/linkDBID
+
+15:57:04.808 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+15:57:04.808 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 43
+
+15:57:04.808 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 44
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 238
+  Query  : CfgFolder[@DBID = 238]/objectIDs/CfgApplicationShortcut/linkDBID
+
+15:57:05.308 Trc 24215 There are [4] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:05.308 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 44
+
+15:57:11.308 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 45
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 139
+  Query  : dbid139
+
+15:57:11.496 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:11.496 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 45
+
+15:57:23.433 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 46
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 384
+  Query  : dbid384
+
+15:57:23.621 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:23.621 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 46
+
+15:57:23.621 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 47
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 380
+  Query  : dbid380
+
+15:57:23.652 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:23.652 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 47
+
+15:57:45.778 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 48
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 200
+  Query  : CfgFolder[@DBID = 200]/objectIDs/CfgFolderShortcut/linkDBID
+
+15:57:45.793 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+15:57:45.793 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 48
+
+15:57:45.793 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 49
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 200
+  Query  : CfgFolder[@DBID = 200]/objectIDs/CfgApplicationShortcut/linkDBID
+
+15:57:46.215 Trc 24215 There are [9] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:46.215 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 49
+
+15:57:50.637 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 50
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 447
+  Query  : CfgFolder[@DBID = 447]/objectIDs/CfgFolderShortcut/linkDBID
+
+15:57:50.825 Trc 24215 There are [7] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+15:57:50.825 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 50
+
+15:57:50.825 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 51
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 447
+  Query  : CfgFolder[@DBID = 447]/objectIDs/CfgApplicationShortcut/linkDBID
+
+15:57:50.825 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:50.825 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 51
+
+15:57:53.575 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 52
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 542
+  Query  : CfgFolder[@DBID = 542]/objectIDs/CfgFolderShortcut/linkDBID
+
+15:57:53.575 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+15:57:53.575 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 52
+
+15:57:53.575 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 53
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 542
+  Query  : CfgFolder[@DBID = 542]/objectIDs/CfgApplicationShortcut/linkDBID
+
+15:57:53.747 Trc 24215 There are [2] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:53.747 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 53
+
+15:57:57.778 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 54
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 198
+  Query  : CfgFolder[@DBID = 198]/objectIDs/CfgFolderShortcut/linkDBID
+
+15:57:57.794 Trc 24215 There are [0] objects of type [CfgFolder] sent to the client [1748] (application [default], type [SCE])
+15:57:57.794 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 22 [CfgFolder]
+  attr: IATRCFG_REQUESTID           value: 54
+
+15:57:57.794 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1748 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 55
+
+  Filter :
+   key: folder_dbid                 type:  [Integer], value : 198
+  Query  : CfgFolder[@DBID = 198]/objectIDs/CfgApplicationShortcut/linkDBID
+
+15:57:58.981 Trc 24215 There are [34] objects of type [CfgApplication] sent to the client [1748] (application [default], type [SCE])
+15:57:58.981 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1748 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 55
+
+16:54:42.481 Trc 04120 Check point 2010-04-22T16:54:42
+17:54:42.487 Trc 04120 Check point 2010-04-22T17:54:42
+18:54:42.493 Trc 04120 Check point 2010-04-22T18:54:42
+19:54:42.498 Trc 04120 Check point 2010-04-22T19:54:42
+20:54:42.504 Trc 04120 Check point 2010-04-22T20:54:42
+21:54:42.510 Trc 04120 Check point 2010-04-22T21:54:42
+22:54:42.516 Trc 04120 Check point 2010-04-22T22:54:42
+23:54:42.569 Trc 04120 Check point 2010-04-22T23:54:42
+00:54:42.592 Trc 04120 Check point 2010-04-23T00:54:42
+01:54:42.598 Trc 04120 Check point 2010-04-23T01:54:42
+02:54:42.604 Trc 04120 Check point 2010-04-23T02:54:42
+03:54:42.610 Trc 04120 Check point 2010-04-23T03:54:42
+04:54:42.631 Trc 04120 Check point 2010-04-23T04:54:42
+05:54:42.637 Trc 04120 Check point 2010-04-23T05:54:42
+06:54:42.643 Trc 04120 Check point 2010-04-23T06:54:42
+07:54:42.649 Trc 04120 Check point 2010-04-23T07:54:42
+08:54:42.663 Trc 04120 Check point 2010-04-23T08:54:42
+09:54:42.664 Trc 04120 Check point 2010-04-23T09:54:42
+10:54:42.670 Trc 04120 Check point 2010-04-23T10:54:42
+11:54:42.676 Trc 04120 Check point 2010-04-23T11:54:42
+12:27:40.270 Std 22801 Port [2020], protocol [CFGLIB], mode [INSECURE] closed
+12:27:40.301 Trc 04524 Client '1748' disconnected
+12:27:40.348 Std 22801 Port [4042], protocol [CFGSOAP], mode [REGULAR] closed
+Shutdown timer has being set to finalize network activity, delay - 5 sec
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

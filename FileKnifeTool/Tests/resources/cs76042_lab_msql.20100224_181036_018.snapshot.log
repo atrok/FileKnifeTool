@@ -1,0 +1,2197 @@
+DBRequest, handle 453 sent, query :
+18:30:15.017 update cfg_port_info set port = '2023' where app_dbid = 99 and id = 'default'
+
+DBRequest, handle 454 sent, query :
+18:30:15.017 update cfg_server set port = '2023' where app_dbid = 99
+
+DBRequest, handle 455 sent, query :
+18:30:15.017 update cfg_refresh set notify_id = 31102
+
+DBRequest, handle 456 sent, query :
+18:30:15.017 COMMIT TRANSACTION
+
+18:30:15.032 Trc 24216 Transaction [19] is committed
+18:30:15.032 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00202300000flexibleProperties000000deletedFlexiblePropertiesdefault20230000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31102
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.032 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00202300000flexibleProperties000000deletedFlexiblePropertiesdefault20230000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31102
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.032 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00202300000flexibleProperties000000deletedFlexiblePropertiesdefault20230000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31102
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.032 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+18:30:15.032 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+18:30:15.126 Std 22801 Port [2001], protocol [CFGLIB], mode [INSECURE] closed
+18:30:15.126 Std 04525 Port 2023 opened for listening
+18:30:15.126 Std 22800 Extended info : Port [2023], protocol [CFGLIB], mode [INSECURE] opened for listening
+18:30:15.126 [HISTORYDB]: Data record 31102 has been written to history database
+18:30:15.126 Std 24201 Object: [CfgServer], name [confserv], DBID: [99] is changed by client, type [SCE], name: [default], user: [default]
+18:30:15.236 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 93
+
+18:30:15.236 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 101
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+18:30:15.236 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:30:15.236 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 101
+
+18:30:15.236 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=99type=9"
+  attr: IATRCFG_REQUESTID           value: 102
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 102
+
+18:30:15.236 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 102
+
+18:30:15.251 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 94
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:30:15.251 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:30:15.251 Trc 24218 Transaction [20] is sent on execution
+DBRequest, handle 457 sent, query :
+18:30:15.251 BEGIN TRANSACTION
+
+DBRequest, handle 458 sent, query :
+18:30:15.251 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(122, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 459 sent, query :
+18:30:15.251 update cfg_refresh set notify_id = 31103
+
+DBRequest, handle 460 sent, query :
+18:30:15.251 COMMIT TRANSACTION
+
+18:30:15.251 Trc 24216 Transaction [20] is committed
+18:30:15.251 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31103
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.407 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31103
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.407 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31103
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.423 [HISTORYDB]: Data record 31103 has been written to history database
+18:30:15.423 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:30:15.517 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 94
+
+18:30:15.517 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 103
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:30:15.517 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:30:15.517 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 103
+
+18:30:15.532 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 104
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 104
+
+18:30:15.532 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 104
+
+18:30:15.548 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 95
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:30:15.548 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:30:15.548 Trc 24218 Transaction [21] is sent on execution
+DBRequest, handle 461 sent, query :
+18:30:15.548 BEGIN TRANSACTION
+
+DBRequest, handle 462 sent, query :
+18:30:15.704 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(132, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 463 sent, query :
+18:30:15.720 update cfg_refresh set notify_id = 31104
+
+DBRequest, handle 464 sent, query :
+18:30:15.736 COMMIT TRANSACTION
+
+18:30:15.736 Trc 24216 Transaction [21] is committed
+18:30:15.736 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31104
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.736 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31104
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.736 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025415
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31104
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:15.736 [HISTORYDB]: Data record 31104 has been written to history database
+18:30:15.736 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:30:15.861 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 95
+
+18:30:15.861 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 105
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:30:15.861 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:30:15.861 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 105
+
+18:30:15.876 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 106
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 106
+
+18:30:16.017 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 106
+
+18:30:16.033 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 96
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:30:16.033 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:30:16.033 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 96
+
+18:35:43.623 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 97
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:35:43.623 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:35:43.623 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 97
+
+18:35:43.623 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 98
+
+  Filter :
+   key: server_dbid                 type:  [Integer], value : 99
+  Query  : CfgApplication[ (appServerDBIDs/CfgConnectionInfo/@linkDBID = '99')]
+
+18:35:43.623 Trc 24215 There are [2] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:35:43.623 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 98
+
+18:35:43.639 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122000000000099"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 99
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs
+   action="delete">
+  <CfgConnectionInfo
+    linkDBID="99"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:35:43.639 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:35:43.639 Trc 24218 Transaction [22] is sent on execution
+DBRequest, handle 530 sent, query :
+18:35:43.654 BEGIN TRANSACTION
+
+DBRequest, handle 531 sent, query :
+18:35:43.654 delete from cfg_app_server where app_dbid = 122 and app_server_dbid = 99
+
+DBRequest, handle 532 sent, query :
+18:35:43.654 update cfg_refresh set notify_id = 31105
+
+DBRequest, handle 533 sent, query :
+18:35:43.654 COMMIT TRANSACTION
+
+18:35:43.654 Trc 24216 Transaction [22] is committed
+18:35:43.654 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025743
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31105
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:43.654 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025743
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31105
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:43.654 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025743
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31105
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:43.811 [HISTORYDB]: Data record 31105 has been written to history database
+18:35:43.811 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:35:43.936 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 99
+
+18:35:43.936 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 107
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:35:43.936 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:35:43.936 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 107
+
+18:35:43.951 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 108
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 108
+
+18:35:43.951 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 108
+
+18:35:43.951 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132000000000099"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 100
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs
+   action="delete">
+  <CfgConnectionInfo
+    linkDBID="99"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:35:43.951 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:35:43.951 Trc 24218 Transaction [23] is sent on execution
+DBRequest, handle 534 sent, query :
+18:35:43.951 BEGIN TRANSACTION
+
+DBRequest, handle 535 sent, query :
+18:35:43.967 delete from cfg_app_server where app_dbid = 132 and app_server_dbid = 99
+
+DBRequest, handle 536 sent, query :
+18:35:43.967 update cfg_refresh set notify_id = 31106
+
+DBRequest, handle 537 sent, query :
+18:35:43.967 COMMIT TRANSACTION
+
+18:35:43.967 Trc 24216 Transaction [23] is committed
+18:35:43.967 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025743
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31106
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:43.967 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025743
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31106
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.123 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31106
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.139 [HISTORYDB]: Data record 31106 has been written to history database
+18:35:44.139 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:35:44.233 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 100
+
+18:35:44.264 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 109
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:35:44.264 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:35:44.264 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 109
+
+18:35:44.264 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 110
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 110
+
+18:35:44.264 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 110
+
+18:35:44.279 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 101
+
+  Filter :
+   key: backup_server_dbid          type:  [Integer], value : 99
+  Query  : CfgServer[ (@backupServerDBID = '99')]
+
+18:35:44.279 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:35:44.279 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 101
+
+18:35:44.279 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "990000000000default20200000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 102
+
+<CfgServerUpdate
+  DBID="99">
+ <portInfos
+   action="change">
+  <CfgPortInfo
+    connID="default"
+    port="2020"  />
+ </portInfos>
+</CfgServerUpdate>
+
+18:35:44.279 Trc 24211 Object [CfgServerUpdate], DBID [99] is to be changed by client, type [SCE], name: [default], user: [default]
+18:35:44.279 Trc 24218 Transaction [24] is sent on execution
+DBRequest, handle 539 sent, query :
+18:35:44.279 BEGIN TRANSACTION
+
+DBRequest, handle 540 sent, query :
+18:35:44.295 update cfg_port_info set port = '2020' where app_dbid = 99 and id = 'default'
+
+DBRequest, handle 541 sent, query :
+18:35:44.295 update cfg_server set port = '2020' where app_dbid = 99
+
+DBRequest, handle 542 sent, query :
+18:35:44.295 update cfg_refresh set notify_id = 31107
+
+DBRequest, handle 543 sent, query :
+18:35:44.295 COMMIT TRANSACTION
+
+18:35:44.295 Trc 24216 Transaction [24] is committed
+18:35:44.295 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00202000000flexibleProperties000000deletedFlexiblePropertiesdefault20200000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31107
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.295 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00202000000flexibleProperties000000deletedFlexiblePropertiesdefault20200000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31107
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.467 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00202000000flexibleProperties000000deletedFlexiblePropertiesdefault20200000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31107
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.467 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+18:35:44.467 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+18:35:44.498 Std 22801 Port [2023], protocol [CFGLIB], mode [INSECURE] closed
+18:35:44.514 Std 04525 Port 2020 opened for listening
+18:35:44.514 Std 22800 Extended info : Port [2020], protocol [CFGLIB], mode [INSECURE] opened for listening
+18:35:44.514 [HISTORYDB]: Data record 31107 has been written to history database
+18:35:44.514 Std 24201 Object: [CfgServer], name [confserv], DBID: [99] is changed by client, type [SCE], name: [default], user: [default]
+18:35:44.623 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 102
+
+18:35:44.623 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 111
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+18:35:44.623 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:35:44.623 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 111
+
+18:35:44.623 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=99type=9"
+  attr: IATRCFG_REQUESTID           value: 112
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 112
+
+18:35:44.623 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 112
+
+18:35:44.639 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 103
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:35:44.639 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:35:44.639 Trc 24218 Transaction [25] is sent on execution
+DBRequest, handle 544 sent, query :
+18:35:44.639 BEGIN TRANSACTION
+
+DBRequest, handle 545 sent, query :
+18:35:44.639 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(122, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 546 sent, query :
+18:35:44.639 update cfg_refresh set notify_id = 31108
+
+DBRequest, handle 547 sent, query :
+18:35:44.639 COMMIT TRANSACTION
+
+18:35:44.639 Trc 24216 Transaction [25] is committed
+18:35:44.639 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31108
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.826 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31108
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.826 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025744
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31108
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:44.826 [HISTORYDB]: Data record 31108 has been written to history database
+18:35:44.826 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:35:44.967 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 103
+
+18:35:44.967 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 113
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:35:44.967 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:35:44.967 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 113
+
+18:35:44.967 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 114
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 114
+
+18:35:44.967 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 114
+
+18:35:44.983 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 104
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:35:44.983 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:35:44.983 Trc 24218 Transaction [26] is sent on execution
+DBRequest, handle 548 sent, query :
+18:35:44.998 BEGIN TRANSACTION
+
+DBRequest, handle 549 sent, query :
+18:35:45.155 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(132, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 550 sent, query :
+18:35:45.155 update cfg_refresh set notify_id = 31109
+
+DBRequest, handle 551 sent, query :
+18:35:45.155 COMMIT TRANSACTION
+
+18:35:45.170 Trc 24216 Transaction [26] is committed
+18:35:45.170 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025745
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31109
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:45.170 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025745
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31109
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:45.170 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025745
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31109
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:35:45.170 [HISTORYDB]: Data record 31109 has been written to history database
+18:35:45.170 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:35:45.295 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 104
+
+18:35:45.389 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 115
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:35:45.389 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:35:45.389 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 115
+
+18:35:45.389 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 116
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 116
+
+18:35:45.389 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 116
+
+18:35:45.405 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 105
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:35:45.405 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:35:45.405 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 105
+
+19:10:36.002 Trc 04120 Check point 2010-02-24T19:10:36
+20:10:36.003 Trc 04120 Check point 2010-02-24T20:10:36
+21:10:36.013 Trc 04120 Check point 2010-02-24T21:10:36
+22:10:36.021 Trc 04120 Check point 2010-02-24T22:10:36
+23:10:36.025 Trc 04120 Check point 2010-02-24T23:10:36
+00:10:36.057 Trc 04120 Check point 2010-02-25T00:10:36
+01:10:36.103 Trc 04120 Check point 2010-02-25T01:10:36
+02:10:36.117 Trc 04120 Check point 2010-02-25T02:10:36
+03:10:36.123 Trc 04120 Check point 2010-02-25T03:10:36
+04:10:36.129 Trc 04120 Check point 2010-02-25T04:10:36
+05:10:36.142 Trc 04120 Check point 2010-02-25T05:10:36
+06:10:36.148 Trc 04120 Check point 2010-02-25T06:10:36
+07:10:36.150 Trc 04120 Check point 2010-02-25T07:10:36
+08:10:36.156 Trc 04120 Check point 2010-02-25T08:10:36
+09:10:36.162 Trc 04120 Check point 2010-02-25T09:10:36
+10:10:36.167 Trc 04120 Check point 2010-02-25T10:10:36
+11:10:36.179 Trc 04120 Check point 2010-02-25T11:10:36
+12:10:36.189 Trc 04120 Check point 2010-02-25T12:10:36
+12:14:28.743 [HISTORYDB]: Client record 159 has been written to history database
+12:14:28.930 [HISTORYDB]: Client record 158 has been written to history database
+12:14:29.055 [HISTORYDB]: Client record 157 has been written to history database
+12:14:29.180 [HISTORYDB]: Client record 156 has been written to history database
+12:14:29.243 Std 22801 Port [2020], protocol [CFGLIB], mode [INSECURE] closed
+12:14:29.259 Trc 04524 Client '1708' disconnected
+12:14:29.259 Trc 04524 Client '1720' disconnected
+12:14:29.259 Trc 04524 Client '1756' disconnected
+12:14:29.259 Trc 04524 Client '1768' disconnected
+12:14:29.337 Std 22801 Port [4042], protocol [CFGSOAP], mode [REGULAR] closed
+Shutdown timer has being set to finalize network activity, delay - 5 sec
+        value: 75
+
+<CfgServerUpdate
+  DBID="99">
+ <portInfos
+   action="change">
+  <CfgPortInfo
+    connID="default"
+    port="2000"  />
+ </portInfos>
+</CfgServerUpdate>
+
+18:20:03.962 Trc 24211 Object [CfgServerUpdate], DBID [99] is to be changed by client, type [SCE], name: [default], user: [default]
+18:20:03.962 Trc 24218 Transaction [9] is sent on execution
+DBRequest, handle 288 sent, query :
+18:20:03.962 BEGIN TRANSACTION
+
+DBRequest, handle 289 sent, query :
+18:20:03.962 update cfg_port_info set port = '2000' where app_dbid = 99 and id = 'default'
+
+DBRequest, handle 290 sent, query :
+18:20:03.962 update cfg_server set port = '2000' where app_dbid = 99
+
+DBRequest, handle 291 sent, query :
+18:20:03.962 update cfg_refresh set notify_id = 31092
+
+DBRequest, handle 292 sent, query :
+18:20:03.962 COMMIT TRANSACTION
+
+18:20:03.962 Trc 24216 Transaction [9] is committed
+18:20:03.962 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00200000000flexibleProperties000000deletedFlexiblePropertiesdefault20000000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024803
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31092
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:03.962 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00200000000flexibleProperties000000deletedFlexiblePropertiesdefault20000000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024803
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31092
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:03.962 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00200000000flexibleProperties000000deletedFlexiblePropertiesdefault20000000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024803
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31092
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:03.962 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+18:20:03.978 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+18:20:03.978 Std 22801 Port [2020], protocol [CFGLIB], mode [INSECURE] closed
+18:20:03.978 Std 04525 Port 2000 opened for listening
+18:20:03.978 Std 22800 Extended info : Port [2000], protocol [CFGLIB], mode [INSECURE] opened for listening
+18:20:03.978 [HISTORYDB]: Data record 31092 has been written to history database
+18:20:03.978 Std 24201 Object: [CfgServer], name [confserv], DBID: [99] is changed by client, type [SCE], name: [default], user: [default]
+18:20:04.103 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 75
+
+18:20:04.103 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 81
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+18:20:04.103 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:20:04.103 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 81
+
+18:20:04.103 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=99type=9"
+  attr: IATRCFG_REQUESTID           value: 82
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 82
+
+18:20:04.103 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 82
+
+18:20:04.118 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 76
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:20:04.118 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:20:04.118 Trc 24218 Transaction [10] is sent on execution
+DBRequest, handle 293 sent, query :
+18:20:04.118 BEGIN TRANSACTION
+
+DBRequest, handle 294 sent, query :
+18:20:04.134 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(122, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 295 sent, query :
+18:20:04.150 update cfg_refresh set notify_id = 31093
+
+DBRequest, handle 296 sent, query :
+18:20:04.150 COMMIT TRANSACTION
+
+18:20:04.150 Trc 24216 Transaction [10] is committed
+18:20:04.150 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024804
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31093
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:04.150 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024804
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31093
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:04.150 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024804
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31093
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:04.150 [HISTORYDB]: Data record 31093 has been written to history database
+18:20:04.150 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:20:04.290 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 76
+
+18:20:04.290 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 83
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:20:04.290 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:20:04.290 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 83
+
+18:20:04.290 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 84
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 84
+
+18:20:04.290 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 84
+
+18:20:04.306 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 77
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:20:04.306 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:20:04.306 Trc 24218 Transaction [11] is sent on execution
+DBRequest, handle 297 sent, query :
+18:20:04.306 BEGIN TRANSACTION
+
+DBRequest, handle 298 sent, query :
+18:20:04.306 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(132, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 299 sent, query :
+18:20:04.306 update cfg_refresh set notify_id = 31094
+
+DBRequest, handle 300 sent, query :
+18:20:04.306 COMMIT TRANSACTION
+
+18:20:04.306 Trc 24216 Transaction [11] is committed
+18:20:04.306 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024804
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31094
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:04.306 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024804
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31094
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:04.306 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267024804
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31094
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:20:04.306 [HISTORYDB]: Data record 31094 has been written to history database
+18:20:04.306 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:20:04.447 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 77
+
+18:20:04.447 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 85
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:20:04.462 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:20:04.462 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 85
+
+18:20:04.462 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 86
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 86
+
+18:20:04.462 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 86
+
+18:20:04.462 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 78
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:20:04.462 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:20:04.462 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 78
+
+18:29:28.265 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 79
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:29:28.265 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:29:28.265 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 79
+
+18:29:28.265 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 80
+
+  Filter :
+   key: server_dbid                 type:  [Integer], value : 99
+  Query  : CfgApplication[ (appServerDBIDs/CfgConnectionInfo/@linkDBID = '99')]
+
+18:29:28.265 Trc 24215 There are [2] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:29:28.265 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 80
+
+18:29:28.281 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122000000000099"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 81
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs
+   action="delete">
+  <CfgConnectionInfo
+    linkDBID="99"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:29:28.281 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:29:28.281 Trc 24218 Transaction [12] is sent on execution
+DBRequest, handle 413 sent, query :
+18:29:28.296 BEGIN TRANSACTION
+
+DBRequest, handle 414 sent, query :
+18:29:28.296 delete from cfg_app_server where app_dbid = 122 and app_server_dbid = 99
+
+DBRequest, handle 415 sent, query :
+18:29:28.296 update cfg_refresh set notify_id = 31095
+
+DBRequest, handle 416 sent, query :
+18:29:28.296 COMMIT TRANSACTION
+
+18:29:28.296 Trc 24216 Transaction [12] is committed
+18:29:28.296 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31095
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.296 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31095
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.296 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31095
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.296 [HISTORYDB]: Data record 31095 has been written to history database
+18:29:28.296 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:29:28.515 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 81
+
+18:29:28.515 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 87
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:29:28.515 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:29:28.515 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 87
+
+18:29:28.515 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 88
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 88
+
+18:29:28.515 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 88
+
+18:29:28.531 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132000000000099"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 82
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs
+   action="delete">
+  <CfgConnectionInfo
+    linkDBID="99"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:29:28.531 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:29:28.531 Trc 24218 Transaction [13] is sent on execution
+DBRequest, handle 417 sent, query :
+18:29:28.531 BEGIN TRANSACTION
+
+DBRequest, handle 418 sent, query :
+18:29:28.531 delete from cfg_app_server where app_dbid = 132 and app_server_dbid = 99
+
+DBRequest, handle 419 sent, query :
+18:29:28.531 update cfg_refresh set notify_id = 31096
+
+DBRequest, handle 420 sent, query :
+18:29:28.531 COMMIT TRANSACTION
+
+18:29:28.546 Trc 24216 Transaction [13] is committed
+18:29:28.546 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31096
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.546 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31096
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.546 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31096
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.546 [HISTORYDB]: Data record 31096 has been written to history database
+18:29:28.546 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:29:28.718 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 82
+
+18:29:28.718 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 89
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:29:28.718 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:29:28.718 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 89
+
+18:29:28.718 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 90
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 90
+
+18:29:28.718 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 90
+
+18:29:28.734 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 83
+
+  Filter :
+   key: backup_server_dbid          type:  [Integer], value : 99
+  Query  : CfgServer[ (@backupServerDBID = '99')]
+
+18:29:28.734 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:29:28.734 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 83
+
+18:29:28.734 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "990000000000default20010000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 84
+
+<CfgServerUpdate
+  DBID="99">
+ <portInfos
+   action="change">
+  <CfgPortInfo
+    connID="default"
+    port="2001"  />
+ </portInfos>
+</CfgServerUpdate>
+
+18:29:28.734 Trc 24211 Object [CfgServerUpdate], DBID [99] is to be changed by client, type [SCE], name: [default], user: [default]
+18:29:28.734 Trc 24218 Transaction [14] is sent on execution
+DBRequest, handle 421 sent, query :
+18:29:28.734 BEGIN TRANSACTION
+
+DBRequest, handle 422 sent, query :
+18:29:28.749 update cfg_port_info set port = '2001' where app_dbid = 99 and id = 'default'
+
+DBRequest, handle 423 sent, query :
+18:29:28.749 update cfg_server set port = '2001' where app_dbid = 99
+
+DBRequest, handle 424 sent, query :
+18:29:28.749 update cfg_refresh set notify_id = 31097
+
+DBRequest, handle 425 sent, query :
+18:29:28.749 COMMIT TRANSACTION
+
+18:29:28.749 Trc 24216 Transaction [14] is committed
+18:29:28.749 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00200100000flexibleProperties000000deletedFlexiblePropertiesdefault20010000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31097
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.749 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00200100000flexibleProperties000000deletedFlexiblePropertiesdefault20010000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31097
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.749 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "990appServerDBIDs00200100000flexibleProperties000000deletedFlexiblePropertiesdefault20010000"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31097
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.749 Trc 04110 Option 'MessageFile' has been set to the value 'confserv.lms'
+18:29:28.749 Std 04106 Log Messages file 'confserv.lms' successfully loaded
+18:29:28.749 Std 22801 Port [2000], protocol [CFGLIB], mode [INSECURE] closed
+18:29:28.765 Std 04525 Port 2001 opened for listening
+18:29:28.765 Std 22800 Extended info : Port [2001], protocol [CFGLIB], mode [INSECURE] opened for listening
+18:29:28.765 [HISTORYDB]: Data record 31097 has been written to history database
+18:29:28.765 Std 24201 Object: [CfgServer], name [confserv], DBID: [99] is changed by client, type [SCE], name: [default], user: [default]
+18:29:28.984 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 84
+
+18:29:28.984 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 91
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 99
+  Query  : dbid99
+
+18:29:28.984 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:29:28.984 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 91
+
+18:29:28.984 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=99type=9"
+  attr: IATRCFG_REQUESTID           value: 92
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 92
+
+18:29:28.984 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 92
+
+18:29:28.999 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 85
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:29:28.999 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:29:28.999 Trc 24218 Transaction [15] is sent on execution
+DBRequest, handle 427 sent, query :
+18:29:28.999 BEGIN TRANSACTION
+
+DBRequest, handle 428 sent, query :
+18:29:28.999 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(122, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 429 sent, query :
+18:29:28.999 update cfg_refresh set notify_id = 31098
+
+DBRequest, handle 430 sent, query :
+18:29:28.999 COMMIT TRANSACTION
+
+18:29:28.999 Trc 24216 Transaction [15] is committed
+18:29:28.999 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31098
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.999 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31098
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.999 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "122099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025368
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31098
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:28.999 [HISTORYDB]: Data record 31098 has been written to history database
+18:29:28.999 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:29:29.203 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 85
+
+18:29:29.203 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 93
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:29:29.203 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:29:29.203 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 93
+
+18:29:29.203 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 94
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 94
+
+18:29:29.203 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 94
+
+18:29:29.218 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132099001default0000000000000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 86
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs>
+  <CfgConnectionInfo
+    linkDBID="99"
+    mode="1"
+    connID="default"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:29:29.218 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:29:29.218 Trc 24218 Transaction [16] is sent on execution
+DBRequest, handle 431 sent, query :
+18:29:29.218 BEGIN TRANSACTION
+
+DBRequest, handle 432 sent, query :
+18:29:29.218 insert into cfg_app_server (app_dbid, app_server_dbid, app_csid, app_server_csid, conn_protocol, timout_local, timout_remote, mode_, id, transport_params, app_params, proxy_params, description, char_field_1, char_field_2, char_field_3, char_field_4, long_field_1, long_field_2, long_field_3, long_field_4) values(132, 99, 0, 0, NULL, 0, 0, 1, 'default', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0)
+
+DBRequest, handle 433 sent, query :
+18:29:29.234 update cfg_refresh set notify_id = 31099
+
+DBRequest, handle 434 sent, query :
+18:29:29.234 COMMIT TRANSACTION
+
+18:29:29.234 Trc 24216 Transaction [16] is committed
+18:29:29.234 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025369
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31099
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:29.234 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025369
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31099
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:29.234 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "132099001default00000000000flexibleProperties000000deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025369
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31099
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:29:29.234 [HISTORYDB]: Data record 31099 has been written to history database
+18:29:29.234 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:29:29.421 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 86
+
+18:29:29.421 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 95
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:29:29.421 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:29:29.421 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 95
+
+18:29:29.421 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 96
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 96
+
+18:29:29.421 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 96
+
+18:29:29.437 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 87
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:29:29.437 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:29:29.437 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 87
+
+18:30:14.079 Trc 04541 Message MSGCFG_GETOBJECTINFOEX received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFOEX
+  attr: SATRCFG_XPATHEXPR           value: "CfgApplication[@backupServerDBID = 99]"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 88
+
+  Query  : CfgApplication[@backupServerDBID = 99]
+
+18:30:14.079 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:30:14.079 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 88
+
+18:30:14.079 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 89
+
+  Filter :
+   key: server_dbid                 type:  [Integer], value : 99
+  Query  : CfgApplication[ (appServerDBIDs/CfgConnectionInfo/@linkDBID = '99')]
+
+18:30:14.095 Trc 24215 There are [2] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:30:14.095 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 89
+
+18:30:14.111 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "122000000000099"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 90
+
+<CfgServerUpdate
+  DBID="122">
+ <appServerDBIDs
+   action="delete">
+  <CfgConnectionInfo
+    linkDBID="99"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:30:14.111 Trc 24211 Object [CfgServerUpdate], DBID [122] is to be changed by client, type [SCE], name: [default], user: [default]
+18:30:14.111 Trc 24218 Transaction [17] is sent on execution
+DBRequest, handle 444 sent, query :
+18:30:14.126 BEGIN TRANSACTION
+
+DBRequest, handle 445 sent, query :
+18:30:14.126 delete from cfg_app_server where app_dbid = 122 and app_server_dbid = 99
+
+DBRequest, handle 446 sent, query :
+18:30:14.126 update cfg_refresh set notify_id = 31100
+
+DBRequest, handle 447 sent, query :
+18:30:14.126 COMMIT TRANSACTION
+
+18:30:14.126 Trc 24216 Transaction [17] is committed
+18:30:14.126 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025414
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31100
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:14.126 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025414
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31100
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:14.126 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1220appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025414
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31100
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:14.298 [HISTORYDB]: Data record 31100 has been written to history database
+18:30:14.298 Std 24201 Object: [CfgServer], name [CSProxy_760], DBID: [122] is changed by client, type [SCE], name: [default], user: [default]
+18:30:14.439 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 90
+
+18:30:14.439 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 97
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 122
+  Query  : dbid122
+
+18:30:14.439 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:30:14.439 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 97
+
+18:30:14.439 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=122type=9"
+  attr: IATRCFG_REQUESTID           value: 98
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 98
+
+18:30:14.439 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 98
+
+18:30:14.454 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "132000000000099"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 91
+
+<CfgServerUpdate
+  DBID="132">
+ <appServerDBIDs
+   action="delete">
+  <CfgConnectionInfo
+    linkDBID="99"  />
+ </appServerDBIDs>
+</CfgServerUpdate>
+
+18:30:14.454 Trc 24211 Object [CfgServerUpdate], DBID [132] is to be changed by client, type [SCE], name: [default], user: [default]
+18:30:14.454 Trc 24218 Transaction [18] is sent on execution
+DBRequest, handle 448 sent, query :
+18:30:14.454 BEGIN TRANSACTION
+
+DBRequest, handle 449 sent, query :
+18:30:14.454 delete from cfg_app_server where app_dbid = 132 and app_server_dbid = 99
+
+DBRequest, handle 450 sent, query :
+18:30:14.454 update cfg_refresh set notify_id = 31101
+
+DBRequest, handle 451 sent, query :
+18:30:14.454 COMMIT TRANSACTION
+
+18:30:14.454 Trc 24216 Transaction [18] is committed
+18:30:14.470 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1708 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025414
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31101
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:14.470 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025414
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31101
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:14.626 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1756 (SCS 'SCS')
+
+MSGCFG_OBJECTCHANGED2
+  attr: SATRCFG_OBJECT              value: "1320appServerDBIDs0000000flexibleProperties00000099deletedFlexibleProperties"
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_TIMESTAMP           value: 1267025414
+  attr: IATRCFG_UNSOLEVENTNUM       value: 31101
+  attr: IATRCFG_REQUESTID           value: 0
+
+18:30:14.626 [HISTORYDB]: Data record 31101 has been written to history database
+18:30:14.626 Std 24201 Object: [CfgServer], name [GIS_750], DBID: [132] is changed by client, type [SCE], name: [default], user: [default]
+18:30:14.798 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 1768 (SCE 'default')
+
+MSGCFG_OBJECTCHANGED2
+  attr: IATRCFG_HISTORYLOG          value: 0
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 91
+
+18:30:14.798 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 99
+
+  Filter :
+   key: dbid                        type:  [Integer], value : 132
+  Query  : dbid132
+
+18:30:14.798 Trc 24215 There are [1] objects of type [CfgApplication] sent to the client [1720] (application [SCI], type [SCI])
+18:30:14.798 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1720 (SCI 'SCI')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 99
+
+18:30:14.798 Trc 04541 Message MSGCFG_GETOBJPERMISSIONS received from 1720 (SCI 'SCI')
+
+MSGCFG_GETOBJPERMISSIONS
+  attr: SATRCFG_ACCOUNTID           value: "CSID=0DBID=100type=3"
+  attr: SATRCFG_ID                  value: "CSID=0DBID=132type=9"
+  attr: IATRCFG_REQUESTID           value: 100
+
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 100
+
+18:30:14.798 Trc 04542 Message MSGCFG_OBJPERMISSIONS sent to 1720 (SCI 'SCI')
+
+MSGCFG_OBJPERMISSIONS
+  attr: IATRCFG_OBJPERMISSIONS      value: 255
+  attr: IATRCFG_REQUESTID           value: 100
+
+18:30:14.814 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 1768 (SCE 'default')
+
+MSGCFG_GETOBJECTINFO
+  attr: BATRCFG_FILTER              value: 
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 92
+
+  Filter :
+   key: backup_server_dbid          type:  [Integer], value : 99
+  Query  : CfgServer[ (@backupServerDBID = '99')]
+
+18:30:14.814 Trc 24215 There are [0] objects of type [CfgApplication] sent to the client [1768] (application [default], type [SCE])
+18:30:14.814 Trc 04542 Message MSGCFG_ENDOBJECTSLIST sent to 1768 (SCE 'default')
+
+MSGCFG_ENDOBJECTSLIST
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 92
+
+18:30:14.814 Trc 04541 Message MSGCFG_CHANGEOBJECT received from 1768 (SCE 'default')
+
+MSGCFG_CHANGEOBJECT
+  attr: SATRCFG_OBJECT              value: "990000000000default20230000"
+  attr: IATRCFG_OBJECTTYPE          value: 9 [CfgApplication]
+  attr: IATRCFG_REQUESTID           value: 93
+
+<CfgServerUpdate
+  DBID="99">
+ <portInfos
+   action="change">
+  <CfgPortInfo
+    connID="default"
+    port="2023"  />
+ </portInfos>
+</CfgServerUpdate>
+
+18:30:14.814 Trc 24211 Object [CfgServerUpdate], DBID [99] is to be changed by client, type [SCE], name: [default], user: [default]
+18:30:14.814 Trc 24218 Transaction [19] is sent on execution
+DBRequest, handle 452 sent, query :
+18:30:15.017 BEGIN TRANSACTION
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
