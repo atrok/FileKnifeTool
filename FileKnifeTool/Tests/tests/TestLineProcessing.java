@@ -47,7 +47,7 @@ public class TestLineProcessing {
 		
 	}
 	
-	@Test
+	
 	public void testFile(){
 		StatisticManager sm=StatisticManager.getInstance();
 
@@ -142,7 +142,58 @@ public class TestLineProcessing {
 		sm.flush();
 		
 	}
-	
-	
 
+	@Test
+	public void testStatisticTrc24206Notification(){
+		System.out.println("------------ Trc24206Notification Name testing -------------");
+		String statname="#Notification";
+		
+		String[] lines=new String[]{
+				"Local time:       2016-02-04T21:55:32.104",
+				"21:57:44.415 Trc 24206 Notification : Object [CfgAgentGroup], name [AC_Apple_Austin_VAG], DBID: [1114] is changed at server",
+				"21:57:44.421 Trc 24206 Notification : Object [CfgAgentGroup], name [External agents with Internal skill], DBID: [3184] is changed at server",
+				"21:57:44.427 Trc 24206 Notification : Object [CfgAgentGroup], name [AC_Apple_Austin_US_EN_iPhone_TS_VAG], DBID: [2109] is changed at server",
+				"21:57:44.433 Trc 24206 Notification : Object [CfgAgentGroup], name [AC_Apple_Austin_US_EN_iPod_Touch_VAG], DBID: [2658] is changed at server",
+				"21:57:44.440 Trc 24206 Notification : Object [CfgAgentGroup], name [IST_CCP_AC_Apple_Austin_VAG], DBID: [2955] is changed at server",
+				"21:57:44.446 Trc 24206 Notification : Object [CfgAgentGroup], name [Agent Group], DBID: [3059] is changed at server",
+				"21:57:44.452 Trc 24206 Notification : Object [CfgAgentGroup], name [CAN iPhone at Austin], DBID: [3983] is changed at server",
+				"21:57:44.452 Trc 24308 Message MSGCFG_OBJECTCHANGED2 (0x2aabe1a7f370) generated",
+				"21:57:44.452 Trc 04542 Message MSGCFG_OBJECTCHANGED2 (0x2aaab89e5d50) sent to 30 (SCE 'default')",
+				"21:57:44.452 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 31 (ConfigurationServer 'APAC_JP_NRT_CSProxy01_B')"
+				};
+		
+		StatisticManager sm=StatisticManager.getInstance();
+		IncrementalStatistic s=new IncrementalStatistic(".+Trc.+24206.+Notification.+",statname);
+		sm.addStatistic(s);
+		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
+
+		
+		int sampling =1;
+		LineProcessing ln=new LineProcessing(sampling, sm);
+		
+		for(String l: lines){
+			ln.processLine(l);
+		}
+		
+		sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		int value=(int) ((HashMap)stats.get(statname)).get("2016:02:04:21:57");
+		
+		assertTrue("Expected value of statistic is 7",value==7);
+		
+		StatDataProcessor sdp=new StatDataProcessor(sm.getStatDataMap());
+		
+		CSVFileFromRecords csv=new CSVFileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		//System.out.println(Arrays.toString(sdp.getResult()));
+		sm.flush();
+		
+	}
+	
 }

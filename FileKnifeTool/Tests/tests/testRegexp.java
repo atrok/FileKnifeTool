@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 
 public class testRegexp {
 	Logger logger=LoggerFactory.getLogger(testRegexp.class);
+	
+	
 	@Test
 	public void test1() {
 		
@@ -27,6 +29,8 @@ public class testRegexp {
 
 		matches(".+Trc\\s24301.+\\sClient.+\\sdisconnected.+","2015-09-18T09:56:03.216 Trc 24301 Extended info : Client [2068] disconnected, application [Inbox_Uniclass_Prod], type [InteractionWorkspace ], protocol [CFGLIB]");
 		matches(".+Trc\\s24300.+\\sclient.+\\sconnected.+","2015-09-18T09:53:39.953 Trc 24300 Extended info : New client [1888] connected, protocol [cfglib]");
+		
+		matches(".+\\]$","[CfgAgent Group]");
 	}
 	
 	private void matches(String regexp, String line){
