@@ -21,7 +21,7 @@ public class Start {
 		public static void main(String[] args) {
 			
 			long start=System.nanoTime();
-			logger.info("Starting...");
+			logger.info("Start initialization");
 			CmdLineParser cmdParser = new CmdLineParser();
 			JCommander commander = cmdParser.getCommander();
 			try {
@@ -40,7 +40,7 @@ public class Start {
 			} catch (Exception e) {
 				logger.error("Start exception", e);
 			}
-			logger.info("Finished in {}", TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
+			logger.info("Finished in {}s", TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
 
 		}
 

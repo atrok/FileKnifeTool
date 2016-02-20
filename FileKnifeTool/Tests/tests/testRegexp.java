@@ -33,6 +33,11 @@ public class testRegexp {
 		matches(".+\\]$","[CfgAgent Group]");
 		
 		matches(".+Std\\s+[0-9]{5,5}\\s.+","14:23:44.340 Std 04541 Message MSGCFG_CHANGEOBJECT received from 624 (SCE 'default')");
+		
+		matches("^MSGCFG.+[0-9]?","MSGCFG_REGISTEROBJECTTYPEEX2");
+		
+		matches("^[0-9T:.-]{12,}\\s(Trc|Std|Int|Dbg)\\s+[0-9]{5,5}\\s.+", "22:43:47.812 Std 22122 Client 197 failed to get authorization. Name [default], type [SCE], user [readonly], address [17.170.208.58:59643]. Reason : Authentication failed, user name or password is incorrect");
+		
 	}
 	
 	private void matches(String regexp, String line){

@@ -25,8 +25,10 @@ public abstract class StatisticDefinition {
 	private Pattern patternRemovePunct=Pattern.compile("[\\d\\p{Punct}]");
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
 	private Pattern patternEndBrackets=Pattern.compile(".+[\\]\\)]$");
+	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
 	private Matcher matcher;
 	private Matcher matcherBracket;
+	private Matcher matcherMSGCFG;
 	private long timenormalizing;
 	private long timegetstatvalue;
 	
@@ -163,10 +165,15 @@ public abstract class StatisticDefinition {
 		for(int i=3;i<line.length;i++){ // getting rid of punctuation and variable parts of message to be able to print uniform message
 			matcher=patternNoPunct.matcher(line[i]);
 			matcherBracket=patternEndBrackets.matcher(line[i]);
+			matcherMSGCFG=patternMSGCFG.matcher(line[i]);// leave MSGCFG messages unchanged
 			
             if (matcher.matches()&&variableFlag==false){// check if word begins with digit or punct sign
-	       	 	String a=patternRemovePunct.matcher(line[i]).replaceAll(""); 
-	       	 	sb.append(" "+a);
+            	String a=line[i];
+            	if(!matcherMSGCFG.matches())	       	 	
+		            	a=patternRemovePunct.matcher(line[i]).replaceAll(""); 
+			    sb.append(" "+a);
+			    logger.trace("String {} normalized to {}",line[i],a);
+	       	 	
                }else{  // to handle phrase inside of bracket as a single word: [CAN iPhone at Austin]
             	   logger.trace("String {} have punct ",line[i]);
             	   variableFlag=true;
