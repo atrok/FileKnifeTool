@@ -29,7 +29,7 @@ public class AggregatingStatistic extends StatisticDefinition {
 
 		public AggregatingStatistic(String name,Map<String,String> param){
 			super(name, param);
-			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD));
+			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
 			
 		}
 

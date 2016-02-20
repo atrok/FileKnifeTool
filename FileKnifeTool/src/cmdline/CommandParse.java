@@ -172,20 +172,21 @@ public class CommandParse extends CommandImpl{
     	try {
         
     		// checking classpath
-    					ClassLoader cl = ClassLoader.getSystemClassLoader();
+    					/*ClassLoader cl = ClassLoader.getSystemClassLoader();
 
     					URL[] urls = ((URLClassLoader)cl).getURLs();
 
     						        for(URL url: urls){
-    						        	logger.debug(url.getFile());
-    						        }
+    						        	logger.debug("Classpath: {}",url.getFile());
+    						        }*/
     		
 
+    						        
 
-    						            File jarPath=new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
-    						            String propertiesPath=jarPath.getParentFile().getAbsolutePath();
-    						            logger.debug(" propertiesPath: {} ",propertiesPath);
-    						            //prop.load(new FileInputStream(propertiesPath+"/importer.properties"));
+    		File jarPath=new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
+            String propertiesPath=jarPath.getParentFile().getAbsolutePath();
+            logger.debug(" propertiesPath: {} ",propertiesPath);
+            //prop.load(new FileInputStream(propertiesPath+"/importer.properties"));				            
 
     						        
     		String filename = propertiesPath+"/statistic.properties.ini";
@@ -193,7 +194,7 @@ public class CommandParse extends CommandImpl{
     		input=new FileInputStream(filename);
     		
     		if(input==null){
-    	            System.out.println("Sorry, unable to find " + filename);
+    	            logger.error("Sorry, unable to find {}", filename);
     		    System.exit(1);
     		}
     		
@@ -223,7 +224,7 @@ public class CommandParse extends CommandImpl{
     		
     	} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("File reading error: {}",e);
 			System.exit(1);
 		}finally{}
     	

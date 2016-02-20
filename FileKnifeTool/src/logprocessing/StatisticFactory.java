@@ -32,20 +32,21 @@ public class StatisticFactory {
 		Constructor<StatisticDefinition> productConstructor;
 		try {
 			logger.info("{}: instantiating {}", productID, productClass);
+			logger.info("arguments: {}", args);
 			productConstructor = productClass.getDeclaredConstructor(new Class[]{String.class,Map.class});
 			return (StatisticDefinition)productConstructor.newInstance((Object[])args);
 
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("{}",e);
 		} catch (SecurityException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("{}",e);
 		
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 				| InvocationTargetException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("{}",e);
 		}
 		return null;
 	}

@@ -31,6 +31,8 @@ public class testRegexp {
 		matches(".+Trc\\s24300.+\\sclient.+\\sconnected.+","2015-09-18T09:53:39.953 Trc 24300 Extended info : New client [1888] connected, protocol [cfglib]");
 		
 		matches(".+\\]$","[CfgAgent Group]");
+		
+		matches(".+Std\\s+[0-9]{5,5}\\s.+","14:23:44.340 Std 04541 Message MSGCFG_CHANGEOBJECT received from 624 (SCE 'default')");
 	}
 	
 	private void matches(String regexp, String line){

@@ -168,7 +168,7 @@ public abstract class StatisticDefinition {
 	       	 	String a=patternRemovePunct.matcher(line[i]).replaceAll(""); 
 	       	 	sb.append(" "+a);
                }else{  // to handle phrase inside of bracket as a single word: [CAN iPhone at Austin]
-            	   logger.debug("String {} starts with punct ",line[i]);
+            	   logger.trace("String {} have punct ",line[i]);
             	   variableFlag=true;
             	   
             	   if(matcherBracket.matches())

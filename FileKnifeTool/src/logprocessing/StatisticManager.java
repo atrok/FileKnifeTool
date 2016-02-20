@@ -17,7 +17,7 @@ public class StatisticManager {
 	
 	private StatisticManager(){
 		StatisticFactory.instance().registerProduct("IncrementalStatistic",IncrementalStatistic.class);
-		StatisticFactory.instance().registerProduct("AggregatingStatistic",IncrementalStatistic.class);
+		StatisticFactory.instance().registerProduct("AggregatingStatistic",AggregatingStatistic.class);
 		
 
 	}

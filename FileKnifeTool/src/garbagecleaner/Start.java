@@ -1,6 +1,7 @@
 package garbagecleaner;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +40,7 @@ public class Start {
 			} catch (Exception e) {
 				logger.error("Start exception", e);
 			}
-			logger.info("Finished in {}", System.nanoTime()-start);
+			logger.info("Finished in {}", TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
 
 		}
 
