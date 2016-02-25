@@ -8,16 +8,14 @@ import java.nio.file.StandardOpenOption;
 
 import logprocessing.StatDataProcessor;
 
-public class CSVFile implements ResultOutput{
+public class FileFromArrays extends AbstractFileOutput{
 
-	protected StatDataProcessor sdp;
-	protected Path filename;
 	
-	public CSVFile(StatDataProcessor sdp, Path filename){
-		this.sdp=sdp;
-		this.filename=filename;
+	public FileFromArrays(StatDataProcessor sdp, Path filename) {
+		super(sdp, filename);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public void outputResult() {
 		String[][] result=sdp.getResult();

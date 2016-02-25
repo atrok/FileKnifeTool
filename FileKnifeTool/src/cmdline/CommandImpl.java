@@ -41,7 +41,7 @@ public abstract class CommandImpl implements Command,Strategy{
 		return paths;
 	}
 
-	public abstract void resetStatData();
+	protected abstract void resetStatData();
 	public abstract void process(File file);
 
 	protected abstract void init();

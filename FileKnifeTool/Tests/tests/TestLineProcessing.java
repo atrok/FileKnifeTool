@@ -15,11 +15,12 @@ import org.junit.Test;
 
 import logprocessing.AggregatingStatistic;
 import logprocessing.IncrementalStatistic;
-import logprocessing.LineProcessing;
+import logprocessing.LineProcessingLogs;
 import logprocessing.StatDataProcessor;
+import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatisticManager;
-import resultoutput.CSVFile;
-import resultoutput.CSVFileFromRecords;
+import resultoutput.FileFromArrays;
+import resultoutput.FileFromRecords;
 
 public class TestLineProcessing {
 
@@ -27,6 +28,7 @@ public class TestLineProcessing {
 	
 	Path csvfile= Paths.get("Tests/resources/result_test.csv");
 	
+	String timespot="2015:09:18:10:07";
 	
 	static String[] linePatterns=new String[]{
 			"Local time:       2014-09-16T13:14:58.465",
@@ -36,7 +38,7 @@ public class TestLineProcessing {
 	};
 	
 	public void testLine() {
-		LineProcessing ln=new LineProcessing(1, StatisticManager.getInstance());
+		LineProcessingLogs ln=new LineProcessingLogs(1, StatisticManager.getInstance());
 		
 		for(String str: linePatterns){
 			ln.processLine(str);
@@ -47,7 +49,7 @@ public class TestLineProcessing {
 		
 	}
 	
-	
+	@Test
 	public void testFile(){
 		StatisticManager sm=StatisticManager.getInstance();
 
@@ -58,15 +60,12 @@ public class TestLineProcessing {
 		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
 		sm.addStatistic(new AggregatingStatistic(".+Total number of clients.+","#total clients",5));
 
-		LineProcessing ln=new LineProcessing(1, sm);
+		LineProcessingLogs ln=new LineProcessingLogs(1, sm);
 		
 		try {
 			Files.lines(file, StandardCharsets.ISO_8859_1).forEach(s->ln.processLine(s));
 			StatisticManager.getInstance().printStatData();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		
 		
 		//sm.printStatData();
@@ -75,21 +74,27 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get("#New client connection")).get("2015:12:23:14:59");
+		int value=(int) ((HashMap)stats.get("#New client connection")).get(timespot);
 		
-		assertTrue("Expected value of '#New client connection' statistic is 19",value==19);
+		assertTrue("Expected value of '#New client connection' statistic is 2",value==2);
 		
-		value=(int) ((HashMap)stats.get("#New client connection")).get("2015:12:23:15:16");
+		value=(int) ((HashMap)stats.get("SentReceived")).get(timespot);
 		
-		assertTrue("Expected value of '#New client connection' statistic is 20",value==20);
+		assertTrue("Expected value of 'SentReceived' statistic is 2852",value==2852);
 		
-		value=(int) ((HashMap)stats.get("#total clients")).get("2015:12:23:14:59");
+		value=(int) ((HashMap)stats.get("#total clients")).get(timespot);
 		
-		assertTrue("Expected value of '#total clients' statistic is 4",value==4);
-		
-		StatDataProcessor sdp=new StatDataProcessor(sm.getStatDataMap());
-
-		CSVFileFromRecords csv=new CSVFileFromRecords(sdp, csvfile);
+		assertTrue("Expected value of '#total clients' statistic is 267",value==267);
+				} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StatDataProcessor sdp=new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
 		
 		csv.outputResult();
 		
@@ -98,7 +103,7 @@ public class TestLineProcessing {
 		
 	}
 	
-	
+	@Test
 	public void testStatisticDefinitionwithVariableMsgName(){
 		System.out.println("------------ Variable Name testing -------------");
 		String[] lines=new String[]{
@@ -116,7 +121,7 @@ public class TestLineProcessing {
 		sm.addStatistic(new IncrementalStatistic(".+(received from|sent to).+","SentReceived"));
 		
 		int sampling =1;
-		LineProcessing ln=new LineProcessing(sampling, sm);
+		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
 		
 		for(String l: lines){
 			ln.processLine(l);
@@ -132,9 +137,10 @@ public class TestLineProcessing {
 		
 		assertTrue("Expected value of SentReceived statistic is 4",value==4);
 		
-		StatDataProcessor sdp=new StatDataProcessor(sm.getStatDataMap());
+		StatDataProcessor sdp=new StatDataProcessorLogs();
 		
-		CSVFileFromRecords csv=new CSVFileFromRecords(sdp, csvfile);
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
 		
 		csv.outputResult();
 		
@@ -169,7 +175,7 @@ public class TestLineProcessing {
 
 		
 		int sampling =1;
-		LineProcessing ln=new LineProcessing(sampling, sm);
+		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
 		
 		for(String l: lines){
 			ln.processLine(l);
@@ -185,9 +191,9 @@ public class TestLineProcessing {
 		
 		assertTrue("Expected value of statistic is 7",value==7);
 		
-		StatDataProcessor sdp=new StatDataProcessor(sm.getStatDataMap());
-		
-		CSVFileFromRecords csv=new CSVFileFromRecords(sdp, csvfile);
+		StatDataProcessor sdp=new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
 		
 		csv.outputResult();
 		

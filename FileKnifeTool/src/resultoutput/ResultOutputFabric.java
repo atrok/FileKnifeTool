@@ -1,15 +1,16 @@
 package resultoutput;
 
 import java.nio.file.Path;
+import java.util.Map;
 
 import logprocessing.StatDataProcessor;
 
 public class ResultOutputFabric {
 	
-	public static ResultOutput getOutputProcessor(String processor_name,StatDataProcessor sdp, Path filename){
-		switch (processor_name){
+	public static ResultOutput getOutputProcessor(Map<String,String> params,StatDataProcessor sdp, Path filename){
+		switch (params.get("format")){
 		case	"csv":
-			return new CSVFileFromRecords(sdp,filename);
+			return FileFabric.getOutputFileCreator(params.get("process"),sdp,filename);
 		}
 		return null;
 	}

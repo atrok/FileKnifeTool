@@ -31,10 +31,14 @@ import com.beust.jcommander.Parameters;
 import logprocessing.AggregatingStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessing;
+import logprocessing.LineProcessingLogs;
 import logprocessing.StatDataProcessor;
+import logprocessing.StatDataProcessorLogs;
+import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticManager;
 import logprocessing.StatisticParamNaming;
-import resultoutput.CSVFileFromRecords;
+import resultoutput.FileFabric;
+import resultoutput.FileFromRecords;
 import resultoutput.ResultOutput;
 import resultoutput.ResultOutputFabric;
 import util.FilesUtil;
@@ -43,45 +47,49 @@ import logprocessing.StatisticFactory;
 @Parameters (separators=",", commandDescription=" command to parse genesys config server files")
 public class CommandParse extends CommandImpl{
 
-	@Parameter(names = "-process", description = "csv format handler (simple|record)", variableArity=false, required = false)
-	private String process;
+	//@Parameter(names = "-process", description = "data format for file handler (simple|record)", variableArity=false, required = false)
+	protected String process="record";
 	
 	@Parameter(names = "-out", description = "output filename", variableArity=false, required = false)
 	private String output;
 	
-	@Parameter(names = "-sample", description = "statdata sampling (1|10) min", variableArity=false, required = true)
-	private int sampling;
+	@Parameter(names = "-sample", description = "statdata sampling (1|10) min", variableArity=false, required = false)
+	private int sampling=10;
 
-	@Parameter(names = "-format", description = "format of output file (csv)", variableArity=false, required = false)
-	private String format="csv";
+	//@Parameter(names = "-format", description = "format of output file (csv|sql)", variableArity=false, required = false)
+	protected String format="csv";
 
 	
-	private StatDataProcessor sdp;
-	private ResultOutput result;
+	protected StatDataProcessor sdp;
+	protected ResultOutput result;
 	private StatisticManager sm=StatisticManager.getInstance();
-	private LineProcessing ln;
+	protected LineProcessing ln;
 	
 	private Logger logger=LoggerFactory.getLogger(CommandParse.class);
+	
+	protected Map<String, String> params=new HashMap<String,String>();
 	
 	public CommandParse() {
 		super();
 		// TODO Auto-generated constructor stub
 		//ln=new LineProcessing(getSampling(),sm);
-
-		
 		
 	}
 
 
-	public ResultOutput getFormat() {
-		return new CSVFileFromRecords(null, null);
+	protected ResultOutput getFormat(Map<String,String> params,StatDataProcessor sdp, Path filename) {
+		//params.put("process", process);
+		//params.put("format", format);
+		
+		return FileFabric.getOutputFileCreator(process, sdp, filename);
+		//return new CSVFileFromRecords(null, null);
 	}
 
-	public String getProcess() {
+/*	protected String getProcess() {
 		return process;
 	}
-
-	public Path getOutput() {
+*/
+	protected Path getOutputPath() {
 		Path currentRelativePath = Paths.get("");
 		if(null==output){// make default filename
 			output="result_"+sampling+"_"+System.nanoTime()+"."+format;
@@ -91,16 +99,16 @@ public class CommandParse extends CommandImpl{
 		return Paths.get(s);
 	}
 
-	public int getSampling() {
+	protected int getSampling() {
 		return sampling;
 	}
 
 
 	  
-	int counter=0;
-	int processed=0;
-	int failed=0;
-	Map<String,String> data=new HashMap<String,String>();
+	protected int counter=0;
+	protected int processed=0;
+	protected int failed=0;
+	protected Map<String,String> data=new HashMap<String,String>();
 
 	public void process(File file) {
 		// TODO Auto-generated method stub
@@ -130,24 +138,33 @@ public class CommandParse extends CommandImpl{
 	@Override
 	public Map<String, String> getStatData() {// it calculates internal statistic related to files processing
 		// TODO Auto-generated method stub
+
+		
 		data.put("Found",String.valueOf(counter));
 		data.put("Processed",String.valueOf(processed));
 		data.put("Failed",String.valueOf(failed));
 		
-		StatDataProcessor sdp=new StatDataProcessor(sm.getStatDataMap());
+		//StatDataProcessor sdp=new StatDataProcessorLogs(sm.getStatDataMap());
+		startAdditionalProcessing();
 
-		result=ResultOutputFabric.getOutputProcessor(format,sdp, getOutput());
-		
-		result.outputResult();
-		
-		sm.flush();
-		
 		return data;
 	}
 
+	private void startAdditionalProcessing(){
+		loadDataToSDP();
+		result=getFormat(params,sdp, getOutputPath());
+		result.outputResult();
+		sm.flush();
+	}
 	
+	public void loadDataToSDP() {
+		// TODO Auto-generated method stub
+		sdp.load(sm.getStatDataMap());
+	}
+
+
 	@Override
-	public void resetStatData() {
+	protected void resetStatData() {
 		// TODO move these methods to CommandImpl
 
 		counter=0;
@@ -158,11 +175,11 @@ public class CommandParse extends CommandImpl{
 
 
 	@Override
-	protected void init() {
+	public void init() {
 		// TODO Auto-generated method stub
 
-		ln=new LineProcessing(sampling,sm);
-
+		ln=new LineProcessingLogs(sampling,sm);
+		sdp=new StatDataProcessorLogs();
 		
 		// Load statistics from configuration file
 		

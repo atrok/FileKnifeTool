@@ -10,9 +10,9 @@ import java.nio.file.StandardOpenOption;
 import logprocessing.StatDataProcessor;
 import record.Record;
 
-public class CSVFileFromRecords extends CSVFile{
+public class FileFromRecords extends AbstractFileOutput{
 
-	public CSVFileFromRecords(StatDataProcessor sdp, Path filename) {
+	public FileFromRecords(StatDataProcessor sdp, Path filename) {
 		super(sdp, filename);
 		// TODO Auto-generated constructor stub
 	}

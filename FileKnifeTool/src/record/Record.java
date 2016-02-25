@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class Record implements Comparable{
 
-	private String first_column;
-	private List values=new ArrayList();
+	protected String first_column;
+	protected List values=new ArrayList();
 	public Record(String timestamp){
 		this.first_column=timestamp;
 	}

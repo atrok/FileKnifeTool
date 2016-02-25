@@ -15,6 +15,7 @@ import cmdline.Command;
 import cmdline.CommandDelete;
 import cmdline.CommandImpl;
 import cmdline.CommandParse;
+import cmdline.CommandParseFileWithSeparators;
 import cmdline.CommandPrint;
 import garbagecleaner.ProcessFilesFabric;
 
@@ -34,7 +35,7 @@ public class TestDefault {
 
 	Path start = Paths.get("Tests/resources/");
 	Path resources = Paths.get("target/_temp/resources");
-	private static int NUM_OF_FILEPATHS=11;
+	private static int NUM_OF_FILEPATHS=16;
 	private static int NUM_OF_QSP_THREE=3;
 	
 	@Before
@@ -63,7 +64,7 @@ public class TestDefault {
 		JCommander commander = cmdParser.getCommander();
 
 		try {
-			commander.parse("genesys", "-d", resources.toAbsolutePath().toString(), "-ext", ".+config_proxy_person_cto_p_all.20150918_095313_510.log", "-format","csv","-sample","10");
+			commander.parse("genesys", "-d", resources.toAbsolutePath().toString(), "-ext", ".+config_proxy_person_cto_p_all.20150918_095313_510.log","-sample","10");
 			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
 
 			assertTrue(cmd instanceof CommandParse);
@@ -71,7 +72,7 @@ public class TestDefault {
 			Map<String, String> results = run((CommandImpl) cmd).getStatData();
 
 			int i = Integer.valueOf(results.get("Found"));
-			assertTrue("ќжидаемое количество найденных файлов - "+NUM_OF_FILEPATHS+", найдено " + i, i == NUM_OF_FILEPATHS);
+			assertTrue("ќжидаемое количество найденных файлов - 1, найдено " + i, i == 1);
 
 		} catch (ParameterException ex) {
 			ex.printStackTrace();
@@ -82,8 +83,60 @@ public class TestDefault {
 		}
 
 	}
-	
-	@Ignore
+
+	@Test
+	public void testSeparator() {
+		CmdLineParser cmdParser = new CmdLineParser();
+		JCommander commander = cmdParser.getCommander();
+
+		try {
+			commander.parse("separator", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","csv");
+			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
+
+			assertTrue(cmd instanceof CommandParseFileWithSeparators);
+
+			Map<String, String> results = run((CommandImpl) cmd).getStatData();
+
+			int i = Integer.valueOf(results.get("Found"));
+			assertTrue("ќжидаемое количество найденных файлов - 1, найдено " + i, i == 1);
+
+		} catch (ParameterException ex) {
+			ex.printStackTrace();
+			commander.usage();
+			System.exit(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	public void testSeparatorSQL() {
+		CmdLineParser cmdParser = new CmdLineParser();
+		JCommander commander = cmdParser.getCommander();
+
+		try {
+			commander.parse("separator", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","sql");
+			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
+
+			assertTrue(cmd instanceof CommandParseFileWithSeparators);
+
+			Map<String, String> results = run((CommandImpl) cmd).getStatData();
+
+			int i = Integer.valueOf(results.get("Found"));
+			assertTrue("ќжидаемое количество найденных файлов - 1, найдено " + i, i == 1);
+
+		} catch (ParameterException ex) {
+			ex.printStackTrace();
+			commander.usage();
+			System.exit(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
 	public void testPrint() {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();
