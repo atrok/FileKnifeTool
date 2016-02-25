@@ -90,7 +90,7 @@ public class TestDefault {
 		JCommander commander = cmdParser.getCommander();
 
 		try {
-			commander.parse("separator", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","csv");
+			commander.parse("lms", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","csv");
 			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
 
 			assertTrue(cmd instanceof CommandParseFileWithSeparators);
@@ -116,7 +116,7 @@ public class TestDefault {
 		JCommander commander = cmdParser.getCommander();
 
 		try {
-			commander.parse("separator", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","sql");
+			commander.parse("lms", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","sql");
 			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
 
 			assertTrue(cmd instanceof CommandParseFileWithSeparators);

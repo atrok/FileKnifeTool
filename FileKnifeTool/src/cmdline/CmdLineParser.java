@@ -21,7 +21,7 @@ public class CmdLineParser {
 		commands.put("delete", new CommandDelete());
 		commands.put("print", new CommandPrint());
 		commands.put("genesys", new CommandParse());
-		commands.put("separator", new CommandParseFileWithSeparators());
+		commands.put("lms", new CommandParseFileWithSeparators());
 	}
 
 	public CmdLineParser(){
