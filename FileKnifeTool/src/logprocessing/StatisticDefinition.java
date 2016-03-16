@@ -100,6 +100,8 @@ public abstract class StatisticDefinition {
 			
 				if (FilesUtil.isNumeric(variable)){
 					variable=line[new Integer(variable)]; // numeric variable is a position of the word in the line, we need to substitute it now
+					matcherSomePunct=patternRemoveSomePunct.matcher(variable);
+					variable=matcherSomePunct.replaceAll(""); //remove all ,.;: 
 					name=varname.replace(nm[i], variable);
 					
 				}
