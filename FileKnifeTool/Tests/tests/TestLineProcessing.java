@@ -172,6 +172,7 @@ public class TestLineProcessing {
 		IncrementalStatistic s=new IncrementalStatistic(".+Trc.+24206.+Notification.+",statname);
 		sm.addStatistic(s);
 		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
+		sm.addStatistic(new IncrementalStatistic(".+Trc 24206 Notification : Object.+, name.+, DBID:.+is changed at server","#Changed at server: $6"));
 
 		
 		int sampling =1;

@@ -22,13 +22,15 @@ public abstract class StatisticDefinition {
 	private String name="";
 	private Map rate = new TreeMap<String, HashMap>();
 	private Pattern patternLineMatcher;
-	private Pattern patternRemovePunct=Pattern.compile("[\\d\\p{Punct}]");
+	private Pattern patternRemoveSomePunct=Pattern.compile("[;:\\.,]");
+	private Pattern patterRemoveAllPunct=Pattern.compile("[\\d\\p{Punct}]");
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
-	private Pattern patternEndBrackets=Pattern.compile(".+[\\]\\)]$");
+	private Pattern patternEndBrackets=Pattern.compile(".+[(\\]|\\],)(\\)|\\),)]$");
 	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
 	private Matcher matcher;
 	private Matcher matcherBracket;
 	private Matcher matcherMSGCFG;
+	private Matcher matcherSomePunct;
 	private long timenormalizing;
 	private long timegetstatvalue;
 	
@@ -92,7 +94,7 @@ public abstract class StatisticDefinition {
 					
 					
 					//if (Pattern.matches(".+Message.+",line[3]))
-						name=normalize(line);;
+						name=normalize(line);
 				}
 		
 			
@@ -166,11 +168,13 @@ public abstract class StatisticDefinition {
 			matcher=patternNoPunct.matcher(line[i]);
 			matcherBracket=patternEndBrackets.matcher(line[i]);
 			matcherMSGCFG=patternMSGCFG.matcher(line[i]);// leave MSGCFG messages unchanged
+			matcherSomePunct=patternRemoveSomePunct.matcher(line[i]);
+			line[i]=matcherSomePunct.replaceAll(""); //remove all ,.;: 
 			
             if (matcher.matches()&&variableFlag==false){// check if word begins with digit or punct sign
             	String a=line[i];
             	if(!matcherMSGCFG.matches())	       	 	
-		            	a=patternRemovePunct.matcher(line[i]).replaceAll(""); 
+		            	a=patterRemoveAllPunct.matcher(line[i]).replaceAll(""); 
 			    sb.append(" "+a);
 			    logger.trace("String {} normalized to {}",line[i],a);
 	       	 	

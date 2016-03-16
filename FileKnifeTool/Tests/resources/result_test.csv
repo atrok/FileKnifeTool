@@ -1,2 +1,2 @@
-Time,#Notification,Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to,Trc 24308 Message MSGCFG_OBJECTCHANGED2 generated,Trc 24206 Notification is changed at server
-2016:02:04:21:57,7,2,1,7
+Time,#Notification,Trc 24206 Notification name DBID is changed at server,Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to,Trc 24308 Message MSGCFG_OBJECTCHANGED2 generated,#Changed at server: [CfgAgentGroup]
+2016:02:04:21:57,7,7,2,1,7
