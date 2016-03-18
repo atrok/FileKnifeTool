@@ -156,13 +156,14 @@ public class TestLineProcessing {
 		
 		String[] lines=new String[]{
 				"Local time:       2016-02-04T21:55:32.104",
-				"21:57:44.415 Trc 24206 Notification : Object [CfgAgentGroup], name [AC_Apple_Austin_VAG], DBID: [1114] is changed at server",
+				"21:57:44.415 Trc 24206 Notification : Object [CfgAgent.Group], name [AC _Apple_Austin_VAG], DBID: [1114] is changed at server",
 				"21:57:44.421 Trc 24206 Notification : Object [CfgAgentGroup], name [External agents with Internal skill], DBID: [3184] is changed at server",
 				"21:57:44.427 Trc 24206 Notification : Object [CfgAgentGroup], name [AC_Apple_Austin_US_EN_iPhone_TS_VAG], DBID: [2109] is changed at server",
 				"21:57:44.433 Trc 24206 Notification : Object [CfgAgentGroup], name [AC_Apple_Austin_US_EN_iPod_Touch_VAG], DBID: [2658] is changed at server",
 				"21:57:44.440 Trc 24206 Notification : Object [CfgAgentGroup], name [IST_CCP_AC_Apple_Austin_VAG], DBID: [2955] is changed at server",
 				"21:57:44.446 Trc 24206 Notification : Object [CfgAgentGroup], name [Agent Group], DBID: [3059] is changed at server",
-				"21:57:44.452 Trc 24206 Notification : Object [CfgAgentGroup], name [CAN iPhone at Austin], DBID: [3983] is changed at server",
+				"21:57:44.452 Trc 24206 Notification : Object [CfgAgent Group], name [CAN iPhone at Austin], DBID: [3983] is changed at server",
+				"18:20:07.571 Std 24201 Object: [CfgFolder], name [Exited Agents], DBID: [2422] is changed by client, type [SCE], name: [default], user: [agentmaster.api]",
 				"21:57:44.452 Trc 24308 Message MSGCFG_OBJECTCHANGED2 (0x2aabe1a7f370) generated",
 				"21:57:44.452 Trc 04542 Message MSGCFG_OBJECTCHANGED2 (0x2aaab89e5d50) sent to 30 (SCE 'default')",
 				"21:57:44.452 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 31 (ConfigurationServer 'APAC_JP_NRT_CSProxy01_B')"
@@ -173,7 +174,7 @@ public class TestLineProcessing {
 		sm.addStatistic(s);
 		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
 		sm.addStatistic(new IncrementalStatistic(".+Trc 24206 Notification : Object.+, name.+, DBID:.+is changed at server","#Changed at server: $6"));
-
+		sm.addStatistic(new IncrementalStatistic(".+Object.+name.+DBID:.+is changed by client.+","#Changed by client: $18"));
 		
 		int sampling =1;
 		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
@@ -191,6 +192,8 @@ public class TestLineProcessing {
 		int value=(int) ((HashMap)stats.get(statname)).get("2016:02:04:21:57");
 		
 		assertTrue("Expected value of statistic is 7",value==7);
+		
+		value=(int) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2016:02:04:18:20");
 		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		sdp.load(sm.getStatDataMap());

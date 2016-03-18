@@ -74,7 +74,8 @@ public class LineProcessingLogs implements LineProcessing{
 		//split_line=Iterables.toArray(SPACE_SPLITTER.split(line), String.class);
 		//split_line_list=SPACE_SPLITTER.splitToList(line);
 		Benchmark.tick();
-		split_line=StringUtils.split(line);
+		//split_line=StringUtils.split(line);//TODO
+		split_line=splitSmart(line);
 		timesplitline+=Benchmark.tack();
 		
 		try {
@@ -302,5 +303,45 @@ public class LineProcessingLogs implements LineProcessing{
 	public Map getData() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	private String[] splitSmart(String s){
+
+			
+			Matcher matcher;
+			Pattern patternMatcherStart=Pattern.compile("^\\[.+");
+			Pattern patternMatcherEnd=Pattern.compile(".+(\\]|\\],)$");
+			
+			String[] arr=StringUtils.split(s);
+			List<String> list=new ArrayList<String>();
+			StringBuilder sb=new StringBuilder();
+			StringBuilder variable=new StringBuilder();
+			boolean flag=false;
+			//list.add(arr);
+			for (String ss: arr){
+				sb.append(ss);			
+				
+				matcher=patternMatcherStart.matcher(ss);
+				if (matcher.matches())				
+					flag=true;
+				
+				if(flag)
+					sb.append(" ");
+				
+					
+				matcher=patternMatcherEnd.matcher(ss);
+				if (matcher.matches()){
+					flag=false;
+					sb.deleteCharAt(sb.length()-1);
+				}
+				
+				if (!flag){
+					list.add(sb.toString());
+					sb.delete(0, sb.length());
+				}
+					
+			}
+			return list.toArray(new String[]{});
+		
 	}
 }

@@ -22,10 +22,10 @@ public abstract class StatisticDefinition {
 	private String name="";
 	private Map rate = new TreeMap<String, HashMap>();
 	private Pattern patternLineMatcher;
-	private Pattern patternRemoveSomePunct=Pattern.compile("[;:\\.,]");
+	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
 	private Pattern patterRemoveAllPunct=Pattern.compile("[\\d\\p{Punct}]");
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
-	private Pattern patternEndBrackets=Pattern.compile(".+[(\\]|\\],)(\\)|\\),)]$");
+	private Pattern patternEndBrackets=Pattern.compile("([\\[\\(].+)|(.+[(\\]|\\],)(\\)|\\),)])");
 	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
 	private Matcher matcher;
 	private Matcher matcherBracket;
@@ -173,7 +173,7 @@ public abstract class StatisticDefinition {
 			matcherSomePunct=patternRemoveSomePunct.matcher(line[i]);
 			line[i]=matcherSomePunct.replaceAll(""); //remove all ,.;: 
 			
-            if (matcher.matches()&&variableFlag==false){// check if word begins with digit or punct sign
+/*            if (matcher.matches()&&variableFlag==false){// check if word begins with digit or punct sign
             	String a=line[i];
             	if(!matcherMSGCFG.matches())	       	 	
 		            	a=patterRemoveAllPunct.matcher(line[i]).replaceAll(""); 
@@ -187,7 +187,16 @@ public abstract class StatisticDefinition {
             	   if(matcherBracket.matches())
             		   variableFlag=false;
             	 
-               }
+               }*/
+			
+     	   if(!matcherBracket.matches()){
+				String a = line[i];
+				if (!matcherMSGCFG.matches())
+					a = patterRemoveAllPunct.matcher(line[i]).replaceAll("");
+				if (a.length()>0)
+					sb.append(" " + a);
+				logger.trace("String {} normalized to {}", line[i], a);
+     	   }
 		}
 		
 		timenormalizing=System.nanoTime()-sec;
