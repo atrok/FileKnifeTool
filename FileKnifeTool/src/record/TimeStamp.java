@@ -31,7 +31,7 @@ public class TimeStamp extends Record{
 	}
 	
 	private int[] toIntArray(String s){
-		String[] ss=s.split(":");
+		String[] ss=s.split("[\\s:-]");
 		int[] split=new int[ss.length];
 		
 		for(int i=0;i<ss.length;i++){

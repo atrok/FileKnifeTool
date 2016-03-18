@@ -189,11 +189,11 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get(statname)).get("2016:02:04:21:57");
+		int value=(int) ((HashMap)stats.get(statname)).get("2016-02-04 21:57");
 		
 		assertTrue("Expected value of statistic is 7",value==7);
 		
-		value=(int) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2016:02:04:18:20");
+		value=(int) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2016-02-04 18:20");
 		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		sdp.load(sm.getStatDataMap());
