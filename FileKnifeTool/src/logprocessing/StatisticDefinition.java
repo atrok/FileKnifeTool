@@ -25,7 +25,7 @@ public abstract class StatisticDefinition {
 	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
 	private Pattern patterRemoveAllPunct=Pattern.compile("[\\d\\p{Punct}]");
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
-	private Pattern patternEndBrackets=Pattern.compile("([\\[\\(].+)|(.+[(\\]|\\],)(\\)|\\),)])");
+	private Pattern patternEndBrackets=Pattern.compile("([\\[\\(].+)|(.*[(\\s\\]|\\]|\\],)(\\)|\\),)]){1}");
 	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
 	private Matcher matcher;
 	private Matcher matcherBracket;

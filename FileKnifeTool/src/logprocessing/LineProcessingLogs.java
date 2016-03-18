@@ -105,8 +105,9 @@ public class LineProcessingLogs implements LineProcessing{
 					timegetstatvalue+=p.getTimegetstatvalue();
 				}
 				}catch(Exception e){
-					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions");
-					logger.error("Statistic Manager is likely empty: please add Statistic Definitions. {}",e);
+					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n"+ln);
+					logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}",e);
+					//System.exit(0);
 				}
 			}
 		 }
@@ -310,7 +311,7 @@ public class LineProcessingLogs implements LineProcessing{
 			
 			Matcher matcher;
 			Pattern patternMatcherStart=Pattern.compile("^\\[.+");
-			Pattern patternMatcherEnd=Pattern.compile(".+(\\]|\\],)$");
+			Pattern patternMatcherEnd=Pattern.compile("(.+(\\]|\\],)|(\\]\\)|\\],))$");
 			
 			String[] arr=StringUtils.split(s);
 			List<String> list=new ArrayList<String>();

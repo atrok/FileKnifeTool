@@ -2,6 +2,11 @@ package logprocessing;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AggregatingStatistic extends StatisticDefinition {
 
@@ -11,6 +16,10 @@ public class AggregatingStatistic extends StatisticDefinition {
 		private Map stats=new HashMap<String, HashMap>();
 		//private String statname="";
 		private int aggregating_field;
+		
+		Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
+		
+		private Logger logger=LoggerFactory.getLogger(AggregatingStatistic.class);
 		
 		public AggregatingStatistic(String regexp,String name, String aggregating_field){
 			super(regexp,name);
@@ -34,11 +43,27 @@ public class AggregatingStatistic extends StatisticDefinition {
 		}
 
 		@Override
-		public void calculate(String line, String[] splitline, String sampled_timeframe) {
+		public void calculate(String line, String[] splitline, String sampled_timeframe){
+			String value=splitline[aggregating_field];
 			
-			counter=getStatValue(line, splitline, sampled_timeframe);
-			if (null!=counter)
-				updateStatValue(Integer.valueOf(splitline[aggregating_field]),sampled_timeframe);
+				counter=getStatValue(line, splitline, sampled_timeframe);
+				if (null!=counter)
+					updateStatValue(toNumberFormat(value),sampled_timeframe);
+			
+		}
+		
+		private int toNumberFormat(String s){
+			Matcher matcher=patternPunct.matcher(s);
+			s=matcher.replaceAll("");	
+			int v=0;
+			try{
+			v=Integer.valueOf(s);
+			}catch(NumberFormatException e){
+				String ss="Cannot convert to number the value '"+s+" for Statistic /"+getName()+"/, field="+aggregating_field;
+				logger.error(ss,e);
+			}
+			return v;
+			
 		}
 	}
 
