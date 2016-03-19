@@ -274,6 +274,14 @@ public class LineProcessingLogs implements LineProcessing{
 			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
 					+ time.get("end_time")[3] + ":" + Integer.toString(t);
 			break;
+		case 60:
+			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
+					+ time.get("end_time")[3] + ":" + "00";
+			break;
+		case 24:
+			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
+					+ "00" + ":" +"00";
+			break;
 		}
 		return sec;
 	}

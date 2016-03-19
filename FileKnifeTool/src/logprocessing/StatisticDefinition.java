@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import util.FilesUtil;
+import jregex.*;
 
 public abstract class StatisticDefinition {
 
@@ -22,7 +23,7 @@ public abstract class StatisticDefinition {
 	private String varname="";
 	private String name="";
 	private Map rate = new TreeMap<String, HashMap>();
-	private Pattern patternLineMatcher;
+	private jregex.Pattern patternLineMatcher;
 	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
 	private Pattern patterRemoveAllPunct=Pattern.compile("[\\d\\p{Punct}]");
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
@@ -34,13 +35,16 @@ public abstract class StatisticDefinition {
 	private Matcher matcherSomePunct;
 	private long timenormalizing;
 	private long timegetstatvalue;
+	
+	private jregex.Matcher jMatcher;
+	
 	private char[] brackets=new char[]{'[','(',']',')'};
 	
 	public StatisticDefinition(String regexp,String name){
 		
 		this.regexp=regexp;
 		this.varname=this.name=name;
-		this.patternLineMatcher=Pattern.compile(getRegexp());
+		this.patternLineMatcher=new jregex.Pattern(getRegexp());
 		
 		
 		
@@ -51,7 +55,7 @@ public abstract class StatisticDefinition {
 		
 		this.regexp=parameters.get(StatisticParamNaming.REGEXP.toString());
 		this.varname=this.name=name;
-		this.patternLineMatcher=Pattern.compile(getRegexp());
+		this.patternLineMatcher=new jregex.Pattern(getRegexp());
 		
 		
 		
@@ -136,9 +140,9 @@ public abstract class StatisticDefinition {
 		
 		Map<String, Integer> t;
 
-		matcher=patternLineMatcher.matcher(line);
+		jMatcher=patternLineMatcher.matcher(line);
 		
-		if(matcher.matches()){
+		if(jMatcher.matches()){
 			
 			generateMsgID(splitline);
 			
