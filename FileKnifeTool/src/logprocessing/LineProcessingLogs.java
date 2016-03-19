@@ -21,7 +21,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 
 import util.Benchmark;
-
+import jregex.*;
 public class LineProcessingLogs implements LineProcessing{
 	private String line;
 	private String[] split_line;
@@ -37,6 +37,15 @@ public class LineProcessingLogs implements LineProcessing{
 	private Matcher matcher;
 	private Matcher matcherCheckpoint;
 	private Matcher matcherLocalTime;
+	
+	private jregex.Matcher jMatcher;
+	private jregex.Matcher jMatcherCheckpoint;
+	private jregex.Matcher jMatcherLocalTime;
+	private jregex.Pattern jPatternTimestamp=new jregex.Pattern(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN);
+	private jregex.Pattern jPatternCheckpoint=new jregex.Pattern(REGEXP.PATTERN_CHECK_POINT);
+	private jregex.Pattern jPatternLocalTime=new jregex.Pattern(REGEXP.PATTERN_LOCAL_TIME);
+	
+	
 
 	private long timeprocessing;
 	private long timenormalizing;

@@ -7,7 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,8 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		
 		logger.debug("Collected statdata processing has started");
 		
-		Set<String> messages=statdata.keySet();
+		SortedSet<String> messages=new TreeSet(statdata.keySet());
+				
 		//String[] header=new String[messages.size()+1];
 		//header[0]="Time";
 		Header head=new Header("Time");//#

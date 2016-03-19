@@ -53,7 +53,7 @@ public class CommandParse extends CommandImpl{
 	@Parameter(names = "-out", description = "output filename", variableArity=false, required = false)
 	private String output;
 	
-	@Parameter(names = "-sample", description = "statdata sampling (1|10) min", variableArity=false, required = false)
+	@Parameter(names = "-sample", description = "statdata sampling (1|10|60|24(h)) min", variableArity=false, required = false)
 	private int sampling=10;
 
 	//@Parameter(names = "-format", description = "format of output file (csv|sql)", variableArity=false, required = false)
