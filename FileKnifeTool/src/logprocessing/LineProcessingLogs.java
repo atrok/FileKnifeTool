@@ -31,6 +31,9 @@ public class LineProcessingLogs implements LineProcessing{
 	private Pattern patternCheckpoint=Pattern.compile(REGEXP.PATTERN_CHECK_POINT);
 	private Pattern patternLocalTime=Pattern.compile(REGEXP.PATTERN_LOCAL_TIME);
 	private Pattern patternReplaceAt=Pattern.compile("@");
+	private Pattern patternMatcherStart=Pattern.compile("^\\[.+");
+	private Pattern patternMatcherEnd=Pattern.compile("(.+(\\]|\\]"+REGEXP.PUNCT+")|(\\]\\)|\\]"+REGEXP.PUNCT+"))$");
+
 	private Matcher matcher;
 	private Matcher matcherCheckpoint;
 	private Matcher matcherLocalTime;
@@ -309,29 +312,31 @@ public class LineProcessingLogs implements LineProcessing{
 	private String[] splitSmart(String s){
 
 			
-			Matcher matcher;
-			Pattern patternMatcherStart=Pattern.compile("^\\[.+");
-			Pattern patternMatcherEnd=Pattern.compile("(.+(\\]|\\],)|(\\]\\)|\\],))$");
 			
 			String[] arr=StringUtils.split(s);
 			List<String> list=new ArrayList<String>();
 			StringBuilder sb=new StringBuilder();
-			StringBuilder variable=new StringBuilder();
+			//StringBuilder variable=new StringBuilder();
 			boolean flag=false;
 			//list.add(arr);
 			for (String ss: arr){
 				sb.append(ss);			
 				
-				matcher=patternMatcherStart.matcher(ss);
-				if (matcher.matches())				
+			//	matcher=patternMatcherStart.matcher(ss);
+			//	if (matcher.matches())
+				if (ss.charAt(0)=='[')
 					flag=true;
 				
 				if(flag)
 					sb.append(" ");
 				
 					
-				matcher=patternMatcherEnd.matcher(ss);
-				if (matcher.matches()){
+				//matcher=patternMatcherEnd.matcher(ss);
+				
+				//if (matcher.matches()){
+				
+				if (ss.charAt(ss.length()-1)==']'||(ss.length()>=2&&ss.charAt(ss.length()-2)==']')){
+						//||ss.charAt(ss.length()-1)==')'||ss.charAt(ss.length()-2)==')')){// replacement for bracket regexp
 					flag=false;
 					sb.deleteCharAt(sb.length()-1);
 				}

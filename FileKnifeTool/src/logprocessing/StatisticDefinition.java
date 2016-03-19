@@ -1,5 +1,6 @@
 package logprocessing;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -33,6 +34,7 @@ public abstract class StatisticDefinition {
 	private Matcher matcherSomePunct;
 	private long timenormalizing;
 	private long timegetstatvalue;
+	private char[] brackets=new char[]{'[','(',']',')'};
 	
 	public StatisticDefinition(String regexp,String name){
 		
@@ -100,8 +102,8 @@ public abstract class StatisticDefinition {
 			
 				if (FilesUtil.isNumeric(variable)){
 					variable=line[new Integer(variable)]; // numeric variable is a position of the word in the line, we need to substitute it now
-					matcherSomePunct=patternRemoveSomePunct.matcher(variable);
-					variable=matcherSomePunct.replaceAll(""); //remove all ,.;: 
+					//matcherSomePunct=patternRemoveSomePunct.matcher(variable);
+					variable=patternRemoveSomePunct.matcher(variable).replaceAll(""); //remove all ,.;: 
 					name=varname.replace(nm[i], variable);
 					
 				}
@@ -167,12 +169,12 @@ public abstract class StatisticDefinition {
 		sb.append(line[1]+" "+line[2]);
 		boolean variableFlag=false;
 		for(int i=3;i<line.length;i++){ // getting rid of punctuation and variable parts of message to be able to print uniform message
-			matcher=patternNoPunct.matcher(line[i]);
-			matcherBracket=patternEndBrackets.matcher(line[i]);
+			//matcher=patternNoPunct.matcher(line[i]);
+			//matcherBracket=patternEndBrackets.matcher(line[i]);
 			matcherMSGCFG=patternMSGCFG.matcher(line[i]);// leave MSGCFG messages unchanged
 			matcherSomePunct=patternRemoveSomePunct.matcher(line[i]);
 			line[i]=matcherSomePunct.replaceAll(""); //remove all ,.;: 
-			
+			String ss=line[i];
 /*            if (matcher.matches()&&variableFlag==false){// check if word begins with digit or punct sign
             	String a=line[i];
             	if(!matcherMSGCFG.matches())	       	 	
@@ -189,13 +191,24 @@ public abstract class StatisticDefinition {
             	 
                }*/
 			
-     	   if(!matcherBracket.matches()){
-				String a = line[i];
+     	   //if(!matcherBracket.matches()){
+			/*int l=ss.length();
+			if(l>=2)
+			if (!(ss.charAt(l-1)==']'
+					||ss.charAt(l-2)==']'
+					||ss.charAt(l-1)==')'
+					||ss.charAt(l-2)==')'
+					||ss.charAt(0)=='('
+					||ss.charAt(0)=='['
+					)){// replacement for bracket regexp
+			*/	
+			if(!isBracketFound(ss,brackets)){
+				String a = ss;
 				if (!matcherMSGCFG.matches())
 					a = patterRemoveAllPunct.matcher(line[i]).replaceAll("");
 				if (a.length()>0)
 					sb.append(" " + a);
-				logger.trace("String {} normalized to {}", line[i], a);
+				logger.trace("String {} normalized to {}", ss, a);
      	   }
 		}
 		
@@ -223,5 +236,14 @@ public abstract class StatisticDefinition {
 		return timegetstatvalue;
 	};
 
+	private boolean isBracketFound(String s,char[] brackets){
+		char[] ch=s.toCharArray();
+		Arrays.sort(ch);
+		for (char c:brackets){
+		if(Arrays.binarySearch(ch, c)!=-1)
+			return true;
+		}
+		return false;
+	}
 	
 }

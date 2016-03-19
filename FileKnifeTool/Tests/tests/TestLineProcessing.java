@@ -133,7 +133,7 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get("SentReceived")).get("2014:09:16:15:00");
+		int value=(int) ((HashMap)stats.get("SentReceived")).get("2014-09-16 15:00");
 		
 		assertTrue("Expected value of SentReceived statistic is 4",value==4);
 		
@@ -156,6 +156,7 @@ public class TestLineProcessing {
 		
 		String[] lines=new String[]{
 				"Local time:       2016-02-04T21:55:32.104",
+				"14:55:29.782 [HISTORYDB]: Data record 40350086 has been written to history database",
 				"2015-09-18T11:24:34.492 Std 24201 Object: [CfgAgent], name [004225868], DBID: [157503] is changed by client, type [InteractionWorkspace ], name: [Inbox_Uniclass_Prod], user: [004225868]",
 				"2015-09-18T09:54:28.222 Trc 24215 There are [1] objects of type [CfgPerson] sent to the client [1492] (application [Inbox_Uniclass_Prod], type [InteractionWorkspace ])",
 				"21:57:44.415 Trc 24206 Notification : Object [CfgAgent.Group], name [AC _Apple_Austin_VAG], DBID: [1114] is changed at server",
@@ -165,15 +166,15 @@ public class TestLineProcessing {
 				"21:57:44.440 Trc 24206 Notification : Object [CfgAgentGroup], name [IST_CCP_AC_Apple_Austin_VAG], DBID: [2955] is changed at server",
 				"21:57:44.446 Trc 24206 Notification : Object [CfgAgentGroup], name [Agent Group], DBID: [3059] is changed at server",
 				"21:57:44.452 Trc 24206 Notification : Object [CfgAgent Group], name [CAN iPhone at Austin], DBID: [3983] is changed at server",
-				//"18:20:07.571 Std 24201 Object: [CfgFolder], name [Exited Agents], DBID: [2422] is changed by client, type [SCE], name: [default], user: [agentmaster.api]",
+				"18:20:07.571 Std 24201 Object: [CfgFolder], name [Exited Agents], DBID: [2422] is changed by client, type [SCE], name: [default], user: [agentmaster.api]",
 				"21:57:44.452 Trc 24308 Message MSGCFG_OBJECTCHANGED2 (0x2aabe1a7f370) generated",
 				"21:57:44.452 Trc 04542 Message MSGCFG_OBJECTCHANGED2 (0x2aaab89e5d50) sent to 30 (SCE 'default')",
 				"21:57:44.452 Trc 04542 Message MSGCFG_OBJECTCHANGED2 sent to 31 (ConfigurationServer 'APAC_JP_NRT_CSProxy01_B')"
 				};
 		
 		StatisticManager sm=StatisticManager.getInstance();
-		IncrementalStatistic s=new IncrementalStatistic(".+Trc.+24206.+Notification.+",statname);
-		sm.addStatistic(s);
+		
+		sm.addStatistic(new IncrementalStatistic(".+Trc.+24206.+Notification.+",statname));
 		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
 		sm.addStatistic(new IncrementalStatistic(".+Trc 24206 Notification : Object.+, name.+, DBID:.+is changed at server","#Changed at server: $6"));
 		sm.addStatistic(new IncrementalStatistic(".+Object.+name.+DBID:.+is changed by client.+","#Changed by client: $18"));
@@ -193,11 +194,11 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get(statname)).get("2016-02-04 21:57");
+		int value=(int) ((HashMap)stats.get(statname)).get("2015-09-18 21:57");
 		
 		assertTrue("Expected value of statistic is 7",value==7);
 		
-		value=(int) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2016-02-04 18:20");
+		value=(int) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2015-09-18 18:20");
 		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		sdp.load(sm.getStatDataMap());
