@@ -21,6 +21,7 @@ import logprocessing.MinStatistic;
 import logprocessing.StatDataProcessor;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatisticManager;
+import logprocessing.SumStatistic;
 import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
 
@@ -214,7 +215,7 @@ public class TestLineProcessing {
 	}
 	
 	@Test
-	public void testMaxMinStatistic(){
+	public void testMaxMinSumStatistic(){
 		System.out.println("------------ MaxMin Stat testing -------------");
 		String statname="#Notification";
 		
@@ -229,10 +230,11 @@ public class TestLineProcessing {
 		StatisticManager sm=StatisticManager.getInstance();
 		String totalMax="#totalMax";
 		String totalMin="#totalMin";
+		String totalSum="#totalSum";
 		
 		sm.addStatistic(new MaxStatistic(".+Total number of clients.+","#totalMax",5));
 		sm.addStatistic(new MinStatistic(".+Total number of clients.+","#totalMin",5));
-		
+		sm.addStatistic(new SumStatistic(".+Total number of clients.+","#totalSum",5));
 		
 		int sampling =1;
 		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
@@ -254,6 +256,11 @@ public class TestLineProcessing {
 		value=(int) ((HashMap)stats.get(totalMin)).get(timestamp);
 		
 		assertTrue("Expected value of "+totalMin+"statistic is 90",value==90);
+		
+		value=(int) ((HashMap)stats.get(totalSum)).get(timestamp);
+		
+		assertTrue("Expected value of "+totalSum+"statistic is 690",value==690);
+		
 		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		sdp.load(sm.getStatDataMap());
