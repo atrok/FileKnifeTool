@@ -29,13 +29,15 @@ public abstract class StatisticDefinition {
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
 	private Pattern patternEndBrackets=Pattern.compile("([\\[\\(].+)|(.*[(\\s\\]|\\]|\\],)(\\)|\\),)]){1}");
 	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
+	private Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
+
 	private Matcher matcher;
 	private Matcher matcherBracket;
 	private Matcher matcherMSGCFG;
 	private Matcher matcherSomePunct;
 	private long timenormalizing;
 	private long timegetstatvalue;
-	
+	private String[] nm;
 	private jregex.Matcher jMatcher;
 	
 	private char[] brackets=new char[]{'[','(',']',')'};
@@ -45,6 +47,7 @@ public abstract class StatisticDefinition {
 		this.regexp=regexp;
 		this.varname=this.name=name;
 		this.patternLineMatcher=new jregex.Pattern(getRegexp());
+		nm=varname.split(REGEXP.SPACES);
 		
 		
 		
@@ -56,7 +59,7 @@ public abstract class StatisticDefinition {
 		this.regexp=parameters.get(StatisticParamNaming.REGEXP.toString());
 		this.varname=this.name=name;
 		this.patternLineMatcher=new jregex.Pattern(getRegexp());
-		
+		nm=varname.split(REGEXP.SPACES);
 		
 		
 		
@@ -88,7 +91,7 @@ public abstract class StatisticDefinition {
 		
 		//String message=normalize(line);
 		
-		String[] nm=varname.split(REGEXP.SPACES);
+		//String[] nm=varname.split(REGEXP.SPACES);
 		
 		
 		for (int i=0;i<nm.length; i++){
@@ -228,7 +231,19 @@ public abstract class StatisticDefinition {
 		return rate;
 	}
 
-
+	protected int toNumberFormat(String s){
+		Matcher matcher=patternPunct.matcher(s);
+		s=matcher.replaceAll("");	
+		int v=0;
+		try{
+		v=Integer.valueOf(s);
+		}catch(NumberFormatException e){
+			String ss="Cannot convert to number the value '"+s+" for Statistic /"+getName()+"/";
+			logger.error(ss,e);
+		}
+		return v;
+		
+	}
 
 	public long getTimenormalizing() {
 		return timenormalizing;

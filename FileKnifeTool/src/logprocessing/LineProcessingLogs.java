@@ -44,7 +44,8 @@ public class LineProcessingLogs implements LineProcessing{
 	private jregex.Pattern jPatternTimestamp=new jregex.Pattern(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN);
 	private jregex.Pattern jPatternCheckpoint=new jregex.Pattern(REGEXP.PATTERN_CHECK_POINT);
 	private jregex.Pattern jPatternLocalTime=new jregex.Pattern(REGEXP.PATTERN_LOCAL_TIME);
-	
+	private jregex.Pattern jPatternMatcherEnd=new jregex.Pattern("(.+(\\]|\\]"+REGEXP.PUNCT+")|(\\]\\)|\\]"+REGEXP.PUNCT+"))$");
+
 	
 
 	private long timeprocessing;
@@ -101,8 +102,12 @@ public class LineProcessingLogs implements LineProcessing{
 			//System.out.println("end_time  : " + Arrays.toString(time.get("end_time")));
 
 			//boolean b = Pattern.matches(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN, split_line[0]);
-			matcher=patternTimestamp.matcher(split_line[0]);
-			if (matcher.find()) {
+			//matcher=patternTimestamp.matcher(split_line[0]);
+			
+			jMatcher=jPatternTimestamp.matcher(split_line[0]);
+			
+			//if (matcher.find()) {
+			if (jMatcher.find()) {
 				sec = sampling(sampling);
 
 				logger.trace("Obtained sampled timestamp:{}", sec);
@@ -170,16 +175,27 @@ public class LineProcessingLogs implements LineProcessing{
 		String timestamp = split_line[0];
 		//timestamp.replace("@", "");
 		patternReplaceAt.matcher(timestamp).replaceAll("");
-
+/*
 		matcher=patternTimestamp.matcher(timestamp);
 		matcherCheckpoint=patternCheckpoint.matcher(line);
 		matcherLocalTime=patternLocalTime.matcher(line);
 		//tick();
-		if (matcher.find()) {
+*/		
+		
+
+		jMatcher=jPatternTimestamp.matcher(timestamp);
+		jMatcherCheckpoint=jPatternCheckpoint.matcher(line);
+		jMatcherLocalTime=jPatternLocalTime.matcher(line);
+		//tick();
+
+		
+		//if (matcher.find()) {
+		if (jMatcher.find()) {
+			
 		//tock("patternTimestamp found:");
 		
 		
-			if (matcherCheckpoint.find()) {
+			if (jMatcherCheckpoint.find()) {
 				
 				List<String> test = new ArrayList<String>(
 						Arrays.asList(
@@ -232,7 +248,7 @@ public class LineProcessingLogs implements LineProcessing{
 			 * Local time: 2014-09-16T13:14:58.465 
 			 * # 1 2
 			 */
-			if (matcherLocalTime.matches()) {
+			if (jMatcherLocalTime.matches()) {
 		//tock("matcherLocalTime.matches() :");
 				time_temp = split_line[2].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
 		//tock("long timestamp split :");
@@ -348,12 +364,12 @@ public class LineProcessingLogs implements LineProcessing{
 					sb.append(" ");
 				
 					
-				//matcher=patternMatcherEnd.matcher(ss);
+				//jMatcher=jPatternMatcherEnd.matcher(ss);
 				
-				//if (matcher.matches()){
+				//if (jMatcher.matches()){
 				
-				if (ss.charAt(ss.length()-1)==']'||(ss.length()>=2&&ss.charAt(ss.length()-2)==']')){
-						//||ss.charAt(ss.length()-1)==')'||ss.charAt(ss.length()-2)==')')){// replacement for bracket regexp
+				if (ss.charAt(ss.length()-1)==']'||(ss.length()>=2&&ss.charAt(ss.length()-2)==']')){// replacement for bracket regexp
+						
 					flag=false;
 					sb.deleteCharAt(sb.length()-1);
 				}

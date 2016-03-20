@@ -1,5 +1,2 @@
-Time,#SentType: [InteractionWorkspace ]),#Notification,Trc 24308 generated,Trc 24215 are objects of type sent to the client type,#Changed at server: [CfgAgent.Group],#Changed at server: [CfgAgent Group],Std 24201 name is changed by client type name user,#Changed by client: [004225868],Trc 24206 name is changed at server,Trc 04542 sent to,#Changed by client: [agentmaster.api],#Changed at server: [CfgAgentGroup]
-2015-09-18 09:54,1,0,0,1,0,0,0,0,0,0,0,0
-2015-09-18 11:24,0,0,0,0,0,0,1,1,0,0,0,0
-2015-09-18 18:20,0,0,0,0,0,0,1,0,0,0,1,0
-2015-09-18 21:57,0,7,1,0,1,1,0,0,7,2,0,5
+Time,#totalMax,#totalMin
+2016-02-04 21:57,300,90

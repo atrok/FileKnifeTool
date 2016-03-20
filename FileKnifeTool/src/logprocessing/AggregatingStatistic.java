@@ -52,18 +52,6 @@ public class AggregatingStatistic extends StatisticDefinition {
 			
 		}
 		
-		private int toNumberFormat(String s){
-			Matcher matcher=patternPunct.matcher(s);
-			s=matcher.replaceAll("");	
-			int v=0;
-			try{
-			v=Integer.valueOf(s);
-			}catch(NumberFormatException e){
-				String ss="Cannot convert to number the value '"+s+" for Statistic /"+getName()+"/, field="+aggregating_field;
-				logger.error(ss,e);
-			}
-			return v;
-			
-		}
+
 	}
 

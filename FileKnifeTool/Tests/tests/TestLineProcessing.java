@@ -16,6 +16,8 @@ import org.junit.Test;
 import logprocessing.AggregatingStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessingLogs;
+import logprocessing.MaxStatistic;
+import logprocessing.MinStatistic;
 import logprocessing.StatDataProcessor;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatisticManager;
@@ -211,4 +213,57 @@ public class TestLineProcessing {
 		
 	}
 	
+	@Test
+	public void testMaxMinStatistic(){
+		System.out.println("------------ MaxMin Stat testing -------------");
+		String statname="#Notification";
+		
+		String[] lines=new String[]{
+				"Local time:       2016-02-04T21:55:32.104",
+				"21:57:06.351 Total number of clients: 90",
+				"21:57:06.382 Total number of clients: 100",
+				"21:57:16.397 Total number of clients: 200",
+				"21:57:16.444 Total number of clients: 300"
+				};
+		String timestamp="2016-02-04 21:57";
+		StatisticManager sm=StatisticManager.getInstance();
+		String totalMax="#totalMax";
+		String totalMin="#totalMin";
+		
+		sm.addStatistic(new MaxStatistic(".+Total number of clients.+","#totalMax",5));
+		sm.addStatistic(new MinStatistic(".+Total number of clients.+","#totalMin",5));
+		
+		
+		int sampling =1;
+		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
+		
+		for(String l: lines){
+			ln.processLine(l);
+		}
+		
+		sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		int value=(int) ((HashMap)stats.get(totalMax)).get(timestamp);
+		
+		assertTrue("Expected value of "+totalMax+"statistic is 300",value==300);
+		
+		value=(int) ((HashMap)stats.get(totalMin)).get(timestamp);
+		
+		assertTrue("Expected value of "+totalMin+"statistic is 90",value==90);
+		
+		StatDataProcessor sdp=new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		//System.out.println(Arrays.toString(sdp.getResult()));
+		sm.flush();
+		
+	}
+
 }
