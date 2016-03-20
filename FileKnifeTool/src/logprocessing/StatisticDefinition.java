@@ -143,9 +143,9 @@ public abstract class StatisticDefinition {
 		
 		Map<String, Integer> t;
 
-		jMatcher=patternLineMatcher.matcher(line);
+		//jMatcher=patternLineMatcher.matcher(line);
 		
-		if(jMatcher.matches()){
+		//if(jMatcher.matches()){
 			
 			generateMsgID(splitline);
 			
@@ -160,10 +160,17 @@ public abstract class StatisticDefinition {
 			}
 			timegetstatvalue=System.nanoTime()-start;
 			return t.get(sampled_timeframe);
-		}
-		timegetstatvalue=System.nanoTime()-start;
-		return null;
+		//}
+		//timegetstatvalue=System.nanoTime()-start;
+		//return null;
 
+		
+	}
+	
+	protected boolean isMatched(String line){
+		
+		jMatcher=patternLineMatcher.matcher(line);
+		return jMatcher.matches();
 		
 	}
 	

@@ -117,12 +117,15 @@ public class LineProcessingLogs implements LineProcessing{
 				
 				while (m.hasNext()) {
 					StatisticDefinition p=(StatisticDefinition) m.next();
-					p.calculate(ln, split_line, sec);
+					if (p.isMatched(ln)) 
+						p.calculate(ln, split_line, sec);
+					
 					timenormalizing+=p.getTimenormalizing();
 					timegetstatvalue+=p.getTimegetstatvalue();
 				}
 				}catch(Exception e){
-					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n"+ln);
+					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
+					logger.error(ln);
 					logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}",e);
 					//System.exit(0);
 				}
