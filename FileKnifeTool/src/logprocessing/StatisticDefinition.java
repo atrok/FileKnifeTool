@@ -30,6 +30,7 @@ public abstract class StatisticDefinition {
 	private Pattern patternEndBrackets=Pattern.compile("([\\[\\(].+)|(.*[(\\s\\]|\\]|\\],)(\\)|\\),)]){1}");
 	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
 	private Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
+	private Pattern patternPunctButCommas=Pattern.compile("[^\\w\\.\\,]");
 
 	private Matcher matcher;
 	private Matcher matcherBracket;
@@ -125,23 +126,23 @@ public abstract class StatisticDefinition {
 		
 	}
 	
-	protected void updateStatValue(Integer value, String sampled_timeframe){
+	protected void updateStatValue(double new_value, String sampled_timeframe){
 		
 			//rate.put(getName(), ((Map)rate.get(getName())).put(sampled_timeframe,value));
 			
 			Map t= (Map)rate.get(getName());
-			t.put(sampled_timeframe, value);
+			t.put(sampled_timeframe, new_value);
 			rate.put(getName(),t);
 			
 	}
 	/*
 	 * returns last value of requested statistic or null if not found
 	 */
-	protected Integer getStatValue(String line, String[] splitline, String sampled_timeframe){
+	protected Double getStatValue(String line, String[] splitline, String sampled_timeframe){
 		
 		long start=System.nanoTime();
 		
-		Map<String, Integer> t;
+		Map<String, Double> t;
 
 		//jMatcher=patternLineMatcher.matcher(line);
 		
@@ -150,13 +151,13 @@ public abstract class StatisticDefinition {
 			generateMsgID(splitline);
 			
 			if (!rate.containsKey(getName())){// create new hashmap for sampled time statistics
-				rate.put(getName(),new HashMap<String,Integer>());
+				rate.put(getName(),new HashMap<String,Double>());
 			}
 			
 			t=(Map) rate.get(getName());
 			
 			if (!t.containsKey(sampled_timeframe)){
-				t.put(sampled_timeframe, 0);
+				t.put(sampled_timeframe, (double) 0);
 			}
 			timegetstatvalue=System.nanoTime()-start;
 			return t.get(sampled_timeframe);
@@ -238,12 +239,13 @@ public abstract class StatisticDefinition {
 		return rate;
 	}
 
-	protected int toNumberFormat(String s){
-		Matcher matcher=patternPunct.matcher(s);
+	protected double toNumberFormat(String s){
+		Matcher matcher=patternPunctButCommas.matcher(s);
 		s=matcher.replaceAll("");	
-		int v=0;
+		double v=0;
 		try{
-		v=Integer.valueOf(s);
+		v=Double.valueOf(s);
+		
 		}catch(NumberFormatException e){
 			String ss="Cannot convert to number the value '"+s+" for Statistic /"+getName()+"/";
 			logger.error(ss,e);

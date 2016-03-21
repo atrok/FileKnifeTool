@@ -35,7 +35,7 @@ public class TestDefault {
 
 	Path start = Paths.get("Tests/resources/");
 	Path resources = Paths.get("target/_temp/resources");
-	private static int NUM_OF_FILEPATHS=16;
+	private static int NUM_OF_FILEPATHS=17;
 	private static int NUM_OF_QSP_THREE=3;
 	
 	@Before

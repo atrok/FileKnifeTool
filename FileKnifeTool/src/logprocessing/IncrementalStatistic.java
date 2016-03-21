@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class IncrementalStatistic extends StatisticDefinition {
 
-	private Integer counter=0;
+	private Double counter=0.0;
 	//private String regexp="";
 	private Map stats=new HashMap<String, HashMap>();
 	//private String statname="";

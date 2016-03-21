@@ -28,7 +28,7 @@ import resultoutput.FileFromRecords;
 public class TestLineProcessing {
 
 	Path file = Paths.get("Tests/resources/config_proxy_person_cto_p_all.20150918_095313_510.log");//"Tests/resources/cs85.20151223_145909_388.log");
-	
+	Path prnfile = Paths.get("Tests/resources/cs_performance_dec15-march16_memonly.prn");
 	Path csvfile= Paths.get("Tests/resources/result_test.csv");
 	
 	String timespot="2015:09:18:10:07";
@@ -57,10 +57,10 @@ public class TestLineProcessing {
 		StatisticManager sm=StatisticManager.getInstance();
 
 		sm.addStatistic(new IncrementalStatistic(".+Message.+(received from|sent to).+","SentReceived"));
-		sm.addStatistic(new IncrementalStatistic(".+Trc.+client.+connected.+","#New client connection"));
+		sm.addStatistic(new IncrementalStatistic(".+04520.+client\\sconnected.+","#New client connection"));
 		sm.addStatistic(new IncrementalStatistic(".+Trc.+client.+disconnected.+","#Client disconnected"));
 		sm.addStatistic(new IncrementalStatistic(".+There are \\[[0-9]{3,}\\] objects of type.+","##ObjectSent  $9 <1000"));
-		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
+		//sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
 		sm.addStatistic(new AggregatingStatistic(".+Total number of clients.+","#total clients",5));
 
 		LineProcessingLogs ln=new LineProcessingLogs(1, sm);
@@ -136,9 +136,9 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get("SentReceived")).get("2014-09-16 15:00");
+		double value=(double) ((HashMap)stats.get("SentReceived")).get("2014-09-16 15:00");
 		
-		assertTrue("Expected value of SentReceived statistic is 4",value==4);
+		assertTrue("Expected value of SentReceived statistic is 4 but we got "+value,value==4);
 		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		
@@ -197,11 +197,11 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get(statname)).get("2015-09-18 21:57");
+		double value=(double) ((HashMap)stats.get(statname)).get("2015-09-18 21:57");
 		
 		assertTrue("Expected value of statistic is 7",value==7);
 		
-		value=(int) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2015-09-18 18:20");
+		value=(double) ((HashMap)stats.get("#Changed by client: [agentmaster.api]")).get("2015-09-18 18:20");
 		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		sdp.load(sm.getStatDataMap());
@@ -249,15 +249,15 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get(totalMax)).get(timestamp);
+		double value=(double) ((HashMap)stats.get(totalMax)).get(timestamp);
 		
 		assertTrue("Expected value of "+totalMax+"statistic is 300",value==300);
 		
-		value=(int) ((HashMap)stats.get(totalMin)).get(timestamp);
+		value=(double) ((HashMap)stats.get(totalMin)).get(timestamp);
 		
 		assertTrue("Expected value of "+totalMin+"statistic is 90",value==90);
 		
-		value=(int) ((HashMap)stats.get(totalSum)).get(timestamp);
+		value=(double) ((HashMap)stats.get(totalSum)).get(timestamp);
 		
 		assertTrue("Expected value of "+totalSum+"statistic is 690",value==690);
 		
@@ -270,6 +270,63 @@ public class TestLineProcessing {
 		
 		//System.out.println(Arrays.toString(sdp.getResult()));
 		sm.flush();
+		
+	}
+
+	
+	@Test
+	public void testPrnFile(){
+		
+		double d1=Double.valueOf("9598284.0");
+		double d2=Double.valueOf("9.577844E7");
+		
+		if (d1!=d2)
+			System.out.println(d1+" not equal to "+d2);
+		
+		StatisticManager sm=StatisticManager.getInstance();
+
+		sm.addStatistic(new MaxStatistic(".+configservermemory.+","#memory%",2));
+
+		LineProcessingLogs ln=new LineProcessingLogs(1, sm);
+		
+		try {
+			Files.lines(prnfile, StandardCharsets.ISO_8859_1).forEach(s->ln.processLine(s));
+			StatisticManager.getInstance().printStatData();
+
+		
+		
+		//sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		int value=(int) ((HashMap)stats.get("#New client connection")).get(timespot);
+		
+		assertTrue("Expected value of '#New client connection' statistic is 2",value==2);
+		
+		value=(int) ((HashMap)stats.get("SentReceived")).get(timespot);
+		
+		assertTrue("Expected value of 'SentReceived' statistic is 2852",value==2852);
+		
+		value=(int) ((HashMap)stats.get("#total clients")).get(timespot);
+		
+		assertTrue("Expected value of '#total clients' statistic is 267",value==267);
+				} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StatDataProcessor sdp=new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		sm.flush();
+
 		
 	}
 
