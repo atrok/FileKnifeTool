@@ -34,7 +34,7 @@ public class testLoadConfig {
 			
 			
 			
-			String filename = "statistic.properties";
+			String filename = "statistic.properties.ini";
 			input=getClass().getClassLoader().getResourceAsStream(filename);
 			if (input == null) {
 				System.out.println("Sorry, unable to find " + filename);

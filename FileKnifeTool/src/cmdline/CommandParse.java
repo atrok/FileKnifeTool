@@ -7,9 +7,13 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.Charset;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -56,7 +60,9 @@ public class CommandParse extends CommandImpl{
 	@Parameter(names = "-sample", description = "statdata sampling (1|10|60|24(h)) min", variableArity=false, required = false)
 	private int sampling=10;
 
-	//@Parameter(names = "-format", description = "format of output file (csv|sql)", variableArity=false, required = false)
+	@Parameter(names = "-statfile", description = "format of output file (csv|sql)", variableArity=false, required = false)
+	protected String statfile="statistic.properties.ini";
+	
 	protected String format="csv";
 
 	
@@ -94,7 +100,17 @@ public class CommandParse extends CommandImpl{
 		if(null==output){// make default filename
 			output="result_"+sampling+"_"+System.nanoTime()+"."+format;
 		}
-		String s = currentRelativePath.toAbsolutePath().toString()+"/"+output;
+		String s = currentRelativePath.toAbsolutePath().toString()+"\\results";
+		
+			try {
+				Files.createDirectory(Paths.get(s));
+			}catch(FileAlreadyExistsException e){
+				logger.info("No need to create "+Paths.get(s).toString()+", folder exists ");
+			}catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		s=s+"\\"+output;
 		logger.info("Result to be stored to : {}", s);
 		return Paths.get(s);
 	}
@@ -201,12 +217,12 @@ public class CommandParse extends CommandImpl{
     						        
 
     		File jarPath=new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
-            String propertiesPath=jarPath.getParentFile().getAbsolutePath();
+            String propertiesPath=jarPath.getParentFile().getAbsolutePath()+"\\conf";
             logger.debug(" propertiesPath: {} ",propertiesPath);
             //prop.load(new FileInputStream(propertiesPath+"/importer.properties"));				            
 
     						        
-    		String filename = propertiesPath+"/statistic.properties.ini";
+    		String filename = propertiesPath+"\\"+statfile;
     		//input = CommandParse.class.getClassLoader().getResourceAsStream(filename);
     		input=new FileInputStream(filename);
     		

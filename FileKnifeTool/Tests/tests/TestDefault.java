@@ -85,6 +85,37 @@ public class TestDefault {
 	}
 
 	@Test
+	public void testLoadingConfigFiles(){
+		CmdLineParser cmdParser = new CmdLineParser();
+		JCommander commander = cmdParser.getCommander();
+
+		try {
+			String testresult="testresult_"+System.nanoTime();
+			
+
+			String s = Paths.get("").toAbsolutePath().toString()+"\\results";
+			
+			commander.parse("genesys", "-d", resources.toAbsolutePath().toString(), "-ext", ".+config_proxy_person_cto_p_all.20150918_095313_510.log","-sample","10","-statfile","msgrate.properties.ini","-out",testresult);
+			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
+
+			assertTrue(cmd instanceof CommandParse);
+
+
+			
+			Map<String, String> results = run((CommandImpl) cmd).getStatData();
+			
+			
+			int i = Integer.valueOf(results.get("Found"));
+			assertTrue("ќжидаемое количество найденных файлов - 1, найдено " + i, i == 1);
+			assertTrue(Files.exists(Paths.get(s+"\\"+testresult)));
+		} catch (ParameterException ex) {
+			ex.printStackTrace();
+			commander.usage();
+			System.exit(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	}
+	@Test
 	public void testSeparator() {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();
