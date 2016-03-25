@@ -95,7 +95,7 @@ public class TestDefault {
 
 			String s = Paths.get("").toAbsolutePath().toString()+"\\results";
 			
-			commander.parse("genesys", "-d", resources.toAbsolutePath().toString(), "-ext", ".+config_proxy_person_cto_p_all.20150918_095313_510.log","-sample","10","-statfile","msgrate.properties.ini","-out",testresult);
+			commander.parse("genesys", "-d", resources.toAbsolutePath().toString(), "-ext", ".+config_proxy_person_cto_p_all.20150918_095313_510.log","-sample","10","-statfile","memory.properties.ini","-out",testresult);
 			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
 
 			assertTrue(cmd instanceof CommandParse);

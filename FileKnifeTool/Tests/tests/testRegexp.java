@@ -30,6 +30,8 @@ public class testRegexp {
 		matches(".+Trc\\s24301.+\\sClient.+\\sdisconnected.+","2015-09-18T09:56:03.216 Trc 24301 Extended info : Client [2068] disconnected, application [Inbox_Uniclass_Prod], type [InteractionWorkspace ], protocol [CFGLIB]");
 		matches(".+Trc\\s24300.+\\sclient.+\\sconnected.+","2015-09-18T09:53:39.953 Trc 24300 Extended info : New client [1888] connected, protocol [cfglib]");
 		
+		matches(".+Trc\\s04.+\\sClient.+\\sdisconnected.+","2015-09-18T09:56:03.216 Trc 24301 Extended info : Client [2068] disconnected, application [Inbox_Uniclass_Prod], type [InteractionWorkspace ], protocol [CFGLIB]");
+		
 		matches(".+\\]$","[CfgAgent Group]");
 		
 		matches(".+Std\\s+[0-9]{5,5}\\s.+","14:23:44.340 Std 04541 Message MSGCFG_CHANGEOBJECT received from 624 (SCE 'default')");
@@ -37,6 +39,8 @@ public class testRegexp {
 		matches("^MSGCFG.+[0-9]?","MSGCFG_REGISTEROBJECTTYPEEX2");
 		
 		matches("^[0-9T:.-]{12,}\\s(Trc|Std|Int|Dbg)\\s+[0-9]{5,5}\\s.+", "22:43:47.812 Std 22122 Client 197 failed to get authorization. Name [default], type [SCE], user [readonly], address [17.170.208.58:59643]. Reason : Authentication failed, user name or password is incorrect");
+		
+		matches(".+There are \\[[0-9]{3,}\\] objects of type.+CfgPerson.+","01:01:07.027 Trc 24215 There are [317333] objects of type [CfgPerson] sent to the client [27] (application [default], type [SCE])");
 		
 	}
 	

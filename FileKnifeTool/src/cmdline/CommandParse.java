@@ -139,7 +139,7 @@ public class CommandParse extends CommandImpl{
 	            stream.close();
 	            
 	            processed++;
-	            logger.info("procesed file: {}, {} sec", file, TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
+	            logger.info("processed file: {}, {} sec", file, TimeUnit.SECONDS.convert(System.nanoTime()-start, TimeUnit.NANOSECONDS));
 	            
 	            ln.getReport();
 	            

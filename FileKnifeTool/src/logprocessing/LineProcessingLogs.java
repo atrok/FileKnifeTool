@@ -41,7 +41,8 @@ public class LineProcessingLogs implements LineProcessing{
 	private jregex.Matcher jMatcher;
 	private jregex.Matcher jMatcherCheckpoint;
 	private jregex.Matcher jMatcherLocalTime;
-	private jregex.Pattern jPatternTimestamp=new jregex.Pattern(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN);
+	//private jregex.Pattern jPatternTimestamp=new jregex.Pattern(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN);
+	private jregex.Pattern jPatternTimestamp=new jregex.Pattern("^[0-9]{2,}[-:]");
 	private jregex.Pattern jPatternCheckpoint=new jregex.Pattern(REGEXP.PATTERN_CHECK_POINT);
 	private jregex.Pattern jPatternLocalTime=new jregex.Pattern(REGEXP.PATTERN_LOCAL_TIME);
 	private jregex.Pattern jPatternMatcherEnd=new jregex.Pattern("(.+(\\]|\\]"+REGEXP.PUNCT+")|(\\]\\)|\\]"+REGEXP.PUNCT+"))$");
@@ -98,16 +99,12 @@ public class LineProcessingLogs implements LineProcessing{
 			if (time_processing(sampling)){
 				
 			
-			//System.out.println("start_time: " + Arrays.toString(time.get("start_time")));
-			//System.out.println("end_time  : " + Arrays.toString(time.get("end_time")));
-
-			//boolean b = Pattern.matches(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN, split_line[0]);
 			//matcher=patternTimestamp.matcher(split_line[0]);
 			
-			jMatcher=jPatternTimestamp.matcher(split_line[0]);
+			//jMatcher=jPatternTimestamp.matcher(split_line[0]);22.03.16 why we need this check?
 			
 			//if (matcher.find()) {
-			if (jMatcher.find()) {
+			//if (jMatcher.find()) {//22.03.16
 				sec = sampling(sampling);
 
 				logger.trace("Obtained sampled timestamp:{}", sec);
@@ -130,7 +127,7 @@ public class LineProcessingLogs implements LineProcessing{
 					//System.exit(0);
 				}
 			}
-		 }
+		 //}// 22.03.16
 		} catch (PatternSyntaxException e) {
 			logger.error("Pattern error", e);
 		}

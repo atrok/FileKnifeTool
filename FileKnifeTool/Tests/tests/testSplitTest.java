@@ -30,9 +30,9 @@ import util.Benchmark;
 public class testSplitTest {
 	
 	Logger logger=LoggerFactory.getLogger(testSplitTest.class);
-	
+	String splitChars=":-";
 	Path file = Paths.get("Tests/resources/config_proxy_person_cto_p_all.20150918_095313_510.log");
-	private static final Splitter MY_SPLITTER = Splitter.on(' ')
+	private static final Splitter MY_SPLITTER = Splitter.onPattern("[-:]")
 		       .trimResults()
 		       .omitEmptyStrings();
 	
@@ -66,7 +66,7 @@ public class testSplitTest {
 			
 			Benchmark.tick();
 			
-			Files.lines(file, StandardCharsets.ISO_8859_1).forEach(s->StringUtils.split(s));
+			Files.lines(file, StandardCharsets.ISO_8859_1).forEach(s->StringUtils.split(s,splitChars));
 			
 			Benchmark.tock("Commons StringUtil split");
 			
