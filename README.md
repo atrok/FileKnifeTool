@@ -8,6 +8,10 @@ INSTALLATION:
 
 mvn clean install -Dmaven.test.skip=true
 
+to compile tests files:
+
+mvn test-compile
+
 2. create folder FileKnifeTool
 3. copy over FileKnifeTool.jar file from /target folder to /FileKnifeTool folder
 4. copy over /lib folder from /targetto /FileKnifeTool folder
