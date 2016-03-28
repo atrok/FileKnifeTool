@@ -357,7 +357,7 @@ public class LineProcessingLogs implements LineProcessing{
 				
 			//	matcher=patternMatcherStart.matcher(ss);
 			//	if (matcher.matches())
-				if (ss.charAt(0)=='[')
+				if (ss.charAt(0)=='['||ss.charAt(0)=='\'')
 					flag=true;
 				
 				if(flag)
@@ -368,7 +368,12 @@ public class LineProcessingLogs implements LineProcessing{
 				
 				//if (jMatcher.matches()){
 				
-				if (ss.charAt(ss.length()-1)==']'||(ss.length()>=2&&ss.charAt(ss.length()-2)==']')){// replacement for bracket regexp
+				if (ss.charAt(ss.length()-1)==']'
+						||ss.charAt(ss.length()-1)=='\''
+						||(ss.length()>=2&&ss.charAt(ss.length()-2)==']')
+						||(ss.length()>=2&&ss.charAt(ss.length()-2)=='\'')
+						
+						){// replacement for bracket regexp
 						
 					flag=false;
 					sb.deleteCharAt(sb.length()-1);

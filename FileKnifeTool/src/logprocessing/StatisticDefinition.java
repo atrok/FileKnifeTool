@@ -27,7 +27,11 @@ public abstract class StatisticDefinition {
 	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
 	private Pattern patterRemoveAllPunct=Pattern.compile("[\\d\\p{Punct}]");
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
-	private Pattern patternEndBrackets=Pattern.compile("([\\[\\(].+)|(.*[(\\s\\]|\\]|\\],)(\\)|\\),)]){1}");
+	//private jregex.Pattern patternEndBrackets=new jregex.Pattern("([\\[\\(].+)|(.*[(\\s\\]|\\]|\\],)(\\)|\\),)]){1}");
+	private jregex.Pattern patternOpenBrackets=new jregex.Pattern("^[\\[\\(\"\']");
+	private jregex.Pattern patternCommas=new jregex.Pattern("^[\"\'].+[\"\']$");
+	private jregex.Pattern patternEndBrackets=new jregex.Pattern("[(\\s\\]|\\]|\\],)(\\)|\\),)\'\"]$");
+	
 	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
 	private Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
 	private Pattern patternPunctButCommas=Pattern.compile("[^\\w\\.\\,]");
@@ -41,7 +45,14 @@ public abstract class StatisticDefinition {
 	private String[] nm;
 	private jregex.Matcher jMatcher;
 	
-	private char[] brackets=new char[]{'[','(',']',')'};
+	private char[][] brackets=new char[][]{
+			new char[]{'[',']'},
+			new char[]{'(',')'}
+	};
+	private Character closingBracket=new Character(' ');
+	
+	int bracketArray=-1;
+	int closingBracketInd;
 	
 	public StatisticDefinition(String regexp,String name){
 		
@@ -217,7 +228,7 @@ public abstract class StatisticDefinition {
 					||ss.charAt(0)=='['
 					)){// replacement for bracket regexp
 			*/	
-			if(!isBracketFound(ss,brackets)){
+			if(!isBracketFound(ss)){
 				String a = ss;
 				if (!matcherMSGCFG.matches())
 					a = patterRemoveAllPunct.matcher(line[i]).replaceAll("");
@@ -264,14 +275,59 @@ public abstract class StatisticDefinition {
 		return timegetstatvalue;
 	};
 
-	private boolean isBracketFound(String s,char[] brackets){
+	private boolean isBracketFound(String s){
+		
+		s=s.toLowerCase();
+		
+		boolean result=false;
 		char[] ch=s.toCharArray();
 		Arrays.sort(ch);
-		for (char c:brackets){
-		if(Arrays.binarySearch(ch, c)!=-1)
-			return true;
+		for (int i=0;i<brackets.length;i++){
+			
+			for(char c:brackets[i]){
+				int ind=Arrays.binarySearch(ch, c);
+				if(ind>=0){
+					
+						if(bracketArray==-1){
+							closingBracket=brackets[i][1];
+							bracketArray=i;
+						}
+						
+						if(c==closingBracket && bracketArray==i){
+							bracketArray=-1;
+							closingBracket=' ';
+						}
+						
+						result=true;
+				}
+			}
+			
 		}
-		return false;
+		
+		if (bracketArray!=-1) result=true;
+		
+		if (patternCommas.matcher(s).matches())result=true;
+		
+		return result;
 	}
-	
+
+	private boolean _isBracketFound(String s){
+		jMatcher=patternOpenBrackets.matcher(s);
+		boolean result=false;
+		if (jMatcher.find()) {
+			bracketArray=1;
+			result=true;
+		}
+		jMatcher=patternEndBrackets.matcher(s);
+		if (jMatcher.find()){
+			bracketArray=-1;
+			result=true;
+		}
+		
+		if (result==false&&bracketArray!=-1) result=true;
+		
+		return result;
+		
+		
+	}
 }

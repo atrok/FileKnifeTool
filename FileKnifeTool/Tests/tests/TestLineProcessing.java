@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -31,7 +32,7 @@ public class TestLineProcessing {
 	Path prnfile = Paths.get("Tests/resources/cs_performance_dec15-march16_memonly.prn");
 	Path csvfile= Paths.get("Tests/resources/result_test.csv");
 	
-	String timespot="2015:09:18:10:07";
+	String timespot="2015-09-18 10:07";
 	
 	static String[] linePatterns=new String[]{
 			"Local time:       2014-09-16T13:14:58.465",
@@ -57,8 +58,8 @@ public class TestLineProcessing {
 		StatisticManager sm=StatisticManager.getInstance();
 
 		sm.addStatistic(new IncrementalStatistic(".+Message.+(received from|sent to).+","SentReceived"));
-		sm.addStatistic(new IncrementalStatistic(".+04520.+client\\sconnected.+","#New client connection"));
-		sm.addStatistic(new IncrementalStatistic(".+Trc.+client.+disconnected.+","#Client disconnected"));
+		sm.addStatistic(new IncrementalStatistic(".+Trc\\s24300.+\\sclient.+\\sconnected.+","#New client connection"));
+		sm.addStatistic(new IncrementalStatistic(".+Trc.+Client.+disconnected.+","#Client disconnected"));
 		sm.addStatistic(new IncrementalStatistic(".+There are \\[[0-9]{3,}\\] objects of type.+","##ObjectSent  $9 <1000"));
 		//sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
 		sm.addStatistic(new AggregatingStatistic(".+Total number of clients.+","#total clients",5));
@@ -77,17 +78,15 @@ public class TestLineProcessing {
 		
 		
 		
-		int value=(int) ((HashMap)stats.get("#New client connection")).get(timespot);
+		//int value=(int) ((HashMap)stats.get("#New client connection")).get(timespot);
 		
-		assertTrue("Expected value of '#New client connection' statistic is 2",value==2);
+		assertTrue("Expected value of '#New client connection' statistic is 2",(double) ((HashMap)stats.get("#New client connection")).get(timespot)==2);
 		
-		value=(int) ((HashMap)stats.get("SentReceived")).get(timespot);
 		
-		assertTrue("Expected value of 'SentReceived' statistic is 2852",value==2852);
+		assertTrue("Expected value of 'SentReceived' statistic is 2852",(double) ((HashMap)stats.get("SentReceived")).get(timespot)==2852);
 		
-		value=(int) ((HashMap)stats.get("#total clients")).get(timespot);
 		
-		assertTrue("Expected value of '#total clients' statistic is 267",value==267);
+		assertTrue("Expected value of '#total clients' statistic is 267",(double) ((HashMap)stats.get("#total clients")).get(timespot)==267);
 				} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -111,11 +110,15 @@ public class TestLineProcessing {
 		System.out.println("------------ Variable Name testing -------------");
 		String[] lines=new String[]{
 			"13:16:54.058 Trc 04120 Check point 2014-09-16T13:16:54",
-			"15:00:10.448 Trc 24215 There are [187] objects of type [CfgApplication] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
+			"15:00:10.448 Trc 24215 There are [187] objects of type [CfgApplication] sent to the client [608] (application [UR Server 750], type [RouterServer])",
 			"15:00:11.107 Trc 24215 There are [108] objects of type [CfgDN] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
 			"15:00:11.375 Trc 24215 There are [445] objects of type [CfgPerson] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
-			"15:00:12.291 Trc 24215 There are [335] objects of type [CfgEnumeratorValue] sent to the client [608] (application [UR_Server_750], type [RouterServer])"
+			"15:00:12.291 Trc 24215 There are [335] objects of type [CfgEnumeratorValue] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
+			"09:56:19.456 Trc 04522 Client 2068 authorized, name 'Inbox_Uniclass_Prod', type 'InteractionWorkspace '"
+			
 		};
+		
+		String msgID="Trc 24215 There are objects of type sent to the client";
 		
 		StatisticManager sm=StatisticManager.getInstance();
 		IncrementalStatistic s=new IncrementalStatistic(".+There are \\[[0-9]{3,}\\] objects of type.+","##ObjectSent  $9 <1000");
@@ -140,6 +143,24 @@ public class TestLineProcessing {
 		
 		assertTrue("Expected value of SentReceived statistic is 4 but we got "+value,value==4);
 		
+		String[] statnames=(String[]) ((HashMap)stats).keySet().toArray(new String[]{});
+		
+		assertTrue("Expected statname '"+msgID+"' is not found\n"+Arrays.toString(statnames), inArray(statnames,msgID));
+		
+		assertTrue("Expected statname 'Trc 04522 Client authorized name type' is not found\n"+Arrays.toString(statnames), inArray(statnames,"Trc 04522 Client authorized name type"));
+		
+		assertTrue("Expected value of SentReceived statistic is 4 but we got "+value,value==4);
+		outputResult(sm);
+		
+	}
+
+	private boolean inArray(String[] statnames,Object key){
+		
+		Arrays.sort(statnames);
+		return (Arrays.binarySearch(statnames, key)>=0)? true : false;
+	}
+	private void outputResult(StatisticManager sm){
+		
 		StatDataProcessor sdp=new StatDataProcessorLogs();
 		
 		sdp.load(sm.getStatDataMap());
@@ -150,8 +171,9 @@ public class TestLineProcessing {
 		//System.out.println(Arrays.toString(sdp.getResult()));
 		sm.flush();
 		
-	}
-
+		}
+	
+	
 	@Test
 	public void testStatisticTrc24206Notification(){
 		System.out.println("------------ Trc24206Notification Name testing -------------");
