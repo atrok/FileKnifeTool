@@ -197,9 +197,19 @@ public class LineProcessingLogs implements LineProcessing{
 		
 			if (jMatcherCheckpoint.find()) {
 				
+				int checkInd=getIndexForArrElement(split_line,"Check");
+				
+				if (checkInd!=-1){// properly determined index position
+					checkInd=checkInd+2;
+				}else {
+					
+					logger.error(" 'Check' word isn't found where expected, interrupting!! {}",split_line);
+					return false;
+				};
+				
 				List<String> test = new ArrayList<String>(
 						Arrays.asList(
-								split_line[5].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP)
+								split_line[checkInd].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP)
 								));
 				 
 				//List<String> test=TIMESTAMP_SPLITTER.splitToList(split_line[5]);
@@ -387,5 +397,15 @@ public class LineProcessingLogs implements LineProcessing{
 			}
 			return list.toArray(new String[]{});
 		
+	}
+	
+	private int getIndexForArrElement(String[] arr,String str){
+		
+		for(int i=0;i<arr.length;i++){
+			if (arr[i].equals(str))
+					return i;
+		}
+		
+		return -1;
 	}
 }

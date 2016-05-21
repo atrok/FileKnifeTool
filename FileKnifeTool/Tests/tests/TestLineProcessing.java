@@ -29,6 +29,7 @@ import resultoutput.FileFromRecords;
 public class TestLineProcessing {
 
 	Path file = Paths.get("Tests/resources/config_proxy_person_cto_p_all.20150918_095313_510.log");//"Tests/resources/cs85.20151223_145909_388.log");
+	Path scsfile = Paths.get("Tests/resources/AMR_US_NWK_SCS_P.20160521_045633_239.log");//"Tests/resources/cs85.20151223_145909_388.log");
 	Path prnfile = Paths.get("Tests/resources/cs_performance_dec15-march16_memonly.prn");
 	Path csvfile= Paths.get("Tests/resources/result_test.csv");
 	
@@ -104,6 +105,57 @@ public class TestLineProcessing {
 
 		
 	}
+
+	
+	@Test
+	public void testSCSFile(){
+		StatisticManager sm=StatisticManager.getInstance();
+
+	//	sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
+		sm.addStatistic(new IncrementalStatistic(".+GCTI-00-04502   Cannot connect.+","$8"));
+
+		LineProcessingLogs ln=new LineProcessingLogs(24, sm);
+		
+		try {
+			Files.lines(scsfile, StandardCharsets.ISO_8859_1).forEach(s->ln.processLine(s));
+			StatisticManager.getInstance().printStatData();
+
+		
+		
+/*		//sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		//int value=(int) ((HashMap)stats.get("#New client connection")).get(timespot);
+		
+		assertTrue("Expected value of '#New client connection' statistic is 2",(double) ((HashMap)stats.get("#New client connection")).get(timespot)==2);
+		
+		
+		assertTrue("Expected value of 'SentReceived' statistic is 2852",(double) ((HashMap)stats.get("SentReceived")).get(timespot)==2852);
+		
+		
+		assertTrue("Expected value of '#total clients' statistic is 267",(double) ((HashMap)stats.get("#total clients")).get(timespot)==267);
+*/				} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StatDataProcessor sdp=new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		sm.flush();
+
+		
+	}
+
+	
 	
 	@Test
 	public void testStatisticDefinitionwithVariableMsgName(){
