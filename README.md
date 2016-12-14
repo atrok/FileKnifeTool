@@ -114,8 +114,8 @@ A set of metrics could be kept in the single stat file, in general case the resu
 In general Metric definition looks as follows:
 
 [<name> <optional calculation field>] - MUST
-stattype=<IncrementalStatistic|MaxStatistic|MinStatistic> - MUST
-regexp=<regular expression of the log line to be looked for> - MUST
+stattype=<IncrementalStatistic|MaxStatistic|MinStatistic> - MUST\n
+regexp=<regular expression of the log line to be looked for> - MUST\n
 field=<field num> - OPTIONAL
 
 Metric definition would vary depending on applied statistical type. Below are examples of possible stattypes
