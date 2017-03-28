@@ -31,6 +31,7 @@ import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticFactory;
 import logprocessing.StatisticManager;
 import logprocessing.StatisticParamNaming;
+import parameterizer.Parameterizer;
 import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
 import resultoutput.ResultOutput;
@@ -47,6 +48,9 @@ public class CommandParseFileWithSeparators extends CommandParse{
 
 	@Parameter(names = "-format", description = "format of output file (csv|sql)", variableArity=false, required = false)
 	private String format="csv";
+	
+	@Parameter(names = "-addname", description = "add <value:{begin|end|{int num}> to the parsed line at position)", variableArity=false, required = false)
+	private Parameterizer param;
 	
 	private ResultOutput result;
 	

@@ -134,7 +134,7 @@ public class CommandParse extends CommandImpl{
 			try {
 				Stream<String> stream = Files.lines(file.toPath(),Charset.defaultCharset());
 	            stream.forEach(s->{
-	            	ln.processLine(s);
+	            	ln.processLine(s,new String[]{file.getName()});
 	            });
 	            stream.close();
 	            

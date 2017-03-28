@@ -3,6 +3,7 @@ package tests;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,15 +12,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import org.junit.Test;
 
 import logprocessing.AggregatingStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessingLogs;
+import logprocessing.LineProcessingSeparators;
 import logprocessing.MaxStatistic;
 import logprocessing.MinStatistic;
 import logprocessing.StatDataProcessor;
+import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatisticManager;
 import logprocessing.SumStatistic;
@@ -32,6 +36,8 @@ public class TestLineProcessing {
 	Path scsfile = Paths.get("Tests/resources/AMR_US_NWK_SCS_P.20160521_045633_239.log");//"Tests/resources/cs85.20151223_145909_388.log");
 	Path prnfile = Paths.get("Tests/resources/cs_performance_dec15-march16_memonly.prn");
 	Path csvfile= Paths.get("Tests/resources/result_test.csv");
+	Path lmsfile= Paths.get("Tests/resources/common.lms");
+	Path sqlfile= Paths.get("Tests/resources/result_sql.sql");
 	
 	String timespot="2015-09-18 10:07";
 	
@@ -401,6 +407,33 @@ public class TestLineProcessing {
 		
 		sm.flush();
 
+		
+	}
+	
+	@Test
+	public void testLMSfile(){
+		
+		
+		LineProcessingSeparators ln= new LineProcessingSeparators('|');
+		StatDataProcessor sdp=StatDataProcessorFactory.getStatDataProcessor("sql");
+
+		try {
+
+		Files.lines(lmsfile,Charset.defaultCharset()).forEach(s->{
+        	ln.processLine(s,new String[]{lmsfile.getFileName().toString()});
+        });
+		
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		sdp.load(ln.getData());
+		FileFromRecords sql=new FileFromRecords(sdp, sqlfile);
+		
+		sql.outputResult();
+		
+		
 		
 	}
 

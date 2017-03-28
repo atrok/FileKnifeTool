@@ -25,16 +25,16 @@ public abstract class StatisticDefinition {
 	private Map rate = new TreeMap<String, HashMap>();
 	private jregex.Pattern patternLineMatcher;
 	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
-	private Pattern patterRemoveAllPunct=Pattern.compile("[\\d\\p{Punct}]");
+	private Pattern patterRemoveAllPunct=Pattern.compile(REGEXP.Log_Processing_RemoveSomePunct);
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
 	//private jregex.Pattern patternEndBrackets=new jregex.Pattern("([\\[\\(].+)|(.*[(\\s\\]|\\]|\\],)(\\)|\\),)]){1}");
-	private jregex.Pattern patternOpenBrackets=new jregex.Pattern("^[\\[\\(\"\']");
-	private jregex.Pattern patternCommas=new jregex.Pattern("^[\"\'].+[\"\']$");
-	private jregex.Pattern patternEndBrackets=new jregex.Pattern("[(\\s\\]|\\]|\\],)(\\)|\\),)\'\"]$");
+	private jregex.Pattern patternOpenBrackets=new jregex.Pattern(REGEXP.Log_Processing_OpenBrackets);
+	private jregex.Pattern patternCommas=new jregex.Pattern(REGEXP.Log_Processing_Commas);
+	private jregex.Pattern patternEndBrackets=new jregex.Pattern(REGEXP.Log_Processing_EndBrackets);
 	
-	private Pattern patternMSGCFG=Pattern.compile("^MSGCFG.+[0-9]?");
+	private Pattern patternMSGCFG=Pattern.compile(REGEXP.Log_Processing_MSGCFG);
 	private Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
-	private Pattern patternPunctButCommas=Pattern.compile("[^\\w\\.\\,]");
+	private Pattern patternPunctButCommas=Pattern.compile(REGEXP.Log_Processing_PunctButCommas);
 
 	private Matcher matcher;
 	private Matcher matcherBracket;

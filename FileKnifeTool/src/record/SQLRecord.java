@@ -25,10 +25,10 @@ public class SQLRecord extends Record{
 		
 		StringBuilder sb=new StringBuilder();
 		
-		sb.append("INSERT INTO "+this.table_name+" VALUES (\""+first_column+"\",");
+		sb.append("INSERT INTO "+this.table_name+" VALUES ('"+first_column+"',");
 		for(int i=0;i<values.size();i++){
 			String s=values.get(i).toString();
-			sb.append('"'+s+'"');
+			sb.append("'"+s+"'");
 			if ((values.size()-i)>1)
 				sb.append(',');
 		}

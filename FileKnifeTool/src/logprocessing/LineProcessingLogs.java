@@ -408,4 +408,12 @@ public class LineProcessingLogs implements LineProcessing{
 		
 		return -1;
 	}
+
+	@Override
+	public void processLine(String ln, String[] params) {
+		// TODO Auto-generated method stub
+		
+		processLine(ln);
+		
+	}
 }
