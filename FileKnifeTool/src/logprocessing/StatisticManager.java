@@ -21,6 +21,7 @@ public class StatisticManager {
 		StatisticFactory.instance().registerProduct("MaxStatistic",MaxStatistic.class);
 		StatisticFactory.instance().registerProduct("MinStatistic",MinStatistic.class);
 		StatisticFactory.instance().registerProduct("SumStatistic",SumStatistic.class);
+		StatisticFactory.instance().registerProduct("DurationStatistic",DurationStatistic.class);
 		
 
 	}

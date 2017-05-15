@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -37,6 +38,7 @@ import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessing;
 import logprocessing.LineProcessingLogs;
 import logprocessing.StatDataProcessor;
+import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticManager;
@@ -57,13 +59,14 @@ public class CommandParse extends CommandImpl{
 	@Parameter(names = "-out", description = "output filename", variableArity=false, required = false)
 	private String output;
 	
-	@Parameter(names = "-sample", description = "statdata sampling (1|10|60|24(h)) min", variableArity=false, required = false)
+	@Parameter(names = "-sample", description = "statdata sampling (0|1|10|60|24(h)) min", variableArity=false, required = false)
 	private int sampling=10;
 
-	@Parameter(names = "-statfile", description = "format of output file (csv|sql)", variableArity=false, required = false)
+	@Parameter(names = "-statfile", description = "name of file with statistics", variableArity=false, required = false)
 	protected String statfile="statistic.properties.ini";
 	
-	protected String format="csv";
+	@Parameter(names = "-format", description = "format of output file (csv|sql|stat|blocks)", variableArity=false, required = false)
+	protected String format="stat";
 
 	
 	protected StatDataProcessor sdp;
@@ -122,6 +125,7 @@ public class CommandParse extends CommandImpl{
 
 	  
 	protected int counter=0;
+	protected int counter_line=0;
 	protected int processed=0;
 	protected int failed=0;
 	protected Map<String,String> data=new HashMap<String,String>();
@@ -132,8 +136,9 @@ public class CommandParse extends CommandImpl{
 			long start=System.nanoTime();
 			
 			try {
-				Stream<String> stream = Files.lines(file.toPath(),Charset.defaultCharset());
-	            stream.forEach(s->{
+				//Stream<String> stream = Files.lines(file.toPath(),Charset.defaultCharset());
+				Stream<String> stream = Files.lines(file.toPath(),StandardCharsets.ISO_8859_1);
+	            stream.forEach(s->{counter_line++;
 	            	ln.processLine(s,new String[]{file.getName()});
 	            });
 	            stream.close();
@@ -145,8 +150,11 @@ public class CommandParse extends CommandImpl{
 	            
 	 		}catch(IOException e){
 	 			failed++;
-	 			data.put(e.toString(), file.getAbsolutePath());
-	 			e.printStackTrace();
+	 			data.put(e.toString(), file.getAbsolutePath()+"; Last processed line "+counter_line);
+	 			logger.error("Failed at line "+counter_line,e);
+	 			
+	 		}finally{
+	 			counter_line=0;
 	 		}
 
 	}
@@ -195,7 +203,7 @@ public class CommandParse extends CommandImpl{
 		// TODO Auto-generated method stub
 
 		ln=new LineProcessingLogs(sampling,sm);
-		sdp=new StatDataProcessorLogs();
+		sdp=StatDataProcessorFactory.getStatDataProcessor(format);
 		
 		// Load statistics from configuration file
 		

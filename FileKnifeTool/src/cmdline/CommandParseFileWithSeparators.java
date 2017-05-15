@@ -46,8 +46,8 @@ public class CommandParseFileWithSeparators extends CommandParse{
 	@Parameter(names = "-sep", description = "String separator, '|' is separator by default", variableArity=false, required = false)
 	private char separator='|';
 
-	@Parameter(names = "-format", description = "format of output file (csv|sql)", variableArity=false, required = false)
-	private String format="csv";
+	//@Parameter(names = "-format", description = "format of output file (csv|sql|blocks)", variableArity=false, required = false)
+	//private String format="csv";
 	
 	@Parameter(names = "-addname", description = "add <value:{begin|end|{int num}> to the parsed line at position)", variableArity=false, required = false)
 	private Parameterizer param;

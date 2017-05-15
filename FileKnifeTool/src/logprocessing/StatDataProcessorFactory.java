@@ -10,6 +10,8 @@ public class StatDataProcessorFactory {
 			return new StatDataProcessorSeparatorsSQL();
 		case "stat":
 			return new StatDataProcessorLogs();
+		case "block":
+			return new StatDataProcessorBlocks();
 				
 		}
 		return null;

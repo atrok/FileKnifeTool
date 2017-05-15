@@ -133,7 +133,22 @@ public class LineProcessingLogs implements LineProcessing{
 		}
 	}
 
-	/*
+    // time that tick() was called
+    static long tickTime;
+
+    // called at start of operation, for timing
+    static void tick () {
+        tickTime = System.nanoTime();
+    }
+
+    // called at end of operation, prints message and time since tick().
+    static void tock (String action) {
+        long mstime = (System.nanoTime() - tickTime) / 1000000;
+        System.out.println(action + ": " + mstime + "ms");
+    }	
+    
+    
+    /*
 	 * 
 	 * #this function is to be called on per line basis #it parses the line to
 	 * retrieve timestamp and returns array[]{yyyy,mm,dd,hh,mm,sec,msec} #use
@@ -148,19 +163,6 @@ public class LineProcessingLogs implements LineProcessing{
 	 * returns false if processing could be avoided
 	 */
 	
-    // time that tick() was called
-    static long tickTime;
-
-    // called at start of operation, for timing
-    static void tick () {
-        tickTime = System.nanoTime();
-    }
-
-    // called at end of operation, prints message and time since tick().
-    static void tock (String action) {
-        long mstime = (System.nanoTime() - tickTime) / 1000000;
-        System.out.println(action + ": " + mstime + "ms");
-    }
     
 	private boolean time_processing(int sampling) {
 		/*
@@ -294,10 +296,13 @@ public class LineProcessingLogs implements LineProcessing{
 		dest.put(index, t);
 	}
 
-	private String sampling(int sampling) {
+	protected String sampling(int sampling) {
 		String sec = "";
 		switch (sampling) {
-
+		
+		case 0: //as is
+			return time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
+					+ time.get("end_time")[3] + ":" + time.get("end_time")[4]+":"+time.get("end_time")[5]+"."+time.get("end_time")[6];
 		case 1:
 			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
 					+ time.get("end_time")[3] + ":" + time.get("end_time")[4]; // to

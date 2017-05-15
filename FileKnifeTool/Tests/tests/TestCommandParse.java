@@ -1,0 +1,145 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Map;
+
+import org.junit.Test;
+
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.ParameterException;
+
+import cmdline.CmdLineParser;
+import cmdline.Command;
+import cmdline.CommandImpl;
+import cmdline.CommandParse;
+import garbagecleaner.ProcessFilesFabric;
+import util.FilesUtil;
+
+public class TestCommandParse {
+
+
+	Path start = Paths.get("Tests/resources/");
+	Path resources = Paths.get("target/_temp/resources");
+	
+	@Test
+	public void testCmdParseSample10(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "config_proxy_person_cto_p_all.+.log",
+						"-sample","10",
+						null,null
+						},
+				1, // found files
+				"2015-09-18 09:50,31.0,18.0,21.0,0,16.0,3.0,0,16.0,16.0,16.0,16.0,29.0,173.0,1.0,1.0,3631.0,33.0,1.0,1.0,1528.0,0.0,16226.0,1.0,65.0,156.0,1.0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,364910.0,7.0,435.0,5456.0,15.0,280.0,62695.0,1895.0,80.0,122.0,30296.0,0.0,259616.0,16.0,1290.0,2496.0,173.0,16.0,29.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0");
+		
+
+	}
+
+	@Test
+	public void testCmdParse_Format_CSV(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "config_proxy_person_cto_p_all.+.log",
+						"-sample","10",
+						"-format","csv", /// it's not supported for 'genesys' mode
+						null,null
+						},
+				1, // found files
+				"2015-09-18 09:50,31.0,18.0,21.0,0,16.0,3.0,0,16.0,16.0,16.0,16.0,29.0,173.0,1.0,1.0,3631.0,33.0,1.0,1.0,1528.0,0.0,16226.0,1.0,65.0,156.0,1.0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,364910.0,7.0,435.0,5456.0,15.0,280.0,62695.0,1895.0,80.0,122.0,30296.0,0.0,259616.0,16.0,1290.0,2496.0,173.0,16.0,29.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0");
+		
+
+	}
+	
+	@Test
+	public void testCmdParse_Format_Block(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "AMR_US_Aus_ORS01_B.20170505_064008_819.log",
+						"-sample","0",
+						"-statfile","ors.duration.properties.ini",
+						"-format","block", 
+						null,null
+						},
+				1, // found files
+				"sid='01E6030IE0CGP8GFLJMMG4DAES0000P5,2204.0");
+		
+
+	}
+private void parse(String[] s, int foundfiles, String search) {
+		CmdLineParser cmdParser = new CmdLineParser();
+		JCommander commander = cmdParser.getCommander();
+
+		try {
+			
+			String testresult="testresult_"+System.nanoTime();
+			String path = Paths.get("").toAbsolutePath().toString()+"\\results";
+			
+			s[s.length-2]="-out";
+			s[s.length-1]=testresult;
+			
+			commander.parse(s);
+			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
+
+			assertTrue(cmd instanceof CommandParse);
+
+			
+			Map<String,String> results= run((CommandImpl) cmd).getStatData();
+			
+			int i = Integer.valueOf(results.get("Found"));
+			assertTrue("ќжидаемое количество найденных файлов - "+foundfiles+", найдено " + i, i == foundfiles);
+			assertTrue(Files.exists(Paths.get(path+"\\"+testresult)));
+
+			String[] result=FilesUtil.read(new FileInputStream((path+"\\"+testresult)));
+			
+			assertTrue(true==contains(result, search));
+
+		} catch (ParameterException ex) {
+			ex.printStackTrace();
+			commander.usage();
+			System.exit(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private CommandImpl run(CommandImpl cmd) {
+		cmd.getExtensions().forEach(s -> {
+			ProcessFilesFabric.create((CommandImpl) cmd, s).start(cmd.getPaths());
+
+		});
+		return cmd;
+	}
+	
+	private boolean contains(String[] arr, String search){
+		
+		for(String s: arr)
+			if (search.equals(s))
+				return true;
+		return false;
+	}
+	
+
+}

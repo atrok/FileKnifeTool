@@ -17,14 +17,17 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 import logprocessing.AggregatingStatistic;
+import logprocessing.DurationStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessingLogs;
 import logprocessing.LineProcessingSeparators;
 import logprocessing.MaxStatistic;
 import logprocessing.MinStatistic;
 import logprocessing.StatDataProcessor;
+import logprocessing.StatDataProcessorBlocks;
 import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorLogs;
+import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticManager;
 import logprocessing.SumStatistic;
 import resultoutput.FileFromArrays;
@@ -34,6 +37,7 @@ public class TestLineProcessing {
 
 	Path file = Paths.get("Tests/resources/config_proxy_person_cto_p_all.20150918_095313_510.log");//"Tests/resources/cs85.20151223_145909_388.log");
 	Path scsfile = Paths.get("Tests/resources/AMR_US_NWK_SCS_P.20160521_045633_239.log");//"Tests/resources/cs85.20151223_145909_388.log");
+	Path orsfile = Paths.get("R:\\Apple\\ORS\\5thmayloadtest\\unpacked\\AMR_US_Aus_ORS01_B\\AMR_US_Aus_ORS01_B.20170505_100442_331.log");//"Tests/resources/cs85.20151223_145909_388.log");
 	Path prnfile = Paths.get("Tests/resources/cs_performance_dec15-march16_memonly.prn");
 	Path csvfile= Paths.get("Tests/resources/result_test.csv");
 	Path lmsfile= Paths.get("Tests/resources/common.lms");
@@ -161,7 +165,53 @@ public class TestLineProcessing {
 		
 	}
 
-	
+	@Test
+	public void testORSFile(){
+		StatisticManager sm=StatisticManager.getInstance();
+
+	//	sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgID"));
+		sm.addStatistic(new IncrementalStatistic(".+appl_begin.+","appl_begin"));
+
+		LineProcessingLogs ln=new LineProcessingLogs(24, sm);
+		
+		try {
+			Files.lines(orsfile, StandardCharsets.ISO_8859_1).forEach(s->ln.processLine(s));
+			StatisticManager.getInstance().printStatData();
+
+		
+		
+/*		//sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		//int value=(int) ((HashMap)stats.get("#New client connection")).get(timespot);
+		
+		assertTrue("Expected value of '#New client connection' statistic is 2",(double) ((HashMap)stats.get("#New client connection")).get(timespot)==2);
+		
+		
+		assertTrue("Expected value of 'SentReceived' statistic is 2852",(double) ((HashMap)stats.get("SentReceived")).get(timespot)==2852);
+		
+		
+		assertTrue("Expected value of '#total clients' statistic is 267",(double) ((HashMap)stats.get("#total clients")).get(timespot)==267);
+*/				} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StatDataProcessor sdp=new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		sm.flush();
+
+		
+	}	
 	
 	@Test
 	public void testStatisticDefinitionwithVariableMsgName(){
@@ -437,4 +487,50 @@ public class TestLineProcessing {
 		
 	}
 
+	@Test
+	public void testDurationStatistic(){
+		System.out.println("------------ Duration Statistic testing -------------");
+		String statname="#duration";
+		
+		String[] lines=new String[]{
+				"Local time:       2017-05-05T06:40:08.819",
+				"06:42:29.034 [T:140286721910528] {ScxmlMetric:1} METRIC <appl_begin sid='01E6030IE0CGP8GFLJMMG4DAES0000P5' />",
+				"06:41:20.808 [T:140286679947008] {ScxmlMetric:1} METRIC <appl_begin sid='01E6030IE0CGP8GFLJMMG4DAES0000P1' />",
+				"06:42:31.238 [T:140286730303232] {ScxmlMetric:1} METRIC <appl_end sid='01E6030IE0CGP8GFLJMMG4DAES0000P5' name='AC_SIP_Refer.AC_SIP_Refer' url='https://cctech-ors-amr.corp.apple.com/AC_SIP_Refer_1_2_2/src-gen/IPD_A C_SIP_Refer_AC_SIP_Refer.scxml' reason='normal' />",
+				"06:41:23.974 [T:140286696732416] {ScxmlMetric:1} METRIC <appl_end sid='01E6030IE0CGP8GFLJMMG4DAES0000P1' name='RONA_RedirToQueue.RONA_RedirToQueue'"
+		};
+		
+		StatisticManager sm=StatisticManager.getInstance();
+		
+		sm.addStatistic(new DurationStatistic(".+(appl_begin|appl_end).+",statname,"5"));
+		
+		
+		int sampling =0;
+		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
+		
+		for(String l: lines){
+			ln.processLine(l);
+		}
+		
+		sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		double value=(double) ((HashMap)stats.get(statname)).get("sid='01E6030IE0CGP8GFLJMMG4DAES0000P5");
+		
+		assertTrue("Expected value of statistic is 2204, but we got "+value,value==2204);
+		
+		
+		StatDataProcessor sdp=new StatDataProcessorBlocks();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		//System.out.println(Arrays.toString(sdp.getResult()));
+		sm.flush();
+		
+	}
 }

@@ -121,7 +121,10 @@ public class TestDefault {
 		JCommander commander = cmdParser.getCommander();
 
 		try {
-			commander.parse("lms", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","csv");
+			String testresult="testresult_"+System.nanoTime();
+			String s = Paths.get("").toAbsolutePath().toString()+"\\results";
+			
+			 commander.parse("lms", "-d", resources.toAbsolutePath().toString(), "-ext", ".+\\.lms", "-format","csv","-out",testresult);
 			Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
 
 			assertTrue(cmd instanceof CommandParseFileWithSeparators);
@@ -129,8 +132,8 @@ public class TestDefault {
 			Map<String, String> results = run((CommandImpl) cmd).getStatData();
 
 			int i = Integer.valueOf(results.get("Found"));
-			assertTrue("ќжидаемое количество найденных файлов - 1, найдено " + i, i == 1);
-
+			assertTrue("ќжидаемое количество найденных файлов - 2, найдено " + i, i == 2);
+			assertTrue(Files.exists(Paths.get(s+"\\"+testresult)));
 		} catch (ParameterException ex) {
 			ex.printStackTrace();
 			commander.usage();
@@ -155,7 +158,7 @@ public class TestDefault {
 			Map<String, String> results = run((CommandImpl) cmd).getStatData();
 
 			int i = Integer.valueOf(results.get("Found"));
-			assertTrue("ќжидаемое количество найденных файлов - 1, найдено " + i, i == 1);
+			assertTrue("ќжидаемое количество найденных файлов - 2, найдено " + i, i == 2);
 
 		} catch (ParameterException ex) {
 			ex.printStackTrace();

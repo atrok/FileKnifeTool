@@ -1,5 +1,6 @@
 package logprocessing;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import util.DateTime;
 import util.FilesUtil;
 import jregex.*;
 
@@ -329,5 +331,59 @@ public abstract class StatisticDefinition {
 		return result;
 		
 		
+	}
+	
+	class Block{
+		
+		String id;
+		
+		ArrayList<Line> lines=new ArrayList<Line>();
+		
+		Block (String id){
+			this.id=id;
+		}
+		public Line getLine(int i){
+			return lines.get(i);
+		}
+		
+		public boolean addLine(Line l){
+			return lines.add(l);
+		}
+		
+		public int getSize(){
+			
+			return lines.size();
+			
+		}
+		public long getDuration() {
+			// TODO Auto-generated method stub
+			
+			long duration=DateTime.getTimeDifference(
+					lines.get(0).getTime(), 
+					lines.get(getSize()-1).getTime());
+			return duration;
+		}
+		
+	}
+	
+	class Line{
+		
+		String time;
+
+		String[] splitline;
+
+		Line(String... splitline){
+			this.splitline=splitline;
+		}
+		
+		public String getTime() {
+			return time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+
 	}
 }
