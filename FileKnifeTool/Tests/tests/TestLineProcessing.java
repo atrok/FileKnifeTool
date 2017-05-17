@@ -582,4 +582,52 @@ public void testLineProcessingSimple(){
 	sm.flush();
 	
 }
+
+@SuppressWarnings("rawtypes")
+@Test
+public void testLineProcessingSimple_Numbers(){
+	System.out.println("------------ LineProcessing Simple testing -------------");
+	String statname="$1"; //AttributeErrorCode      223
+						//    0						1			
+	
+	String[] lines=new String[]{
+		    " AttributeErrorCode      56",
+		    
+	};
+	
+	StatisticManager sm=StatisticManager.getInstance();
+	
+	sm.addStatistic(new IncrementalStatistic(".+AttributeErrorCode.+",statname));
+	
+	
+	int sampling =0;
+	LineProcessingSimple ln=new LineProcessingSimple(sampling, sm);
+	
+	for(String l: lines){
+		ln.processLine(l);
+	}
+	
+	sm.printStatData();
+	
+	Map<String, HashMap> stats = sm.getStatDataMap();
+	
+	
+	
+	double value=(double) ((HashMap)stats.get("56")).get("simple");
+	
+	assertTrue("Expected value of statistic is 1, but we got "+value,value==1);
+	
+	
+	StatDataProcessor sdp=new StatDataProcessorBlocks();
+	sdp.load(sm.getStatDataMap());
+	FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+	
+	csv.outputResult();
+	
+	//System.out.println(Arrays.toString(sdp.getResult()));
+	sm.flush();
+	
+}
+
+
 }

@@ -128,6 +128,28 @@ public class TestCommandParse {
 	}
 
 	@Test
+	public void testCmdParse_Processor_Simple_Format_Table_NumberAsName(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-sample","0",
+						"-statfile","urs.errors.properties.ini",
+						"-format","table", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				"223,1.0");
+		
+
+	}
+	
+	@Test
 	public void testCmdParse_Process_Simple_Format_Block(){
 	
 

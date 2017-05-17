@@ -32,8 +32,9 @@ public class LineProcessingSimple implements LineProcessing{
 	public void processLine(String ln) {
 		// TODO Auto-generated method stub
 		String[] split_line;
-
-		split_line=StringUtils.split(ln, ' ');
+		
+		split_line=StringUtils.split(ln, null);
+		
 
 		try{
 		Iterator<?> m = sm.getStatisticsList().iterator();
