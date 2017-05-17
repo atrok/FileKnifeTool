@@ -15,7 +15,9 @@ public class CmdLineParser {
 	JCommander jc;
 	private Logger logger=LoggerFactory.getLogger(CmdLineParser.class);
 	
-	static Map<String,Command> commands;
+	static Map<String,Command> commands=new HashMap<String,Command>();
+
+	/*
 	static{
 		commands=new HashMap<String,Command>();
 		commands.put("delete", new CommandDelete());
@@ -23,7 +25,7 @@ public class CmdLineParser {
 		commands.put("genesys", new CommandParse());
 		commands.put("lms", new CommandParseFileWithSeparators());
 	}
-
+*/
 	public CmdLineParser(){
 		jc=new JCommander();
 		
@@ -36,6 +38,12 @@ public class CmdLineParser {
 	
 	public void addCommands(){
 		
+		//commands=new HashMap<String,Command>();
+		commands.put("delete", new CommandDelete());
+		commands.put("print", new CommandPrint());
+		commands.put("genesys", new CommandParse());
+		commands.put("lms", new CommandParseFileWithSeparators());
+
 		for (Entry<String, Command> entry : commands.entrySet())
 		{
 			  jc.addCommand(entry.getKey(),entry.getValue());
@@ -53,5 +61,11 @@ public class CmdLineParser {
 			logger.error("command with name '{}' is not found, check your command line arguments", cmd);
 			return null;
 		}
+	}
+	
+	public void flush(){
+		
+		commands.clear();
+		
 	}
 }

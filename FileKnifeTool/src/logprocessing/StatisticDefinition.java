@@ -24,6 +24,8 @@ public abstract class StatisticDefinition {
 	private String regexp="";
 	private String varname="";
 	private String name="";
+	private String column="simple";
+	
 	private Map rate = new TreeMap<String, HashMap>();
 	private jregex.Pattern patternLineMatcher;
 	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
@@ -71,6 +73,19 @@ public abstract class StatisticDefinition {
 	public StatisticDefinition(String name, Map<String,String> parameters){
 		
 		this.regexp=parameters.get(StatisticParamNaming.REGEXP.toString());
+		
+		/*
+		 * if parameter column is specified in stat properties, it means we want to use a specific name for a column (for instance with format=simple)
+		 * then we will check updatestat requests to see if the call to update stat value comes with sampled_timeframe or not
+		 * if it's null we put value of column variable instead. 
+		 * 
+		 * if request has sampled_timeframe empty, but column field is not defined in stat properties then "simple" name is used by default;
+		 * 
+		 */
+		String c=parameters.get(StatisticParamNaming.COLUMN.toString());
+		if (c!=null)
+			this.column=c;
+		
 		this.varname=this.name=name;
 		this.patternLineMatcher=new jregex.Pattern(getRegexp());
 		nm=varname.split(REGEXP.SPACES);
@@ -138,13 +153,17 @@ public abstract class StatisticDefinition {
 		
 		
 	}
-	
-	protected void updateStatValue(double new_value, String sampled_timeframe){
+	private String checkColumn(String name){
+		if(null==name)
+			return column;
+		return name;
+	}
+	protected void updateStatValue(double new_value, String column){
 		
 			//rate.put(getName(), ((Map)rate.get(getName())).put(sampled_timeframe,value));
 			
 			Map t= (Map)rate.get(getName());
-			t.put(sampled_timeframe, new_value);
+			t.put(checkColumn(column), new_value);
 			rate.put(getName(),t);
 			
 	}
@@ -152,6 +171,8 @@ public abstract class StatisticDefinition {
 	 * returns last value of requested statistic or null if not found
 	 */
 	protected Double getStatValue(String line, String[] splitline, String sampled_timeframe){
+		
+		String column=checkColumn(sampled_timeframe);
 		
 		long start=System.nanoTime();
 		
@@ -169,11 +190,11 @@ public abstract class StatisticDefinition {
 			
 			t=(Map) rate.get(getName());
 			
-			if (!t.containsKey(sampled_timeframe)){
-				t.put(sampled_timeframe, (double) 0);
+			if (!t.containsKey(column)){
+				t.put(column, (double) 0);
 			}
 			timegetstatvalue=System.nanoTime()-start;
-			return t.get(sampled_timeframe);
+			return t.get(column);
 		//}
 		//timegetstatvalue=System.nanoTime()-start;
 		//return null;

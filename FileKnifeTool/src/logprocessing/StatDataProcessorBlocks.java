@@ -5,6 +5,7 @@ import java.util.Set;
 
 import record.Header;
 import record.Record;
+import record.SimpleRecord;
 
 public class StatDataProcessorBlocks extends StatDataProcessor {
 
@@ -25,10 +26,10 @@ public class StatDataProcessorBlocks extends StatDataProcessor {
 
 				for(String recordKEY: recordsID){
 					
-					Header record=(Header)resultR[k];
+					SimpleRecord record=(SimpleRecord)resultR[k];
 					
 					if(record==null)
-						record=new Header(recordKEY);
+						record=new SimpleRecord(recordKEY);
 					
 					record.addValue(h.get(recordKEY));
 					resultR[k]=record;

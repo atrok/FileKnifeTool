@@ -12,7 +12,8 @@ public abstract class Record implements Comparable{
 	}
 	
 	public void addValue(Object v){
-		values.add(v);
+		
+			values.add(v);
 	}
 
 	public void putValue(int index,Object v){

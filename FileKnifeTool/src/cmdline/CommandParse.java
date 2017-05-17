@@ -33,9 +33,11 @@ import org.slf4j.LoggerFactory;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 
+import garbagecleaner.ENUMERATIONS;
 import logprocessing.AggregatingStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessing;
+import logprocessing.LineProcessingFactory;
 import logprocessing.LineProcessingLogs;
 import logprocessing.StatDataProcessor;
 import logprocessing.StatDataProcessorFactory;
@@ -65,8 +67,11 @@ public class CommandParse extends CommandImpl{
 	@Parameter(names = "-statfile", description = "name of file with statistics", variableArity=false, required = false)
 	protected String statfile="statistic.properties.ini";
 	
-	@Parameter(names = "-format", description = "format of output file (csv|sql|stat|blocks)", variableArity=false, required = false)
+	@Parameter(names = "-format", description = "format of output file (csv|sql|stat|blocks|table)", variableArity=false, required = false)
 	protected String format="stat";
+	
+	@Parameter(names = "-processor", description = "type of line processor (time|simple)", variableArity=false, required = false)
+	protected String processor=ENUMERATIONS.ProcessorTIME;
 
 	
 	protected StatDataProcessor sdp;
@@ -82,7 +87,6 @@ public class CommandParse extends CommandImpl{
 		super();
 		// TODO Auto-generated constructor stub
 		//ln=new LineProcessing(getSampling(),sm);
-		
 	}
 
 
@@ -202,7 +206,7 @@ public class CommandParse extends CommandImpl{
 	public void init() {
 		// TODO Auto-generated method stub
 
-		ln=new LineProcessingLogs(sampling,sm);
+		ln=LineProcessingFactory.getInstance(processor, sampling, sm);
 		sdp=StatDataProcessorFactory.getStatDataProcessor(format);
 		
 		// Load statistics from configuration file

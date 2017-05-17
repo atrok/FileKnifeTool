@@ -1,5 +1,7 @@
 package logprocessing;
 
+import garbagecleaner.ENUMERATIONS;
+
 public class StatDataProcessorFactory {
 	
 	public static StatDataProcessor getStatDataProcessor(String s){
@@ -12,7 +14,8 @@ public class StatDataProcessorFactory {
 			return new StatDataProcessorLogs();
 		case "block":
 			return new StatDataProcessorBlocks();
-				
+		case ENUMERATIONS.FORMAT_TABLE:
+			return new StatDataProcessorTest();		
 		}
 		return null;
 	}

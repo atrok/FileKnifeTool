@@ -21,6 +21,7 @@ import logprocessing.DurationStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessingLogs;
 import logprocessing.LineProcessingSeparators;
+import logprocessing.LineProcessingSimple;
 import logprocessing.MaxStatistic;
 import logprocessing.MinStatistic;
 import logprocessing.StatDataProcessor;
@@ -533,4 +534,52 @@ public class TestLineProcessing {
 		sm.flush();
 		
 	}
+
+
+@SuppressWarnings("rawtypes")
+@Test
+public void testLineProcessingSimple(){
+	System.out.println("------------ LineProcessing Simple testing -------------");
+	String statname="$3"; //_I_I_0075029c371116ec [14:33] strategy: *0x65*RP_90011_CMP_GrupoT_01 (2414814088) is attached to the call
+						//    0						1			2		3
+	
+	String[] lines=new String[]{
+		    "_I_I_0075029c371116ec [14:33] strategy: *0x65*RP_90011_CMP_GrupoT_01 (2414814088) is attached to the call",
+		    "_I_I_0075029c371115ee [14:33] strategy: *0x65*RP_90015_CMP_GrupoT_05_PruebaA (4257837752) is attached to the call"
+		    
+	};
+	
+	StatisticManager sm=StatisticManager.getInstance();
+	
+	sm.addStatistic(new IncrementalStatistic(".+strategy:.+is attached to the call",statname));
+	
+	
+	int sampling =0;
+	LineProcessingSimple ln=new LineProcessingSimple(sampling, sm);
+	
+	for(String l: lines){
+		ln.processLine(l);
+	}
+	
+	sm.printStatData();
+	
+	Map<String, HashMap> stats = sm.getStatDataMap();
+	
+	
+	
+	double value=(double) ((HashMap)stats.get("*0x65*RP_90011_CMP_GrupoT_01")).get("simple");
+	
+	assertTrue("Expected value of statistic is 1, but we got "+value,value==1);
+	
+	
+	StatDataProcessor sdp=new StatDataProcessorBlocks();
+	sdp.load(sm.getStatDataMap());
+	FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+	
+	csv.outputResult();
+	
+	//System.out.println(Arrays.toString(sdp.getResult()));
+	sm.flush();
+	
+}
 }

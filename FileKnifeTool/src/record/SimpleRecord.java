@@ -1,17 +1,12 @@
 package record;
 
-public class Header extends Record{
-
-	public Header(String timestamp) {
-		super(timestamp);
+public class SimpleRecord extends Record{
+	
+	public SimpleRecord(String first_column) {
+		super(first_column);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void addValue(Object v){
-		if (!values.contains(v))   /// Header may contain unique names of columns only;
-			values.add(v);
-	}
-	
 	@Override
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
@@ -23,5 +18,6 @@ public class Header extends Record{
 		// TODO Auto-generated method stub
 		return getZeroColumnName().compareTo(arg0.getZeroColumnName());
 	}
+
 
 }
