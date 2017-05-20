@@ -3,6 +3,9 @@ package logprocessing;
 import java.util.HashMap;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import garbagecleaner.ENUMERATIONS;
 import record.Header;
 import record.Record;
@@ -10,6 +13,7 @@ import record.SimpleRecord;
 
 public class StatDataProcessorTest extends StatDataProcessor {
 
+	private Logger logger=LoggerFactory.getLogger(StatDataProcessorTest.class);
 	@Override
 	public void process() {
 		// 
@@ -18,6 +22,7 @@ public class StatDataProcessorTest extends StatDataProcessor {
 			Header topHeader=new Header(ENUMERATIONS.COLUMN_ID);
 			
 			int k=1;
+			try{
 			for(String statName: stats){
 				
 					HashMap keyvalue_pairs=(HashMap)statdata.get(statName);
@@ -45,7 +50,10 @@ public class StatDataProcessorTest extends StatDataProcessor {
 					k++;
 			}
 			
-
+			}catch(NullPointerException exc){
+				logger.error("Statistic collection is likely empty, check the regular expression in statistic definition",exc);
+			}
+			
 		}
 
 	

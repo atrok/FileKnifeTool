@@ -124,7 +124,7 @@ public class LineProcessingLogs implements LineProcessing{
 					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
 					logger.error(ln);
 					logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}",e);
-					//System.exit(0);
+					System.exit(0);
 				}
 			}
 		 //}// 22.03.16

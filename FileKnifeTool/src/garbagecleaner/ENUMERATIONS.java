@@ -7,5 +7,6 @@ public class ENUMERATIONS {
 	public static final String COLUMN_ID = "ID";
 	public static final String ProcessorTest = "table";
 	public static final String FORMAT_TABLE = "table";
+	public static final Object STATDEF_MSGID = "msgid";
 	
 }

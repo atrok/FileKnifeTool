@@ -263,6 +263,46 @@ public class TestLineProcessing {
 		
 	}
 
+	@Test
+	public void testStatisticDefinition_MSGID_simple(){
+		System.out.println("------------ Variable Name testing -------------");
+		String[] lines=new String[]{
+			"13:16:54.058 Trc 04120 Check point 2014-09-16T13:16:54",
+			"15:00:10.448 Trc 24215 There are [187] objects of type [CfgApplication] sent to the client [608] (application [UR Server 750], type [RouterServer])",
+			"15:00:11.107 Trc 24215 There are [108] objects of type [CfgDN] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
+			"15:00:11.375 Trc 24215 There are [445] objects of type [CfgPerson] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
+			"15:00:12.291 Trc 24215 There are [335] objects of type [CfgEnumeratorValue] sent to the client [608] (application [UR_Server_750], type [RouterServer])",
+			"09:56:19.456 Trc 04522 Client 2068 authorized, name 'Inbox_Uniclass_Prod', type 'InteractionWorkspace '"
+			
+		};
+		
+		String msgID="Trc 24215 There are objects of type sent to the client";
+		
+		StatisticManager sm=StatisticManager.getInstance();
+		sm.addStatistic(new IncrementalStatistic(".+(Trc|Std|Int|Dbg).+","$msgid"));
+
+		
+		int sampling =1;
+		LineProcessingSimple ln=new LineProcessingSimple(sampling, sm);
+		
+		for(String l: lines){
+			ln.processLine(l);
+		}
+		
+		sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		double value=(double) ((HashMap)stats.get("Trc 04120 Check point")).get("simple");
+		
+		assertTrue("Expected value of SentReceived statistic is 1 but we got "+value,value==1);
+		
+		outputResult(sm);
+		
+	}
+
 	private boolean inArray(String[] statnames,Object key){
 		
 		Arrays.sort(statnames);

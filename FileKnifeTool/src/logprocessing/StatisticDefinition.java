@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import garbagecleaner.ENUMERATIONS;
 import util.DateTime;
 import util.FilesUtil;
 import jregex.*;
@@ -39,6 +40,8 @@ public abstract class StatisticDefinition {
 	private Pattern patternMSGCFG=Pattern.compile(REGEXP.Log_Processing_MSGCFG);
 	private Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
 	private Pattern patternPunctButCommas=Pattern.compile(REGEXP.Log_Processing_PunctButCommas);
+	
+	private Pattern patternDigitPunct=Pattern.compile(REGEXP.DIGIT_PUNCT);
 
 	private Matcher matcher;
 	private Matcher matcherBracket;
@@ -48,6 +51,7 @@ public abstract class StatisticDefinition {
 	private long timegetstatvalue;
 	private String[] nm;
 	private jregex.Matcher jMatcher;
+	private String[] foundGroups;
 	
 	private char[][] brackets=new char[][]{
 			new char[]{'[',']'},
@@ -82,6 +86,7 @@ public abstract class StatisticDefinition {
 		 * if request has sampled_timeframe empty, but column field is not defined in stat properties then "simple" name is used by default;
 		 * 
 		 */
+		
 		String c=parameters.get(StatisticParamNaming.COLUMN.toString());
 		if (c!=null)
 			this.column=c;
@@ -112,6 +117,10 @@ public abstract class StatisticDefinition {
  *   where $9 represents 9th element of array representing the line
  *   # 12:16:48.843 Trc 24215 There are [1] objects of type [CfgHost] sent to the client [1132] (application [Workspace], type [InteractionWorkspace ])
  *   	0			1		2	3	4	5	6		7	8		9	
+ *   or
+ *   "#ObjectSent" $name ">1000" 
+ *   where $name represents the name of the regex group (?<name>X)
+ *   
  */
 	private void generateMsgID(String[] line){
 		char dollar='$';
@@ -128,7 +137,7 @@ public abstract class StatisticDefinition {
 			if (dollar == nm[i].charAt(0)){// find variable
 				variable=nm[i].substring(1);		
 			
-				if (variable.equals("msgID")){
+				if (variable.toLowerCase().equals(ENUMERATIONS.STATDEF_MSGID)){
 					
 					
 					//if (Pattern.matches(".+Message.+",line[3]))
@@ -137,9 +146,14 @@ public abstract class StatisticDefinition {
 		
 			
 				if (FilesUtil.isNumeric(variable)){
-					variable=line[new Integer(variable)]; // numeric variable is a position of the word in the line, we need to substitute it now
-					//matcherSomePunct=patternRemoveSomePunct.matcher(variable);
-					variable=patternRemoveSomePunct.matcher(variable).replaceAll(""); //remove all ,.;: 
+					if(jMatcher.groupCount()>1){//found groups in matched regex
+						variable=foundGroups[new Integer(variable)];
+					}else{
+						variable=line[new Integer(variable)]; // numeric variable is a position of the word in the line, we need to substitute it now
+						//matcherSomePunct=patternRemoveSomePunct.matcher(variable);
+						variable=patternRemoveSomePunct.matcher(variable).replaceAll(""); //remove all ,.;:
+					
+					}
 					name=varname.replace(nm[i], variable);
 					
 				}
@@ -158,6 +172,8 @@ public abstract class StatisticDefinition {
 			return column;
 		return name;
 	}
+	
+	
 	protected void updateStatValue(double new_value, String column){
 		
 			//rate.put(getName(), ((Map)rate.get(getName())).put(sampled_timeframe,value));
@@ -205,7 +221,11 @@ public abstract class StatisticDefinition {
 	protected boolean isMatched(String line){
 		
 		jMatcher=patternLineMatcher.matcher(line);
-		return jMatcher.matches();
+		boolean b=jMatcher.matches();
+		if(b)
+			foundGroups=jMatcher.groups();
+		
+		return b;
 		
 	}
 	
@@ -253,9 +273,10 @@ public abstract class StatisticDefinition {
 			*/	
 			if(!isBracketFound(ss)){
 				String a = ss;
-				if (!matcherMSGCFG.matches())
+				if (!matcherMSGCFG.matches()){
 					a = patterRemoveAllPunct.matcher(line[i]).replaceAll("");
-				if (a.length()>0)
+				}
+				if (a.length()>0 && !patternDigitPunct.matcher(a).find())
 					sb.append(" " + a);
 				logger.trace("String {} normalized to {}", ss, a);
      	   }

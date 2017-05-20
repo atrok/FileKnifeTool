@@ -128,6 +128,28 @@ public class TestCommandParse {
 	}
 
 	@Test
+	public void testCmdParse_Processor_Simple_Format_Table_MSGID(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-sample","0",
+						"-statfile","msgid.properties.ini",
+						"-format","table", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				"Int 20002 interaction is routed to,211.0");
+		
+
+	}
+	
+	@Test
 	public void testCmdParse_Processor_Simple_Format_Table_NumberAsName(){
 	
 
@@ -166,7 +188,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"*0x65*RP_90016_CMP_GrupoT_06,3.0");
+				"simple,3.0,2.0,14.0,176.0,1.0,1.0,21.0");
 		
 
 	}
@@ -269,6 +291,70 @@ public class TestCommandParse {
 
 	}
 	
+
+	/*
+	 * 
+	 * 
+	 ++++ Test with group name + column name ++++
+	 
+	 No timestamp header, so "-format logs" is not supported and will not produce any results
+	 
+	    _I_I_0075029c3714e8ad [14:33] strategy: *0x65*RP_90015_CMP_GrupoT_05_PruebaA (4257837752) is attached to the call
+	    
+	urs.groups.properties.ini
+	[$1]
+	stattype=IncrementalStatistic
+	regexp=.+strategy:\\s+*[\\dx]*(\\w)\\s+.+is attached to the call
+	column=value
+	 */
+	
+	@Test
+	public void testCmdParse_Format_Table_Processor_Simple_Column_GroupName(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-statfile","urs.groups.properties.ini",
+						"-format","table", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				"Strategy RP_80007_Atencion_Bancoppel,2.0");
+		
+
+	}
+	/*
+	 * urs.errors.properties.ini
+	 * [$1]
+	 * stattype=IncrementalStatistic
+	 * regexp=.+AttributeErrorMessage.+'([\\d\\w\\s]+)'
+	 * 
+	 */
+	@Test
+	public void testCmdParse_Format_Table_Processor_Simple_Column_GroupName_EventError(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS_tab_delimeted.log",
+						"-statfile","urs.errors.properties.ini",
+						"-format","table", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				"Strat Error 0013 Remote error (TreatmentPlayAnnouncement),1.0");
+		
+
+	}
 	
 private void parse(String[] s, int foundfiles, String search) {
 		CmdLineParser cmdParser = new CmdLineParser();

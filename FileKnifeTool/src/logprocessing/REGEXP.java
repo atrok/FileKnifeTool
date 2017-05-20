@@ -28,4 +28,5 @@ public class REGEXP {
 	public static final String Log_Processing_PunctButCommas="[^\\w\\.\\,]";
 	
 	public static final String QuoteIdentifiers ="[\'\"]";
+	public static final String DIGIT_PUNCT = "[\\d\\p{Punct}]";
 }

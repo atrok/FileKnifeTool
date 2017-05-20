@@ -13,6 +13,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import logprocessing.REGEXP;
+
 public class testRegexp {
 	Logger logger=LoggerFactory.getLogger(testRegexp.class);
 	
@@ -34,19 +36,40 @@ public class testRegexp {
 		
 		matches(".+\\]$","[CfgAgent Group]");
 		
-		matches(".+Std\\s+[0-9]{5,5}\\s.+","14:23:44.340 Std 04541 Message MSGCFG_CHANGEOBJECT received from 624 (SCE 'default')");
 		
 		matches("^MSGCFG.+[0-9]?","MSGCFG_REGISTEROBJECTTYPEEX2");
 		
-		matches("^[0-9T:.-]{12,}\\s(Trc|Std|Int|Dbg)\\s+[0-9]{5,5}\\s.+", "22:43:47.812 Std 22122 Client 197 failed to get authorization. Name [default], type [SCE], user [readonly], address [17.170.208.58:59643]. Reason : Authentication failed, user name or password is incorrect");
+		matches("^[0-9T:.-]{12,}\\s((Trc|Std|Int|Dbg)\\s+[0-9]{5,5})\\s.+", "22:43:47.812 Std 22122 Client 197 failed to get authorization. Name [default], type [SCE], user [readonly], address [17.170.208.58:59643]. Reason : Authentication failed, user name or password is incorrect");
 		
 		matches(".+There are \\[[0-9]{3,}\\] objects of type.+CfgPerson.+","01:01:07.027 Trc 24215 There are [317333] objects of type [CfgPerson] sent to the client [27] (application [default], type [SCE])");
+		
+		matches(REGEXP.NO_PUNCTUATION_NOR_DIGIT,"0075029c37105ebf");
+		
+	}
+	
+	@Test
+	public void test_regex_groups(){
+		
+		matches(".+error in strategy:\\s+(\\w.+)", "    _I_E_0075029c3710a5e4 [09:05] error in strategy: 0013 Remote error (TreatmentPlayAnnouncement)");
+		
+
 		
 	}
 	
 	private void matches(String regexp, String line){
-		if (Pattern.matches(regexp, line))
-			logger.info("match\nString {} \n to pattern {}", line, regexp);
+		jregex.Matcher matcher=(new jregex.Pattern(regexp)).matcher(line);
+		if (matcher.find()){
+			logger.info("PATTERN | {}", regexp);
+			logger.info("MATCHED | {}", line);
+			if(matcher.groupCount()>0){
+				for(int i=0;i<matcher.groupCount();i++){
+					logger.info("GROUP {} | {}",i,matcher.group(i));
+					
+				}
+	//			logger.info("NAMED GROUP {}",matcher.group("level"));
+				
+			}
+		}
 		else
 			logger.info("doesn't match\nString {}\n to pattern {}", line, regexp);
 	}
