@@ -47,6 +47,11 @@ public class LineProcessingLogs implements LineProcessing{
 	private jregex.Pattern jPatternLocalTime=new jregex.Pattern(REGEXP.PATTERN_LOCAL_TIME);
 	private jregex.Pattern jPatternMatcherEnd=new jregex.Pattern("(.+(\\]|\\]"+REGEXP.PUNCT+")|(\\]\\)|\\]"+REGEXP.PUNCT+"))$");
 
+	private jregex.Matcher jMatcherLongTimestamp;
+	private jregex.Pattern jPatternLongTime=new jregex.Pattern("^[\\d]{4,4}(-[\\d]{2,2})+T[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //2017-11-09T12:23:32.123
+	
+	private jregex.Matcher jMatcherShortTimestamp;
+	private jregex.Pattern jPatternShortTime=new jregex.Pattern("^[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}\\s?$"); //12:23:32.123
 	
 
 	private long timeprocessing;
@@ -71,6 +76,7 @@ public class LineProcessingLogs implements LineProcessing{
 	private StatisticManager sm;
 	
 	private Logger logger=LoggerFactory.getLogger(LineProcessingLogs.class);
+
 
 	public LineProcessingLogs(int sampling, StatisticManager sm) {
 		this.sampling = sampling;
@@ -188,11 +194,16 @@ public class LineProcessingLogs implements LineProcessing{
 		jMatcher=jPatternTimestamp.matcher(timestamp);
 		jMatcherCheckpoint=jPatternCheckpoint.matcher(line);
 		jMatcherLocalTime=jPatternLocalTime.matcher(line);
+		jMatcherLongTimestamp=jPatternLongTime.matcher(timestamp);
+		jMatcherShortTimestamp=jPatternShortTime.matcher(timestamp);
+		
+		
 		//tick();
 
 		
 		//if (matcher.find()) {
 		if (jMatcher.find()) {
+		
 			
 		//tock("patternTimestamp found:");
 		
@@ -225,11 +236,12 @@ public class LineProcessingLogs implements LineProcessing{
 				test.toArray(time_temp);
 			} else {
 
-				if (13 < timestamp.length()) { //// 2015-09-17T19:32:29.778
+				if (timestamp.length()>13&&(jMatcherLongTimestamp.matches())) { //// 2015-09-17T19:32:29.778
 					
 					time_temp = timestamp.split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
 		//tock("long timestamp split :");		
 				} else {
+					if(jMatcherShortTimestamp.matches()){
 
 					// 13:16:54.215 Trc 04541 Message MSGCFG_GETOBJECTINFO
 					// received from 224 (CCView 'CCPulse_701')
@@ -246,7 +258,9 @@ public class LineProcessingLogs implements LineProcessing{
 															// time only, first
 															// 3 indices refer
 															// to dd mm yy
-					}
+						}
+					}else
+						return false;
 
 				}
 			}

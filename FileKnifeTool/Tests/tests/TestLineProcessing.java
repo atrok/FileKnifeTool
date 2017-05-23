@@ -575,7 +575,53 @@ public class TestLineProcessing {
 		
 	}
 
+	@Test
+	public void testDurationStatistic_URS(){
+		System.out.println("------------ Duration Statistic testing -------------");
+		String statname="#duration";
+		
+		String[] lines=new String[]{
+				"Local time:       2017-05-05T06:40:08.819",
+				"09:41:40.621 Int 20001 interaction 0075029c37150fe4 is started",
+			    "_I_I_0075029c37150fe4 [01:14] current call classification: media=voice(100), service=default(200), segment=default(300)",
+			    "09:41:40.621_I_I_0075029c37150fe4 [09:06] >>>>>>>>>>>>start interp()		};",
+			    "09:41:41.093 Int 20002 interaction 0075029c37150fe4 is routed to GrupoT_05@SS_Routing.GA"
+		};
+		StatisticManager sm=StatisticManager.getInstance();
+		
+		sm.addStatistic(new DurationStatistic(".+(Int 20001|Int 20002).+",statname,"4"));
+		
+		
+		int sampling =0;
+		LineProcessingLogs ln=new LineProcessingLogs(sampling, sm);
+		
+		for(String l: lines){
+			ln.processLine(l);
+		}
+		
+		sm.printStatData();
+		
+		Map stats = sm.getStatDataMap();
+		
+		
+		
+		double value=(double) ((HashMap)stats.get(statname)).get("0075029c37150fe4");
+		
+		assertTrue("Expected value of statistic is 472, but we got "+value,value==472);
+		
+		
+		StatDataProcessor sdp=new StatDataProcessorBlocks();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv=new FileFromRecords(sdp, csvfile);
+		
+		csv.outputResult();
+		
+		//System.out.println(Arrays.toString(sdp.getResult()));
+		sm.flush();
+		
+	}
 
+	
 @SuppressWarnings("rawtypes")
 @Test
 public void testLineProcessingSimple(){

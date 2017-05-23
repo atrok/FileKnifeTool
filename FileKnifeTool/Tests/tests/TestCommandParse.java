@@ -213,6 +213,26 @@ public class TestCommandParse {
 
 	}
 	
+	@Test
+	public void testCmdParse_Format_Block_URS_Log(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-sample","0",
+						"-statfile","urs.duration.properties.ini",
+						"-format","block", 
+						null,null
+						},
+				1, // found files
+				"0075029c37105c68,87.0,2017-04-20 08:09:55.890,2017-04-20 08:09:55.977");
+		
+
+	}
 	
 	
 	/*
