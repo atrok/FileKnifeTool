@@ -45,6 +45,9 @@ import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticManager;
 import logprocessing.StatisticParamNaming;
+import paramvalidators.LineProcValidator;
+import paramvalidators.OutputFormatValidator;
+import paramvalidators.SamplingValidator;
 import resultoutput.FileFabric;
 import resultoutput.FileFromRecords;
 import resultoutput.ResultOutput;
@@ -55,22 +58,28 @@ import logprocessing.StatisticFactory;
 @Parameters (separators=",", commandDescription=" command to parse genesys config server files")
 public class CommandParse extends CommandImpl{
 
-	//@Parameter(names = "-process", description = "data format for file handler (simple|record)", variableArity=false, required = false)
+	//@Parameter(names = "-process", description = "data format for file handler (simple|record)", variableArity=false, required = false, validateWith=ProcessParamValidator.class)
 	protected String process="record";
 	
 	@Parameter(names = "-out", description = "output filename", variableArity=false, required = false)
 	private String output;
 	
-	@Parameter(names = "-sample", description = "statdata sampling (0|1|10|60|24(h)) min", variableArity=false, required = false)
+	@Parameter(names = "-sample", description = "statdata sampling (0|1|10|60|24(h)) min", variableArity=false, required = false, validateWith=SamplingValidator.class)
 	private int sampling=10;
 
 	@Parameter(names = "-statfile", description = "name of file with statistics", variableArity=false, required = false)
 	protected String statfile="statistic.properties.ini";
 	
-	@Parameter(names = "-format", description = "format of output file (csv|sql|stat|blocks|table)", variableArity=false, required = false)
+	@Parameter(names = "-format", description = "format of output file ("
+			+ENUMERATIONS.FORMAT_CSV+"|"
+			+ENUMERATIONS.FORMAT_SQL+"|"
+			+ENUMERATIONS.FORMAT_STAT+"|"
+			+ENUMERATIONS.FORMAT_BLOCK+"|"
+			+ENUMERATIONS.FORMAT_TABLE+")", variableArity=false, required = false, validateWith=OutputFormatValidator.class)
 	protected String format="stat";
 	
-	@Parameter(names = "-processor", description = "type of line processor (time|simple)", variableArity=false, required = false)
+	@Parameter(names = "-processor", description = "type of line processor (time|simple). Time line processor splits the string by spaces and seeks for timestamp in first column\n"
+			+ "Simple Line processor splits the string by spaces and passes to statistic processor directly. It needs for cases to reveal commonities for custom ID others than timestamp (like connID)", variableArity=false, required = false, validateWith=LineProcValidator.class)
 	protected String processor=ENUMERATIONS.ProcessorTIME;
 
 	

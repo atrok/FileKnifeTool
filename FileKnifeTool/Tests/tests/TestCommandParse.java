@@ -376,6 +376,7 @@ public class TestCommandParse {
 
 	}
 	
+	
 private void parse(String[] s, int foundfiles, String search) {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();
@@ -405,7 +406,7 @@ private void parse(String[] s, int foundfiles, String search) {
 			assertTrue(true==contains(result, search));
 
 		} catch (ParameterException ex) {
-			ex.printStackTrace();
+			System.out.println(ex.getMessage());
 			commander.usage();
 			System.exit(1);
 		} catch (Exception e) {

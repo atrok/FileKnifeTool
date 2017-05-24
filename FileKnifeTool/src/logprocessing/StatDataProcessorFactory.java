@@ -6,13 +6,13 @@ public class StatDataProcessorFactory {
 	
 	public static StatDataProcessor getStatDataProcessor(String s){
 		switch(s){
-		case "csv":
+		case ENUMERATIONS.FORMAT_CSV:
 			return new StatDataProcessorSeparatorsCSV();
-		case "sql":
+		case ENUMERATIONS.FORMAT_SQL:
 			return new StatDataProcessorSeparatorsSQL();
-		case "stat":
+		case ENUMERATIONS.FORMAT_STAT:
 			return new StatDataProcessorLogs();
-		case "block":
+		case ENUMERATIONS.FORMAT_BLOCK:
 			return new StatDataProcessorBlocks();
 		case ENUMERATIONS.FORMAT_TABLE:
 			return new StatDataProcessorTest();		
