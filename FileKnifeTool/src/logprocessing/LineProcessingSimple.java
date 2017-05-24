@@ -46,7 +46,7 @@ public class LineProcessingSimple implements LineProcessing{
 			
 		}
 		}catch(Exception e){
-			System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
+			//System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
 			logger.error(ln);
 			logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}",e);
 			System.exit(0);

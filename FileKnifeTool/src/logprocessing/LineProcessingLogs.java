@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import com.beust.jcommander.internal.Lists;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Multiset.Entry;
 
 import util.Benchmark;
 import jregex.*;
@@ -58,6 +59,7 @@ public class LineProcessingLogs implements LineProcessing{
 	private long timenormalizing;
 	private long timegetstatvalue;
 	private long timesplitline;
+	private Map<String,Integer> timestatfound=new HashMap<String,Integer>();
 	
 	private static final Splitter SPACE_SPLITTER = Splitter.on(' ')
 		       .trimResults()
@@ -120,9 +122,18 @@ public class LineProcessingLogs implements LineProcessing{
 				
 				while (m.hasNext()) {
 					StatisticDefinition p=(StatisticDefinition) m.next();
-					if (p.isMatched(ln)) 
-						p.calculate(ln, split_line, sec);
 					
+					int val=0;
+					if(timestatfound.get(p.getName())==null)
+						timestatfound.put(p.getName(),0);
+					else
+						val=timestatfound.get(p.getName());
+					
+					if (p.isMatched(ln)) {
+						val++;
+						timestatfound.put(p.getName(),val);
+						p.calculate(ln, split_line, sec);
+					}
 					timenormalizing+=p.getTimenormalizing();
 					timegetstatvalue+=p.getTimegetstatvalue();
 				}
@@ -361,6 +372,17 @@ public class LineProcessingLogs implements LineProcessing{
         logger.debug("normalizing: {} sec",TimeUnit.SECONDS.convert(getTimenormalizing(), TimeUnit.NANOSECONDS));
         logger.debug("getstatvalue: {} sec",TimeUnit.SECONDS.convert(getTimegetstatvalue(),TimeUnit.NANOSECONDS));
         logger.debug("getsplitvalue: {} sec",TimeUnit.SECONDS.convert(getTimesplitline(),TimeUnit.NANOSECONDS));
+        
+		
+		for (Map.Entry entry : timestatfound.entrySet()){
+		     System.out.print(entry.getKey()+" found:");
+		     Integer val= (Integer) entry.getValue();
+		     
+		     
+		     
+		     System.out.println(val);
+		}
+
 		
     	timeprocessing=timenormalizing=timegetstatvalue=timesplitline=0;
 	}

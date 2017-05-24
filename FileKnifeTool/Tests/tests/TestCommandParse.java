@@ -166,7 +166,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"223,1.0");
+				"TLIB Error Bad parameter passed to function,1.0");
 		
 
 	}
@@ -221,7 +221,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", start.toAbsolutePath().toString(),  
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.duration.properties.ini",
@@ -234,7 +234,7 @@ public class TestCommandParse {
 
 	}
 	
-	
+
 	/*
 	 * 
 	 * 

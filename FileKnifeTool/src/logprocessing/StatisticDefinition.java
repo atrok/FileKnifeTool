@@ -235,7 +235,8 @@ public abstract class StatisticDefinition {
 		
 		StringBuilder sb=new StringBuilder();
 		StringBuilder variable=new StringBuilder();
-		sb.append(line[1]+" "+line[2]);
+		if (line.length>=3){
+		sb.append(line[1]+" "+line[2]);// assumption based on timestamp based line
 		boolean variableFlag=false;
 		for(int i=3;i<line.length;i++){ // getting rid of punctuation and variable parts of message to be able to print uniform message
 			//matcher=patternNoPunct.matcher(line[i]);
@@ -271,6 +272,7 @@ public abstract class StatisticDefinition {
 					||ss.charAt(0)=='['
 					)){// replacement for bracket regexp
 			*/	
+			
 			if(!isBracketFound(ss)){
 				String a = ss;
 				if (!matcherMSGCFG.matches()){
@@ -281,7 +283,11 @@ public abstract class StatisticDefinition {
 				logger.trace("String {} normalized to {}", ss, a);
      	   }
 		}
-		
+		}else{
+			for (int i=0; i<line.length;i++)
+				sb.append(patterRemoveAllPunct.matcher(Arrays.toString(line)).replaceAll(""));
+			
+		}
 		timenormalizing=System.nanoTime()-sec;
    		logger.trace("normalization result {}, took: {}",sb.toString(), TimeUnit.SECONDS.convert(timenormalizing, TimeUnit.NANOSECONDS));
 		
