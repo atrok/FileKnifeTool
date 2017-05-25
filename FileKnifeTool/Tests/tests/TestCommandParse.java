@@ -150,6 +150,28 @@ public class TestCommandParse {
 	}
 	
 	@Test
+	public void testCmdParse_Processor_Simple_Format_Table_FILENAME(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-sample","0",
+						"-statfile","filename.properties.ini",
+						"-format","table", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				//"URS_tab_delimeted.log,29.0");
+				"URS.20170420_080950_004.log,637389.0");
+		
+
+	}
+	@Test
 	public void testCmdParse_Processor_Simple_Format_Table_NumberAsName(){
 	
 
@@ -194,8 +216,6 @@ public class TestCommandParse {
 	}
 	@Test
 	public void testCmdParse_Format_Block(){
-	
-
 
 		parse(
 				new String[]{
@@ -212,6 +232,30 @@ public class TestCommandParse {
 		
 
 	}
+
+	/*
+	 * test to find filiename duration
+	 *  
+	 */
+		@Test
+	public void testCmdParse_Format_Block_Duration_Filename_Field(){
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-sample","0",
+						"-statfile","filename.duration.properties.ini",
+						"-format","block", 
+						null,null
+						},
+				1, // found files
+				"sid='01E6030IE0CGP8GFLJMMG4DAES0000P5,2204.0,2017-05-05 06:42:29.034,2017-05-05 06:42:31.238");
+		
+
+	}
+
 	
 	@Test
 	public void testCmdParse_Format_Block_URS_Log(){
@@ -348,6 +392,7 @@ public class TestCommandParse {
 		
 
 	}
+
 	/*
 	 * urs.errors.properties.ini
 	 * [$1]
@@ -375,7 +420,6 @@ public class TestCommandParse {
 		
 
 	}
-	
 	
 private void parse(String[] s, int foundfiles, String search) {
 		CmdLineParser cmdParser = new CmdLineParser();

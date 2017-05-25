@@ -12,5 +12,6 @@ public class ENUMERATIONS {
 	public static final String FORMAT_SQL = "sql";
 	public static final String FORMAT_STAT = "stat";
 	public static final String FORMAT_BLOCK = "block";
+	public static final Object STATDEF_FILENAME = "filename";
 	
 }

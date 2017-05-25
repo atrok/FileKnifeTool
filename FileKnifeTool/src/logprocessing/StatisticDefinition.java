@@ -13,6 +13,8 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.beust.jcommander.ParameterException;
+
 import garbagecleaner.ENUMERATIONS;
 import util.DateTime;
 import util.FilesUtil;
@@ -53,6 +55,8 @@ public abstract class StatisticDefinition {
 	private jregex.Matcher jMatcher;
 	private String[] foundGroups;
 	
+	protected boolean useFilename=false;
+	
 	private char[][] brackets=new char[][]{
 			new char[]{'[',']'},
 			new char[]{'(',')'}
@@ -61,6 +65,8 @@ public abstract class StatisticDefinition {
 	
 	int bracketArray=-1;
 	int closingBracketInd;
+
+	protected String filename;
 	
 	public StatisticDefinition(String regexp,String name){
 		
@@ -95,8 +101,7 @@ public abstract class StatisticDefinition {
 		this.patternLineMatcher=new jregex.Pattern(getRegexp());
 		nm=varname.split(REGEXP.SPACES);
 		
-		
-		
+	
 	}
 	
 	public String getRegexp() {
@@ -142,6 +147,13 @@ public abstract class StatisticDefinition {
 					
 					//if (Pattern.matches(".+Message.+",line[3]))
 						name=normalize(line);
+				}
+				
+				if (variable.toLowerCase().equals(ENUMERATIONS.STATDEF_FILENAME)){
+					
+					
+					//if (Pattern.matches(".+Message.+",line[3]))
+						name=filename;
 				}
 		
 			
@@ -189,6 +201,9 @@ public abstract class StatisticDefinition {
 	protected Double getStatValue(String line, String[] splitline, String sampled_timeframe){
 		
 		String column=checkColumn(sampled_timeframe);
+		filename=splitline[splitline.length-1];
+		
+		String[] stripped_splitline=Arrays.copyOfRange(splitline, 0, splitline.length-1); // get rid of filename in last cell;
 		
 		long start=System.nanoTime();
 		
@@ -198,7 +213,7 @@ public abstract class StatisticDefinition {
 		
 		//if(jMatcher.matches()){
 			
-			generateMsgID(splitline);
+			generateMsgID(stripped_splitline);
 			
 			if (!rate.containsKey(getName())){// create new hashmap for sampled time statistics
 				rate.put(getName(),new HashMap<String,Double>());

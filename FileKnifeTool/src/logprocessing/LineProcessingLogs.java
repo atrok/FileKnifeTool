@@ -454,7 +454,7 @@ public class LineProcessingLogs implements LineProcessing{
 	public void processLine(String ln, String[] params) {
 		// TODO Auto-generated method stub
 		
-		processLine(ln);
+		processLine(ln+"\t"+params[0]);// appending filename
 		
 	}
 }

@@ -11,6 +11,11 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.beust.jcommander.ParameterException;
+
+import garbagecleaner.ENUMERATIONS;
+import util.FilesUtil;
+
 public class DurationStatistic extends StatisticDefinition { 
 
 
@@ -53,7 +58,21 @@ public class DurationStatistic extends StatisticDefinition {
 
 		public DurationStatistic(String name,Map<String,String> param){
 			super(name, param);
-			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
+			String f=param.get(StatisticParamNaming.FIELD.toString());
+			if (null==f){
+				throw new ParameterException("DurationStatistic require 'field' property configured. Expected parameters: (filename|digits)");
+			}
+			if(FilesUtil.isNumeric(f))
+			this.aggregating_field=Integer.valueOf(f);
+			
+			String field=param.get(StatisticParamNaming.FIELD.toString());
+			if (!FilesUtil.isNumeric(field)){
+				if(field.equals(ENUMERATIONS.STATDEF_FILENAME)){
+					useFilename=true;
+				}else{
+					throw new ParameterException("Value of 'field' parameter in statistic "+name+" could be 'filename' or numeric. Instead we got '"+field+"'");
+				}
+			}
 			
 		}
 		
@@ -61,7 +80,11 @@ public class DurationStatistic extends StatisticDefinition {
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){ // LineProcessing sampling should be 0 to get not sampled timestamp 
 			long duration = 0;
-			String value=splitline[aggregating_field];
+			String value;
+			if (useFilename)
+				value=splitline[splitline.length-1]; // filename in last cell
+			else
+				value=splitline[aggregating_field];
 			block=(Block)stats.get(value);
 			
 			if(block==null)

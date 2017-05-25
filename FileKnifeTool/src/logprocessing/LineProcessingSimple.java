@@ -1,5 +1,6 @@
 package logprocessing;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -16,6 +17,8 @@ public class LineProcessingSimple implements LineProcessing{
 	private StatisticManager sm;
 
 	private Map result;
+
+	private String filename;
 	public LineProcessingSimple(int sampling, StatisticManager sm){
 		this.sampling = sampling;
 		this.sm = sm;
@@ -24,6 +27,7 @@ public class LineProcessingSimple implements LineProcessing{
 	@Override
 	public void processLine(String ln, String[] params) {
 		
+		filename=params[0];
 		processLine(ln);
 		
 	}
@@ -33,9 +37,9 @@ public class LineProcessingSimple implements LineProcessing{
 		// TODO Auto-generated method stub
 		String[] split_line;
 		
-		split_line=StringUtils.split(ln, null);
+		String extended_ln=ln+"\t"+filename; //adding filename to pass into statistic for further processing/use if needed
 		
-
+		split_line=StringUtils.split(extended_ln, null);
 		try{
 		Iterator<?> m = sm.getStatisticsList().iterator();
 		
@@ -43,7 +47,10 @@ public class LineProcessingSimple implements LineProcessing{
 			StatisticDefinition p=(StatisticDefinition) m.next();
 			if (p.isMatched(ln)) 
 				p.calculate(ln, split_line, null);
-			
+			else{
+				int t; 
+				t=0;
+			}
 		}
 		}catch(Exception e){
 			//System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
