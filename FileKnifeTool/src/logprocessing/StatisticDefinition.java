@@ -405,6 +405,21 @@ public abstract class StatisticDefinition {
 		
 	}
 	
+	protected String[] getRegexGroups(){
+		
+		return jMatcher.groups();
+		
+	}
+	
+	public String toString(){
+		return "Statistic:{\nstattype\t"+this.getClass().getName()
+		+"\nheader\t"+getName()
+		+"\nregexp\t"+this.regexp
+		+"\ncolumn\t"+this.column
+		+"\nuseFilename\t"+useFilename;
+		
+	}
+	
 	class Block{
 		
 		String id;

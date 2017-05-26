@@ -355,6 +355,42 @@ public class TestCommandParse {
 
 	}
 	
+	/*
+	 * 
+	 * 
+	 ++++ Test with group name + column name ++++
+	 
+	 No timestamp header, so "-format logs" is not supported and will not produce any results
+	 
+	    _I_I_0075029c3714e8ad [14:33] strategy: *0x65*RP_90015_CMP_GrupoT_05_PruebaA (4257837752) is attached to the call
+	    
+	urs.groups.properties.ini
+	[$1]
+	stattype=IncrementalStatistic
+	regexp=.+strategy:\\s+*[\\dx]*(\\w)\\s+.+is attached to the call
+	column=value
+	 */
+	
+	@Test
+	public void testCmdParse_Format_Table_Processor_Simple_AggregatingFieldGroupName_SumStatistic(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.20170420_080950_004.log",
+						"-statfile","urs.aggr_group.properties.ini",
+						"-format","table", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				"Strategy RP_80007_Atencion_Bancoppel,2.0");
+		
+
+	}
 
 	/*
 	 * 

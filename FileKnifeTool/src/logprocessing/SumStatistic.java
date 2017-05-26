@@ -52,15 +52,33 @@ public class SumStatistic extends StatisticDefinition {
 		
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
-			String value=splitline[aggregating_field];
-			double new_value=toNumberFormat(value);
+			
+			try{
+			String value;
+			String[] regexgroups=getRegexGroups();
+			double new_value;
+			
+			if(regexgroups!=null&&regexgroups.length>1)
+				value=regexgroups[aggregating_field];
+			else 
+				value=splitline[aggregating_field];
+			
+			new_value=toNumberFormat(value);
 				counter=getStatValue(line, splitline, sampled_timeframe);
 				if (null!=counter)
 					
 					updateStatValue(new_value+counter,sampled_timeframe);
+			}catch(Exception exc){
+				logger.error("Can't calculate statistic value, statistic:"+toString(), exc);
+				throw exc;
+			}
 			
 		}
 
+		public String toString(){
+			
+			return super.toString()+"\nfield\t"+aggregating_field;
+		}
 
 	
 }

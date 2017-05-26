@@ -7,10 +7,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import logprocessing.StatDataProcessor;
+import logprocessing.StatisticDefinition;
 import record.Record;
 
 public class FileFromRecords extends AbstractFileOutput{
+
+	private Logger logger=LoggerFactory.getLogger(FileFromRecords.class);
 
 	public FileFromRecords(StatDataProcessor sdp, Path filename) {
 		super(sdp, filename);
@@ -38,7 +44,10 @@ public class FileFromRecords extends AbstractFileOutput{
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Can't write the result output",e);
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			logger.error("Result output is likely empty, check your regular expression",e);
 		}
 
 		

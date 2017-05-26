@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.beust.jcommander.ParameterException;
+
 public class AggregatingStatistic extends StatisticDefinition {
 
 	
@@ -40,12 +42,15 @@ public class AggregatingStatistic extends StatisticDefinition {
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
 			
+			String f=param.get(StatisticParamNaming.FIELD.toString());
+			if (null==f){
+				throw new ParameterException("DurationStatistic require 'field' property configured. Expected parameters: (filename|digits)");
+			}
+
 		}
 
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
-			
-			
 			String value=splitline[aggregating_field];
 			
 				counter=getStatValue(line, splitline, sampled_timeframe);
