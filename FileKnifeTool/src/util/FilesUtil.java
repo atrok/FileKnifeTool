@@ -26,6 +26,8 @@ public class FilesUtil {
 	}
 	
 	public static boolean isNumeric(String s) {  
+		if (null==s)
+			return false;
 	    return s.matches("[-+]?\\d*\\.?\\d+");  
 	} 
 

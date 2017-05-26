@@ -101,6 +101,15 @@ public abstract class StatisticDefinition {
 		this.patternLineMatcher=new jregex.Pattern(getRegexp());
 		nm=varname.split(REGEXP.SPACES);
 		
+		String field=parameters.get(StatisticParamNaming.FIELD.toString());
+		if (null!=field)
+			if(!FilesUtil.isNumeric(field)){
+			if(field.equals(ENUMERATIONS.STATDEF_FILENAME)){
+				useFilename=true;
+			}else{
+				throw new ParameterException("Value of 'field' parameter in statistic "+name+" could be 'filename' or numeric. Instead we got '"+field+"'");
+			}
+		}
 	
 	}
 	

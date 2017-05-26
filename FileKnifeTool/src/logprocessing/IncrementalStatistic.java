@@ -29,9 +29,14 @@ public class IncrementalStatistic extends StatisticDefinition {
 	
 	@Override
 	public void calculate(String line, String[] splitline, String sampled_timeframe) {
+		String row;
+		if (useFilename)
+			row=splitline[splitline.length-1]; // filename in last cell
+		else
+			row=sampled_timeframe;
 		
-		counter=getStatValue(line, splitline, sampled_timeframe);
+		counter=getStatValue(line, splitline, row);
 		if (null!=counter)
-			updateStatValue(counter+1,sampled_timeframe);
+			updateStatValue(counter+1,row);
 	}
 }

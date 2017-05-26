@@ -44,6 +44,8 @@ public class AggregatingStatistic extends StatisticDefinition {
 
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
+			
+			
 			String value=splitline[aggregating_field];
 			
 				counter=getStatValue(line, splitline, sampled_timeframe);

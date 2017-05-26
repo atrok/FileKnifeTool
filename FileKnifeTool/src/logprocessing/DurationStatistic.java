@@ -62,17 +62,9 @@ public class DurationStatistic extends StatisticDefinition {
 			if (null==f){
 				throw new ParameterException("DurationStatistic require 'field' property configured. Expected parameters: (filename|digits)");
 			}
-			if(FilesUtil.isNumeric(f))
-			this.aggregating_field=Integer.valueOf(f);
 			
-			String field=param.get(StatisticParamNaming.FIELD.toString());
-			if (!FilesUtil.isNumeric(field)){
-				if(field.equals(ENUMERATIONS.STATDEF_FILENAME)){
-					useFilename=true;
-				}else{
-					throw new ParameterException("Value of 'field' parameter in statistic "+name+" could be 'filename' or numeric. Instead we got '"+field+"'");
-				}
-			}
+			if(FilesUtil.isNumeric(f))
+				this.aggregating_field=Integer.valueOf(f);
 			
 		}
 		
