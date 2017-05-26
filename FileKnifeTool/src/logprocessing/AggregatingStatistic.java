@@ -61,7 +61,7 @@ public class AggregatingStatistic extends StatisticDefinition {
 				value=splitline[aggregating_field];
 			
 			if(useFilename)
-				rowname=filename;
+				rowname=filename=splitline[splitline.length-1];
 			else
 				rowname=sampled_timeframe;
 			

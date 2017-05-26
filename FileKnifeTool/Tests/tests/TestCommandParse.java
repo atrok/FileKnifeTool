@@ -360,15 +360,12 @@ public class TestCommandParse {
 	 * 
 	 ++++ Test with group name + column name ++++
 	 
-	 No timestamp header, so "-format logs" is not supported and will not produce any results
-	 
-	    _I_I_0075029c3714e8ad [14:33] strategy: *0x65*RP_90015_CMP_GrupoT_05_PruebaA (4257837752) is attached to the call
-	    
-	urs.groups.properties.ini
-	[$1]
-	stattype=IncrementalStatistic
-	regexp=.+strategy:\\s+*[\\dx]*(\\w)\\s+.+is attached to the call
-	column=value
+[duration]
+stattype=SumStatistic
+regexp=^\\s+AttributeUserData\\s+\\[([0-9]+)\\]\\s+.+
+field=1
+rowname=filename
+
 	 */
 	
 	@Test
