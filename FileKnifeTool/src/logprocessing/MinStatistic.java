@@ -13,23 +13,17 @@ public class MinStatistic extends AggregatingStatistic {
 	
 
 		private Double counter=0.0;
-		//private String regexp="";
 		private Map stats=new HashMap<String, HashMap>();
-		//private String statname="";
 		
-	/*	public IncrementalStatistic(String regexp,String name, String field){
-			super(regexp,name, field);
-			
-		}
-	*/	
+
 		private int aggregating_field;
 		
 		Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
 		
 		private Logger logger=LoggerFactory.getLogger(MinStatistic.class);
-		/*
+
 		public MinStatistic(String regexp,String name, String aggregating_field){
-			super(regexp,name);
+			super(regexp,name, aggregating_field);
 			this.aggregating_field=Integer.valueOf(aggregating_field);
 			
 		}
@@ -38,11 +32,11 @@ public class MinStatistic extends AggregatingStatistic {
 
 		public MinStatistic(String regexp, String name, int i) {
 			// TODO Auto-generated constructor stub
-			super(regexp,name);
+			super(regexp,name,i);
 			this.aggregating_field=i;
 		}
 
-*/
+
 		public MinStatistic(String name,Map<String,String> param){
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));

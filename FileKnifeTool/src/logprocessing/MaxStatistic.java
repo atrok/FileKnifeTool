@@ -27,10 +27,10 @@ public class MaxStatistic extends AggregatingStatistic {
 		Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
 		
 		private Logger logger=LoggerFactory.getLogger(AggregatingStatistic.class);
-		
-		/*
+
+
 		public MaxStatistic(String regexp,String name, String aggregating_field){
-			super(regexp,name);
+			super(regexp,name, aggregating_field);
 			this.aggregating_field=Integer.valueOf(aggregating_field);
 			
 		}
@@ -39,11 +39,11 @@ public class MaxStatistic extends AggregatingStatistic {
 
 		public MaxStatistic(String regexp, String name, int i) {
 			// TODO Auto-generated constructor stub
-			super(regexp,name);
+			super(regexp,name,i);
 			this.aggregating_field=i;
 		}
 
-		*/
+
 		public MaxStatistic(String name,Map<String,String> param){
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));

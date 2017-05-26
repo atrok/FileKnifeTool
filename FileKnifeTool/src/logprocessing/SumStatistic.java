@@ -28,9 +28,9 @@ public class SumStatistic extends AggregatingStatistic {
 		
 		private Logger logger=LoggerFactory.getLogger(MinStatistic.class);
 		
-		/*
+	
 		public SumStatistic(String regexp,String name, String aggregating_field){
-			super(regexp,name);
+			super(regexp,name,aggregating_field);
 			this.aggregating_field=Integer.valueOf(aggregating_field);
 			
 		}
@@ -39,11 +39,11 @@ public class SumStatistic extends AggregatingStatistic {
 
 		public SumStatistic(String regexp, String name, int i) {
 			// TODO Auto-generated constructor stub
-			super(regexp,name);
+			super(regexp,name,i);
 			this.aggregating_field=i;
 		}
 
-*/
+
 		public SumStatistic(String name,Map<String,String> param){
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
