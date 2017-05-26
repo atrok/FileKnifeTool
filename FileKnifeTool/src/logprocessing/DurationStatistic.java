@@ -59,8 +59,9 @@ public class DurationStatistic extends StatisticDefinition {
 		public DurationStatistic(String name,Map<String,String> param){
 			super(name, param);
 			String f=param.get(StatisticParamNaming.FIELD.toString());
-			if (null==f){
-				throw new ParameterException("DurationStatistic require 'field' property configured. Expected parameters: (filename|digits)");
+			String r=param.get(StatisticParamNaming.ROWNAME.toString());
+			if (null==f&&null==r){
+				throw new ParameterException("DurationStatistic require either 'field=<0-9>' or 'rowname=(filename|<any string>)' properties configured.");
 			}
 			
 			if(FilesUtil.isNumeric(f))

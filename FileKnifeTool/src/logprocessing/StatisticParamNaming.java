@@ -5,7 +5,8 @@ public enum StatisticParamNaming {
 	REGEXP("regexp"),
 	FIELD("field"),
 	STATTYPE("stattype"), 
-	COLUMN("column");
+	COLUMN("column"), 
+	ROWNAME("rowname");
 	
 	
 	private String description;

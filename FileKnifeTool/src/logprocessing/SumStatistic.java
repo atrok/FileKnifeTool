@@ -7,7 +7,7 @@ package logprocessing;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SumStatistic extends StatisticDefinition { 
+public class SumStatistic extends AggregatingStatistic { 
 
 
 	
@@ -28,6 +28,7 @@ public class SumStatistic extends StatisticDefinition {
 		
 		private Logger logger=LoggerFactory.getLogger(MinStatistic.class);
 		
+		/*
 		public SumStatistic(String regexp,String name, String aggregating_field){
 			super(regexp,name);
 			this.aggregating_field=Integer.valueOf(aggregating_field);
@@ -42,7 +43,7 @@ public class SumStatistic extends StatisticDefinition {
 			this.aggregating_field=i;
 		}
 
-
+*/
 		public SumStatistic(String name,Map<String,String> param){
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
@@ -52,22 +53,16 @@ public class SumStatistic extends StatisticDefinition {
 		
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
+			super.calculate(line, splitline, sampled_timeframe);
 			
 			try{
-			String value;
-			String[] regexgroups=getRegexGroups();
 			double new_value;
 			
-			if(regexgroups!=null&&regexgroups.length>1)
-				value=regexgroups[aggregating_field];
-			else 
-				value=splitline[aggregating_field];
-			
 			new_value=toNumberFormat(value);
-				counter=getStatValue(line, splitline, sampled_timeframe);
+				counter=getStatValue(line, splitline, rowname);
 				if (null!=counter)
 					
-					updateStatValue(new_value+counter,sampled_timeframe);
+					updateStatValue(new_value+counter,rowname);
 			}catch(Exception exc){
 				logger.error("Can't calculate statistic value, statistic:"+toString(), exc);
 				throw exc;
@@ -75,10 +70,7 @@ public class SumStatistic extends StatisticDefinition {
 			
 		}
 
-		public String toString(){
-			
-			return super.toString()+"\nfield\t"+aggregating_field;
-		}
+
 
 	
 }

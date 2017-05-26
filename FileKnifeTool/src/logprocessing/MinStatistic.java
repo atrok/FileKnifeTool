@@ -7,7 +7,7 @@ package logprocessing;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MinStatistic extends StatisticDefinition { 
+public class MinStatistic extends AggregatingStatistic { 
 
 
 	
@@ -27,7 +27,7 @@ public class MinStatistic extends StatisticDefinition {
 		Pattern patternPunct=Pattern.compile(REGEXP.PUNCT);
 		
 		private Logger logger=LoggerFactory.getLogger(MinStatistic.class);
-		
+		/*
 		public MinStatistic(String regexp,String name, String aggregating_field){
 			super(regexp,name);
 			this.aggregating_field=Integer.valueOf(aggregating_field);
@@ -42,7 +42,7 @@ public class MinStatistic extends StatisticDefinition {
 			this.aggregating_field=i;
 		}
 
-
+*/
 		public MinStatistic(String name,Map<String,String> param){
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
@@ -52,12 +52,13 @@ public class MinStatistic extends StatisticDefinition {
 		
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
-			String value=splitline[aggregating_field];
+			super.calculate(line, splitline, sampled_timeframe);
+			
 			double new_value=toNumberFormat(value);
-				counter=getStatValue(line, splitline, sampled_timeframe);
+				counter=getStatValue(line, splitline, rowname);
 				if (null!=counter)
 					if (counter>new_value || counter==0)
-					updateStatValue(new_value,sampled_timeframe);
+					updateStatValue(new_value,rowname);
 			
 		}
 

@@ -7,7 +7,7 @@ package logprocessing;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MaxStatistic extends StatisticDefinition { 
+public class MaxStatistic extends AggregatingStatistic { 
 
 
 	
@@ -28,6 +28,7 @@ public class MaxStatistic extends StatisticDefinition {
 		
 		private Logger logger=LoggerFactory.getLogger(AggregatingStatistic.class);
 		
+		/*
 		public MaxStatistic(String regexp,String name, String aggregating_field){
 			super(regexp,name);
 			this.aggregating_field=Integer.valueOf(aggregating_field);
@@ -42,23 +43,26 @@ public class MaxStatistic extends StatisticDefinition {
 			this.aggregating_field=i;
 		}
 
-
+		*/
 		public MaxStatistic(String name,Map<String,String> param){
 			super(name, param);
 			this.aggregating_field=Integer.valueOf(param.get(StatisticParamNaming.FIELD.toString()));
 			
 		}
 		
+
 		
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
-			String value=splitline[aggregating_field];
+			super.calculate(line, splitline, sampled_timeframe);
 			
-				counter=getStatValue(line, splitline, sampled_timeframe);
+			//String value=splitline[aggregating_field];
+			
+				counter=getStatValue(line, splitline, rowname);
 				if (null!=counter){
 					double new_value=toNumberFormat(value);
 					if (counter<new_value)
-					updateStatValue(new_value,sampled_timeframe);
+					updateStatValue(new_value,rowname);
 				}
 		}
 

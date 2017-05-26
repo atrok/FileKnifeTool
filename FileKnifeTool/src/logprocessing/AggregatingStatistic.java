@@ -44,21 +44,33 @@ public class AggregatingStatistic extends StatisticDefinition {
 			
 			String f=param.get(StatisticParamNaming.FIELD.toString());
 			if (null==f){
-				throw new ParameterException("DurationStatistic require 'field' property configured. Expected parameters: (filename|digits)");
+				throw new ParameterException("AggregationStatistic type require 'field' property configured. Expected parameters: [0-9]");
 			}
-
+			
 		}
-
+		protected String value;
+		protected String rowname;
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){
-			String value=splitline[aggregating_field];
 			
-				counter=getStatValue(line, splitline, sampled_timeframe);
-				if (null!=counter)
-					updateStatValue(toNumberFormat(value),sampled_timeframe);
+			String[] regexgroups=getRegexGroups();
+			
+			if(regexgroups!=null&&regexgroups.length>1)
+				value=regexgroups[aggregating_field];
+			else 
+				value=splitline[aggregating_field];
+			
+			if(useFilename)
+				rowname=filename;
+			else
+				rowname=sampled_timeframe;
 			
 		}
 		
-
+		public String toString(){
+			
+			return super.toString()+"\nfield\t"+aggregating_field;
+		}
+		
 	}
 
