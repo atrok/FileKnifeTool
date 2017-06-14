@@ -29,10 +29,10 @@ import logprocessing.StatDataProcessorBlocks;
 import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatDataProcessorSeparatorsCSV;
-import logprocessing.StatisticManager;
 import logprocessing.SumStatistic;
 import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
+import statmanager.StatisticManager;
 
 public class TestLineProcessing {
 

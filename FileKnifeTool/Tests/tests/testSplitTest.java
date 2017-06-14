@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 
-import logprocessing.StatisticManager;
+import statmanager.StatisticManager;
 import util.Benchmark;
 
 public class testSplitTest {

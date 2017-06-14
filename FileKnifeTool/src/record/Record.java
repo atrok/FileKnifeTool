@@ -13,6 +13,7 @@ public abstract class Record implements Comparable{
 	
 	public void addValue(Object v){
 		
+		if (v==null) v=0;
 			values.add(v);
 	}
 
@@ -24,7 +25,7 @@ public abstract class Record implements Comparable{
 		return values;
 	}
 	
-	protected String getZeroColumnName(){
+	public String getZeroColumnName(){
 		return first_column;
 	}
 	

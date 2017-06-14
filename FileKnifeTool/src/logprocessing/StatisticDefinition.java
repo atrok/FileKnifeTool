@@ -80,8 +80,14 @@ public abstract class StatisticDefinition {
 		
 	}
 	
+	Map<String,String> parameters = new HashMap<String,String>();
+	
+	public Map<String,String> getStatParameters(){
+		return parameters;
+	}
+	
 	public StatisticDefinition(String name, Map<String,String> parameters){
-		
+		this.parameters=parameters;
 		this.regexp=parameters.get(StatisticParamNaming.REGEXP.toString());
 		
 		/*
@@ -107,7 +113,7 @@ public abstract class StatisticDefinition {
 			if(rowname.equals(ENUMERATIONS.STATDEF_FILENAME)){
 				useFilename=true;
 			}else{
-				throw new ParameterException("Value of 'field' parameter in statistic "+name+" could be 'filename' or numeric. Instead we got '"+rowname+"'");
+				throw new ParameterException("Value of 'rowname' parameter in statistic "+name+" could be 'filename' or numeric. Instead we got '"+rowname+"'");
 			}
 		}
 	
@@ -208,13 +214,14 @@ public abstract class StatisticDefinition {
 	 * returns last value of requested statistic or null if not found
 	 */
 	protected Double getStatValue(String line, String[] splitline, String sampled_timeframe){
+		long start=System.nanoTime();
 		
 		String column=checkColumn(sampled_timeframe);
 		filename=splitline[splitline.length-1];
 		
 		String[] stripped_splitline=Arrays.copyOfRange(splitline, 0, splitline.length-1); // get rid of filename in last cell;
 		
-		long start=System.nanoTime();
+		
 		
 		Map<String, Double> t;
 
@@ -233,8 +240,10 @@ public abstract class StatisticDefinition {
 			if (!t.containsKey(column)){
 				t.put(column, (double) 0);
 			}
+			
+			Double s=t.get(column);
 			timegetstatvalue=System.nanoTime()-start;
-			return t.get(column);
+			return s;
 		//}
 		//timegetstatvalue=System.nanoTime()-start;
 		//return null;

@@ -43,7 +43,7 @@ public class testRegexp {
 		
 		matches(".+There are \\[[0-9]{3,}\\] objects of type.+CfgPerson.+","01:01:07.027 Trc 24215 There are [317333] objects of type [CfgPerson] sent to the client [27] (application [default], type [SCE])");
 		
-		matches("^[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}\\s?$","09:41:40.502_I");
+		matches("^[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}","09:41:40.502_I");
 		
 	}
 	

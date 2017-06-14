@@ -44,7 +44,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"2015-09-18 09:50,31.0,18.0,21.0,0,16.0,3.0,0,16.0,16.0,16.0,16.0,29.0,173.0,1.0,1.0,3631.0,33.0,1.0,1.0,1528.0,0.0,16226.0,1.0,65.0,156.0,1.0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,364910.0,7.0,435.0,5456.0,15.0,280.0,62695.0,1895.0,80.0,122.0,30296.0,0.0,259616.0,16.0,1290.0,2496.0,173.0,16.0,29.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0");
+				"2015-09-18 09:50:00.000,32.0,16.0,16.0,16.0,173.0,3631.0,1528.0,16226.0,156.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,354563.0,7.0,5363.0,62640.0,24448.0,259616.0,2496.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0");
 	}
 
 	@Test(expected = AssertionError.class) // it's not supported for 'genesys' mode 
@@ -247,11 +247,12 @@ public class TestCommandParse {
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","filename.duration.properties.ini",
-						"-format","block", 
+						"-format","block",
+						"-processor","time",
 						null,null
 						},
 				1, // found files
-				"URS.20170420_080950_004.log,2017-04-20 08:09:50.011,5510838.0,2017-04-20 09:41:40.849");
+				"URS.20170420_080950_004.log,2017-04-20 08:09:50.004,5510845.0,2017-04-20 09:41:40.849");
 		
 
 	}
@@ -384,11 +385,41 @@ rowname=filename
 						null,null
 						},
 				1, // found files
-				"Strategy RP_80007_Atencion_Bancoppel,2.0");
+				"userdata bytes,3709342.0");
 		
 
 	}
 
+	/*
+	 * 
+	 * 
+	 ++++ Test with group name + column name ++++
+	 
+
+
+	 */
+	
+	@Test
+	public void testCmdParse_Format_Table_Processor_Simple_AggregatingFieldGroupName_combined(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", start.toAbsolutePath().toString(), 
+						"-ext", "URS.+.log",
+						"-statfile","filename.combined_duration.properties.ini",
+						"-format","block", 
+						"-processor","time",
+						"-sample","0",
+						null,null
+						},
+				2, // found files
+				"URS.20170420_080950_004.log,3709342.0,415930.0,2017-04-20 08:09:50.004,5510845.0,2017-04-20 09:41:40.849,637389.0");
+		
+
+	}
 	/*
 	 * 
 	 * 

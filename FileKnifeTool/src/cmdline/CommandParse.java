@@ -43,7 +43,6 @@ import logprocessing.StatDataProcessor;
 import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatDataProcessorSeparatorsCSV;
-import logprocessing.StatisticManager;
 import logprocessing.StatisticParamNaming;
 import paramvalidators.LineProcValidator;
 import paramvalidators.OutputFormatValidator;
@@ -52,6 +51,9 @@ import resultoutput.FileFabric;
 import resultoutput.FileFromRecords;
 import resultoutput.ResultOutput;
 import resultoutput.ResultOutputFabric;
+import statmanager.StatisticManager;
+import statmanager.UnsupportedStatFormatException;
+import statmanager.UnsupportedStatParamException;
 import util.FilesUtil;
 import logprocessing.StatisticFactory;
 
@@ -85,7 +87,7 @@ public class CommandParse extends CommandImpl{
 	
 	protected StatDataProcessor sdp;
 	protected ResultOutput result;
-	private StatisticManager sm=StatisticManager.getInstance();
+	private StatisticManager sm;
 	protected LineProcessing ln;
 	
 	private Logger logger=LoggerFactory.getLogger(CommandParse.class);
@@ -215,7 +217,8 @@ public class CommandParse extends CommandImpl{
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
-
+		try {
+		sm=StatisticManager.getInstance(format);
 		ln=LineProcessingFactory.getInstance(processor, sampling, sm);
 		sdp=StatDataProcessorFactory.getStatDataProcessor(format);
 		
@@ -224,7 +227,7 @@ public class CommandParse extends CommandImpl{
 		Properties prop = new Properties();
     	InputStream input = null;
     	
-    	try {
+    	
         
     		// checking classpath
     					/*ClassLoader cl = ClassLoader.getSystemClassLoader();
@@ -280,6 +283,13 @@ public class CommandParse extends CommandImpl{
     	} catch (IOException e) {
 			// TODO Auto-generated catch block
 			logger.error("File reading error: {}",e);
+			System.exit(1);
+		}catch (UnsupportedStatParamException e){
+			logger.error("Statistic parameter error: {}",e);
+			System.exit(1);
+		} catch (UnsupportedStatFormatException e) {
+			// TODO Auto-generated catch block
+			logger.error("Output format error",e);
 			System.exit(1);
 		}finally{}
     	

@@ -72,6 +72,8 @@ public class DurationStatistic extends StatisticDefinition {
 		
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){ // LineProcessing sampling should be 0 to get not sampled timestamp 
+			
+			if(null!=sampled_timeframe){
 			long duration = 0;
 			String value;
 			if (useFilename)
@@ -89,15 +91,22 @@ public class DurationStatistic extends StatisticDefinition {
 
 			stats.put(value, block);
 			
+			try{
 			if (block.getSize()>1)
 				duration=block.getDuration();
-			
+			}catch(Exception exc){
+				logger.error("Can't update duration,\nline: "+line+"\nsampled_timeframe: "+sampled_timeframe+"{}", exc.getMessage());
+				throw exc;
+				
+			}finally{
 				counter=getStatValue(line, splitline, block.id);
 				if (null!=counter){
 					double new_value=duration;
 					if (counter<new_value)
 					updateStatValue(duration,block.id);
 				}
+			}
+			}
 		}
 
 

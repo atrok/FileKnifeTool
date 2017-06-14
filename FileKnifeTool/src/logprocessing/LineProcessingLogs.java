@@ -23,6 +23,7 @@ import com.google.common.collect.Multiset.Entry;
 
 import util.Benchmark;
 import jregex.*;
+import statmanager.StatisticManager;
 public class LineProcessingLogs implements LineProcessing{
 	private String line;
 	private String[] split_line;
@@ -52,7 +53,7 @@ public class LineProcessingLogs implements LineProcessing{
 	private jregex.Pattern jPatternLongTime=new jregex.Pattern("^[\\d]{4,4}(-[\\d]{2,2})+T[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //2017-11-09T12:23:32.123
 	
 	private jregex.Matcher jMatcherShortTimestamp;
-	private jregex.Pattern jPatternShortTime=new jregex.Pattern("^[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}\\s?$"); //12:23:32.123
+	private jregex.Pattern jPatternShortTime=new jregex.Pattern("^[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //12:23:32.123
 	
 
 	private long timeprocessing;
@@ -95,29 +96,19 @@ public class LineProcessingLogs implements LineProcessing{
 		//split_line = line.split(REGEXP.SPACES); // split line by spaces
 		//split_line=Iterables.toArray(SPACE_SPLITTER.split(line), String.class);
 		//split_line_list=SPACE_SPLITTER.splitToList(line);
-		Benchmark.tick();
-		//split_line=StringUtils.split(line);//TODO
-		split_line=splitSmart(line);
-		timesplitline+=Benchmark.tack();
+
 		
 		try {
 
-			// if (b){// if line begins with timestamp we may start processing
-			// the line
-			if (time_processing(sampling)){
-				
+			Benchmark.tick();
+			//split_line=StringUtils.split(line);//TODO
+			split_line=splitSmart(line);
 			
-			//matcher=patternTimestamp.matcher(split_line[0]);
+			timesplitline+=Benchmark.tack();
 			
-			//jMatcher=jPatternTimestamp.matcher(split_line[0]);22.03.16 why we need this check?
-			
-			//if (matcher.find()) {
-			//if (jMatcher.find()) {//22.03.16
-				sec = sampling(sampling);
-
 				logger.trace("Obtained sampled timestamp:{}", sec);
 				
-				try{
+				
 				Iterator<?> m = sm.getStatisticsList().iterator();
 				
 				while (m.hasNext()) {
@@ -140,14 +131,11 @@ public class LineProcessingLogs implements LineProcessing{
 				}catch(Exception e){
 					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
 					logger.error(ln);
-					logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}",e);
-					System.exit(0);
+					logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}");
+					throw e;
+					//System.exit(0);
 				}
-			}
-		 //}// 22.03.16
-		} catch (PatternSyntaxException e) {
-			logger.error("Pattern error", e);
-		}
+			
 	}
 
     // time that tick() was called
@@ -181,13 +169,12 @@ public class LineProcessingLogs implements LineProcessing{
 	 */
 	
     
-	private boolean time_processing(int sampling) {
+	private boolean time_processing(int sampling, String[] split_line) {
 		/*
 		 * # 13:16:54.058 Trc 04120 Check point 2014-09-16T13:16:54 # 0 1 2 3 4
 		 * 5
 		 */
-		
-		long start=System.nanoTime();
+		boolean result=false;
 		
 		if (split_line.length>0){
 		String[] time_temp = new String[7];
@@ -236,10 +223,8 @@ public class LineProcessingLogs implements LineProcessing{
 								split_line[checkInd].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP)
 								));
 				 
-				//List<String> test=TIMESTAMP_SPLITTER.splitToList(split_line[5]);
 		
 				String[] t = split_line[0].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
-		//tock("split_line[0].split :");
 		
 				if (t.length == 4 && t[3] != null)
 					test.add(t[3]); // # 13:16:54.058 Trc 04120 Check point	2014-09-16T13:16:54
@@ -247,18 +232,19 @@ public class LineProcessingLogs implements LineProcessing{
 				test.toArray(time_temp);
 			} else {
 
-				if (timestamp.length()>13&&(jMatcherLongTimestamp.matches())) { //// 2015-09-17T19:32:29.778
-					
+				if (timestamp.length()>13&&(jMatcherLongTimestamp.find())) { //// 2015-09-17T19:32:29.778
+					timestamp=jMatcherLongTimestamp.group(0);
 					time_temp = timestamp.split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
 		//tock("long timestamp split :");		
 				} else {
-					if(jMatcherShortTimestamp.matches()){
+					if(jMatcherShortTimestamp.find()){
 
 					// 13:16:54.215 Trc 04541 Message MSGCFG_GETOBJECTINFO
 					// received from 224 (CCView 'CCPulse_701')
 					// 1
 					// print "debug: " name
-
+					timestamp=jMatcherShortTimestamp.group(0);
+					
 					String[] arr_new_time = timestamp.split(REGEXP.PATTERN_SPLIT_SHORT_TIMESTAMP);
 		//tock("short timestamp split :");			
 					for (int i = 0; i < arr_new_time.length; i++) {
@@ -291,12 +277,14 @@ public class LineProcessingLogs implements LineProcessing{
 		//tock("long timestamp split :");
 				putTime(time, "start_time", time_temp);
 				putTime(time, "end_time", time_temp);
+				
+				return true;
 			}
 		}
 		//tock("timeprocessing finished in:");
 		}
 		
-		timeprocessing+=System.nanoTime()-start;
+		
 		return false;
 	}
 
@@ -335,17 +323,19 @@ public class LineProcessingLogs implements LineProcessing{
 			break;
 		case 10:
 			int t = (Integer.parseInt(time.get("end_time")[4]) / sampling) * 10;
-
+			String val="";
+			if (t==0) val="00"; else val=Integer.toString(t);
+			
 			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
-					+ time.get("end_time")[3] + ":" + Integer.toString(t);
+					+ time.get("end_time")[3] +":"+ val+":00.000";
 			break;
 		case 60:
 			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
-					+ time.get("end_time")[3] + ":" + "00";
+					+ time.get("end_time")[3] + ":" + "00:00.000";;
 			break;
 		case 24:
 			sec = time.get("end_time")[0] + "-" + time.get("end_time")[1] + "-" + time.get("end_time")[2] + " "
-					+ "00" + ":" +"00";
+					+ "00:00:00.000";
 			break;
 		}
 		return sec;
@@ -398,6 +388,26 @@ public class LineProcessingLogs implements LineProcessing{
 			
 			
 			String[] arr=StringUtils.split(s);
+			
+			long start=System.nanoTime();
+			
+			boolean timeIsFound= time_processing(sampling, arr);
+			
+			timeprocessing+=System.nanoTime()-start;
+			
+			if (timeIsFound){// for lines with timestamps we remove punctuation, for other leave as is
+				
+				
+				//matcher=patternTimestamp.matcher(split_line[0]);
+				
+				//jMatcher=jPatternTimestamp.matcher(split_line[0]);22.03.16 why we need this check?
+				
+				//if (matcher.find()) {
+				//if (jMatcher.find()) {//22.03.16
+				//split_line=splitSmart(line);
+				sec = sampling(sampling);
+				
+
 			List<String> list=new ArrayList<String>();
 			StringBuilder sb=new StringBuilder();
 			//StringBuilder variable=new StringBuilder();
@@ -437,6 +447,10 @@ public class LineProcessingLogs implements LineProcessing{
 					
 			}
 			return list.toArray(new String[]{});
+			}else {
+				sec=null;
+				return StringUtils.split(line);
+			}
 		
 	}
 	

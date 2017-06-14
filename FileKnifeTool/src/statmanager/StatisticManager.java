@@ -1,4 +1,4 @@
-package logprocessing;
+package statmanager;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -7,15 +7,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import garbagecleaner.ENUMERATIONS;
+import logprocessing.AggregatingStatistic;
+import logprocessing.DurationStatistic;
+import logprocessing.IncrementalStatistic;
+import logprocessing.MaxStatistic;
+import logprocessing.MinStatistic;
+import logprocessing.StatisticDefinition;
+import logprocessing.StatisticFactory;
+import logprocessing.SumStatistic;
 
 
-public class StatisticManager {
+
+public abstract class StatisticManager {
 
 	private List<StatisticDefinition> stats=new LinkedList<StatisticDefinition>();
 		
-	private static StatisticManager sm=new StatisticManager();
+	//private static StatisticManager sm=new StatisticManager();
 	
-	private StatisticManager(){
+	public StatisticManager(){
 		StatisticFactory.instance().registerProduct("IncrementalStatistic",IncrementalStatistic.class);
 		StatisticFactory.instance().registerProduct("AggregatingStatistic",AggregatingStatistic.class);
 		StatisticFactory.instance().registerProduct("MaxStatistic",MaxStatistic.class);
@@ -26,7 +36,21 @@ public class StatisticManager {
 
 	}
 	
-	public static StatisticManager getInstance(){return sm;}
+	public static StatisticManager getInstance(String format) throws UnsupportedStatFormatException{
+
+		switch(format){
+		
+		case ENUMERATIONS.FORMAT_STAT: return new StatisticManagerSTAT();
+		case ENUMERATIONS.FORMAT_TABLE: return new StatisticManagerTABLE();
+		case ENUMERATIONS.FORMAT_BLOCK: return new StatisticManagerBLOCK();
+		default:
+			throw new UnsupportedStatFormatException("Provided format '"+format+"' is not supported");
+		}
+		
+		
+	}
+	
+	abstract boolean verifyStatistic(StatisticDefinition stat) throws UnsupportedStatParamException;
 	
 	public List getStatisticsList(){return stats.size()!=0 ? stats : null;} /// to make sure statistic definitions were put into statistic manager before passing it to LineProcessing class
 	
@@ -51,8 +75,10 @@ public class StatisticManager {
 		
 	}
 	
-	public void addStatistic(StatisticDefinition stat){
-		stats.add(stat);
+	public void addStatistic(StatisticDefinition stat) throws UnsupportedStatParamException{
+		if(verifyStatistic(stat))
+			stats.add(stat);
+		
 	}
 	
 	public void printStatData(){

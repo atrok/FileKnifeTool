@@ -29,13 +29,13 @@ import logprocessing.StatDataProcessor;
 import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticFactory;
-import logprocessing.StatisticManager;
 import logprocessing.StatisticParamNaming;
 import parameterizer.Parameterizer;
 import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
 import resultoutput.ResultOutput;
 import resultoutput.ResultOutputFabric;
+import statmanager.StatisticManager;
 
 @Parameters (separators=",", commandDescription=" command to parse alarms common files to retrieve log events and its categories")
 public class CommandParseFileWithSeparators extends CommandParse{

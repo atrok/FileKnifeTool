@@ -14,7 +14,7 @@ import org.junit.Test;
 
 import logprocessing.DurationStatistic;
 import logprocessing.LineProcessingLogs;
-import logprocessing.StatisticManager;
+import statmanager.StatisticManager;
 import util.DateTime;
 
 public class TestUtils {

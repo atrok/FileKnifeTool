@@ -1,6 +1,7 @@
 package logprocessing;
 
 import garbagecleaner.ENUMERATIONS;
+import statmanager.StatisticManager;
 
 public class LineProcessingFactory {
 	
