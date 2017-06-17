@@ -56,6 +56,8 @@ public abstract class StatisticDefinition {
 	private String[] foundGroups;
 	
 	protected boolean useFilename=false;
+	protected boolean useGroupForRowname=false;
+	protected int rowname_group_index=0;
 	
 	private char[][] brackets=new char[][]{
 			new char[]{'[',']'},
@@ -115,6 +117,9 @@ public abstract class StatisticDefinition {
 			}else{
 				throw new ParameterException("Value of 'rowname' parameter in statistic "+name+" could be 'filename' or numeric. Instead we got '"+rowname+"'");
 			}
+		}else{ /// it's an index 
+			useGroupForRowname=true;
+			rowname_group_index=Integer.valueOf(rowname);
 		}
 	
 	}

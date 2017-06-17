@@ -67,7 +67,7 @@ public class CommandParse extends CommandImpl{
 	private String output;
 	
 	@Parameter(names = "-sample", description = "statdata sampling (0|1|10|60|24(h)) min", variableArity=false, required = false, validateWith=SamplingValidator.class)
-	private int sampling=10;
+	private int sampling=0;
 
 	@Parameter(names = "-statfile", description = "name of file with statistics", variableArity=false, required = false)
 	protected String statfile="statistic.properties.ini";

@@ -73,40 +73,48 @@ public class DurationStatistic extends StatisticDefinition {
 		@Override
 		public void calculate(String line, String[] splitline, String sampled_timeframe){ // LineProcessing sampling should be 0 to get not sampled timestamp 
 			
-			if(null!=sampled_timeframe){
+		String[] regexgroups = getRegexGroups();
+
+		if (null != sampled_timeframe) {
 			long duration = 0;
 			String value;
 			if (useFilename)
-				value=splitline[splitline.length-1]; // filename in last cell
+				value = splitline[splitline.length - 1]; // filename in last
 			else
-				value=splitline[aggregating_field];
-			block=(Block)stats.get(value);
+				if(regexgroups!=null&&regexgroups.length>1)
+					value=regexgroups[aggregating_field];
+				else 
+					value=splitline[aggregating_field];
 			
-			if(block==null)
-				block=new Block(value);
-			
-			Line l=new Line(splitline);
+			block = (Block) stats.get(value);
+
+			if (block == null)
+				block = new Block(value);
+
+			Line l = new Line(splitline);
 			l.setTime(sampled_timeframe);
 			block.addLine(l);
 
 			stats.put(value, block);
-			
-			try{
-			if (block.getSize()>1)
-				duration=block.getDuration();
-			}catch(Exception exc){
-				logger.error("Can't update duration,\nline: "+line+"\nsampled_timeframe: "+sampled_timeframe+"{}", exc.getMessage());
+
+			try {
+				if (block.getSize() > 1)
+					duration = block.getDuration();
+			} catch (Exception exc) {
+				logger.error(
+						"Can't update duration,\nline: " + line + "\nsampled_timeframe: " + sampled_timeframe + "{}",
+						exc.getMessage());
 				throw exc;
-				
-			}finally{
-				counter=getStatValue(line, splitline, block.id);
-				if (null!=counter){
-					double new_value=duration;
-					if (counter<new_value)
-					updateStatValue(duration,block.id);
+
+			} finally {
+				counter = getStatValue(line, splitline, block.id);
+				if (null != counter) {
+					double new_value = duration;
+					if (counter < new_value)
+						updateStatValue(duration, block.id);
 				}
 			}
-			}
+		}
 		}
 
 

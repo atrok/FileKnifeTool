@@ -32,8 +32,11 @@ public class StatisticFactory {
 		Constructor<StatisticDefinition> productConstructor;
 		try {
 			logger.info("{}: instantiating {}", productID, productClass);
-			logger.info("arguments: {}", args);
+			
 			productConstructor = productClass.getDeclaredConstructor(new Class[]{String.class,Map.class});
+			StatisticDefinition sd=(StatisticDefinition)productConstructor.newInstance((Object[])args);
+			logger.info(sd.toString());
+			
 			return (StatisticDefinition)productConstructor.newInstance((Object[])args);
 
 		} catch (NoSuchMethodException e) {

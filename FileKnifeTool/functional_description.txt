@@ -1,0 +1,87 @@
+
+<String, Map<String,int>>rate{
+        StatName{
+            sampled_timeframe, value
+            ...
+        }
+        StatName{
+            sampled_timeframe, value
+            ...
+        }
+}
+
+StatDataProcessingLogs (format=logs) // use when sampling by time sample is required
+<String, Map<String,int>>rate ==> Record[n]{
+                0->Header("TIME", StatName1, StatName2, ... StatNameN-1)
+                1->TimeStamp (sampled_timeframe, value1, value2,..., valueN-1)
+                ...
+                n-1->TimeStamp (sampled_timeframe, value1, value2,..., valueN-1)
+    
+}
+
+ StatDataProcessingBlocks (format=block)
+ <String, Map<String,int>>rate ==> Record[n]{
+                0->Header("ID", StatName1, StatName2, ... StatNameN-1)
+                1->SimpleRecord(sampled_timeframe, value1, value2,..., valueN-1)
+                ...
+                n-1->SimpleRecord(sampled_timeframe, value1, value2,..., valueN-1)
+    
+}
+
+ StatDataProcessingTest (format=table) // use when metrics summary by statname is required
+ <String, Map<String,int>>rate ==> Record[n]{
+                0->Header("ID", sampled_timeframe1, sampled_timeframe2, ... sampled_timeframeN-1)
+                1->Header (StatName1, value1, value2,..., valueN-1)
+                ...
+                n-1->Header (StatName2, value1, value2,..., valueN-1)
+    
+}
+
+TimeStamp{
+    String first_column
+    ArrayList values
+    
+    compareTo( compares timestamps in first_columns)
+    return first_column+','+values
+    }
+ 
+ 
+ Header { //used as a columns holder
+    ArrayList values (unique values only)
+    compareTo( compares strings in first_columns)
+    return first_column+','+values
+ }
+ 
+SimpleRecord {
+    ArrayList values (values aren't unique)
+    compareTo( compares strings in first_columns)
+    return first_column+','+values
+ }
+ SQLRecord{
+    String table_name="TestTable";
+    compareTo( compares strings in first_columns)
+    return "INSERT INTO "+table_name+" VALUES ('"+first_column+"',"+values)"
+ 
+ }
+ 
+sampled_timeframe
+-----------------
+
+LineProcessingLogs
+    generate sampled_timeframe based on line timestamp
+    then executes statistic calculate method with sampled_timeframe passed as an argument
+
+LineProcessingSimple
+    puts "simple" as value of sampled_timeframe 
+    TODO: derive sampled_timeframe from statistic definition
+    
+Statistic definition:
+
+[#ObjectSentSum] <== StatName
+stattype=SumStatistic
+regexp=.+There are \\[[0-9]{3,}\\] objects of type.+
+field=5 <== aggregating field used for calculation of aggregation metrics (Like Sum, Min, Max)
+column= <== name of column (used with LogProcesingSimple ) 
+
+ 
+    

@@ -1,5 +1,8 @@
 package logprocessing;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,6 +25,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Multiset.Entry;
 
 import util.Benchmark;
+import util.MyStringUtils;
 import jregex.*;
 import statmanager.StatisticManager;
 public class LineProcessingLogs implements LineProcessing{
@@ -60,6 +64,8 @@ public class LineProcessingLogs implements LineProcessing{
 	private long timenormalizing;
 	private long timegetstatvalue;
 	private long timesplitline;
+	private long timecalculate;
+	
 	private Map<String,Integer> timestatfound=new HashMap<String,Integer>();
 	
 	private static final Splitter SPACE_SPLITTER = Splitter.on(' ')
@@ -77,6 +83,8 @@ public class LineProcessingLogs implements LineProcessing{
 	
 	private int sampling = 10;
 	private StatisticManager sm;
+	
+	private MyStringUtils cache;
 	
 	private Logger logger=LoggerFactory.getLogger(LineProcessingLogs.class);
 
@@ -99,12 +107,11 @@ public class LineProcessingLogs implements LineProcessing{
 
 		
 		try {
-
-			Benchmark.tick();
-			//split_line=StringUtils.split(line);//TODO
-			split_line=splitSmart(line);
-			
-			timesplitline+=Benchmark.tack();
+			cache=new MyStringUtils();	
+			TimeProcessing tp=new TimeProcessing(line);
+				
+				
+				sec=tp.getSampling();
 			
 				logger.trace("Obtained sampled timestamp:{}", sec);
 				
@@ -121,12 +128,24 @@ public class LineProcessingLogs implements LineProcessing{
 						val=timestatfound.get(p.getName());
 					
 					if (p.isMatched(ln)) {
+
+						Benchmark.tick();
+						//split_line=StringUtils.split(line);//TODO
+						split_line=splitSmart(tp.timeIsFound(),line);
+						
+						timesplitline+=Benchmark.tack();
+						
 						val++;
 						timestatfound.put(p.getName(),val);
+						
+						Benchmark.tick();
 						p.calculate(ln, split_line, sec);
+						timecalculate+=Benchmark.tack();
+						
+						timenormalizing+=p.getTimenormalizing();
+						timegetstatvalue+=p.getTimegetstatvalue();
 					}
-					timenormalizing+=p.getTimenormalizing();
-					timegetstatvalue+=p.getTimegetstatvalue();
+					
 				}
 				}catch(Exception e){
 					System.out.println("Statistic Manager is likely empty: please add Statistic Definitions\n");
@@ -134,6 +153,9 @@ public class LineProcessingLogs implements LineProcessing{
 					logger.error("Statistic Manager is likely empty or one of statistics is defined incorrectly {}");
 					throw e;
 					//System.exit(0);
+				}finally{
+					cache=null;
+					
 				}
 			
 	}
@@ -218,13 +240,15 @@ public class LineProcessingLogs implements LineProcessing{
 					return false;
 				};
 				
+				String ts=jMatcherCheckpoint.group(1);
+				//ts=";";
 				List<String> test = new ArrayList<String>(
 						Arrays.asList(
-								split_line[checkInd].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP)
+								cache.getArray(split_line[checkInd],REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP)
 								));
 				 
 		
-				String[] t = split_line[0].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
+				String[] t = cache.getArray(split_line[0],REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
 		
 				if (t.length == 4 && t[3] != null)
 					test.add(t[3]); // # 13:16:54.058 Trc 04120 Check point	2014-09-16T13:16:54
@@ -234,7 +258,7 @@ public class LineProcessingLogs implements LineProcessing{
 
 				if (timestamp.length()>13&&(jMatcherLongTimestamp.find())) { //// 2015-09-17T19:32:29.778
 					timestamp=jMatcherLongTimestamp.group(0);
-					time_temp = timestamp.split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
+					time_temp = cache.getArray(timestamp,REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
 		//tock("long timestamp split :");		
 				} else {
 					if(jMatcherShortTimestamp.find()){
@@ -245,7 +269,7 @@ public class LineProcessingLogs implements LineProcessing{
 					// print "debug: " name
 					timestamp=jMatcherShortTimestamp.group(0);
 					
-					String[] arr_new_time = timestamp.split(REGEXP.PATTERN_SPLIT_SHORT_TIMESTAMP);
+					String[] arr_new_time = cache.getArray(timestamp,REGEXP.PATTERN_SPLIT_SHORT_TIMESTAMP);
 		//tock("short timestamp split :");			
 					for (int i = 0; i < arr_new_time.length; i++) {
 						time_temp[i + 3] = arr_new_time[i]; // i+3 is offset
@@ -271,7 +295,7 @@ public class LineProcessingLogs implements LineProcessing{
 			 * Local time: 2014-09-16T13:14:58.465 
 			 * # 1 2
 			 */
-			if (jMatcherLocalTime.matches()) {
+			if (jMatcherLocalTime.find()) {
 		//tock("matcherLocalTime.matches() :");
 				time_temp = split_line[2].split(REGEXP.PATTERN_SPLIT_LONG_TIMESTAMP);
 		//tock("long timestamp split :");
@@ -362,7 +386,7 @@ public class LineProcessingLogs implements LineProcessing{
         logger.debug("normalizing: {} sec",TimeUnit.SECONDS.convert(getTimenormalizing(), TimeUnit.NANOSECONDS));
         logger.debug("getstatvalue: {} sec",TimeUnit.SECONDS.convert(getTimegetstatvalue(),TimeUnit.NANOSECONDS));
         logger.debug("getsplitvalue: {} sec",TimeUnit.SECONDS.convert(getTimesplitline(),TimeUnit.NANOSECONDS));
-        
+        logger.debug("timecalculate: {} sec",TimeUnit.SECONDS.convert(timecalculate,TimeUnit.NANOSECONDS));
 		
 		for (Map.Entry entry : timestatfound.entrySet()){
 		     System.out.print(entry.getKey()+" found:");
@@ -374,7 +398,7 @@ public class LineProcessingLogs implements LineProcessing{
 		}
 
 		
-    	timeprocessing=timenormalizing=timegetstatvalue=timesplitline=0;
+		timecalculate=timeprocessing=timenormalizing=timegetstatvalue=timesplitline=0;
 	}
 
 	@Override
@@ -383,17 +407,42 @@ public class LineProcessingLogs implements LineProcessing{
 		return null;
 	}
 	
-	private String[] splitSmart(String s){
-
+	private class TimeProcessing{
+		
+		private String string;
+		
+		private boolean timeisfound=false;
+		
+		private String time_sample;
+		
+		public TimeProcessing(String s){
+			string=s;
 			
-			
-			String[] arr=StringUtils.split(s);
-			
+			String[] arr=cache.getArray(s,null);
 			long start=System.nanoTime();
 			
-			boolean timeIsFound= time_processing(sampling, arr);
+			timeisfound= time_processing(sampling, arr);
 			
 			timeprocessing+=System.nanoTime()-start;
+			
+			if (timeisfound)
+				time_sample=sampling(sampling);
+			else
+				time_sample=null;
+			
+		}
+		
+		
+		public String getSampling(){return time_sample;}
+		public boolean timeIsFound(){ return timeisfound;}
+	}
+	
+	private String[] splitSmart(boolean timeIsFound, String s){
+
+		
+			String[] arr=cache.getArray(s,null);
+			
+
 			
 			if (timeIsFound){// for lines with timestamps we remove punctuation, for other leave as is
 				
@@ -449,7 +498,7 @@ public class LineProcessingLogs implements LineProcessing{
 			return list.toArray(new String[]{});
 			}else {
 				sec=null;
-				return StringUtils.split(line);
+				return arr;
 			}
 		
 	}

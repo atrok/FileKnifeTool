@@ -3,6 +3,7 @@ package logprocessing;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -18,7 +19,7 @@ public class StatDataProcessorBlocks extends StatDataProcessor {
 		Set<String> keys=statdata.keySet();
 		
 		Header topHeader=new Header("ID");
-		Set<Record> tempRecords=new TreeSet<Record>();
+		Set<Record> tempRecords=new LinkedHashSet<Record>();
 		tempRecords.add(topHeader);
 
 		for(String statname: keys){

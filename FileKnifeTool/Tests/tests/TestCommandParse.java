@@ -30,6 +30,9 @@ public class TestCommandParse {
 	Path start = Paths.get("Tests/resources/");
 	Path resources = Paths.get("target/_temp/resources");
 	
+	String garbagecleaner_logs="D:\\Share\\distrib\\3dparty\\GarbageCleaner\\logs";
+	String default_logs=start.toAbsolutePath().toString();
+	
 	@Test
 	public void testCmdParseSample10(){
 	
@@ -38,7 +41,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "config_proxy_person_cto_p_all.+.log",
 						"-sample","10",
 						null,null
@@ -55,7 +58,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "config_proxy_person_cto_p_all.+.log",
 						"-sample","10",
 						"-format","csv", /// it's not supported for 'genesys' mode
@@ -89,7 +92,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.properties.ini",
@@ -113,7 +116,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.properties.ini",
@@ -135,7 +138,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","msgid.properties.ini",
@@ -157,7 +160,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","filename.properties.ini",
@@ -179,7 +182,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.errors.properties.ini",
@@ -194,6 +197,25 @@ public class TestCommandParse {
 	}
 	
 	@Test
+	public void testCmdParse_Format_Block_AggregatingFieldGroupName_MaxStatistic(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "AMR_US_Aus_ORS01_B.20170505_064008_819.log",
+						"-statfile","ors.doc_duration.properties.ini",
+						"-format","block", 
+						null,null
+						},
+				1, // found files
+				"01E6030IE0CGP8GFLJMMG4DAES0000P1,2017-05-05 06:41:20.808,2017-05-05 06:41:23.974,722.0,3166.0");
+		
+	}
+	
+	@Test
 	public void testCmdParse_Process_Simple_Format_Block(){
 	
 
@@ -201,7 +223,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.properties.ini",
@@ -220,7 +242,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "AMR_US_Aus_ORS01_B.20170505_064008_819.log",
 						"-sample","0",
 						"-statfile","ors.duration.properties.ini",
@@ -228,7 +250,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"sid='01E6030IE0CGP8GFLJMMG4DAES0000P5,2204.0,2017-05-05 06:42:29.034,2017-05-05 06:42:31.238");
+				"01E6030IE0CGP8GFLJMMG4DAES0000P5,2204.0,2017-05-05 06:42:29.034,2017-05-05 06:42:31.238");
 		
 
 	}
@@ -243,7 +265,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","filename.duration.properties.ini",
@@ -266,7 +288,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(),  
+						"-d", default_logs,  
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.duration.properties.ini",
@@ -304,7 +326,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.column.properties.ini",
@@ -342,7 +364,7 @@ public class TestCommandParse {
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-sample","0",
 						"-statfile","urs.column.properties.ini",
@@ -377,7 +399,7 @@ rowname=filename
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-statfile","urs.aggr_group.properties.ini",
 						"-format","table", 
@@ -407,7 +429,7 @@ rowname=filename
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.+.log",
 						"-statfile","filename.combined_duration.properties.ini",
 						"-format","block", 
@@ -444,7 +466,7 @@ rowname=filename
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS.20170420_080950_004.log",
 						"-statfile","urs.groups.properties.ini",
 						"-format","table", 
@@ -472,7 +494,7 @@ rowname=filename
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", start.toAbsolutePath().toString(), 
+						"-d", default_logs, 
 						"-ext", "URS_tab_delimeted.log",
 						"-statfile","urs.errors.properties.ini",
 						"-format","table", 

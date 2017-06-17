@@ -63,7 +63,13 @@ public class AggregatingStatistic extends StatisticDefinition {
 			if(useFilename)
 				rowname=filename=splitline[splitline.length-1];
 			else
-				rowname=sampled_timeframe;
+				if(useGroupForRowname){
+					if(regexgroups!=null&&regexgroups.length>1)
+						rowname=regexgroups[rowname_group_index];
+					else
+						rowname=splitline[rowname_group_index];
+				}else
+					rowname=sampled_timeframe;
 			
 		}
 		
