@@ -26,17 +26,27 @@ public class IncrementalStatistic extends StatisticDefinition {
 		
 	}
 	
+	protected String rowname;
 	
 	@Override
 	public void calculate(String line, String[] splitline, String sampled_timeframe) {
-		String row;
-		if (useFilename)
-			row=splitline[splitline.length-1]; // filename in last cell
-		else
-			row=sampled_timeframe;
+		//String row;
 		
-		counter=getStatValue(line, splitline, row);
+		String[] regexgroups=getRegexGroups();
+		
+		if(useFilename)
+			rowname=filename=splitline[splitline.length-1];
+		else
+			if(useGroupForRowname){
+				if(regexgroups!=null&&regexgroups.length>1)
+					rowname=regexgroups[rowname_group_index];
+				else
+					rowname=splitline[rowname_group_index];
+			}else
+				rowname=sampled_timeframe;
+		
+		counter=getStatValue(line, splitline, rowname);
 		if (null!=counter)
-			updateStatValue(counter+1,row);
+			updateStatValue(counter+1,rowname);
 	}
 }

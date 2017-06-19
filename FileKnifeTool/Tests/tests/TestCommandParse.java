@@ -236,6 +236,27 @@ public class TestCommandParse {
 		
 
 	}
+	
+	@Test
+	public void testCmdParse_Process_Simple_Format_Block_IncrementingStat_with_rowname(){
+	
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "config_proxy_person_cto_p_all.20150918_095313_510.log ",
+						"-sample","0",
+						"-statfile","ixn.clients.properties.ini",
+						"-format","block", 
+						"-processor","simple",
+						null,null
+						},
+				1, // found files
+				"1220,2.0,3.0");
+		
+
+	}
+	
 	@Test
 	public void testCmdParse_Format_Block(){
 
