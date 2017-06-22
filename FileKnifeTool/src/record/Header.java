@@ -1,5 +1,7 @@
 package record;
 
+import java.util.Objects;
+
 public class Header extends Record{
 
 	public Header(String timestamp) {
@@ -24,4 +26,14 @@ public class Header extends Record{
 		return getZeroColumnName().compareTo(arg0.getZeroColumnName());
 	}
 
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof Header)) {
+            return false;
+        }
+        Header obj = (Header) o;
+        return Objects.equals(getZeroColumnName(), obj.getZeroColumnName());
+    }
 }

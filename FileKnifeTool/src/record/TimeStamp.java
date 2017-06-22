@@ -1,5 +1,7 @@
 package record;
 
+import java.util.Objects;
+
 public class TimeStamp extends Record{
 	
 	int[] timestamp_split;
@@ -48,5 +50,15 @@ public class TimeStamp extends Record{
 		return compareTo((Record)o);
 	}
 
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof TimeStamp)) {
+            return false;
+        }
+        TimeStamp obj = (TimeStamp) o;
+        return Objects.equals(getZeroColumnName(), obj.getZeroColumnName());
+    }
 
 }

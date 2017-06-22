@@ -100,6 +100,7 @@ public class DurationStatistic extends StatisticDefinition {
 			try {
 				if (block.getSize() > 1)
 					duration = block.getDuration();
+				else duration=-1;
 			} catch (Exception exc) {
 				logger.error(
 						"Can't update duration,\nline: " + line + "\nsampled_timeframe: " + sampled_timeframe + "{}",

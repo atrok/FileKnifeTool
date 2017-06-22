@@ -1,5 +1,7 @@
 package record;
 
+import java.util.Objects;
+
 public class SQLRecord extends Record{
 
 	private String table_name="TestTable";
@@ -35,4 +37,15 @@ public class SQLRecord extends Record{
 		sb.append(")\n");
 		return sb.toString();
 	}
+	
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof SQLRecord)) {
+            return false;
+        }
+        SQLRecord obj = (SQLRecord) o;
+        return Objects.equals(getZeroColumnName(), obj.getZeroColumnName());
+    }
 }

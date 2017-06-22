@@ -47,7 +47,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"2015-09-18 09:50:00.000,32.0,16.0,16.0,16.0,173.0,3631.0,1528.0,16226.0,156.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,354563.0,7.0,5363.0,62640.0,24448.0,259616.0,2496.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0");
+				"2015-09-18 09:50:00.000,32.0,16.0,16.0,16.0,173.0,3631.0,1528.0,16226.0,156.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,354563.0,7.0,5363.0,62640.0,24448.0,259616.0,2496.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0",
+				0);
 	}
 
 	@Test(expected = AssertionError.class) // it's not supported for 'genesys' mode 
@@ -65,7 +66,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"2015-09-18 09:50,31.0,18.0,21.0,0,16.0,3.0,0,16.0,16.0,16.0,16.0,29.0,173.0,1.0,1.0,3631.0,33.0,1.0,1.0,1528.0,0.0,16226.0,1.0,65.0,156.0,1.0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,364910.0,7.0,435.0,5456.0,15.0,280.0,62695.0,1895.0,80.0,122.0,30296.0,0.0,259616.0,16.0,1290.0,2496.0,173.0,16.0,29.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0");
+				"2015-09-18 09:50,31.0,18.0,21.0,0,16.0,3.0,0,16.0,16.0,16.0,16.0,29.0,173.0,1.0,1.0,3631.0,33.0,1.0,1.0,1528.0,0.0,16226.0,1.0,65.0,156.0,1.0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,1.0,0,0,1.0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,1.0,0,0,0,0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,364910.0,7.0,435.0,5456.0,15.0,280.0,62695.0,1895.0,80.0,122.0,30296.0,0.0,259616.0,16.0,1290.0,2496.0,173.0,16.0,29.0,246.0,7.0,7575.0,7.0,7887.0,13671.0,21558.0",
+				0);
 		
 
 	}
@@ -101,7 +103,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"simple,3.0,2.0,14.0,176.0,1.0,1.0,21.0");
+				"simple,3.0,2.0,14.0,176.0,1.0,1.0,21.0",
+				0);
 		
 
 	}
@@ -125,7 +128,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"*0x65*RP_90016_CMP_GrupoT_06,3.0");
+				"*0x65*RP_90016_CMP_GrupoT_06,3.0",
+				0);
 		
 
 	}
@@ -147,7 +151,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"Int 20002 interaction is routed to,211.0");
+				"Int 20002 interaction is routed to,211.0",
+				0);
 		
 
 	}
@@ -170,7 +175,8 @@ public class TestCommandParse {
 						},
 				1, // found files
 				//"URS_tab_delimeted.log,29.0");
-				"URS.20170420_080950_004.log,637389.0");
+				"URS.20170420_080950_004.log,637389.0",
+				0);
 		
 
 	}
@@ -191,7 +197,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"TLIB Error Bad parameter passed to function,1.0");
+				"TLIB Error Bad parameter passed to function,1.0",
+				0);
 		
 
 	}
@@ -211,7 +218,8 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"01E6030IE0CGP8GFLJMMG4DAES0000P1,2017-05-05 06:41:20.808,2017-05-05 06:41:23.974,722.0,3166.0");
+				"01E6030IE0CGP8GFLJMMG4DAES0000P1,2017-05-05 06:41:20.808,2017-05-05 06:41:23.974,722.0,3166.0",
+				0);
 		
 	}
 	
@@ -252,7 +260,9 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"1220,2.0,3.0");
+				"config_proxy_person_cto_p_all.20150918_095313_510.log,2.0,3.0,1.0,1.0,1.0,2.0,1.0,1.0,2.0,1.0,5.0,1.0,3.0,2.0,3.0,2.0,1.0,1.0,1.0,1.0,5.0,1.0,1.0,2.0,1.0,1.0,3.0,1.0,5.0,2.0,1.0,2.0,2.0,1.0,4.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,3.0,2.0,1.0,1.0,1.0,1.0,3.0,1.0,1.0,1.0,2.0,2.0,1.0,1.0,4.0,1.0,2.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,2.0,4.0,1.0,1.0,2.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,3.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,4.0,1.0,2.0,2.0,1.0,1.0,5.0,1.0,4.0,2.0,2.0,1.0,2.0,1.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,4.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,2.0,1.0,2.0,3.0,1.0,1.0,1.0,1.0,4.0,2.0,3.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,4.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,2.0,4.0,1.0,2.0,1.0,1.0,1.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,2.0,1.0,1.0,3.0,1.0,1.0,1.0,3.0,1.0,4.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,2.0,1.0,1.0,1.0",
+				2 // result_length
+				);
 		
 
 	}
@@ -276,6 +286,28 @@ public class TestCommandParse {
 
 	}
 
+	
+	@Test
+	public void testCmdParse_Format_Block_Duration(){
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "duration.log",
+						"-sample","0",
+						"-statfile","ors.duration.properties.ini",
+						"-format","block", 
+						null,null
+						},
+				1, // found files
+				"01E6030IE0CGP8GFLJMMG4DAES0000P5,2204.0,2017-05-05 06:42:29.034,2017-05-05 06:42:31.238");
+		
+
+	}
+
+	
+	
 	/*
 	 * test to find filiename duration
 	 *  
@@ -528,7 +560,7 @@ rowname=filename
 
 	}
 	
-private void parse(String[] s, int foundfiles, String search) {
+private void parse(String[] s, int foundfiles, String search, int result_length) {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();
 
@@ -555,6 +587,9 @@ private void parse(String[] s, int foundfiles, String search) {
 			String[] result=FilesUtil.read(new FileInputStream((path+"\\"+testresult)));
 			
 			assertTrue(true==contains(result, search));
+			if (result_length!=0){
+				assertTrue("ќжидаема€ длина массива результата - "+result_length+", найдено " + i,result.length==result.length);
+			}
 
 		} catch (ParameterException ex) {
 			System.out.println(ex.getMessage());
@@ -588,5 +623,9 @@ private void parse(String[] s, int foundfiles, String search) {
 		return false;
 	}
 	
+	private void parse(String[] s, int foundfiles, String search){
+		
+		parse(s,foundfiles,search,0);
+	}
 
 }

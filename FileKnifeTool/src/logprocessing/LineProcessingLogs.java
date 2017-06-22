@@ -418,8 +418,9 @@ public class LineProcessingLogs implements LineProcessing{
 		public TimeProcessing(String s){
 			string=s;
 			
-			String[] arr=cache.getArray(s,null);
 			long start=System.nanoTime();
+			String[] arr=cache.getArray(s,null);
+			
 			
 			timeisfound= time_processing(sampling, arr);
 			

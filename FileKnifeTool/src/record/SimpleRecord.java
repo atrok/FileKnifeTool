@@ -1,5 +1,7 @@
 package record;
 
+import java.util.Objects;
+
 public class SimpleRecord extends Record{
 	
 	public SimpleRecord(String first_column) {
@@ -19,5 +21,14 @@ public class SimpleRecord extends Record{
 		return getZeroColumnName().compareTo(arg0.getZeroColumnName());
 	}
 
+    @Override
+    public boolean equals(Object o) {
 
+        if (o == this) return true;
+        if (!(o instanceof SimpleRecord)) {
+            return false;
+        }
+        SimpleRecord obj = (SimpleRecord) o;
+        return Objects.equals(getZeroColumnName(), obj.getZeroColumnName());
+    }
 }

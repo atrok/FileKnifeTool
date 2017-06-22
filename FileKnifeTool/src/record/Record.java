@@ -2,6 +2,7 @@ package record;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Record implements Comparable{
 
@@ -40,4 +41,11 @@ public abstract class Record implements Comparable{
 		}
 		return line+"\n";
 	}
+	
+	public abstract boolean equals(Object o);
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first_column);
+    }
 }
