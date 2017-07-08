@@ -30,6 +30,7 @@ import logprocessing.StatDataProcessorBlocks;
 import logprocessing.StatDataProcessorFactory;
 import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatDataProcessorSeparatorsCSV;
+import logprocessing.StatisticDefinition;
 import logprocessing.SumStatistic;
 import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
@@ -736,6 +737,64 @@ public class TestLineProcessing {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void testDurationStatistic_ISCC() {
+		
+		System.out.println("------------ ISCC Duration Statistic testing -------------");
+		String statname = "#duration";
+
+		String[] lines = new String[] { "Local time:       2017-05-05T06:40:08.819",
+				"@08:08:55.2410 [ISCC] Transaction [D56561818]: created [origin:AMR_US_Aus_SIP02_P@AMR_US_Aus_SIP02_Switch controller:AMR_US_Aus_SIP02_P@AMR_US_Aus_SIP02_Switch device:1016241 resource:]",
+				"@08:09:45.9298 [ISCC] Transaction [D56561818]: deleted [origin:AMR_US_Aus_SIP02_P@AMR_US_Aus_SIP02_Switch controller:AMR_US_Aus_SIP02_P@AMR_US_Aus_SIP02_Switch device:1016241 resource:1082285]"
+				};
+		StatisticDefinition[] sd=new StatisticDefinition[]{
+				new DurationStatistic(".+\\[ISCC\\] Transaction \\[D(\\d+)\\]: (created|deleted).+", statname, "1")
+				};
+		
+		run(lines, ENUMERATIONS.FORMAT_STAT, 0, sd, statname, "56561818", 50688);
+	}
+
+	
+	private void run(String[] lines, String smtype, int sampling, StatisticDefinition[] statistics, String statname, String rowname, int expected_value){
+		
+		try{
+			StatisticManager sm = StatisticManager.getInstance(smtype);
+			
+		for(int i=0;i<statistics.length;i++){
+			sm.addStatistic(statistics[i]);
+		}
+		
+		LineProcessingLogs ln = new LineProcessingLogs(sampling, sm);
+
+		for (String l : lines) {
+			ln.processLine(l);
+		}
+
+		sm.printStatData();
+
+		Map stats = sm.getStatDataMap();
+
+		double value = (double) ((HashMap) stats.get(statname)).get(rowname);
+
+		assertTrue("Expected value of statistic is "+expected_value, value == expected_value);
+
+
+		StatDataProcessor sdp = new StatDataProcessorLogs();
+		sdp.load(sm.getStatDataMap());
+		FileFromRecords csv = new FileFromRecords(sdp, csvfile);
+
+		csv.outputResult();
+
+		// System.out.println(Arrays.toString(sdp.getResult()));
+		sm.flush();
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+		
 	}
 
 }

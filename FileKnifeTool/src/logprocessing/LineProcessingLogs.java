@@ -48,16 +48,16 @@ public class LineProcessingLogs implements LineProcessing{
 	private jregex.Matcher jMatcherCheckpoint;
 	private jregex.Matcher jMatcherLocalTime;
 	//private jregex.Pattern jPatternTimestamp=new jregex.Pattern(REGEXP.REGEXP_TIMESTAMP_LN_BEGIN);
-	private jregex.Pattern jPatternTimestamp=new jregex.Pattern("^[0-9]{2,}[-:]");
+	private jregex.Pattern jPatternTimestamp=new jregex.Pattern("^?[0-9]{2,}[-:]");
 	private jregex.Pattern jPatternCheckpoint=new jregex.Pattern(REGEXP.PATTERN_CHECK_POINT);
 	private jregex.Pattern jPatternLocalTime=new jregex.Pattern(REGEXP.PATTERN_LOCAL_TIME);
 	private jregex.Pattern jPatternMatcherEnd=new jregex.Pattern("(.+(\\]|\\]"+REGEXP.PUNCT+")|(\\]\\)|\\]"+REGEXP.PUNCT+"))$");
 
 	private jregex.Matcher jMatcherLongTimestamp;
-	private jregex.Pattern jPatternLongTime=new jregex.Pattern("^[\\d]{4,4}(-[\\d]{2,2})+T[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //2017-11-09T12:23:32.123
+	private jregex.Pattern jPatternLongTime=new jregex.Pattern("^?[\\d]{4,4}(-[\\d]{2,2})+T[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //2017-11-09T12:23:32.123
 	
 	private jregex.Matcher jMatcherShortTimestamp;
-	private jregex.Pattern jPatternShortTime=new jregex.Pattern("^[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //12:23:32.123
+	private jregex.Pattern jPatternShortTime=new jregex.Pattern("^?[\\d]{2,2}:[\\d]{2,2}:[\\d]{2,2}.[\\d]{3,3}"); //12:23:32.123
 	
 
 	private long timeprocessing;

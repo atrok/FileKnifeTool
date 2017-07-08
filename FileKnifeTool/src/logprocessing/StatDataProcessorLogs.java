@@ -61,13 +61,15 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		
 		resultR[0]=head;//#
 		
+		logger.debug("timestamps.length={}",timestamps.size());
+		
 		int a=1;		
 		for(int i=1;i<resultR.length;i++){/// we start from 1 because at i=0 there is Time column. However all other arrays starts from 0 so we introduce t_ind
 			int t_ind=i-1;
 			//String[] row=new String[head.getValues().size()];
 			//result[i]=row;
 			
-			logger.debug("timestamps.length={}, timestamp: {}",timestamps.size(),t[t_ind]);
+			//logger.debug("timestamps.length={}, timestamp: {}",timestamps.size(),t[t_ind]);
 			
 			//sampled_timeframe[i-1]=t[0];
 			//row[0]=t[0];
