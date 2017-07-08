@@ -76,7 +76,7 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 			//String[] row=new String[head.getValues().size()];
 			//result[i]=row;
 			
-			//logger.debug("timestamps.length={}, timestamp: {}",timestamps.size(),t[t_ind]);
+			logger.debug("timestamps.length={}, "+t_ind+", timestamp: {}",timestamps.size(), t[t_ind]);
 			
 			//sampled_timeframe[i-1]=t[0];
 			//row[0]=t[0];
