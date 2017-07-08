@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -16,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import record.Header;
 import record.Record;
 import record.TimeStamp;
+import util.Benchmark;
 
 public class StatDataProcessorLogs extends StatDataProcessor{
 
@@ -28,7 +30,8 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		logger.debug("Collected statdata processing has started");
 		
 		SortedSet<String> messages=new TreeSet(statdata.keySet());
-				
+		UniqueSet<Record> tempRecords=new UniqueSet<Record>();
+		
 		//String[] header=new String[messages.size()+1];
 		//header[0]="Time";
 		Header head=new Header("Time");//#
@@ -45,6 +48,7 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		Map[] data=(Map[]) statdata.values().toArray(new Map[0]);
 		
 		Set timestamps=new HashSet();
+		
 		// we need to determine the list of unique timestamps which to be added to recordR
 		for(Map m: data)
 			timestamps.addAll(m.keySet());
@@ -59,11 +63,14 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		
 		//result[0]=header;
 		
-		resultR[0]=head;//#
+		tempRecords.add(head);
+		//resultR[0]=head;//#
 		
 		logger.debug("timestamps.length={}",timestamps.size());
 		
-		int a=1;		
+		int a=1;	
+		
+		Benchmark.tick();
 		for(int i=1;i<resultR.length;i++){/// we start from 1 because at i=0 there is Time column. However all other arrays starts from 0 so we introduce t_ind
 			int t_ind=i-1;
 			//String[] row=new String[head.getValues().size()];
@@ -76,9 +83,15 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 			
 			//logger.trace("sampled timeframe: {}",t[t_ind]);
 			
-			TimeStamp tstamp=new TimeStamp(t[t_ind]); //#
+			TimeStamp tstamp=(TimeStamp)tempRecords.addBack(new TimeStamp(t[t_ind])); //#
+			
+			//TimeStamp tstamp=new TimeStamp(t[t_ind]);
+			/*
 			if (null==resultR[a])
-				resultR[a]=tstamp;//#
+				resultR[a]=tstamp;
+				
+			
+			
 			Arrays.sort(resultR,1,a);//#
 			int ind=Arrays.binarySearch(resultR, 1, a, tstamp);//#
 			if (ind>=0){//#
@@ -87,7 +100,9 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 			}
 			else
 				a++;//resultR[i]=tstamp;
-				
+			*/	
+			
+			a++;
 			
 			List t_values=tstamp.getValues();//#
 			
@@ -108,6 +123,10 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 				}
 			}
 		}
+		
+		tempRecords.toArray(resultR);
+		
+		Benchmark.tock("Done calculating");
 		// this part is to be removed once Record type is implemented properly
 /*		for(int i=1;i<result.length;i++){
 			
@@ -139,5 +158,24 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		
 	}
 
+	private class UniqueSet<Record> extends LinkedHashSet{
+		
+
+		public Record addBack(Record a){
+			add(a);
+		    for (Iterator<Record> it = iterator(); it.hasNext(); ) {
+		        Record f = it.next();
+		        if (f.equals(a))
+		            return f;
+		        else {
+		        	
+		        	return a;
+		        }
+		    }
+		    return null;
+		}
+		
+		
+	}
 
 }
