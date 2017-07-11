@@ -1,0 +1,7 @@
+Local time:       2017-05-05T06:40:08.819
+06:40:25.365 [T:140286679947008] {ScxmlMetric:1} METRIC <appl_begin sid='01E6030IE0CGP8GFLJMMG4DAES000041' name='Main.Main' url='https://cctech-ors-amr.corp.apple.com/AC_Main_1_0_21/src-gen/IPD_Main_Main.scxml' reason='normal' />
+06:40:25.520 [T:140286679947008] {ScxmlMetric:1} METRIC <appl_end sid='01E6030IE0CGP8GFLJMMG4DAES00004B' name='Main.Main' url='https://cctech-ors-amr.corp.apple.com/AC_Main_1_0_21/src-gen/IPD_Main_Main.scxml' reason='normal' />
+06:40:25.567 [T:140286713517824] {ScxmlMetric:1} METRIC <appl_begin sid='01E6030IE0CGP8GFLJMMG4DAES000048' name='Main.Main' url='https://cctech-ors-amr.corp.apple.com/AC_Main_1_0_21/src-gen/IPD_Main_Main.scxml' reason='normal' />
+06:40:25.576 [T:140286671554304] {ScxmlMetric:1} METRIC <appl_end sid='01E6030IE0CGP8GFLJMMG4DAES000048' name='Main.Main' url='https://cctech-ors-amr.corp.apple.com/AC_Main_1_0_21/src-gen/IPD_Main_Main.scxml' reason='normal' />
+06:40:25.693 [T:140286679947008] {ScxmlMetric:1} METRIC <appl_end sid='01E6030IE0CGP8GFLJMMG4DAES00004H' name='Main.Main' url='https://cctech-ors-amr.corp.apple.com/AC_Main_1_0_21/src-gen/IPD_Main_Main.scxml' reason='normal' />
+06:40:25.703 [T:140286688339712] {ScxmlMetric:1} METRIC <appl_begin sid='01E6030IE0CGP8GFLJMMG4DAES00004H' name='Main.Main' url='https://cctech-ors-amr.corp.apple.com/AC_Main_1_0_21/src-gen/IPD_Main_Main.scxml' reason='normal' />

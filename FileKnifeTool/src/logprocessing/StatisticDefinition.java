@@ -32,7 +32,7 @@ public abstract class StatisticDefinition {
 	private String column="simple";
 	
 	private Map rate = new TreeMap<String, HashMap>();
-	private jregex.Pattern patternLineMatcher;
+	protected jregex.Pattern patternLineMatcher;
 	private Pattern patternRemoveSomePunct=Pattern.compile("[;:,]");
 	private Pattern patterRemoveAllPunct=Pattern.compile(REGEXP.Log_Processing_RemoveSomePunct);
 	private Pattern patternNoPunct=Pattern.compile(REGEXP.NO_PUNCTUATION_NOR_DIGIT);
@@ -54,8 +54,8 @@ public abstract class StatisticDefinition {
 	private long timenormalizing;
 	private long timegetstatvalue;
 	private String[] nm;
-	private jregex.Matcher jMatcher;
-	private String[] foundGroups;
+	protected jregex.Matcher jMatcher;
+	protected String[] foundGroups;
 	
 	protected boolean useFilename=false;
 	protected boolean useGroupForRowname=false;
@@ -108,7 +108,11 @@ public abstract class StatisticDefinition {
 			this.column=c;
 		
 		this.varname=this.name=name;
+		if(regexp!=null)
 		this.patternLineMatcher=new jregex.Pattern(getRegexp());
+		else
+			this.patternLineMatcher=null;
+		
 		nm=varname.split(REGEXP.SPACES);
 		
 		String rowname=parameters.get(StatisticParamNaming.ROWNAME.toString());
@@ -423,7 +427,7 @@ public abstract class StatisticDefinition {
 	
 	protected String[] getRegexGroups(){
 		
-		return jMatcher.groups();
+		return foundGroups;
 		
 	}
 	
@@ -439,6 +443,10 @@ public abstract class StatisticDefinition {
 	class Block{
 		
 		String id;
+		
+		boolean finished=false;
+		boolean started=false;
+		boolean ended=false;
 		
 		ArrayList<Line> lines=new ArrayList<Line>();
 		
@@ -475,6 +483,8 @@ public abstract class StatisticDefinition {
 				}
 			return -1;
 		}
+		
+		
 		
 	}
 	

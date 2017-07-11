@@ -1,0 +1,14 @@
+Tserver for Avaya Communication Manager, Version: 8.1.010.16 Compiled: May 18 2016 10:17:40
+Genesys Telecommunications Laboratories, Inc., Copyright 1991 - 2016
+Application name: AMR_US_CUP_Tsvr_B
+Application type: TServer (1)
+Command line:     ./avayacm_server -l /ngs/app/gatp/gcti/license/license.dat -app AMR_US_CUP_Tsvr_B -host biomega.corp.apple.com -port 32022 
+Host name:        abici.corp.apple.com
+DST:              TZ = 0, timeb = 0
+Time zone:        0, GMT, GMT
+UTC time:         2017-06-29T08:04:50.827
+Local time:       2017-06-29T08:04:50.827
+@08:04:56.4017 [ISCC] Resource 1082204: acquired by Transaction [D56689364]
+@08:04:56.410 [ISCC] Resource 1082204: released by Transaction [D56689364]
+@08:04:56.4120 [ISCC] Resource 1082204: acquired by Transaction [D56689365]
+@08:04:56.421 [ISCC] Resource 1082204: released by Transaction [D56689366]

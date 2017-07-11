@@ -6,7 +6,9 @@ public enum StatisticParamNaming {
 	FIELD("field"),
 	STATTYPE("stattype"), 
 	COLUMN("column"), 
-	ROWNAME("rowname");
+	ROWNAME("rowname"), 
+	STARTWITH("startwith"),
+	ENDWITH("endwith");
 	
 	
 	private String description;

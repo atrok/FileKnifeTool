@@ -560,6 +560,31 @@ rowname=filename
 
 	}
 	
+	@Test
+	public void testCmd_Duration_StartWith(){
+		
+		String[] expected_result=new String[]{
+				"Time,iscc acquired,iscc acquired _ended,iscc acquired _finished,iscc acquired _started,time_end,time_start",
+				"56689364,9.0,true,true,true,2017-06-29 08:04:56.410,2017-06-29 08:04:56.401",
+				// can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
+		};
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "iscc.log",
+						"-statfile","duration_startwith.properties",
+						"-sample","0", 
+						null,null
+						},
+				1, // found files
+				expected_result, //content of the file
+				4 //number of records in resulting file
+				);
+		
+
+	}
 	
 	public void testCmdz_ZZZ_Custom(){
 	
@@ -579,7 +604,7 @@ rowname=filename
 		
 
 	}
-private void parse(String[] s, int foundfiles, String search, int result_length) {
+private void parse(String[] s, int foundfiles, String[] search, int result_length) {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();
 
@@ -605,7 +630,10 @@ private void parse(String[] s, int foundfiles, String search, int result_length)
 
 			String[] result=FilesUtil.read(new FileInputStream((path+"\\"+testresult)));
 			
-			assertTrue(true==contains(result, search));
+			for(int a=0; a<search.length;a++){
+				assertTrue(true==contains(result, search[a]));
+			}
+			
 			if (result_length!=0){
 				assertTrue("ќжидаема€ длина массива результата - "+result_length+", найдено " + i,result.length==result.length);
 			}
@@ -647,4 +675,10 @@ private void parse(String[] s, int foundfiles, String search, int result_length)
 		parse(s,foundfiles,search,0);
 	}
 
+	private void parse(String[] s, int foundfiles, String search, int result_length) {
+		String[] searches=new String[]{search};
+		
+		parse(s,foundfiles,searches,result_length);
+	}
+	
 }
