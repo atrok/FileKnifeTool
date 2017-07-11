@@ -1,5 +1,7 @@
 package logprocessing;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -459,10 +461,19 @@ public abstract class StatisticDefinition {
 		public long getDuration() {
 			// TODO Auto-generated method stub
 			
+			if (lines.size()>1){
 			long duration=DateTime.getTimeDifference(
 					lines.get(0).getTime(), 
 					lines.get(getSize()-1).getTime());
 			return duration;
+			}else 
+				if(lines.size()==1){
+					long duration=DateTime.getTimeDifference(
+							lines.get(0).getTime(), 
+							new Timestamp(System.currentTimeMillis()).toString());
+					return duration;
+				}
+			return -1;
 		}
 		
 	}

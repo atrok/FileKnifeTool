@@ -756,6 +756,24 @@ public class TestLineProcessing {
 		run(lines, ENUMERATIONS.FORMAT_STAT, 0, sd, statname, "56561818", 50688);
 	}
 
+	@Test
+	public void testDurationStatistic_ISCC_acquired() {
+		
+		System.out.println("------------ ISCC Duration Statistic testing -------------");
+		String statname = "#duration";
+
+		String[] lines = new String[] { "Local time:       2017-05-05T06:40:08.819",
+				"@08:05:11.5400 [ISCC] Resource 1082201: acquired by Transaction [D33333319]",
+				"@08:05:11.5400 [ISCC] Resource 1082201: acquired by Transaction [D56689519]",
+				"@08:05:11.5446 [ISCC] Resource 1082264: released by Transaction [D56689519]"
+				
+				};
+		StatisticDefinition[] sd=new StatisticDefinition[]{
+				new DurationStatistic(".+\\[ISCC\\]\\s+Resource.+(acquired|released).+\\[D(\\d+)\\]", statname, "2")
+				};
+		
+		run(lines, ENUMERATIONS.FORMAT_STAT, 0, sd, statname, "56561818", 50688);
+	}
 	
 	private void run(String[] lines, String smtype, int sampling, StatisticDefinition[] statistics, String statname, String rowname, int expected_value){
 		

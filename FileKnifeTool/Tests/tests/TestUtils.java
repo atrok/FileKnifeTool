@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -24,8 +25,9 @@ public class TestUtils {
 	@Test
 	public void testDateFormatter() {
 		String 	 t="2017-05-05 06:42:29.034";
-		String end="2017-05-05 06:42:31.238";
+		String end="2017-05-05 06:42:31.23";
 		
+		LocalDateTime a=LocalDateTime.ofInstant(Instant.now(), ZoneId.of("Z"));
 		LocalDateTime date=DateTime.SimpleStringToDate(t);
 		LocalDateTime endDate=DateTime.SimpleStringToDate(end);
 		

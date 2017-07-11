@@ -560,6 +560,25 @@ rowname=filename
 
 	}
 	
+	
+	public void testCmdz_ZZZ_Custom(){
+	
+
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "iscc.log",
+						"-statfile","iscc_acquired.properties",
+						"-sample","0", 
+						null,null
+						},
+				1, // found files
+				"Strat Error 0013 Remote error (TreatmentPlayAnnouncement),1.0");
+		
+
+	}
 private void parse(String[] s, int foundfiles, String search, int result_length) {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();

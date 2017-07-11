@@ -98,9 +98,9 @@ public class DurationStatistic extends StatisticDefinition {
 			stats.put(value, block);
 
 			try {
-				if (block.getSize() > 1)
+				//if (block.getSize() > 1)
 					duration = block.getDuration();
-				else duration=-1;
+				//else duration=-1;
 			} catch (Exception exc) {
 				logger.error(
 						"Can't update duration,\nline: " + line + "\nsampled_timeframe: " + sampled_timeframe + "{}",
@@ -111,7 +111,7 @@ public class DurationStatistic extends StatisticDefinition {
 				counter = getStatValue(line, splitline, block.id);
 				if (null != counter) {
 					double new_value = duration;
-					if (counter < new_value)
+					//if (counter < new_value)
 						updateStatValue(duration, block.id);
 				}
 			}
