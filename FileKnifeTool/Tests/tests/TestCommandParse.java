@@ -585,6 +585,31 @@ rowname=filename
 		
 
 	}
+	@Test
+	public void testCmdParse_TimeGap(){
+		
+		String[] expected_result= new String[]{
+				"Time,time_end,time_start,timegap",
+		"2017-04-20 08:09:50.004,2017-04-20 08:09:50.009,2017-04-20 08:09:50.004,5.0",
+		"2017-04-20 08:09:50.009,2017-04-20 08:09:50.010,2017-04-20 08:09:50.009,1.0",
+		"2017-04-20 08:09:50.010,2017-04-20 08:09:50.011,2017-04-20 08:09:50.010,1.0"
+		};
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "URS.20170420_080950_004.log",
+						"-statfile","timegap",
+						"-sample","0", 
+						null,null
+						},
+				1, // found files
+				expected_result,
+				2592);
+		
+
+	}
 	
 	public void testCmdz_ZZZ_Custom(){
 	

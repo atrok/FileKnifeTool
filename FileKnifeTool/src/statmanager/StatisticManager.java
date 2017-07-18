@@ -16,6 +16,7 @@ import logprocessing.MinStatistic;
 import logprocessing.StatisticDefinition;
 import logprocessing.StatisticFactory;
 import logprocessing.SumStatistic;
+import logprocessing.TimeGap;
 
 
 
@@ -32,6 +33,7 @@ public abstract class StatisticManager {
 		StatisticFactory.instance().registerProduct("MinStatistic",MinStatistic.class);
 		StatisticFactory.instance().registerProduct("SumStatistic",SumStatistic.class);
 		StatisticFactory.instance().registerProduct("DurationStatistic",DurationStatistic.class);
+		StatisticFactory.instance().registerProduct("TimeGap",TimeGap.class);
 		
 
 	}

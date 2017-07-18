@@ -212,10 +212,6 @@ public class LineProcessingLogs implements LineProcessing{
 		
 
 		jMatcher=jPatternTimestamp.matcher(timestamp);
-		jMatcherCheckpoint=jPatternCheckpoint.matcher(line);
-		jMatcherLocalTime=jPatternLocalTime.matcher(line);
-		jMatcherLongTimestamp=jPatternLongTime.matcher(timestamp);
-		jMatcherShortTimestamp=jPatternShortTime.matcher(timestamp);
 		
 		
 		//tick();
@@ -223,8 +219,11 @@ public class LineProcessingLogs implements LineProcessing{
 		
 		//if (matcher.find()) {
 		if (jMatcher.find()) {
-		
 			
+		jMatcherCheckpoint=jPatternCheckpoint.matcher(line);
+		jMatcherLongTimestamp=jPatternLongTime.matcher(timestamp);
+		jMatcherShortTimestamp=jPatternShortTime.matcher(timestamp);		
+		
 		//tock("patternTimestamp found:");
 		
 		
@@ -290,6 +289,8 @@ public class LineProcessingLogs implements LineProcessing{
 			//tock("timeprocessing finished in:");
 			return true;
 		}else{
+			jMatcherLocalTime=jPatternLocalTime.matcher(line);
+
 			/*
 			 * # it will work in case file has a predefined Genesys format 
 			 * Local time: 2014-09-16T13:14:58.465 

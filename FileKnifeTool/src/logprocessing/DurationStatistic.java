@@ -21,7 +21,7 @@ public class DurationStatistic extends StatisticDefinition {
 
 	private Double counter = 0.0;
 	// private String regexp="";
-	private Map stats = new HashMap<String, Block>();
+	protected Map stats = new HashMap<String, Block>();
 
 	// private String statname="";
 

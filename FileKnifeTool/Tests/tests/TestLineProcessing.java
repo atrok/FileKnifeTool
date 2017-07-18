@@ -32,6 +32,7 @@ import logprocessing.StatDataProcessorLogs;
 import logprocessing.StatDataProcessorSeparatorsCSV;
 import logprocessing.StatisticDefinition;
 import logprocessing.SumStatistic;
+import logprocessing.TimeGap;
 import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
 import statmanager.StatisticManager;
@@ -773,6 +774,25 @@ public class TestLineProcessing {
 				};
 		
 		run(lines, ENUMERATIONS.FORMAT_STAT, 0, sd, statname, "56561818", 50688);
+	}
+
+	@Test
+	public void testTimeGapStatistic() {
+		
+		System.out.println("------------ TimeGapStatistic testing -------------");
+		String statname = "#duration";
+
+		String[] lines = new String[] { "Local time:       2017-05-05T06:40:08.819",
+				"@08:05:11.541 [ISCC] Resource 1082201: acquired by Transaction [D33333319]",
+				"@08:05:11.542 [ISCC] Resource 1082201: acquired by Transaction [D56689519]",
+				"@08:05:11.543 [ISCC] Resource 1082264: released by Transaction [D56689519]"
+				
+				};
+		StatisticDefinition[] sd=new StatisticDefinition[]{
+				new TimeGap(statname, null)
+				};
+		
+		run(lines, ENUMERATIONS.FORMAT_STAT, 0, sd, statname, "2017-05-05 08:05:11.542", 1);
 	}
 	
 	@Test
