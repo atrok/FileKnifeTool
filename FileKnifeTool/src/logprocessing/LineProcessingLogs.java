@@ -325,11 +325,37 @@ public class LineProcessingLogs implements LineProcessing{
 	 */
 	private void putTime(Map<String, String[]> dest, String index, String... source) {
 		String[] t = (String[]) dest.get(index);
+		String[] pdt =Arrays.copyOf(t,t.length);
+
+		
 		for (int i = 0; i < source.length; i++) {
 			if (source[i] != null && source[i].length() != 0)
 				t[i] = source[i];
 
 		}
+		
+		//End of day transition
+		
+		if (pdt[3] != null)
+			if (Integer.valueOf(pdt[3]) > Integer.valueOf(source[3])) {// we
+																		// assume
+																		// that
+																		// in
+																		// 24h
+																		// day
+																		// 00:01
+																		// follows
+																		// 23:59
+																		// meaning
+																		// the
+																		// next
+																		// day
+				if (source[2] == null) {// short timestamp
+					int w = Integer.valueOf(pdt[2]) + 1;
+					t[2] = String.valueOf(w);
+				}
+			}
+		
 
 		dest.put(index, t);
 	}

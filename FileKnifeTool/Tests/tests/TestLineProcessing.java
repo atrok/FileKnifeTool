@@ -37,6 +37,7 @@ import resultoutput.FileFromArrays;
 import resultoutput.FileFromRecords;
 import statmanager.StatisticManager;
 import statmanager.UnsupportedStatFormatException;
+import statmanager.UnsupportedStatParamException;
 
 public class TestLineProcessing {
 
@@ -51,20 +52,31 @@ public class TestLineProcessing {
 
 	String timespot = "2015-09-18 10:07";
 
-	static String[] linePatterns = new String[] { "Local time:       2014-09-16T13:14:58.465",
+	static String[] linePatterns = new String[] { 
+			"Local time:       2014-09-16T13:14:58.465",
 			"13:16:54.058 Trc 04120 Check point 2014-09-16T13:16:54",
+			"23:52:00.212 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 224 (CCView 'CCPulse_701')",
+			"00:05:00.215 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 224 (CCView 'CCPulse_701')",
+			"00:06:53.050 Trc 04120 Check point 2014-09-17T00:06:53",
 			"13:16:54.215 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 224 (CCView 'CCPulse_701')"
 
 	};
-
+	@Test
 	public void testLine() {
 		LineProcessingLogs ln;
+		
+		
 		try {
-			ln = new LineProcessingLogs(1, StatisticManager.getInstance(ENUMERATIONS.FORMAT_STAT));
+			
+			StatisticManager sm = StatisticManager.getInstance(ENUMERATIONS.FORMAT_STAT);
+
+			sm.addStatistic(new IncrementalStatistic(".+Message.+(received from|sent to).+", "SentReceived"));
+			
+			ln = new LineProcessingLogs(1, sm);
 			for (String str : linePatterns) {
 				ln.processLine(str);
 			}
-		} catch (UnsupportedStatFormatException e) {
+		} catch (UnsupportedStatFormatException | UnsupportedStatParamException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -816,6 +828,31 @@ public class TestLineProcessing {
 		StatisticDefinition[] sd=new StatisticDefinition[]{dur};
 		
 		run(lines, ENUMERATIONS.FORMAT_STAT, 0, sd, statname, "56561818", 50688);
+	}
+	
+	@Test
+	public void testEndofDayTransition() {
+		
+		System.out.println("------------ End of day transition 23:59 -> 00:00, day should increase in timestamp -------------");
+		String statname = "#nomatter";
+
+		String[] lines = new String[] { 
+				"Local time:       2014-09-16T13:14:58.465",
+				"13:16:54.058 Trc 04120 Check point 2014-09-16T13:16:54",
+				"23:52:00.212 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 224 (CCView 'CCPulse_701')",
+				"00:05:00.215 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 224 (CCView 'CCPulse_701')",
+				"00:06:53.050 Trc 04120 Check point 2014-09-17T00:06:53",
+				"13:16:54.215 Trc 04541 Message MSGCFG_GETOBJECTINFO received from 224 (CCView 'CCPulse_701')"
+
+		};
+		
+		Map param=new HashMap<String,String>();
+		param.put("regexp", ".+Message.+(received from|sent to).+" );
+		
+		IncrementalStatistic dur=new IncrementalStatistic(statname,param);
+		StatisticDefinition[] sd=new StatisticDefinition[]{dur};
+		
+		run(lines, ENUMERATIONS.FORMAT_STAT, 1, sd, statname, "2014-09-17 00:05", 1);
 	}
 	
 	private void run(String[] lines, String smtype, int sampling, StatisticDefinition[] statistics, String statname, String rowname, int expected_value){

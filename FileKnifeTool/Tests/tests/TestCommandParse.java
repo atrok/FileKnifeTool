@@ -610,18 +610,19 @@ rowname=filename
 		
 
 	}
-	
+	@Test
 	public void testCmdz_ZZZ_Custom(){
 	
-
+		String d="R:\\Apple\\0002010818\\attachments\\unpacked\\0717\\AD_P2";
+		String f="AMR_US_PRN_AD_CSProxy_P2.20170712_183828_430.log";
 
 		parse(
 				new String[]{
 						"genesys", 
-						"-d", default_logs, 
-						"-ext", "iscc.log",
-						"-statfile","iscc_acquired.properties",
-						"-sample","0", 
+						"-d", d, 
+						"-ext", f,
+						"-statfile","client.properties.ini",
+						"-sample","1", 
 						null,null
 						},
 				1, // found files
