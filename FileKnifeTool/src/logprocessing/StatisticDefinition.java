@@ -444,6 +444,8 @@ public abstract class StatisticDefinition {
 		
 		String id;
 		
+		String uniqueid;
+		
 		boolean finished=false;
 		boolean started=false;
 		boolean ended=false;

@@ -3,6 +3,7 @@ package logprocessing;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -16,6 +17,7 @@ import com.beust.jcommander.ParameterException;
 import garbagecleaner.ENUMERATIONS;
 import jregex.Matcher;
 import util.FilesUtil;
+import util.Generator;
 
 public class DurationStatistic extends StatisticDefinition {
 
@@ -122,7 +124,7 @@ public class DurationStatistic extends StatisticDefinition {
 
 	}
 	
-	
+	Map <String, String> ids =new HashMap<String, String>();
 
 
 	@Override
@@ -149,11 +151,28 @@ public class DurationStatistic extends StatisticDefinition {
 			else
 				value = splitline[aggregating_field];
 
-			block = (Block) stats.get(value);
+			
+			String uniqueId="";
+			
+			ids.put(Generator.getID().toString(), value);
+			
+			Set<String> keys = ids.keySet();
+			
+			for (String key : keys) {
 
+				String blockId = ids.get(key);
+				uniqueId=key;
+				if (blockId.equals(value)) {
+					block = (Block) stats.get(key);
+					if (block!=null){
+						if(!block.finished)							
+							break;
+					}
+				}
+			}
+			
 			if (block == null)
 				block = new Block(value);
-
 			
 			Line l = new Line(splitline);
 			l.setTime(sampled_timeframe);
@@ -163,11 +182,15 @@ public class DurationStatistic extends StatisticDefinition {
 				block.started=true;
 			if (end)
 				block.ended=true;
-			if(block.started&block.ended)
+			if(block.started&block.ended){
 				block.finished=true;
+				if (!ids.isEmpty())
+					ids.entrySet().removeIf(e->e.getValue().equals(value));
+			}
 			start=end=false;
 			
-			stats.put(value, block);
+			//String idMD5=Generator.getMD5();
+			stats.put(uniqueId, block);
 
 			try {
 				// if (block.getSize() > 1)
@@ -180,20 +203,35 @@ public class DurationStatistic extends StatisticDefinition {
 				throw exc;
 
 			} finally {
-				counter = getStatValue(line, splitline, block.id);
+				counter = getStatValue(line, splitline, uniqueId);
 				if (null != counter) {
 					double new_value = duration;
 					// if (counter < new_value)
-					updateStatValue(duration, block.id);
+					updateStatValue(duration, uniqueId);
 				}
 			}
 		}
 	}
 
+	private Map<String,String> cleanMap(Map map, String value){
+		
+		try{
+		Set<String> keys=map.keySet();
+		
+		for(String key : keys){
+			if (map.get(key).equals(value))
+				map.remove(key);
+		}
+		}catch (Exception exc){
+			logger.error("Error!",exc);
+		}
+		return map;
+	}
 	public Map<String, Map> getStatistics() {
 
 		TreeMap<String, Map> rate = (TreeMap) super.getStatistics();
 
+		Map blockIds = new HashMap<String,String>();
 		Map timeStart = new HashMap<String, String>();
 		Map timeEnd = new HashMap<String, String>();
 		Map finished= new HashMap<String, String>();
@@ -203,20 +241,21 @@ public class DurationStatistic extends StatisticDefinition {
 		Set<String> keys = stats.keySet();
 
 		if (stats.size() > 0) {
-			for (String blockID : keys) {
+			for (String uniqueId : keys) {
 
-				Block block = (Block) stats.get(blockID);
-
-				timeStart.put(blockID, block.getLine(0).time);
-				timeEnd.put(blockID, block.getLine(block.getSize() - 1).time);
+				Block block = (Block) stats.get(uniqueId);
+				blockIds.put(uniqueId, block.id);
+				timeStart.put(uniqueId, block.getLine(0).time);
+				timeEnd.put(uniqueId, block.getLine(block.getSize() - 1).time);
 				
 				if(patternLineMatcher==null){// in case we use startwith/endwith tags
-					finished.put(blockID, String.valueOf(block.finished));
-					started.put(blockID, String.valueOf(block.started));
-					ended.put(blockID, String.valueOf(block.ended));
+					finished.put(uniqueId, String.valueOf(block.finished));
+					started.put(uniqueId, String.valueOf(block.started));
+					ended.put(uniqueId, String.valueOf(block.ended));
 				}
 
 			}
+			rate.put("stat_id", blockIds);
 			rate.put("time_start", timeStart);
 			rate.put("time_end", timeEnd);
 

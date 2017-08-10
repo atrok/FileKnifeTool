@@ -327,7 +327,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"URS.20170420_080950_004.log,2017-04-20 08:09:50.004,5510845.0,2017-04-20 09:41:40.849");
+				"1,2017-04-20 08:09:50.004,5510845.0,2017-04-20 09:41:40.849,URS.20170420_080950_004.log");
 		
 
 	}
@@ -564,9 +564,8 @@ rowname=filename
 	public void testCmd_Duration_StartWith(){
 		
 		String[] expected_result=new String[]{
-				"Time,iscc acquired,iscc acquired _ended,iscc acquired _finished,iscc acquired _started,time_end,time_start",
-				"56689364,9.0,true,true,true,2017-06-29 08:04:56.410,2017-06-29 08:04:56.401",
-				// can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
+				"Time,iscc acquired,iscc acquired _ended,iscc acquired _finished,iscc acquired _started,stat_id,time_end,time_start",
+				"1,9.0,true,true,true,56689364,2017-06-29 08:04:56.410,2017-06-29 08:04:56.401"				// can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
 		};
 
 		parse(
@@ -613,16 +612,17 @@ rowname=filename
 	@Test
 	public void testCmdz_ZZZ_Custom(){
 	
-		String d="R:\\Apple\\0002010818\\attachments\\unpacked\\0717\\AD_P2";
-		String f="AMR_US_PRN_AD_CSProxy_P2.20170712_183828_430.log";
+		String d="R:\\Apple\\0002032090_CSP_CPU\\attachments\\unpacked";
+		String f="AMR_US_Aus_SP_K_CSProxy01.20170802_011236_826.log";
 
 		parse(
 				new String[]{
 						"genesys", 
 						"-d", d, 
 						"-ext", f,
-						"-statfile","client.properties.ini",
-						"-sample","1", 
+						"-statfile","client.registration_duration",
+						"-sample","0", 
+						"-format","block",
 						null,null
 						},
 				1, // found files
