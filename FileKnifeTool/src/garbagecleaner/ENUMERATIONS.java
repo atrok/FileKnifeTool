@@ -15,3 +15,19 @@ public class ENUMERATIONS {
 	public static final Object STATDEF_FILENAME = "filename";
 	
 }
+
+public enum Status {
+    ENABLED("enabled"),
+    DISABLED("disabled"),
+    UNDEFINED("undefined");
+
+    private String label;
+
+    Status(String label) {
+        this.label = label;
+    }
+
+    public String toString() {
+        return label;
+    }
+}
