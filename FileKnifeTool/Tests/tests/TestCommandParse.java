@@ -22,6 +22,7 @@ import cmdline.Command;
 import cmdline.CommandImpl;
 import cmdline.CommandParse;
 import garbagecleaner.ProcessFilesFabric;
+import statmanager.UnsupportedStatFormatException;
 import util.FilesUtil;
 
 public class TestCommandParse {
@@ -51,7 +52,7 @@ public class TestCommandParse {
 				0);
 	}
 
-	@Test(expected = AssertionError.class) // it's not supported for 'genesys' mode 
+	@Test(expected = UnsupportedStatFormatException.class) // it's not supported for 'genesys' mode 
 	public void testCmdParse_Format_CSV(){
 	
 
@@ -301,7 +302,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"01E6030IE0CGP8GFLJMMG4DAES0000P5,2204.0,2017-05-05 06:42:29.034,2017-05-05 06:42:31.238");
+				"01E6030IE0CGP8GFLJMMG4DAES00004H,10.0,2017-05-05 06:40:25.693,2017-05-05 06:40:25.703");
 		
 
 	}
@@ -327,7 +328,7 @@ public class TestCommandParse {
 						null,null
 						},
 				1, // found files
-				"1,2017-04-20 08:09:50.004,5510845.0,2017-04-20 09:41:40.849,URS.20170420_080950_004.log");
+				"URS.20170420_080950_004.log,2017-04-20 08:09:50.004,5510845.0,2017-04-20 09:41:40.849");
 		
 
 	}
@@ -564,8 +565,8 @@ rowname=filename
 	public void testCmd_Duration_StartWith(){
 		
 		String[] expected_result=new String[]{
-				"Time,iscc acquired,iscc acquired _ended,iscc acquired _finished,iscc acquired _started,stat_id,time_end,time_start",
-				"1,9.0,true,true,true,56689364,2017-06-29 08:04:56.410,2017-06-29 08:04:56.401"				// can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
+				"Time,iscc acquired,iscc acquired _ended,iscc acquired _finished,iscc acquired _started,time_end,time_start",
+				"56689364,9.0,true,true,true,2017-06-29 08:04:56.410,2017-06-29 08:04:56.401"				// can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
 		};
 
 		parse(
@@ -575,7 +576,7 @@ rowname=filename
 						"-ext", "iscc.log",
 						"-statfile","duration_startwith.properties",
 						"-sample","0", 
-						null,null
+						null, null
 						},
 				1, // found files
 				expected_result, //content of the file
@@ -584,6 +585,59 @@ rowname=filename
 		
 
 	}
+
+	@Test
+	public void testCmd_Duration_StartWith_UseUniqueID(){
+		
+		String[] expected_result=new String[]{
+				"Time,iscc acquired,iscc acquired _ended,iscc acquired _finished,iscc acquired _started,stat_id,time_end,time_start",
+				"1,9.0,true,true,true,56689364,2017-06-29 08:04:56.410,2017-06-29 08:04:56.401"				// can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
+		};
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "iscc.log",
+						"-statfile","duration_startwith_uniqueid.properties",
+						"-sample","0", 
+						null, null
+						},
+				1, // found files
+				expected_result, //content of the file
+				4 //number of records in resulting file
+				);
+		
+
+	}
+	
+	@Test
+	public void testCmd_Duration_UseUniqueID(){
+		
+		String[] expected_result=new String[]{
+				"Time,Client registration duration(ms),Client registration duration(ms) _ended,Client registration duration(ms) _finished,Client registration duration(ms) _started,stat_id,time_end,time_start",
+				"1,239.0,true,true,true,12,2017-08-02 01:12:38.228,2017-08-02 01:12:37.989",
+				"10001,177.0,true,true,true,12,2017-08-02 03:53:05.398,2017-08-02 03:53:05.221",
+				"10003,177.0,true,true,true,12,2017-08-02 03:53:06.134,2017-08-02 03:53:05.957" //can't test edge cases when transaction is not full since the duration is calculated dynamically and is different for every test run (based on Instant.now())
+		};
+
+		parse(
+				new String[]{
+						"genesys", 
+						"-d", default_logs, 
+						"-ext", "client_register.log",
+						"-statfile","client.registration_duration",
+						"-sample","0", 
+						null, null
+						},
+				1, // found files
+				expected_result, //content of the file
+				4 //number of records in resulting file
+				);
+		
+
+	}
+	
 	@Test
 	public void testCmdParse_TimeGap(){
 		
@@ -609,20 +663,20 @@ rowname=filename
 		
 
 	}
-	@Test
+	//@Test
 	public void testCmdz_ZZZ_Custom(){
 	
-		String d="R:\\Apple\\0002032090_CSP_CPU\\attachments\\unpacked";
-		String f="AMR_US_Aus_SP_K_CSProxy01.20170802_011236_826.log";
+		String d="R:\\Apple\\0002015738\\attachments\\unpacked";
+		String f="AMR_US_EG_ConfigSvr_B.20170809_234150_852.log";
 
 		parse(
 				new String[]{
 						"genesys", 
 						"-d", d, 
 						"-ext", f,
-						"-statfile","client.registration_duration",
+						"-statfile","objchanged.properties.ini",
 						"-sample","0", 
-						"-format","block",
+						//"-format","block",
 						null,null
 						},
 				1, // found files
@@ -667,7 +721,11 @@ private void parse(String[] s, int foundfiles, String[] search, int result_lengt
 		} catch (ParameterException ex) {
 			System.out.println(ex.getMessage());
 			commander.usage();
-			System.exit(1);
+			//System.exit(1);
+		}catch (UnsupportedStatFormatException ex){
+			System.out.println(ex.getMessage());
+			commander.usage();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail("Should not have thrown any exception");
@@ -688,7 +746,7 @@ private void parse(String[] s, int foundfiles, String[] search, int result_lengt
 	private boolean contains(String[] arr, String search){
 		
 		System.out.println("Expected: "+search);
-		System.out.println("Found   : "+Arrays.toString(arr));
+		//System.out.println("Found   : "+Arrays.toString(arr));
 		
 		for(String s: arr)
 			if (search.equals(s))

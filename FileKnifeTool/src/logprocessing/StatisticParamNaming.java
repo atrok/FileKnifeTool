@@ -8,7 +8,8 @@ public enum StatisticParamNaming {
 	COLUMN("column"), 
 	ROWNAME("rowname"), 
 	STARTWITH("startwith"),
-	ENDWITH("endwith");
+	ENDWITH("endwith"), 
+	USEUNIQUEID("useuniqueid");
 	
 	
 	private String description;

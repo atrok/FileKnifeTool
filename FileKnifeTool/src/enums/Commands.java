@@ -7,10 +7,10 @@ import cmdline.CommandParseFileWithSeparators;
 import cmdline.CommandPrint;
 
 public enum Commands {
-    DELETE("delete", new CommandDelete()),
-    PRINT("print", new CommandPrint()),
-	GENESYS("genesys", new CommandParse()),
-	LMS("lms", new CommandParseFileWithSeparators());
+    delete("delete", new CommandDelete()),
+    print("print", new CommandPrint()),
+	genesys("genesys", new CommandParse()),
+	lms("lms", new CommandParseFileWithSeparators());
 
     private String label;
     private Command cmd;

@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.beust.jcommander.JCommander;
 
 import enums.Commands;
+import statmanager.UnsupportedStatFormatException;
 
 public class CmdLineParser {
 	
@@ -41,10 +42,10 @@ public class CmdLineParser {
 	public void addCommands(){
 		
 		//commands=new HashMap<String,Command>();
-		commands.put(Commands.DELETE, Commands.DELETE.getCmd());
-		commands.put(Commands.PRINT, new CommandPrint());
-		commands.put(Commands.GENESYS, new CommandParse());
-		commands.put(Commands.LMS, new CommandParseFileWithSeparators());
+		commands.put(Commands.delete, Commands.delete.getCmd());
+		commands.put(Commands.print, new CommandPrint());
+		commands.put(Commands.genesys, new CommandParse());
+		commands.put(Commands.lms, new CommandParseFileWithSeparators());
 
 		for (Entry<Commands, Command> entry : commands.entrySet())
 		{
@@ -53,7 +54,7 @@ public class CmdLineParser {
 
 	}
 	
-	public Command getCommandObj(String cmd){ // Here we return Command object determined on base of obtained from jc.getParsedCommand. 
+	public Command getCommandObj(String cmd) throws UnsupportedStatFormatException{ // Here we return Command object determined on base of obtained from jc.getParsedCommand. 
 		Command cmdobj=commands.get(Commands.valueOf(cmd));
 		
 		if(null!=cmdobj){

@@ -16,6 +16,7 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
+import enums.Format;
 import garbagecleaner.ENUMERATIONS;
 import logprocessing.AggregatingStatistic;
 import logprocessing.DurationStatistic;
@@ -853,6 +854,29 @@ public class TestLineProcessing {
 		StatisticDefinition[] sd=new StatisticDefinition[]{dur};
 		
 		run(lines, ENUMERATIONS.FORMAT_STAT, 1, sd, statname, "2014-09-17 00:05", 1);
+	}
+	
+
+	@Test
+	public void test_TRC_bug() {
+		
+		System.out.println("------------ TRC Bug -------------");
+		String statname = "#Changed at server: $6";
+		
+
+		String[] lines = new String[] { 
+				"Local time:       2014-09-16T13:14:58.465",
+				"Cluster [scripts] is being read ...23:45:01.595 Trc 24206 Notification : Object [CfgTransaction], name [Retail_SIP_DTMF_SAMS_TR], DBID: [11382] is changed at server"
+
+		};
+		
+		Map param=new HashMap<String,String>();
+		param.put("regexp", ".+Trc 24206 Notification : Object.+, name.+, DBID:.+is changed at server.+" );
+		
+		IncrementalStatistic dur=new IncrementalStatistic(statname,param);
+		StatisticDefinition[] sd=new StatisticDefinition[]{dur};
+		
+		run(lines, Format.STAT.toString(), 1, sd, statname, "2014-09-17 00:05", 1);
 	}
 	
 	private void run(String[] lines, String smtype, int sampling, StatisticDefinition[] statistics, String statname, String rowname, int expected_value){

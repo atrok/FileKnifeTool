@@ -1,9 +1,12 @@
 package logprocessing;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -36,6 +39,7 @@ public class DurationStatistic extends StatisticDefinition {
 	 * }
 	 */
 	private int aggregating_field;
+	private boolean useUniqueID = false;
 
 	Pattern patternPunct = Pattern.compile(REGEXP.PUNCT);
 
@@ -61,7 +65,7 @@ public class DurationStatistic extends StatisticDefinition {
 		String startwith = param.get(StatisticParamNaming.STARTWITH.toString());
 		String endwith = param.get(StatisticParamNaming.ENDWITH.toString());
 
-
+		String useUniqueID_s = param.get(StatisticParamNaming.USEUNIQUEID.toString());
 
 		if (null == f && null == r) {
 			throw new ParameterException(
@@ -71,15 +75,33 @@ public class DurationStatistic extends StatisticDefinition {
 		if (patternLineMatcher == null & (startwith == null || endwith == null))
 			throw new ParameterException(
 					"DurationStatistic require either 'regexp' or ('startwith'|'endwith') properties configured.");
-		else{
-			if (patternLineMatcher == null ){
-			startwithLineMatcher = new jregex.Pattern(startwith);
-			endwithLineMatcher = new jregex.Pattern(endwith);
+		else {
+			if (patternLineMatcher == null) {
+				startwithLineMatcher = new jregex.Pattern(startwith);
+				endwithLineMatcher = new jregex.Pattern(endwith);
 			}
 		}
 
 		if (FilesUtil.isNumeric(f))
 			this.aggregating_field = Integer.valueOf(f);
+
+		if (useUniqueID_s != null) {
+			switch (useUniqueID_s) {
+
+			case "yes":
+			case "true":
+				useUniqueID = true;
+				break;
+			case "no":
+			case "false":
+				useUniqueID = false;
+				break;
+			default:
+				throw new ParameterException(
+						"DurationStatistic useUniqueID options accepts next values only: yes/no, true/false (NOTE: case sensitive). false is a value used by default/");
+
+			}
+		}
 
 	}
 
@@ -90,42 +112,40 @@ public class DurationStatistic extends StatisticDefinition {
 
 	boolean start = false;
 	boolean end = false;
+
 	@Override
 	protected boolean isMatched(String line) {
 
 		boolean b = false;
 
-		if(patternLineMatcher!=null){
-		jMatcher = patternLineMatcher.matcher(line);
+		if (patternLineMatcher != null) {
+			jMatcher = patternLineMatcher.matcher(line);
 
-
-		b = jMatcher.matches();
-		}
-		else {
+			b = jMatcher.matches();
+		} else {
 			startwithMatcher = startwithLineMatcher.matcher(line);
 			endwithMatcher = endwithLineMatcher.matcher(line);
 
-				start = startwithMatcher.matches();
-				end = endwithMatcher.matches();
+			start = startwithMatcher.matches();
+			end = endwithMatcher.matches();
 		}
-		if (b){
+		if (b) {
 			foundGroups = jMatcher.groups();
 			return b;
 		}
-		if (start){
+		if (start) {
 			foundGroups = startwithMatcher.groups();
 			return start;
 		}
-		if (end){
+		if (end) {
 			foundGroups = endwithMatcher.groups();
 			return end;
 		}
 		return false;
 
 	}
-	
-	Map <String, String> ids =new HashMap<String, String>();
 
+	Map<String, String> ids = new LinkedHashMap<String, String>();
 
 	@Override
 	public void calculate(String line, String[] splitline, String sampled_timeframe) { // LineProcessing
@@ -142,54 +162,41 @@ public class DurationStatistic extends StatisticDefinition {
 		String[] regexgroups = getRegexGroups();
 
 		if (null != sampled_timeframe) {
+			String uniqueId = "";
 			long duration = 0;
 			String value;
-			if (useFilename)
-				value = splitline[splitline.length - 1]; // filename in last
+
+			if (useFilename){
+				filename=splitline[splitline.length - 1];// filename in last
+				value =  filename;
+			}
 			else if (regexgroups != null && regexgroups.length > 1)
 				value = regexgroups[aggregating_field];
 			else
 				value = splitline[aggregating_field];
 
-			
-			String uniqueId="";
-			
-			ids.put(Generator.getID().toString(), value);
-			
-			Set<String> keys = ids.keySet();
-			
-			for (String key : keys) {
+			// ids.put(Generator.getID().toString(), value);
 
-				String blockId = ids.get(key);
-				uniqueId=key;
-				if (blockId.equals(value)) {
-					block = (Block) stats.get(key);
-					if (block!=null){
-						if(!block.finished)							
-							break;
-					}
-				}
-			}
-			
-			if (block == null)
-				block = new Block(value);
-			
+			block=generateBlock(value);
+
+			uniqueId=block.uniqueid;
+
 			Line l = new Line(splitline);
 			l.setTime(sampled_timeframe);
 			block.addLine(l);
 
 			if (start)
-				block.started=true;
+				block.started = true;
 			if (end)
-				block.ended=true;
-			if(block.started&block.ended){
-				block.finished=true;
+				block.ended = true;
+			if (block.started & block.ended) {
+				block.finished = true;
 				if (!ids.isEmpty())
-					ids.entrySet().removeIf(e->e.getValue().equals(value));
+					ids.entrySet().removeIf(e -> e.getValue().equals(value));
 			}
-			start=end=false;
-			
-			//String idMD5=Generator.getMD5();
+			start = end = false;
+
+			// String idMD5=Generator.getMD5();
 			stats.put(uniqueId, block);
 
 			try {
@@ -213,31 +220,80 @@ public class DurationStatistic extends StatisticDefinition {
 		}
 	}
 
-	private Map<String,String> cleanMap(Map map, String value){
+	private Block generateBlock(String v){
 		
-		try{
-		Set<String> keys=map.keySet();
+		updateIDMap(v);
 		
-		for(String key : keys){
-			if (map.get(key).equals(value))
-				map.remove(key);
+		Set<String> keys = ids.keySet();
+
+		List<String> sortedList = new ArrayList(keys);
+		//Collections.sort(sortedList);
+		
+		for (String key : sortedList) {// it should be sorted in asc order
+
+			String blockId = ids.get(key);
+			//uniqueId = key;
+			if (blockId.equals(v)) {
+				block = (Block) stats.get(key);
+				
+				if (block == null){
+					block = new Block(v);
+					block.uniqueid=key;
+				}
+				
+				if (!block.finished)
+						break;
+				
+			}
 		}
-		}catch (Exception exc){
-			logger.error("Error!",exc);
+		
+		return block;
+
+	}
+	private void updateIDMap(String value) {
+
+		try {
+			String uniqueID = "";
+
+			if (!useUniqueID)
+				uniqueID = value;
+			else
+				uniqueID = Generator.getID().toString();
+
+			ids.put(uniqueID, value);
+		} catch (Exception exc) {
+			logger.error("Can't update uniqueID map", exc.getMessage());
+			throw exc;
+		}
+
+	}
+
+	private Map<String, String> cleanMap(Map map, String value) {
+
+		try {
+			Set<String> keys = map.keySet();
+
+			for (String key : keys) {
+				if (map.get(key).equals(value))
+					map.remove(key);
+			}
+		} catch (Exception exc) {
+			logger.error("Error!", exc);
 		}
 		return map;
 	}
+
 	public Map<String, Map> getStatistics() {
 
 		TreeMap<String, Map> rate = (TreeMap) super.getStatistics();
 
-		Map blockIds = new HashMap<String,String>();
+		Map blockIds = new HashMap<String, String>();
 		Map timeStart = new HashMap<String, String>();
 		Map timeEnd = new HashMap<String, String>();
-		Map finished= new HashMap<String, String>();
-		Map started= new HashMap<String, String>();
-		Map ended= new HashMap<String, String>();
-		
+		Map finished = new HashMap<String, String>();
+		Map started = new HashMap<String, String>();
+		Map ended = new HashMap<String, String>();
+
 		Set<String> keys = stats.keySet();
 
 		if (stats.size() > 0) {
@@ -247,25 +303,28 @@ public class DurationStatistic extends StatisticDefinition {
 				blockIds.put(uniqueId, block.id);
 				timeStart.put(uniqueId, block.getLine(0).time);
 				timeEnd.put(uniqueId, block.getLine(block.getSize() - 1).time);
-				
-				if(patternLineMatcher==null){// in case we use startwith/endwith tags
+
+				if (patternLineMatcher == null) {// in case we use
+													// startwith/endwith tags
 					finished.put(uniqueId, String.valueOf(block.finished));
 					started.put(uniqueId, String.valueOf(block.started));
 					ended.put(uniqueId, String.valueOf(block.ended));
 				}
 
 			}
-			rate.put("stat_id", blockIds);
+			if(useUniqueID) // we need stat_id just in case we generate real uniqueID. 
+				//This is only the case when we're calculating durations for interactions that may have repeating identificators 
+				rate.put("stat_id", blockIds);
+			
 			rate.put("time_start", timeStart);
 			rate.put("time_end", timeEnd);
 
-			if(patternLineMatcher==null){ // in case we use startwith/endwith tags
-				rate.put(getName()+" _finished", finished);
-				rate.put(getName()+" _started", started);
-				rate.put(getName()+" _ended", ended);
+			if (patternLineMatcher == null) { // in case we use
+												// startwith/endwith tags
+				rate.put(getName() + " _finished", finished);
+				rate.put(getName() + " _started", started);
+				rate.put(getName() + " _ended", ended);
 			}
-			
-			
 
 		}
 

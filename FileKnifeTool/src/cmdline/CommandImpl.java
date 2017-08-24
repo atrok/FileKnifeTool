@@ -9,6 +9,7 @@ import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 
 import garbagecleaner.Strategy;
+import statmanager.UnsupportedStatFormatException;
 
 @Parameters (separators=",", commandDescription=" command to add firewall rule")
 public abstract class CommandImpl implements Command,Strategy{
@@ -44,7 +45,7 @@ public abstract class CommandImpl implements Command,Strategy{
 	protected abstract void resetStatData();
 	public abstract void process(File file);
 
-	protected abstract void init();
+	protected abstract void init() throws UnsupportedStatFormatException;
 	
 
 

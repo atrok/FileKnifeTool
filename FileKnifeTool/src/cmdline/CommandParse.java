@@ -216,7 +216,7 @@ public class CommandParse extends CommandImpl{
 
 
 	@Override
-	public void init() {
+	public void init() throws UnsupportedStatFormatException {
 		// TODO Auto-generated method stub
 		try {
 		sm=StatisticManager.getInstance(format);
@@ -291,7 +291,7 @@ public class CommandParse extends CommandImpl{
 		} catch (UnsupportedStatFormatException e) {
 			// TODO Auto-generated catch block
 			logger.error("Output format error",e);
-			System.exit(1);
+			throw e;
 		}finally{}
     	
 		//sm.addStatistic(new IncrementalStatistic(".+Message.+(received from|sent to).+","SentReceived"));
