@@ -18,6 +18,7 @@ import cmdline.CommandParse;
 import cmdline.CommandParseFileWithSeparators;
 import cmdline.CommandPrint;
 import garbagecleaner.ProcessFilesFabric;
+import statmanager.UnsupportedStatFormatException;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
@@ -223,7 +224,7 @@ public class TestDefault {
 	}
 
 	@Ignore
-	public void testDelete() {
+	public void testDelete() throws UnsupportedStatFormatException {
 		CmdLineParser cmdParser = new CmdLineParser();
 		JCommander commander = cmdParser.getCommander();
 
@@ -232,7 +233,10 @@ public class TestDefault {
 //TODO Command is implemented as a singleton, as result you get the same Command object every time you call it
 		// because of this all internal structures retains the results of previous Command execution.
 		// as of now it's enough to initialize JCommander with comdline arguments one more time to get new Command object
-		Command cmd = cmdParser.getCommandObj(commander.getParsedCommand());
+		Command cmd;
+		try {
+			cmd = cmdParser.getCommandObj(commander.getParsedCommand());
+
 
 		
 		//((CommandImpl) cmd).resetStatData(); 
@@ -242,6 +246,10 @@ public class TestDefault {
 
 		int i = Integer.valueOf(results.get("Processed"));
 		assertTrue("ќжидаемое количество найденных файлов - "+NUM_OF_QSP_THREE+", найдено " + i, i == NUM_OF_QSP_THREE);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

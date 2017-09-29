@@ -10,8 +10,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.junit.Test;
@@ -50,6 +52,8 @@ public class TestLineProcessing {
 	Path csvfile = Paths.get("Tests/resources/result_test.csv");
 	Path lmsfile = Paths.get("Tests/resources/common.lms");
 	Path sqlfile = Paths.get("Tests/resources/result_sql.sql");
+	
+
 
 	String timespot = "2015-09-18 10:07";
 
@@ -879,6 +883,30 @@ public class TestLineProcessing {
 		run(lines, Format.STAT.toString(), 1, sd, statname, "2014-09-17 00:05", 1);
 	}
 	
+	
+	@Test
+	public void test_Custom_bug() throws IOException {
+		
+		System.out.println("------------ Custom  -------------");
+		String statname = "timeout";
+		
+		Path file = Paths.get("R:\\Apple\\0001995921_GetVAGDetails_timeout\\attachments\\unpacked\\config-services_lapp17.log");
+		Path file2 = Paths.get("R:\\Apple\\0001995921_GetVAGDetails_timeout\\attachments\\unpacked\\config-services_lapp17_modified.log");
+		
+		List<String> lines = Files.lines(file)
+				.map(p->p.substring(0,10).concat("T").concat(p.substring(11, 19)).concat(".").concat(p.substring(20)))
+				.collect(Collectors.toList());
+		Files.write(file2, lines, Charset.defaultCharset());
+		
+		Map<String, String> param=new HashMap<String,String>();
+		param.put("regexp", ".+timeout waiting for server response.+" );
+		
+		IncrementalStatistic dur=new IncrementalStatistic(statname,param);
+		StatisticDefinition[] sd=new StatisticDefinition[]{dur};
+		
+		run(lines.toArray(new String[lines.size()]), Format.STAT.toString(), 1, sd, statname, "2014-09-17 00:05", 1);
+	}
+	
 	private void run(String[] lines, String smtype, int sampling, StatisticDefinition[] statistics, String statname, String rowname, int expected_value){
 		
 		try{
@@ -898,7 +926,7 @@ public class TestLineProcessing {
 
 		Map stats = sm.getStatDataMap();
 
-		double value = (double) ((HashMap) stats.get(statname)).get(rowname);
+		double value = (double) ((HashMap<Double,Double>) stats.get(statname)).get(rowname);
 
 		assertTrue("Expected value of statistic is "+expected_value, value == expected_value);
 

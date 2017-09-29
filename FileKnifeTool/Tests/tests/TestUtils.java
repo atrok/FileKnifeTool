@@ -38,5 +38,22 @@ public class TestUtils {
 		long diff=endepoch-epoch;
 		assertTrue("We got "+diff,diff==64115);
 	}
+	
+	@Test
+	public void testPadding() {
+		String 	 t="2017-05-05 06:42";
+		String end="2017-05-05 06:42:31.23";
+		
+		LocalDateTime a=LocalDateTime.ofInstant(Instant.now(), ZoneId.of("Z"));
+		LocalDateTime date=DateTime.SimpleStringToDate(t);
+		LocalDateTime endDate=DateTime.SimpleStringToDate(end);
+		
+		ZoneId zoneId = ZoneId.systemDefault(); // or: ZoneId.of("Europe/Oslo");
+		long epoch = date.atZone(zoneId).toInstant().toEpochMilli();
+		long endepoch = endDate.atZone(zoneId).toInstant().toEpochMilli();
+		
+		long diff=endepoch-epoch;
+		assertTrue("We got "+diff,diff==31230);
+	}
 
 }
