@@ -8,8 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DateTime {
 
+	static Logger logger=LoggerFactory.getLogger(DateTime.class);
 	public static LocalDateTime SimpleStringToDate(String input) {
 
 		try {
@@ -31,7 +35,7 @@ public class DateTime {
 			return date;
 
 		} catch (DateTimeParseException exc) {
-			System.out.printf("%s is not parsable!%n", input);
+			logger.error("%s is not parsable!%n", input);
 			throw exc; // Rethrow the exception.
 		}
 	}

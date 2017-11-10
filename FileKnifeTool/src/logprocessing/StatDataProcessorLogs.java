@@ -71,6 +71,8 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 		int a=1;	
 		
 		Benchmark.tick();
+		int error_count=0;
+		
 		for(int i=1;i<resultR.length;i++){/// we start from 1 because at i=0 there is Time column. However all other arrays starts from 0 so we introduce t_ind
 			int t_ind=i-1;
 			//String[] row=new String[head.getValues().size()];
@@ -83,6 +85,7 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 			
 			//logger.trace("sampled timeframe: {}",t[t_ind]);
 			
+			try{
 			TimeStamp tstamp=(TimeStamp)tempRecords.addBack(new TimeStamp(t[t_ind])); //#
 			
 			//TimeStamp tstamp=new TimeStamp(t[t_ind]);
@@ -122,11 +125,15 @@ public class StatDataProcessorLogs extends StatDataProcessor{
 						tstamp.putValue(k-1,m.get(t[t_ind]));//#
 				}
 			}
+			}catch(Exception exc){
+				logger.error("Couldn't process the aggregating value with timestamp "+t[t_ind], exc);
+				error_count++;
+			}
 		}
 		
 		tempRecords.toArray(resultR);
 		
-		Benchmark.tock("Done calculating");
+		Benchmark.tock("Done calculating.\n Error count: "+error_count);
 		// this part is to be removed once Record type is implemented properly
 /*		for(int i=1;i<result.length;i++){
 			

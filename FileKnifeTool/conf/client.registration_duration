@@ -1,0 +1,6 @@
+[Client registration duration(ms)]
+stattype=DurationStatistic
+startwith=.+Trc 04541 Message MSGCFG_CLIENTREGISTER received from\\s+(\\d+).+
+endwith=.+Trc 04542 Message MSGCFG_CLIENTREGISTERED sent to (\\d+).+
+field=1
+useuniqueid=true

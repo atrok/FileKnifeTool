@@ -890,8 +890,8 @@ public class TestLineProcessing {
 		System.out.println("------------ Custom  -------------");
 		String statname = "timeout";
 		
-		Path file = Paths.get("R:\\Apple\\0001995921_GetVAGDetails_timeout\\attachments\\unpacked\\config-services_lapp17.log");
-		Path file2 = Paths.get("R:\\Apple\\0001995921_GetVAGDetails_timeout\\attachments\\unpacked\\config-services_lapp17_modified.log");
+		Path file = Paths.get("R:\\Apple\\0001995921_GetVAGDetails_timeout\\attachments\\unpacked\\Oct3\\config-services.log");
+		Path file2 = Paths.get("R:\\Apple\\0001995921_GetVAGDetails_timeout\\attachments\\unpacked\\Oct3\\config-services.log.modified");
 		
 		List<String> lines = Files.lines(file)
 				.map(p->p.substring(0,10).concat("T").concat(p.substring(11, 19)).concat(".").concat(p.substring(20)))
