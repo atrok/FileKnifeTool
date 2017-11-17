@@ -8,8 +8,11 @@ import javax.swing.filechooser.FileSystemView;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 
+import garbagecleaner.FKTProperties;
 import garbagecleaner.Strategy;
+import statmanager.StatfileNotFoundException;
 import statmanager.UnsupportedStatFormatException;
+import statmanager.UnsupportedStatParamException;
 
 @Parameters (separators=",", commandDescription=" command to add firewall rule")
 public abstract class CommandImpl implements Command,Strategy{
@@ -42,10 +45,12 @@ public abstract class CommandImpl implements Command,Strategy{
 		return paths;
 	}
 
+	protected FKTProperties context=FKTProperties.getProperties();
+	
 	protected abstract void resetStatData();
 	public abstract void process(File file);
 
-	protected abstract void init() throws UnsupportedStatFormatException;
+	protected abstract void init() throws UnsupportedStatFormatException, StatfileNotFoundException, UnsupportedStatParamException;
 	
 
 

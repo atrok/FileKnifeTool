@@ -51,6 +51,7 @@ import resultoutput.FileFabric;
 import resultoutput.FileFromRecords;
 import resultoutput.ResultOutput;
 import resultoutput.ResultOutputFabric;
+import statmanager.StatfileNotFoundException;
 import statmanager.StatisticManager;
 import statmanager.UnsupportedStatFormatException;
 import statmanager.UnsupportedStatParamException;
@@ -114,16 +115,16 @@ public class CommandParse extends CommandImpl{
 	}
 */
 	protected Path getOutputPath() {
-		Path currentRelativePath = Paths.get("");
+		Path currentRelativePath = Paths.get(context.resultPath);
 		if(null==output){// make default filename
 			output="result_"+sampling+"_"+System.nanoTime()+"."+format;
 		}
-		String s = currentRelativePath.toAbsolutePath().toString()+"\\results";
+		String s = currentRelativePath.toAbsolutePath().toString();
 		
 			try {
-				Files.createDirectory(Paths.get(s));
+				Files.createDirectory(currentRelativePath);
 			}catch(FileAlreadyExistsException e){
-				logger.info("No need to create "+Paths.get(s).toString()+", folder exists ");
+				logger.info("No need to create "+currentRelativePath.toString()+", folder exists ");
 			}catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -216,7 +217,7 @@ public class CommandParse extends CommandImpl{
 
 
 	@Override
-	public void init() throws UnsupportedStatFormatException {
+	public void init() throws StatfileNotFoundException, UnsupportedStatFormatException, UnsupportedStatParamException {
 		// TODO Auto-generated method stub
 		try {
 		sm=StatisticManager.getInstance(format);
@@ -242,19 +243,24 @@ public class CommandParse extends CommandImpl{
 
     						        
 
-    		File jarPath=new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
-            String propertiesPath=jarPath.getParentFile().getAbsolutePath()+"\\conf";
+    	//	File jarPath=new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
+    		//File jarPath=context.jarPath;
+    		
+            //String propertiesPath=jarPath.getParentFile().getAbsolutePath()+"\\conf";
+    		String propertiesPath=context.propertiesPath;
+    		
             logger.debug(" propertiesPath: {} ",propertiesPath);
             //prop.load(new FileInputStream(propertiesPath+"/importer.properties"));				            
 
     						        
     		String filename = propertiesPath+"\\"+statfile;
     		//input = CommandParse.class.getClassLoader().getResourceAsStream(filename);
+    		try{
     		input=new FileInputStream(filename);
     		
-    		if(input==null){
+    		}catch(Exception e){
     	            logger.error("Sorry, unable to find {}", filename);
-    		    System.exit(1);
+    		    throw new StatfileNotFoundException("Can't find statfile "+filename);
     		}
     		
     		Ini ini=new Ini();
@@ -287,7 +293,8 @@ public class CommandParse extends CommandImpl{
 			System.exit(1);
 		}catch (UnsupportedStatParamException e){
 			logger.error("Statistic parameter error: {}",e);
-			System.exit(1);
+			throw e;
+			//System.exit(1);
 		} catch (UnsupportedStatFormatException e) {
 			// TODO Auto-generated catch block
 			logger.error("Output format error",e);

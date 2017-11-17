@@ -11,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import com.beust.jcommander.JCommander;
 
 import enums.Commands;
+import statmanager.StatfileNotFoundException;
 import statmanager.UnsupportedStatFormatException;
+import statmanager.UnsupportedStatParamException;
 
 public class CmdLineParser {
 	
@@ -54,7 +56,7 @@ public class CmdLineParser {
 
 	}
 	
-	public Command getCommandObj(String cmd) throws UnsupportedStatFormatException{ // Here we return Command object determined on base of obtained from jc.getParsedCommand. 
+	public Command getCommandObj(String cmd) throws UnsupportedStatFormatException, StatfileNotFoundException, UnsupportedStatParamException{ // Here we return Command object determined on base of obtained from jc.getParsedCommand. 
 		Command cmdobj=commands.get(Commands.valueOf(cmd));
 		
 		if(null!=cmdobj){

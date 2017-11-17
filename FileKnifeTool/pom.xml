@@ -8,6 +8,29 @@
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>Tests</testSourceDirectory>
     <plugins>
+        <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <!-- here the phase you need -->
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/conf</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>conf</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>

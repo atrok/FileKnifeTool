@@ -21,6 +21,7 @@ import cmdline.CmdLineParser;
 import cmdline.Command;
 import cmdline.CommandImpl;
 import cmdline.CommandParse;
+import garbagecleaner.FKTProperties;
 import garbagecleaner.ProcessFilesFabric;
 import statmanager.UnsupportedStatFormatException;
 import util.FilesUtil;
@@ -33,6 +34,8 @@ public class TestCommandParse {
 	
 	String garbagecleaner_logs="D:\\Share\\distrib\\3dparty\\GarbageCleaner\\logs";
 	String default_logs=start.toAbsolutePath().toString();
+	
+	FKTProperties context = FKTProperties.getProperties();
 	
 	@Test
 	public void testCmdParseSample10(){
@@ -691,7 +694,7 @@ private void parse(String[] s, int foundfiles, String[] search, int result_lengt
 		try {
 			
 			String testresult="testresult_"+System.nanoTime();
-			String path = Paths.get("").toAbsolutePath().toString()+"\\results";
+			String path = context.resultPath;
 			
 			s[s.length-2]="-out";
 			s[s.length-1]=testresult;
