@@ -53,5 +53,10 @@ public abstract class CommandImpl implements Command,Strategy{
 	protected abstract void init() throws UnsupportedStatFormatException, StatfileNotFoundException, UnsupportedStatParamException;
 	
 
+	protected void init(FKTProperties context)
+			throws UnsupportedStatFormatException, StatfileNotFoundException, UnsupportedStatParamException {
+		this.context=context;
+		init();
+	}
 
 }

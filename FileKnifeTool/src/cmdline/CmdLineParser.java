@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.beust.jcommander.JCommander;
 
 import enums.Commands;
+import garbagecleaner.FKTProperties;
 import statmanager.StatfileNotFoundException;
 import statmanager.UnsupportedStatFormatException;
 import statmanager.UnsupportedStatParamException;
@@ -67,7 +68,19 @@ public class CmdLineParser {
 			return null;
 		}
 	}
-	
+
+	public Command getCommandObj(String cmd,FKTProperties context) throws UnsupportedStatFormatException, StatfileNotFoundException, UnsupportedStatParamException{ // 
+		Command cmdobj=commands.get(Commands.valueOf(cmd));
+		
+		if(null!=cmdobj){
+			((CommandImpl)cmdobj).init(context);
+			return cmdobj;
+		}else{
+			logger.error("command with name '{}' is not found, check your command line arguments", cmd);
+			return null;
+		}
+	}
+
 	public void flush(){
 		
 		commands.clear();

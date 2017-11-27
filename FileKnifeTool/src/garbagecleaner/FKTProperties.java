@@ -13,4 +13,12 @@ public class FKTProperties {
 		return obj;
 	}
 
+	public String toString(){
+		StringBuilder sb=new StringBuilder();
+		sb.append("jarPath:\t"+jarPath.toString()+"\n");
+		sb.append("propertiesPath:\t"+propertiesPath+"\n");
+		sb.append("resultPath:\t"+resultPath+"\n");
+		
+		return sb.toString();
+	}
 }

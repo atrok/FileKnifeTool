@@ -34,6 +34,7 @@ import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 
 import garbagecleaner.ENUMERATIONS;
+import garbagecleaner.FKTProperties;
 import logprocessing.AggregatingStatistic;
 import logprocessing.IncrementalStatistic;
 import logprocessing.LineProcessing;
@@ -100,7 +101,7 @@ public class CommandParse extends CommandImpl{
 		// TODO Auto-generated constructor stub
 		//ln=new LineProcessing(getSampling(),sm);
 	}
-
+	
 
 	protected ResultOutput getFormat(Map<String,String> params,StatDataProcessor sdp, Path filename) {
 		//params.put("process", process);
@@ -249,7 +250,7 @@ public class CommandParse extends CommandImpl{
             //String propertiesPath=jarPath.getParentFile().getAbsolutePath()+"\\conf";
     		String propertiesPath=context.propertiesPath;
     		
-            logger.debug(" propertiesPath: {} ",propertiesPath);
+            logger.debug("Context assigned:\n {} ",context);
             //prop.load(new FileInputStream(propertiesPath+"/importer.properties"));				            
 
     						        
@@ -312,6 +313,8 @@ public class CommandParse extends CommandImpl{
 			setInitialized(true);
 	}
 
+
+	
 
 	
 }
